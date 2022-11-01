@@ -1,0 +1,5091 @@
+/* Fonts Start */
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Fonts End */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    padding: 0px !important;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Call Fonts */
+
+.bellMT_font {
+    font-family: "BellMT", sans-serif !important;
+}
+
+.container {
+    max-width: 1170px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all ease 0.3s;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: unset;
+}
+
+.content-box-right-side {
+    background-color: #6888ff;
+    padding: 70px;
+}
+
+.innder-contnt-hold {
+    background-color: #fff;
+    padding: 50px;
+}
+
+.innder-contnt-hold h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.innder-contnt-hold p {
+    padding: 25px;
+    font-size: 17px;
+}
+
+.innder-contnt-hold a {
+    color: #b4b4b4;
+    padding: 0px 25px;
+    font-size: 17px;
+}
+
+.innder-contnt-hold img {
+    width: 100%;
+}
+
+.form-box-left-side {
+    text-align: center;
+}
+
+.date-box {
+    display: block;
+    margin: 20px 0px;
+}
+
+.date-box ul {
+    display: flex;
+    padding: 0px;
+}
+
+.date-box ul li {
+    list-style: none;
+    margin-right: 25px;
+}
+
+.date-box ul li i {
+    color: #6888ff;
+    margin-right: 5px;
+}
+
+.form-box-left-side img {
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 12%), 0 6px 20px 0 rgb(0 0 0 / 9%) !important;
+    margin: 30px 0px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.col-bg-hold-pd {
+    background-color: #f5f6fa;
+    padding: 100px;
+    padding-bottom: 0px;
+}
+
+.reset-second {
+    margin-top: 70px;
+}
+
+.pd-left-dektop {
+    padding-left: 0px;
+}
+
+.field-hold {
+    margin-bottom: 40px;
+}
+
+.field-hold label {
+    color: #bdbdbd;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.form-box-left-side h2 {
+    margin: 40px 0px;
+}
+
+input.contact_fields::placeholder {
+    color: #bdbdbd;
+}
+
+input.contact_fields {
+    background-color: #fff;
+    border: unset;
+    padding: 14px 14px;
+    border-radius: 4px;
+}
+
+button#submit-recaptcha {
+    background-color: #6888ff;
+    border: #6888ff;
+    height: 47px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    box-shadow: 0 10px 9px 0 rgb(0 0 0 / 12%), 0 6px 30px 0 rgb(104 136 255 / 40%) !important;
+}
+
+.reset-pass {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*/////////////////////////////////////////////////////////*/
+
+
+/*//////////// header style start here //////////////////////*/
+
+
+/*/////////////////////////////////////////////////////////*/
+
+.top-header-hold {
+    display: block;
+    width: 100%;
+    padding: 22px 0px;
+    line-height: 52px;
+    top: 0px;
+    height: 97px;
+}
+
+ul.top-nav-bar {
+    text-align: end;
+    margin-bottom: 0px;
+    font-size: 15px;
+    margin-top: 24px;
+    line-height: 30px;
+}
+
+ul.top-nav-bar li {
+    display: inline-block;
+    color: #000;
+    border-radius: 30px;
+    padding: 0px 4px !important;
+}
+
+ul.top-nav-bar li:hover {
+    display: inline-block;
+    background-color: #000;
+    color: #fff !important;
+    border-radius: 30px;
+    padding: 0px 4px !important;
+}
+
+ul.top-nav-bar li a {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 1px 19px !important;
+}
+
+ul.top-nav-bar li:hover a {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 1px 19px !important;
+    color: #fff !important;
+}
+
+.active a {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 1px 19px !important;
+}
+
+.active {
+    border: unset;
+    background-color: #000 !important;
+    color: #fff !important;
+    border-radius: 30px;
+    padding: 0px 4px !important;
+}
+
+.actions-btn-hold.btn_box_border:hover {
+    background-color: #000;
+}
+
+.actions-btn-hold.btn_box_border:hover a.btn_border {
+    color: #fff;
+    border: 1px solid;
+}
+
+.btn_box_border.whit-color:hover a.btn_border.whit-color {
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn_box_border.whit-color:hover {
+    background-color: #fff;
+}
+
+
+/*/////////////////////////////////////////////////////////*/
+
+
+/*//////////// header style end here //////////////////////*/
+
+
+/* Slider start */
+
+.banner_text {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 105px;
+}
+
+#hero2 .banner_text {
+    top: 175px;
+}
+
+#hero3 .banner_text {
+    top: 175px;
+}
+
+#hero4 .banner_text {
+    top: 175px;
+}
+
+#hero5 .banner_text {
+    top: 175px;
+}
+
+.banner_text p {
+    font-weight: 200;
+    font-size: 17px;
+    line-height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0px 0px 0px #464646;
+}
+
+.banner_text h2 {
+    color: black;
+    font-family: "Bebas Neue", cursive;
+    font-size: 75px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+
+.inner.cus-sliders .span4.cus-span4 {
+    float: left !important;
+}
+
+.mySlides {
+    display: none;
+}
+
+#hero1 {
+    background: url(../images/slider01.jpg) no-repeat;
+    background-size: cover;
+}
+
+.hero,
+.content {
+    position: relative;
+    width: 100%;
+    height: 570px;
+    display: block;
+}
+
+.inner {
+    margin: 0 auto;
+    /*min-height: 1285px;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.copy.slide-tekst {
+    margin: 0;
+    background-image: url(http://sola-elektro.no/wp-content/uploads/2019/02/Reklame-grÃƒÂ¸n-bg.png);
+    background-position: right;
+    height: 200px;
+    width: 800px;
+}
+
+.copyLogo.slide-tekst {
+    margin: 0px 0px 0px 200px;
+    height: 200px;
+    width: 800px;
+}
+
+@media only screen and (max-width: 750px) {
+    .inner {
+        justify-content: center !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .copy h2 {
+        margin: 50px 0px 0px 50px !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .copy a {
+        margin: 0px 0px 0px 50px !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .copyLogo.slide-tekst {
+        margin: 0px 0px 0px 50px !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .copy h2 {
+        font-size: 22px !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .copy a {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .copyLogo.slide-tekst img {
+        width: 240px !important;
+    }
+}
+
+.copy h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin: 50px 0px 0px 200px;
+    line-height: normal;
+}
+
+.slide-tekst {
+    position: relative;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    80% {
+        -webkit-transform: translateX(-10px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.w3-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 100;
+}
+
+.w3-display-left {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(-0%, -50%);
+}
+
+.w3-display-right {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+}
+
+
+/* Badge */
+
+.w3-badge {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+.w3-badge {
+    cursor: pointer;
+    height: 3px;
+    width: 30px;
+    padding: 0;
+}
+
+.header_dots {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.w3-border {
+    border: 2px solid #4c4c4c !important;
+}
+
+.w3-transparent {
+    background-color: transparent !important;
+}
+
+.w3-hover-white:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.w3-white,
+.w3-hover-white:hover {
+    color: #000 !important;
+    background-color: #ffffff !important;
+    border-color: #fff !important;
+    visibility: hidden;
+}
+
+.fade-in {
+    animation: fadein 0.8s linear;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*//////////// slider style end here //////////////////////*/
+
+
+/*//////////// Home search-cars-boxes style start here //////////////////////*/
+
+
+/* Search start */
+
+.search-box {
+    padding: 60px 0px 20px;
+}
+
+.easy-autocomplete {
+    width: 100% !important;
+}
+
+.easy-autocomplete input {
+    border-bottom: 1px solid #000000a1 !important;
+    box-shadow: none !important;
+    position: relative !important;
+    width: 100% !important;
+    right: 0px !important;
+    background-color: unset !important;
+    border: unset;
+    border-radius: unset;
+    padding-left: 30px;
+}
+
+.easy-autocomplete .form-control:focus {
+    background-color: unset !important;
+    font-size: 16px;
+    border: unset !important;
+    border-bottom: 1px solid #000000a1 !important;
+}
+
+.search-box .input-group i.fas.fa-search {
+    color: #636363;
+    position: absolute;
+    top: 4px;
+    right: 25px;
+    z-index: 9;
+    font-size: 24px;
+    float: right;
+}
+
+.filter-box-right p a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.filter-box-right p a {
+    font-size: 18px;
+}
+
+.filter-box-right {
+    padding: 65px 0px 20px;
+}
+
+
+/* Search end */
+
+
+/* nav-lins start */
+
+.product-featur-row {
+    margin-bottom: 30px;
+}
+
+.product-featur-row ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.product-featur-row ul li {
+    display: inline-block;
+    list-style: unset;
+}
+
+li.btn_box_border {
+    border: 1px solid #000;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 0px 15px 0px 0px;
+}
+
+.btn_box_border {
+    border: 1px solid #000;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 0px 15px 0px 0px;
+}
+
+a.btn_border {
+    border: 1px solid white;
+    display: inline-block;
+    border-radius: 100px;
+    width: 100%;
+    border-color: black;
+    padding: 0px 20px;
+    font-weight: 400;
+}
+
+button.btn-close {
+    background: unset;
+    font-size: 30px;
+    font-family: 'Montserrat';
+    color: #000 !important;
+    letter-spacing: 24px;
+    line-height: 31px;
+    font-weight: 600;
+    border-color: #000 !important;
+    outline: unset !important;
+}
+
+.modal-header {
+    margin-bottom: 30px;
+}
+
+.btn-close {
+    color: #000 !important;
+    text-decoration: none;
+    opacity: .75;
+}
+
+.btn-close:focus,
+hover {
+    outline: 0;
+    box-shadow: unset;
+}
+
+.heading-border-section {
+    padding: 0px 0px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.heading-inner-pd ul li.btn_box_border:hover {
+    background-color: #000;
+}
+
+.heading-inner-pd ul li.btn_box_border:hover a.btn_border {
+    border: 1px solid #fff !important;
+    color: #fff;
+}
+
+.heading-box h2 {
+    color: #fff;
+    font-size: 47px;
+    font-family: "Bebas Neue", cursive;
+    padding: 7px 0px 1px 0px;
+}
+
+.cutsom-white-bg h2 {
+    color: #000;
+}
+
+.heading-box.second-white-heading h2 {
+    color: #000;
+}
+
+.heading-box {
+    background-color: #000;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 1040;
+}
+
+.main-heading-cl-pos {
+    position: relative;
+}
+
+.main-heading-cl-pos span.left {
+    content: "";
+    box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: -102px 0px 49px 52px rgb(255 255 255);
+    -moz-box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+    right: -140px;
+    position: absolute;
+    top: 25px;
+    width: 100px;
+    z-index: 99;
+}
+
+.main-heading-cl-pos span.Right {
+    content: "";
+    box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: -102px 0px 49px 52px rgb(255 255 255);
+    -moz-box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+    left: 60px;
+    position: absolute;
+    top: 25px;
+    width: 100px;
+    z-index: 99;
+}
+
+.cutsom-white-bg {
+    background-color: #fff;
+    box-shadow: 0px 0px 28px 34px rgb(255 255 255 / 100%);
+}
+
+.heading-box.second-white-heading {
+    background-color: #e5e5e5;
+    -webkit-box-shadow: -67px -1px 24px 25px #e5e5e5, 67px -1px 24px 25px #e5e5e5;
+}
+
+.heading-border-section span.firts {
+    border: 12px solid #000;
+    background-color: #000;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    z-index: 11;
+    left: 0px;
+}
+
+.heading-border-section span.second {
+    border: 12px solid #000;
+    background-color: #000;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    z-index: 11;
+    left: 0px;
+}
+
+.card-heading-box span.firts {
+    border: 7px solid #000;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    z-index: 11;
+    left: 0px;
+}
+
+.card-heading-box span.second {
+    border: 7px solid #000;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    z-index: 11;
+    left: 0px;
+}
+
+.card-heads-h {
+    width: 68%;
+    box-shadow: 0px 0px 28px 34px rgb(237 237 237);
+    background-color: #ededed;
+}
+
+.card-heads-h h5 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 36px;
+}
+
+
+/* nav-lins end */
+
+
+/* product-box style start here */
+
+.product-img-heading {
+    position: relative;
+}
+
+.attributes {
+    position: absolute;
+    top: -3px;
+    z-index: 9;
+}
+
+.attributes ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.attributes ul li {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.attributes ul li p.live {
+    background-color: #000;
+    color: #fff;
+    padding: 0px 9px;
+    font-weight: 600;
+}
+
+.product-box .img-hold {
+    overflow: hidden;
+}
+
+.img-hold img {
+    width: 100%;
+    transition: ease all 0.3s;
+}
+
+.img-hold img:hover {
+    transform: scale(1.05);
+}
+
+.product-img-heading .heading-hold {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading-hold h4 {
+    font-size: 20px;
+    color: #000;
+}
+
+.heading-hold h4:hover {
+    color: #333;
+}
+
+ul.icons-section {
+    padding: 0px;
+    margin: 0px;
+    float: right;
+}
+
+ul.icons-section li {
+    display: inline-flex;
+}
+
+ul.icons-section li a i {
+    background-color: #000;
+    padding: 5px 5px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* shair social media  style start here */
+
+.social .fbtn {
+    width: 35px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height: 8px;
+    float: left;
+    height: 35px;
+    padding: 0px !important;
+    border-radius: 0px;
+}
+.social.top.center.networks-5.active i {
+    background-color: unset !important;
+}
+.social .fa {
+    padding: 8px 0px;
+    background-color: unset !important;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.instagram {
+    background-color: #cd3276;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.stumbleupon {
+    background-color: #eb4924;
+}
+
+.pinterest {
+    background-color: #cc2127;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.buffer {
+    background-color: #323b43;
+}
+
+
+.share-button.sharer .social.active.top {
+    transform: scale(1) translateY(28px);
+}
+
+.share-button.sharer .social.active {
+    opacity: 1;
+    transition: all 0.4s ease 0s;
+    visibility: visible;
+}
+
+.share-button.sharer .social.networks-5 {
+    position: absolute;
+}
+.social.top.center.networks-5.active i {
+    background-color: unset !important;
+}
+.share-button.sharer .social.top {
+    margin-top: 26px;
+    transform-origin: 0 0 0;
+}
+.social.top.center.networks-5.active {
+       background-color: #ffffff !important;
+    border-radius: 0px;
+    border: 1px solid #d9d9d9;
+    padding: 7px !important;
+}
+
+.share-button.sharer .social {
+   right: 0px;
+    opacity: 0;
+    transition: all 0.4s ease 0s;
+    visibility: hidden;
+}
+li.share-button.sharer .social.top.center.networks-5.active {
+    position: absolute;
+    width: fit-content;
+}
+li.share-button.sharer button.share-btn {
+    background-color: #000;
+    border-radius: 4px;
+    color: #fff;
+    border: unset;
+}
+/* shair social media  style end here */
+
+
+.product-content p.double-border {
+    border-width: 6px;
+    border-style: double;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-color: #a7a7a7;
+    margin-bottom: 0px;
+}
+
+.product-content span p:first-child {
+    margin-left: 0px !important;
+}
+
+.product-content span {
+    display: inline-flex;
+}
+
+.product-content span p {
+    margin: 3px 10px;
+}
+
+.product-content span p img {
+    margin-left: 13px;
+    display: inline-block;
+    width: 24px;
+}
+
+.product-shadow-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient( 90deg, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    margin-bottom: 25px;
+    padding: 4px 8px 4px px;
+    font-weight: 500;
+}
+
+.head-bg-color p {
+    margin-bottom: 0px;
+    color: #fff;
+    padding: 0px 6px;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+.red p {
+    background-color: #b70e0c;
+    display: inline-block !important;
+}
+
+.green p {
+    background-color: #7fa84a;
+    display: inline-block !important;
+}
+
+.yellow p {
+    background-color: #f39433;
+    display: inline-block !important;
+}
+
+.timging-tage p {
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+.current-bids p {
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+.end-border-and-btn {
+    text-align: center;
+}
+
+.last-bottom-pd {
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.actions-btn-hold.btn_box_border {
+    margin: 30px auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.double-border {
+    border-width: 6px;
+    border-style: double;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-color: #a8a8a8;
+    margin-bottom: 50px;
+}
+
+.cars-details-box-holder.double-border:last-child {
+    border: unset;
+    margin-bottom: 0px;
+}
+
+.cars-details-box-holder.double-border {
+    margin-bottom: 30px;
+}
+
+li.double-border {
+    border-width: 6px;
+    border-style: double;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-color: #a8a8a8;
+    margin-bottom: 25px;
+}
+
+.head-bg-color,
+.timging-tage,
+.current-bids {
+    -ms-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+}
+
+.head-bg-color {
+    text-align: left;
+}
+
+.timging-tage {
+    text-align: center;
+}
+
+.current-bids {
+    text-align: end;
+}
+
+
+/* product-box style end here */
+
+
+/* home-subscribe-now-banner start here */
+
+.scribes-content-here {
+    padding-top: 11%;
+}
+
+.btn_box_border {
+    display: inline-block;
+}
+
+.home-scribes-banner-section {
+    background-image: url(../images/subscribe-bg.jpg);
+    background-size: 100%;
+    height: 690px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scribes-content-here h6 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.scribes-content-here h2 {
+    margin: 50px 0px 40px;
+    margin-top: 0px;
+    color: white;
+    font-size: 103px;
+    line-height: 100px;
+    font-family: "Bebas Neue", cursive;
+    width: 82%;
+    text-shadow: 0px 0px 3px #606060;
+}
+
+.form_box input {
+    opacity: 0.8;
+    border-radius: 7px;
+    padding: 5px 10px;
+    width: 35%;
+    border: none;
+    display: block;
+    margin: 10px 0px;
+}
+
+a.btn_border.whit-color {
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.product-featur-row ul li a.btn_border {
+    font-weight: 600;
+}
+
+.btn_box_border.whit-color {
+    border: 1px solid #fff;
+}
+
+
+/* clears the â€˜Xâ€™ from Internet Explorer */
+
+input[type=search]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+
+/* clears the â€˜Xâ€™ from Chrome */
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+
+/* home-subscribe-now-banner end here */
+
+
+/*//////////// Home search-cars-boxes style end here //////////////////////*/
+
+
+/*//////////// Home Bloges style start here //////////////////////*/
+
+.blog-main-heading h3 {
+    font-size: 48px;
+    font-family: "Bebas Neue";
+    margin-bottom: 50px;
+    color: #000000;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.blog-content-img-holder-box p {
+    font-size: 14px;
+    width: 80%;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.blog-content-img-holder-box h4 {
+    font-size: 18px;
+    width: 55%;
+    line-height: 24px;
+    margin-top: 20px;
+    font-weight: 800;
+}
+
+.blog-content-img-holder-box h4:hover {
+    color: #333;
+}
+
+.blog-content-img-holder-box b {
+    margin-bottom: 60px;
+    display: block;
+}
+
+.home-blog-section {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.blog-left-icons-shape img {
+    position: absolute;
+    width: 300px;
+    left: -10px;
+    top: 52px;
+}
+
+
+/*//////////// Home Bloges style end here //////////////////////*/
+
+
+/*//////////// Home Contact us style start here //////////////////////*/
+
+.home-contact-us-heading {
+    text-align: center;
+}
+
+.home-contact-us-heading h2 {
+    font-family: "Bebas Neue";
+    font-size: 135px;
+    letter-spacing: 5px;
+}
+
+.home-contact-us-heading p {
+    display: inline-block;
+    width: 330px;
+    color: #4d4d4d;
+    margin-top: -10px;
+}
+
+.form_contact_box {
+    width: 40%;
+    margin: 40px auto;
+}
+
+.contact_left_side_box {
+    float: left;
+    width: 50%;
+    padding-right: 15px;
+    position: relative;
+}
+
+.contact_form_box input {
+    width: 100%;
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+i.fas.fa-angle-down {
+    position: absolute;
+    right: 27px;
+    margin-top: 9px;
+}
+
+.contact_form_box label {
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+select#contact_country {
+    width: 100%;
+    padding: 5px 10px;
+    opacity: 0.8;
+    border: none;
+    border-radius: 5px;
+    background-color: #d7d7d7;
+}
+
+.contact_right_side_box {
+    float: right;
+    width: 50%;
+    padding-left: 15px;
+    position: relative;
+}
+
+.contact_message {
+    display: inline-block;
+    width: 100%;
+}
+
+.contact_form_box label {
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+    position: relative;
+}
+
+.contact_message textarea {
+    width: 100%;
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    height: 100px;
+}
+
+.radio_btn_box p {
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.radio_btn_box span {
+    margin: 0px 25px 0px 0px;
+}
+
+.radio_btn_box ul li span label {
+    font-size: 14px;
+    padding: 0px 18px;
+}
+
+.contact_form_box label {
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+}
+
+.radio_btn_box ul li span input {
+    position: absolute;
+    margin-top: 18px;
+}
+
+.radio_btn_box ul li {
+    display: inline-block;
+}
+
+.radio_btn_box ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.home-contact-us-section {
+    background-image: url(../images/sec5.jpg);
+    height: 1296px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative !important;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    background-position: 100% 100%;
+}
+
+
+/*//////////// Home Contact us style start here //////////////////////*/
+
+
+/*//////////// Home About us style start here //////////////////////*/
+
+.section_three_main_box {
+    margin-top: 30px;
+}
+
+.section_three_main_box img {
+    width: 100%;
+}
+
+.section_four_box img {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    width: auto !IMPORTANT;
+    display: block;
+    margin-left: auto;
+}
+
+.section_three_des_text {
+    width: 75%;
+    margin-bottom: 30px;
+}
+
+.section_four_text h2 {
+    font-size: 53px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    padding: 7px 0px 1px 0px;
+    color: #58595b;
+    margin-bottom: 40px;
+}
+
+.section_three_des_text p {
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+
+/*//////////// Home About us style end here //////////////////////*/
+
+
+/*//////////// Terms-and-Condtions style start here //////////////////////*/
+
+.terms-conditions-content {
+    margin-top: -105px;
+    z-index: 1080;
+    position: relative;
+}
+
+ul.count-one {
+    list-style: lower-roman;
+    padding: 0px 20px;
+}
+
+ul.count-one li {
+    padding-left: 15px;
+    margin-bottom: 8px;
+}
+
+ul.count-second {
+    list-style: lower-latin;
+    padding: 0px 20px;
+}
+
+ul.count-second li {
+    padding-left: 15px;
+    margin-bottom: 8px;
+}
+
+.border {
+    border: unset !important;
+    border-bottom: 1px solid #000 !important;
+    display: block;
+    padding: 0px 0px 25px;
+    margin-bottom: 25px;
+}
+
+.terms-conditions-content span {
+    font-weight: 700;
+}
+
+.privacy-policy-content span {
+    font-weight: 700;
+}
+
+.privacy-policy-content {
+    position: relative;
+    z-index: 1080;
+    margin-top: -115px;
+}
+
+
+/*//////////// Terms-and-Condtions style end here //////////////////////*/
+
+
+/*//////////// FAQS style start here //////////////////////*/
+
+.faq-left-tabs {
+    text-align: left;
+    border-left: 2px solid #cfcfcf;
+    padding-left: 20px;
+}
+
+.faq-tab-left-btn {
+    color: #666 !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.faq-tab-left-btn .active {
+    background-color: unset !important;
+}
+
+.faq-pd-top-holder {
+    padding-bottom: 70px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: unset !important;
+    border-left: 2px solid #000 !important;
+    border-radius: unset;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+.tab-content>.active {
+    display: block;
+    background-color: #ffff !important;
+    color: #000 !important;
+    border-radius: unset !important;
+}
+
+.accordion-item {
+    background: #f5f5fc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 14px 20px !important;
+}
+
+.accordion-button {
+    background: #f5f5fc !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+
+.accordion-body.inner-descitopn {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+}
+
+h3.text-muted.mt-3 {
+    font-size: 23px;
+    font-weight: 800;
+    color: #212121 !important;
+}
+
+.diagram-heading {
+    margin: 40px 0px;
+}
+
+.diagram-box-hold {
+    display: block;
+    background-color: #000;
+    width: 235px;
+    line-height: 18px;
+    height: 90px;
+    margin-right: 30px;
+}
+
+.diagram-box-hold p {
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    height: 41px;
+    display: block;
+    padding: 30px;
+}
+
+.diagram-content-hold ul {
+    padding: 0px;
+}
+
+.diagram-content-hold ul li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.diagram-section-hold {
+    padding: 0px !important;
+}
+
+.diagram-section-hold:before {
+    content: '';
+    display: flex;
+    position: absolute;
+    border-top: 2px solid #034EA2;
+    top: 156px;
+    z-index: -1;
+    width: 100%;
+    right: unset;
+    left: 0px;
+    margin: auto !important;
+    justify-content: space-evenly;
+}
+
+.diagram-section-hold2:after {
+    content: '';
+    border-top: 2px solid #034EA2;
+    bottom: 60px;
+    z-index: -1;
+    right: 0px;
+    justify-content: space-evenly;
+    margin-right: auto !important;
+    padding: 30px 30px 40px 10px;
+    position: absolute;
+    width: 65%;
+}
+
+.diagram-content-hold {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*//////////// FAQS style end here //////////////////////*/
+
+
+/*//////////// Footer style start here //////////////////////*/
+
+.logo-nav {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.logo-nav img {
+    width: 430px;
+}
+
+.footer_main_box {
+    background-color: #000;
+}
+
+.footer-heading-contents h5 {
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer-heading-contents ul {
+    padding: 0px;
+    margin: 25px 0px;
+}
+
+.footer-heading-contents ul li {
+    list-style: none;
+}
+
+.footer-heading-contents ul li a {
+    font-size: 12px;
+    list-style: none;
+    color: #fff;
+    font-weight: 300;
+}
+
+.footer-heading-contents ul li a i.fab.fa-facebook-square:hover {
+    color: #308af0;
+}
+
+.footer-heading-contents ul li a i.fab.fa-instagram-square:hover {
+    color: #c9488e;
+}
+
+.footer-heading-contents ul li a i.fab.fa-twitter-square:hover {
+    color: #55adec;
+}
+
+.footer-heading-contents ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer_main_box {
+    background-color: #000;
+    padding: 60px 0px 0px 0px;
+}
+
+.social-media-links ul li a i {
+    font-size: 38px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+}
+
+.social-media-links {
+    float: right;
+}
+
+.footer-bottom-bar ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-bottom-bar ul span {
+    color: #ffffffb5;
+    margin: 0px 10px;
+}
+
+.footer-bottom-bar {
+    text-align: center;
+}
+
+.footer-bottom-bar ul li a {
+    text-decoration: underline;
+}
+
+.footer-bottom-bar ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 200;
+    margin-bottom: 35px;
+}
+
+
+/*//////////// Footer style end here //////////////////////*/
+
+
+/*//////////// Mega menu dropdown style start here //////////////////////*/
+
+#filter_drop {
+    max-height: 580px;
+    overflow-y: scroll !important;
+}
+
+#filter_drop::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+#filter_drop::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#filter_drop::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+.filter-box-right ul {
+    padding: 0px;
+}
+
+.filter-box-right ul li {
+    list-style: none;
+}
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.product-featur-row ul li {
+    margin: 0px !important;
+}
+
+.active-2 {
+    background-color: #000;
+}
+
+.carousel-item.active {
+    border-radius: unset !IMPORTANT;
+}
+
+.active-2 a {
+    color: #fff;
+    border: 1px solid;
+}
+
+.active-2 a.btn_border {
+    color: #fff;
+}
+
+.filter-main-hold-pos {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f5f5f5;
+    z-index: 11111111;
+    width: 100%;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    padding: 30px;
+    -webkit-box-shadow: -62px 27px 24px 5px #fff, 61px 27px 24px 5px #fff;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+.pop-main-btn-hold {
+    text-align: right;
+}
+
+.pop-main-btn-hold ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.pop-main-btn-hold ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.pop-main-btn-hold ul li a {
+    padding: 0px;
+}
+
+.pop-main-btn-hold {
+    text-align: right;
+}
+
+.pop-main-btn-hold ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.pop-main-btn-hold ul li:last-child {
+    list-style: none;
+    display: inline-block;
+    margin-right: 0px;
+}
+
+.pop-main-btn-hold ul li a {
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/*.active-btn-colors a.btn_border {
+
+
+
+    border: 1px solid #fff !important;
+
+
+
+    color: #fff;
+
+
+
+}
+
+*/
+
+.filter-box-right ul li a i {
+    font-size: 25px;
+    margin-right: 8px;
+}
+
+.filter-box-right ul li a {
+    font-size: 19px;
+}
+
+.col-megamenu ul.list-unstyled {
+    margin-top: 25px;
+}
+
+.form-check-input[type=checkbox] {
+    width: 17px !important;
+    height: 17px !important;
+    border-radius: 30px !important;
+    margin-top: -2px !important;
+}
+
+.form-check-input:checked {
+    background-color: #575757;
+    border-color: #575757;
+}
+
+.form-check-input:focus,
+hover,
+active {
+    border-color: #575757;
+    outline: 0;
+    box-shadow: unset;
+    color: #575757;
+    border-radius: 30px;
+    padding: 8px;
+    background-color: #575757 !important;
+}
+
+ul.list-unstyled li a.view-more {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.col-megamenu {
+    margin-top: 12px;
+}
+
+.col-megamenu h6 {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.col-megamenu ul.list-unstyled li {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.col-megamenu ul.list-unstyled li span label {
+    font-size: 13px;
+    color: #000 !important;
+    margin-top: 0px;
+    position: relative;
+    top: -3px;
+    left: 3px;
+}
+
+
+/*//////////// Mega menu dropdown style end here //////////////////////*/
+
+
+/*//////////// banner slider  style start here //////////////////////*/
+
+.banner.slider.section.hold {
+    background-image: url(../images/blog-slider01.png);
+    height: 650px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.banner-slider-content-hold {
+    text-align: center;
+    color: #fff;
+    padding: 23.6% 0px;
+}
+
+.banner-slider-content-hold-second {
+    text-align: center;
+    color: #fff;
+    padding: 20.4% 0px;
+}
+
+.banner-slider-content-hold-second h2 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 75px;
+    line-height: 55px;
+    margin-bottom: 25px;
+}
+
+.banner-slider-content-hold p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.banner-slider-content-hold h2 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 75px;
+    line-height: 55px;
+    margin-bottom: 25px;
+}
+
+.spot-light-blog-top-pd {
+    padding-top: 105px;
+}
+
+.blog-content-img-holder-box img {
+    transition: ease all 0.3s;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog-content-img-holder-box {
+    overflow: hidden;
+}
+
+.blog-content-img-holder-box img:hover {
+    transform: scale(1.03);
+}
+
+.blog-left-icons-shape.slb-page-hold img {
+    position: absolute;
+    width: 25%;
+    left: -10px;
+    top: 10px;
+    z-index: -1;
+}
+
+.spoligth-second-content {
+    padding-top: 96px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0px auto 0px;
+}
+
+.spoligth-second-content {
+    padding-top: 96px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+}
+
+.spoligth-second-content span {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.slb-content-img-holder-box img {
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.slb-content-img-holder-box iframe {
+    margin: 40px 0px 30px;
+}
+
+.slb-content-img-holder-box p {
+    margin-top: 20px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.spot-light-end-section-bg {
+    background-color: #e5e5e5;
+    padding: 50px 0px;
+}
+
+
+/*//////////// banner slider  style end here //////////////////////*/
+
+
+/*////////////  register and login modal popup  style start here //////////////////////*/
+
+.modal {
+    z-index: 1111111111;
+}
+
+.heading-box.back-white-header {
+    background-color: #fff;
+    width: 463px;
+    box-shadow: 0px 0px 28px 41px rgb(255 255 255 / 100%);
+}
+
+.heading-box.back-white-header img {
+    width: 340px;
+    margin: 7px 0px;
+}
+
+.form_contact_box.register-form {
+    width: 70%;
+    margin-bottom: 0px;
+}
+
+.contact_form_box.register-form-head input {
+    padding: 3px 5px;
+}
+
+.register-check-popup-holder {
+    display: inline-flex;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.register-check-popup-holder ul li input.form-check-input {
+    position: absolute;
+    left: 0px;
+    width: 2.5% !important;
+    border-radius: 3px !important;
+    height: 13px !important;
+    margin-top: 4px !important;
+}
+
+.register-check-popup-holder ul li p {
+    margin-left: 30px;
+    font-size: 13px;
+    text-align: left !important;
+}
+
+.register-check-popup-holder ul li {
+    list-style: none;
+}
+
+.register-check-popup-holder ul {
+    padding: 0px;
+}
+
+.form_contact_box.register-form {
+    width: 70%;
+    margin-bottom: 0px;
+    z-index: 111111;
+    text-align: center;
+    padding: 0px 0px 5px;
+}
+
+.form_contact_box.register-form p {
+    text-align: center;
+    font-family: "Montserrat";
+    color: #4d4d4d;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.register-check-popup-holder ul li p {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+.register-form-head .actions-btn-hold.btn_box_border {
+    margin: 10px 0px 50px;
+}
+
+.form_contact_box.register-form h2 {
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 800;
+}
+
+.contact_login_box {
+    width: 75%;
+    margin: auto;
+    padding: 0px 0px 30px;
+}
+
+input.hight-input-add {
+    height: 44px;
+}
+
+.contact_login_box a {
+    color: #0b68aa;
+    font-size: 14px;
+    text-align: left !important;
+    display: block;
+    margin-top: 10px;
+}
+
+a.show-password {
+    position: relative;
+    top: -31px;
+    right: 0px;
+    float: right;
+    font-size: 14px;
+    color: #808080;
+}
+
+
+/*////////////  register and login modal popup  style end here //////////////////////*/
+
+
+/*////////////  Sell With Us style start here //////////////////////*/
+
+.seller-top-pd {
+    padding-top: 30px;
+}
+.banner-inner-content-sell-with-us {
+    margin-top: 60px;
+}
+.sell-with-us-heading p {
+    font-size: 28px;
+    font-weight: 100;
+}
+
+.sell-with-us-heading {
+    padding: 21.5% 0px;
+}
+
+.sell-with-us-content p {
+    font-size: 21px;
+    line-height: 45px;
+    color: #4d4d4d;
+    font-family: 'Montserrat';
+    margin-right: 30px;
+}
+
+.sell-with-us-img img {
+    width: 100%;
+}
+
+.sellers-receives-content span {
+    font-weight: 700;
+    color: #4d4d4d;
+    margin-bottom: 30px;
+    display: block;
+    font-size: 22px;
+}
+
+.sellers-receives-content {
+    padding: 50px 0px 20px;
+}
+
+.sellers-receives-content ul {
+    width: 82%;
+    padding: 0px 15px;
+}
+
+.sellers-receives-content ul li {
+    line-height: 28px;
+    margin-bottom: 26px;
+    color: #4d4d4d;
+    font-size: 17px;
+}
+
+.sellers-receives-content p {
+    line-height: 27px;
+    color: #4d4d4d;
+    width: 82%;
+}
+
+.seller-middle-banner {
+    background-image: url(../images/sell-middle-banner.jpg);
+    height: 618px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 70px;
+}
+
+.seller-bottom-banner {
+    background-image: url(../images/sell-bottom-banner.jpg);
+    height: 650px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+}
+
+.sell-with-heading--second h2 {
+       color: #4d4d4d;
+    font-family: "Bebas Neue";
+    font-size: 109px;
+    letter-spacing: 5px;
+    line-height: 60px;
+}
+
+.page_button_box.arrow-box .btn_box_border.arrow-down-btn {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    margin: 0px 14px 0px 0px;
+}
+
+.page_button_box.arrow-box .btn_box_border.arrow-down-btn .btn_border {
+    padding: 25px 13px;
+    border: 1px solid;
+    border-radius: 30px;
+    padding-top: 6px;
+    padding-bottom: 34px;
+}
+
+.page_button_box.arrow-box .btn_box_border.arrow-down-btn .btn_border i.fal.fa-long-arrow-down {
+    font-size: 39px;
+}
+
+.page_button_box.arrow-box {
+    margin-top: 9%;
+}
+
+.page_button_box.arrow-box p {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+/*////////////  Seller form-desing style start here //////////*/
+
+.seller-form-hold {
+    width: 60%;
+    margin-top: 0px;
+}
+
+.seller-form-hold p {
+    font-size: 16px;
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+}
+
+a.btn_border i.fas.fa-long-arrow-alt-right {
+    padding-top: 5px;
+}
+
+.sell-ypur-vehicles-content {
+    text-align: center;
+}
+
+.sell-ypur-vehicles-content p {
+    margin-bottom: 7px;
+    color: #4d4d4d;
+}
+
+
+/*////////////  Seller form-desing style end here //////////*/
+
+
+/*////////////  Sell With Us style end here //////////////////////*/
+
+
+/*////////////  My account style start here //////////////////////*/
+
+.my-accont-section {
+    padding: 20px 0px 0px 0px;
+}
+
+.my-acconut-content {
+    text-align: center;
+}
+
+.my-acconut-content h6 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #4d4d4d;
+    font-weight: 700;
+}
+
+.my-acconut-content p {
+    font-size: 16px;
+    width: 66%;
+    line-height: 30px;
+    margin: auto;
+    color: #4d4d4d;
+    margin-bottom: 40px;
+}
+
+.my-account-form-hold {
+    width: 75%;
+}
+
+.my-accont-input input::placeholder {
+    font-size: 13px;
+    padding: 7px;
+}
+
+.my-accont-input input {
+    height: 33px;
+    margin-bottom: 10px;
+}
+
+.my-accont-input label {
+    font-weight: 500;
+    color: #4d4d4d;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    color: #000000;
+    background-color: #e5e5e5;
+    border-color: unset;
+    outline: 0;
+    box-shadow: unset;
+    border: unset;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+select {
+    background-color: #e5e5e5 !important;
+    box-shadow: unset;
+    outline: unset;
+    border: unset !important;
+    font-size: 14px !important;
+    margin-bottom: 25px;
+}
+
+
+/*////////////  photo & descriptions style start here ///////////*/
+
+.photo-and-description-section {
+    width: 75%;
+    margin: auto;
+}
+
+.photo-and-description-content {
+    margin: 30px 0px;
+}
+
+.photo-and-description-content span {
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+.photo-and-description-content p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #4d4d4d;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: auto !important;
+    transform: rotate(-180deg);
+    color: #000;
+}
+
+.accordion-item.photo-and-desc-collaps h2 button.accordion-button {
+    padding: 7px 10px;
+    margin: 0px;
+    background-color: #e5e5e5 !important;
+    color: #000 !important;
+    outline: unset;
+    border: unset;
+    font-size: 13px;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    border-radius: 11px 11px 0px 0px;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: #e5e5e5;
+    outline: 0;
+    box-shadow: unset;
+}
+
+.photo-and-description-left-collapse {
+    border: 1px solid #e5e5e5;
+    margin-bottom: 35px;
+    border-radius: 12px 12px 0px 0px;
+    border-bottom: unset;
+}
+
+.collase-content-iiner {
+    padding: 0px;
+}
+
+.collase-content-iiner ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.collase-content-iiner ul li {
+    list-style: none;
+    font-size: 13px;
+    margin: 10px 0px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 6px;
+    padding-left: 10px;
+}
+
+.upload-images-and-files span {
+    display: inline-flex;
+}
+
+.upload-images-and-files span p {
+    margin: auto;
+    font-size: 14px;
+    margin-left: 17px;
+}
+
+.upload-images-and-files p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.upload-images-and-files ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 7px;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+}
+
+.upload-images-and-files ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.upload-images-and-files ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 6px;
+    border: unset;
+}
+
+.upload-images-and-files ul li img {
+    width: 59px;
+    height: 46px;
+}
+
+.upload-images-and-files ul li i.fas.fa-times-circle {
+    position: absolute;
+    margin-left: 51px;
+    font-size: 13px;
+    margin-top: -6px;
+}
+
+.upload-images-and-files {
+    border: dashed 2px #e5e5e5;
+    margin-bottom: 30px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.vehicle-form-info textarea {
+    width: 100%;
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    height: 120px;
+}
+
+.vehicle-form-info p {
+    font-size: 14px;
+    color: #4d4d4d;
+    text-align: left;
+    float: left;
+}
+
+.vehicle-form-info .my_account_form_box.my-accont-input {
+    float: left;
+}
+
+.exterior-img-box {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.exterior-img-box ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.exterior-img-box ul li {
+    padding: 9px 8px;
+    border-bottom: 1px solid #e5e5e5;
+    list-style: none;
+}
+
+.exterior-img-box ul li a {
+    font-size: 14px;
+}
+
+.active-ext {
+    background-color: #e5e5e5;
+    color: #4d4d4d;
+}
+
+
+/*////////////  photo & descriptions style end here ////////////*/
+
+
+/*////////////  My account style end here //////////////////////*/
+
+
+/*////////////  User Profile style start here //////////////////////*/
+
+.user-profile.section.hold {
+    margin: 60px 0px;
+}
+
+.user-profile-tabs {
+    display: flex;
+}
+
+.user-profile-tabs ul {
+    padding: 0px;
+}
+
+.user-profile-tabs ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.user-profile-tabs ul li a {
+    padding: 18px 30px;
+    color: #4d4d4d;
+}
+
+.user-profile-tabs ul li a.btn-active {
+    background-color: #000;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.user-cars-details-box ul {
+    padding: 0px;
+}
+
+.user-cars-details-box ul li {
+    list-style: none;
+}
+
+.user-cars-details-box ul li .detail-heading {
+    display: block;
+    width: 100%;
+}
+
+.user-cars-details-box ul li .detail-heading span {
+    display: inline-flex;
+    float: right;
+    margin-top: 0px;
+}
+
+.user-cars-details-box ul li .detail-heading h6 {
+    display: inline-flex;
+    font-weight: 800;
+    text-align: left;
+    font-size: 18px;
+}
+
+p.count {
+    margin-left: 5px;
+    font-weight: 400;
+    color: #666666;
+}
+
+p.close a {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-right: 13px;
+}
+
+p.close a i.fas.fa-sort-up {
+    position: relative;
+    top: 5px;
+    left: 2px;
+}
+
+.detail-heading p {
+    font-size: 15px;
+    color: #4d4d4d;
+}
+
+
+/*/////// User Profile  Cars Details style start here ///////*/
+
+.cars-detail-col-left {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.cars-detail-col-left img {
+    width: 100%;
+    transition: ease all 0.3s;
+}
+
+.cars-detail-col-left img:hover {
+    transform: scale(1.05);
+}
+
+.main-heads-cars-user-detail-box1 {
+    display: block;
+}
+
+.main-heads-cars-user-detail-box1 span.icons {
+    background-color: #000;
+    padding: 1px 5px 1px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.main-heads-cars-user-detail-box1 span.icons.unactive {
+    background-color: unset;
+    color: #000;
+    border: 1px solid;
+}
+
+span.icons {
+    display: inline-flex;
+    float: right;
+}
+
+.main-heads-cars-user-detail-box1 p {
+    display: inline-flex;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.main-heads-cars-user-detail-box1 span img {
+    margin-left: 10px;
+}
+
+p.upper-description {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.main-heads-cars-user-detail-box1 h5 {
+    font-weight: 800;
+    display: inline-flex;
+    color: #000;
+    font-size: 22px;
+}
+
+.main-heads-cars-user-detail-box1 h5:hover {
+    color: #333;
+}
+
+.boder-one-line {
+    border-bottom: 1px solid #a8a8a8;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.main-heads-cars-user-detail-box2 span {
+    display: inline-flex;
+    float: right;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.main-heads-cars-user-detail-box2 p {
+    display: inline-flex;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.main-heads-cars-user-detail-box2 {
+    display: block;
+}
+
+.blue-tag {
+    color: #2179b2;
+}
+
+.red-tag {
+    color: #e71111;
+}
+
+.red {
+    background-color: #e71111 !important;
+    display: contents;
+}
+
+.step-one.your-bids-tags span {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.step-one.your-bids-tags h6 {
+    display: inline-flex;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.step-one.your-bids-tags {
+    margin: 20px 0px;
+}
+
+.step-one.your-bids-tags p {
+    text-align: right;
+    float: right;
+    font-weight: 600;
+}
+
+.green-tag {
+    color: #458212;
+}
+
+span.content-price {
+    display: inline-flex;
+    float: right;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.detail-heading .end-border-and-btn {
+    text-align: left;
+}
+
+.main-heads-cars-user-detail-box1 .right-step-tag p {
+    float: right;
+    color: #fff;
+    padding: 0px 7px;
+    margin-top: 3px;
+}
+
+.check-box-right-in {
+    display: block;
+    position: relative;
+}
+
+.check-box-right-in .form-check-input {
+    position: absolute;
+    right: 0px;
+    top: 7px;
+    width: 17px !important;
+    padding: 9px;
+    height: 19px;
+    color: #000 !important;
+}
+
+.correct-and-cross-icons {
+    text-align: right;
+    position: relative;
+}
+
+.correct-and-cross-icons i.fas.fa-times-circle {
+    color: #ef2415;
+    position: absolute;
+    top: -23px;
+    right: 13px;
+}
+
+.correct-and-cross-icons i.fas.fa-check-circle {
+    color: #94bc61;
+    position: absolute;
+    top: -23px;
+    right: 13px;
+}
+
+.form-inner-hold {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.contact_form_box.full-width-form {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+a.btn_border.update-icons {
+    position: relative;
+}
+
+a.btn_border.update-icons::after {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #fff;
+    font-size: 7px;
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    background-color: #94bc61;
+    border-radius: 30px;
+    padding: 2px 3px 0px;
+}
+
+.cars-details-box-holder a.btn_border {
+    padding: 0px 28px 0px;
+}
+
+.cards-input-boxes {
+    display: flex;
+}
+
+.cards-input-boxes .input-row {
+    display: block;
+    width: 100%;
+}
+
+.cards-input-boxes .cardf {
+    width: 100%;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    outline: unset;
+}
+
+.cards-input-boxes .yearf {
+    width: 100%;
+    margin-left: -4px;
+    outline: unset;
+    border-radius: unset;
+}
+
+.cards-input-boxes .cvvf {
+    width: 100%;
+    margin-left: -5px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    outline: unset;
+}
+
+p.error-message {
+    color: #fc3232;
+    font-size: 14px;
+}
+
+
+/*/////// User Profile  Cars Details style end here ///////*/
+
+
+/*////////////  User Profile style end here //////////////////////*/
+
+
+/*////////////  Vehicle Descriptions style start here //////////////////////*/
+
+.heading-box.cutsom-white-bg h2.reduce-size {
+    font-size: 65px;
+    margin-top: -8px;
+}
+
+.vehicles-description-section p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.vehicles-description-section h4 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 28px;
+    color: #000;
+}
+
+ul.vehicles-models-detail li {
+    list-style: none;
+    border-bottom: 1px solid #8d8d8d;
+    margin-bottom: 30px;
+}
+
+ul.vehicles-models-detail li span {
+    font-weight: 800;
+    font-size: 22px;
+}
+
+ul.vehicles-models-detail {
+    padding: 0px;
+    margin: 0px;
+    margin: 40px;
+}
+
+.home-blog-section.vehicle-des-pd-top .active-btn-colors a.btn_border:hover {
+    border: 1px solid #fff !important;
+}
+
+
+/*.home-blog-section.vehicle-des-pd-top .active-btn-colors a.btn_border {
+
+    border: 1px solid #000 !important;
+
+}
+
+.home-blog-section.vehicle-des-pd-top .active-btn-colors a {
+
+    color: #000;
+
+}*/
+
+
+/*/////// live-register bids style start here ///////*/
+
+.current-bid-register-tab-banner {
+    background-color: #000;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.live-bid-hits-tags {
+    display: block;
+    padding: 35px 0px 25px;
+}
+
+.bids-times span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.live-bid-hits-tags .bids-times ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.live-bid-hits-tags .bids-times ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 0px 0px 20px;
+}
+
+.live-bid-hits-tags .bids-times ul li span {
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.bids-times {
+    display: inline-flex;
+    margin-left: 50px;
+}
+
+.bids-times span.end-in {
+    color: #fff;
+    font-weight: 800;
+    margin-top: 11px;
+}
+
+.live-bid-hits-tags a {
+    background-color: #fff;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.live-bid-hits-tags .bids-times ul li p {
+    color: #fff;
+    font-size: 13px;
+}
+
+.current-bid-tags p span {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.current-bid-tags p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.current-bid-tags {
+    display: inline-grid;
+    margin-left: 50px;
+    position: relative;
+    top: -12px;
+}
+
+.current-bid-tags p {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.current-bid-tags .head-bg-color.green {
+    display: contents;
+    text-align: center;
+}
+
+.current-bid-tags .head-bg-color.green p {
+    background-color: #009900 !important;
+    font-size: 14px;
+}
+
+.register-login-makebid ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.register-login-makebid ul li a.regisder-bids {
+    background-color: #fff;
+    display: block;
+    padding: 9px 27px;
+    border-radius: 50px;
+    margin-top: 31px;
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.register-login-makebid ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.register-login-makebid ul li a.book-mark-icons {
+    background-color: #fff;
+    padding: 9px 14px;
+    border-radius: 4px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    font-size: 17px;
+}
+
+.vehicle-des-pd-top {
+    padding-top: 45px;
+}
+
+.vehicles-description-conetnst-head h2 {
+    font-size: 75px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue";
+    margin-bottom: 30px;
+}
+
+.vehicles-description-conetnst-head p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.vehicles-description-conetnst-head {
+    margin-bottom: 50px;
+}
+
+.vehicles-banner-lists-01 {
+    height: 670px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 40px 0px 50px;
+    position: relative;
+}
+
+.video-play-icons {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 135px;
+}
+
+.vehicles-banner-lists-02 {
+    height: 670px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 40px 0px 50px;
+    position: relative;
+}
+
+.vehicles-banner-lists-03 {
+    height: 670px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 40px 0px 50px;
+    position: relative;
+}
+
+.vehicles-banner-lists-04 {
+    background-image: url(../images/vehicle-intro-04.jpg);
+    height: 670px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 40px 0px 50px;
+}
+
+.vd-content-heads h2 {
+    font-size: 124px;
+    text-align: left;
+    position: relative;
+    margin: 0px;
+    line-height: 110px;
+}
+
+.vd-content-heads-box-shadow-left span.firts {
+    width: 50%;
+}
+
+.vd-content-heads-box-shadow-left span.second {
+    width: 50%;
+}
+
+.vehicles-description-content-inner span {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+    color: #000;
+}
+
+.vehicles-description-content-inner p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
+    width: 80%;
+}
+
+th.center-align {
+    text-align: center;
+}
+
+td.center-align {
+    text-align: center;
+}
+
+.table>thead tr th {
+    background-color: #8f8f8f;
+    color: #fff;
+    border: unset;
+}
+
+.vehicles-description-content-inner table.table {
+    margin: 50px 0px;
+}
+
+
+/*////////////  cards-box style start here ///////////*/
+
+.vehicles-addiction-bidding-cards {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+}
+
+.vehicles-addiction-bidding-cards h5 {
+    font-weight: 600;
+    display: inline-flex;
+    font-size: 22px;
+    color: #000;
+}
+
+.vehicles-addiction-bidding-cards h5 p {
+    color: #008d36;
+    font-size: 22px;
+    margin-left: 5px;
+    margin-top: 0px;
+}
+
+.vehicles-addiction-bidding-cards p {
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.vehicles-addiction-bidding-cards ul {
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+.vehicles-addiction-bidding-cards p a {
+    text-decoration: underline;
+}
+
+.border-input-hold {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 30px;
+    width: 75%;
+    margin: auto;
+}
+
+.border-input-hold input {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 30px;
+    height: 36px;
+    outline: unset;
+    box-shadow: unset;
+}
+
+.border-input-hold-second-cards textarea {
+    outline: unset;
+    box-shadow: unset;
+    height: 166px;
+    width: 95%;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.vehicles-addiction-bidding-cards ul li:last-child {
+    margin-right: 0px;
+}
+
+.heading-inner-pd ul li.btn_box_border.active-btn-colors {
+    background-color: #000;
+}
+
+.vehicles-addiction-bidding-cards ul {
+    padding: 0px;
+}
+
+.vehicles-addiction-timmers {
+    text-align: center;
+}
+
+.vehicles-addiction-timmers .bids-times {
+    display: block;
+    margin: 0px;
+}
+
+.vehicles-addiction-timmers span {
+    display: inline-flex;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.vehicles-addiction-timmers .bids-times ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.vehicles-addiction-timmers .bids-times ul li {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.vehicles-addiction-timmers span p {
+    font-weight: normal;
+    margin-left: 10px;
+    font-size: inherit;
+}
+
+.vehicles-addiction-timmers .bids-times ul li p {
+    font-weight: 600;
+}
+
+.vehicles-addiction-timmers .bids-times ul li span {
+    margin: 0px 20px;
+    color: #4d4d4d;
+}
+
+.vehicles-addiction-timmers span {
+    display: inline-flex;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.vehicles-addiction-timmers b {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.vehicles-addiction-timmers p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.vehicles-addiction-timmers p a {
+    text-decoration: underline;
+}
+
+.card-bg-gary {
+    background-color: #ededed;
+    padding: 40px 0px;
+    border-radius: 24px 24px 0px 0px;
+}
+
+.heading-inner-pd {
+    padding: 30px 50px;
+}
+
+.cards-footer {
+    background-color: #000;
+    padding: 30px;
+    text-align: center;
+    border-radius: 0px 0px 24px 24px;
+}
+
+.cards-footer img {
+    width: 190px;
+}
+
+.show-bids-and-chattes ul li .tages p {
+    margin: 0px;
+    padding: 4px 8px;
+    font-size: 13px;
+}
+
+.show-bids-and-chattes ul li .tages {
+    justify-content: space-between;
+    display: flex;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.show-bids-date a {
+    text-decoration: underline;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.show-bids-and-chattes ul li {
+    list-style: none;
+}
+
+.show-bids-and-chattes ul {
+    padding: 0px;
+}
+
+.chat-box {
+    display: flex;
+}
+
+p.time-show {
+    float: right;
+    position: relative;
+    top: -8px;
+    font-size: 12px !important;
+}
+
+.chat-box.reply-box {
+    display: flex;
+    width: 78%;
+    margin-left: auto;
+    border-top: 1px solid;
+    padding-top: 20px;
+}
+
+.chatt-innter-content {
+    width: 80%;
+}
+
+.img-holder img {
+    width: 65px;
+}
+
+.img-holder {
+    margin-right: 10px;
+    width: 20%;
+}
+
+li.chat-bg-color {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+.chatt-innter-content p {
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.chatt-innter-content span {
+    font-weight: 600;
+    color: #a1a1a1;
+}
+
+.chatt-innter-content a {
+    font-size: 12px;
+    border: 1px solid #4d4d4d;
+    padding: 4px 15px;
+}
+
+
+/*////////////  cards-box style end here ///////////*/
+
+
+/*////////////  Vehicle Descriptions style start here //////////////////////*/
+
+
+/*////////////  Light-box iamges style start here //////////////////////*/
+
+.col-lg-13 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.galler-slider-imgsrow a {
+    display: contents;
+}
+
+.galler-slider-imgsrow a img {
+    display: inline-flex;
+    margin-right: 5px;
+    margin-bottom: 50px;
+}
+
+
+/*////////////  Light-box iamges style end here //////////////////////*/
+
+
+/*////////////  accordian-pannels style start here //////////////////////*/
+
+.accordion-item {
+    border: unset;
+}
+
+.accordion-button:not(.collapsed) {
+    color: unset !important;
+    box-shadow: unset !important;
+    border: unset !important;
+    background-color: unset;
+}
+
+.accordion-body {
+    padding: 0px;
+}
+
+button.accordion-button {
+    margin: 0px;
+    padding: 0px;
+}
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg);
+    background: url(https://api.iconify.design/bi/caret-down-fill.svg) no-repeat center center / contain;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 0.7rem;
+    height: 1rem;
+    margin-left: auto;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform .2s ease-in-out;
+    background: url(https://api.iconify.design/bi/caret-down-fill.svg) no-repeat center center / contain;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+}
+
+
+/*////////////  accordian-pannels style end here //////////////////////*/
+
+
+/*////////////  animated bounce style start here //////////////////////*/
+
+.animated {
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(30px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        transform: translateY(1);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+#animated-example {
+    position: relative;
+}
+
+
+/*////////////  animated bounce style end here //////////////////////*/
+
+
+/* Responsive Menu Toggle Style Start Here */
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1070;
+    top: 0;
+    right: -250px;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 48px;
+    margin-left: 50px;
+    color: #000;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
+.only-responsive-show {
+    display: none;
+}
+
+.social-media-links.show-mob-rep {
+    display: none;
+}
+
+.social-media-links.show-desktop {
+    display: block;
+}
+
+
+/* Responsive Menu Toggle Style End Here */
+
+
+/*////////////  Responsive Media Style Start Here //////////////////////*/
+
+@media (min-width:1200px) and (max-width:1300px) {
+    .banner.slider.section.hold {
+        height: auto;
+    }
+    .banner-slider-content-hold {
+        padding: 16% 0px;
+    }
+    .vehicles-description-content-inner p {
+        font-size: 18px;
+        line-height: 30px;
+        color: #000;
+        width: 100%;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .section_three_des_text {
+        width: 100%;
+    }
+    .vd-content-heads h2 {
+        font-size: 92px;
+        text-align: left;
+        position: relative;
+        margin: 0px;
+        line-height: 83px;
+    }
+    .vehicles-description-content-inner p {
+        width: 100%;
+    }
+    .galler-slider-imgsrow a img {
+        display: inline-flex;
+        margin-right: 5px;
+        margin-bottom: 30px;
+        width: 160px;
+    }
+    .double-border {
+        margin-bottom: 15px;
+    }
+    .home-blog-section {
+        position: relative;
+        margin-bottom: 0px;
+    }
+    .card-bg-gary {
+        margin-top: 30px;
+    }
+    .vehicle-des-pd-top {
+        padding-top: 110px;
+    }
+    .page_button_box.arrow-box {
+        margin-top: 14%;
+    }
+    .user-profile-tabs ul li a {
+        padding: 18px 24px !important;
+    }
+    .user-profile-tabs ul li a.btn-active {
+        margin-right: 0px;
+    }
+    .banner.slider.section.hold {
+        height: auto;
+    }
+    .logo-nav img {
+        width: 270px !important;
+    }
+    ul.top-nav-bar li a {
+        padding: 1px 15px !important;
+    }
+    .banner_text h2 {
+        color: black;
+        font-family: "Bebas Neue", cursive;
+        font-size: 60px;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+    .dropdown-content {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+    }
+    .home-scribes-banner-section {
+        background-size: cover;
+        height: 620px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .scribes-content-here h2 {
+        font-size: 88px;
+        line-height: 85px;
+    }
+    .last-bottom-pd {
+        padding-bottom: 30px;
+        padding-top: 0px;
+    }
+    .blog-left-icons-shape img {
+        position: absolute;
+        width: 201px;
+        left: -10px;
+        top: 20px;
+    }
+    .blog-content-img-holder-box h4 {
+        width: 100% !important;
+        height: 48px;
+        font-size: 17px;
+    }
+    .blog-content-img-holder-box p {
+        width: 100%;
+    }
+    .home-contact-us-heading h2 {
+        font-size: 110px;
+    }
+    .blog-content-img-holder-box b {
+        margin-bottom: 15px;
+        display: block;
+    }
+    .form_contact_box {
+        width: 70%;
+        margin: 10px auto 0px;
+    }
+    .sell-with-us-heading p {
+        font-size: 25px;
+        font-weight: 100;
+    }
+    .banner-slider-content-hold h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 68px;
+        line-height: 55px;
+        margin-bottom: 25px;
+    }
+    .sell-with-us-heading {
+        padding: 14.7% 0px;
+    }
+    .banner.slider.section.hold {
+        height: auto;
+    }
+    .sell-with-us-content p {
+        font-size: 18px;
+        line-height: 36px;
+        color: #4d4d4d;
+        font-family: 'Montserrat';
+        margin-right: 30px;
+    }
+    .sellers-receives-content ul li {
+        line-height: 26px;
+        margin-bottom: 10px;
+        color: #4d4d4d;
+        font-size: 15px;
+    }
+    .seller-middle-banner {
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    .seller-bottom-banner {
+        height: 480px;
+        background-size: 100%;
+    }
+    .heading-box.back-white-header {
+        background-color: #fff;
+        width: 360px;
+        box-shadow: 0px 0px 28px 41px rgb(255 255 255 / 100%);
+    }
+    .form_contact_box.register-form {
+        padding: 30px 0px 5px;
+    }
+    .form_contact_box.register-form p {
+        font-size: 17px !important;
+        line-height: 30px !important;
+    }
+    .heading-border-section {
+        margin-bottom: 20px;
+        margin: 40px 0px;
+    }
+    .main-heading-cl-pos span.Right {
+        content: "";
+        box-shadow: 45px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: 45px 0px 49px 52px rgb(255 255 255);
+        -moz-box-shadow: 45px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        left: 60px;
+        position: absolute;
+        top: 25px;
+        width: 100px;
+        z-index: 99;
+    }
+    .main-heading-cl-pos span.left {
+        right: 0px;
+    }
+    .heading-box {
+        width: 70%;
+    }
+    .vehicle-resp-hold {
+        padding: 7% 0px !important;
+    }
+    ul.vehicles-models-detail li span {
+        font-weight: 800;
+        font-size: 18px;
+    }
+    ul.vehicles-models-detail p {
+        font-size: 14px;
+    }
+    .banner-slider-content-hold {
+        padding: 11.6% 0px;
+    }
+    .blog-left-icons-shape img {
+        top: 20px !important;
+    }
+    .slb-content-img-holder-box iframe {
+        margin: 20px 0px 9px;
+        height: 400px;
+    }
+    .banner-slider-content-hold-second {
+        padding: 12.5% 0px;
+    }
+    .banner-slider-content-hold-second h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 68px;
+        line-height: 55px;
+        margin-bottom: 25px;
+    }
+    .spoligth-second-content span {
+        font-size: 22px;
+        font-weight: 800;
+    }
+    .slb-content-img-holder-box img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .spot-light-end-section-bg {
+        background-color: #e5e5e5;
+        padding: 40px 0px;
+        margin-top: -30px;
+    }
+    .terms-conditions-content {
+        margin-top: -20px;
+    }
+    .privacy-policy-content {
+        margin-top: -20px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .ipad-hold-with-hold {
+        width: 100%;
+        padding: 0px;
+    }
+    .product-shadow-box {
+        align-items: center;
+        height: 35px;
+    }
+    .current-bids {
+        text-align: end;
+        padding-right: 10px;
+    }
+    li.btn_box_border {
+        margin: 1px 0px 8px 0px;
+    }
+    .galler-slider-imgsrow a img {
+        display: inline-flex;
+        margin-right: 5px;
+        margin-bottom: 30px;
+        width: 120px;
+    }
+    .double-border {
+        margin-bottom: 10px;
+    }
+    .row.galler-slider-imgsrow .box1.col-lg-2 {
+        width: unset;
+    }
+    .home-blog-section {
+        position: relative;
+        margin-bottom: 0px;
+    }
+    .card-bg-gary {
+        margin-top: 40px;
+    }
+    .vehicles-addiction-bidding-cards h5 {
+        font-size: 18px;
+    }
+    .vehicles-addiction-bidding-cards h5 p {
+        font-size: 18px;
+    }
+    .vehicles-addiction-timmers span {
+        display: inline-flex;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .img-holder img {
+        width: 40px;
+    }
+    .chatt-innter-content p {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+    .heading-inner-pd {
+        padding: 30px 27px;
+    }
+    .vd-content-heads h2 {
+        font-size: 68px !IMPORTANT;
+        text-align: left;
+        position: relative;
+        margin: 0px;
+        line-height: 58px;
+    }
+    .vehicles-banner-lists-04 {
+        height: 260px;
+    }
+    .bids-times {
+        margin-left: 35px;
+    }
+    .current-bid-tags {
+        margin-left: 35px;
+    }
+    .live-bid-hits-tags a {
+        font-size: 14px;
+    }
+    .bids-times span.end-in {
+        font-size: 13px;
+    }
+    .live-bid-hits-tags .bids-times ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0px 0px 0px 10px;
+    }
+    .spot-light-end-section-bg {
+        background-color: #e5e5e5;
+        padding: 30px 0px;
+        margin-top: -40px;
+    }
+    .live-bid-hits-tags {
+        display: block;
+        padding: 35px 0px 15px;
+    }
+    .register-login-makebid ul li a.regisder-bids {
+        padding: 9px 18px;
+        font-size: 11px;
+    }
+    .register-login-makebid ul li a.book-mark-icons {
+        background-color: #fff;
+        padding: 7px 10px;
+        border-radius: 4px;
+        position: relative;
+        top: 6px;
+        left: 16px;
+        font-size: 12px;
+    }
+    .slb-content-img-holder-box iframe {
+        margin: 20px 0px 9px;
+        height: 350px;
+    }
+    .heading-box.cutsom-white-bg h2.reduce-size {
+        font-size: 50px;
+        margin-top: -12px;
+    }
+    .slb-content-img-holder-box p {
+        margin-top: 20px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .banner-slider-content-hold-second {
+        text-align: center;
+        color: #fff;
+        padding: 14.4% 0px;
+    }
+    .spoligth-second-content span {
+        font-size: 21px;
+        font-weight: 800;
+    }
+    .slb-content-img-holder-box img {
+        margin-top: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .banner-slider-content-hold-second h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 50px;
+        line-height: 35px;
+        margin-bottom: 25px;
+    }
+    .vehicle-resp-hold {
+        padding: 6% !important;
+    }
+    ul.vehicles-models-detail {
+        padding: 0px;
+        margin: 40px 5px;
+    }
+    ul.vehicles-models-detail li span {
+        font-weight: 800;
+        font-size: 20px;
+    }
+    .page_button_box.arrow-box p {
+        font-weight: 300;
+        font-size: 18px;
+    }
+    .page_button_box.arrow-box {
+        margin-top: 13%;
+    }
+    .step-one.your-bids-tags span {
+        font-size: 16px;
+    }
+    .cars-details-box-holder a.btn_border {
+        font-size: 15px;
+    }
+    .step-one.your-bids-tags h6 {
+        font-size: 16px;
+    }
+    .step-one.your-bids-tags {
+        margin: 5px 0px;
+    }
+    span.content-price {
+        font-size: 13px;
+    }
+    .main-heads-cars-user-detail-box1 h5 {
+        font-size: 18px;
+    }
+    .heading-border-section span.firts {
+        border: 9px solid #000;
+    }
+    .heading-border-section span.second {
+        border: 9px solid #000;
+        top: 33px;
+    }
+    .user-profile-tabs ul li a.btn-active {
+        margin-right: 0px;
+    }
+    .banner-slider-content-hold {
+        padding: 14% 0px;
+    }
+    .upload-images-and-files a.btn_border {
+        padding: 7px 19px !important;
+        font-size: 13px !important;
+    }
+    .heading-box {
+        width: 75%;
+    }
+    .user-profile-tabs ul li a {
+        padding: 15px 17px;
+        color: #4d4d4d;
+        font-size: 14px;
+    }
+    .main-heading-cl-pos span.Right {
+        content: "";
+        box-shadow: 45px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: 45px 0px 49px 52px rgb(255 255 255);
+        -moz-box-shadow: 45px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        left: 60px;
+        position: absolute;
+        top: 25px;
+        width: 100px;
+        z-index: 99;
+    }
+    .heading-box h2 {
+        font-size: 36px;
+    }
+    .main-heading-cl-pos span.left {
+        right: 0px;
+    }
+    .form_contact_box.register-form {
+        padding: 30px 0px 5px;
+    }
+    .form_contact_box.register-form p {
+        font-size: 17px !important;
+        line-height: 30px !important;
+    }
+    .heading-box.back-white-header {
+        background-color: #fff;
+        width: 360px;
+        box-shadow: 0px 0px 28px 41px rgb(255 255 255 / 100%);
+    }
+    .seller-middle-banner {
+        height: 310px;
+        margin-bottom: 50px;
+    }
+    .seller-top-pd {
+        padding-top: 84px;
+    }
+    .heading-border-section {
+        margin-bottom: 20px;
+        margin: 40px 0px;
+    }
+    .sell-ypur-vehicles-content br {
+        display: none;
+    }
+    .seller-bottom-banner {
+        height: 370px;
+        background-size: 100%;
+    }
+    .banner.slider.section.hold {
+        height: auto;
+    }
+    .sell-with-us-content p {
+        font-size: 16px;
+        line-height: 34px;
+    }
+    .sell-with-heading--second h2 {
+        font-size: 40px;
+    }
+    .sellers-receives-content ul li {
+        line-height: 26px;
+        margin-bottom: 10px;
+        color: #4d4d4d;
+        font-size: 15px;
+    }
+    .banner-slider-content-hold h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 50px;
+        line-height: 35px;
+        margin-bottom: 18px;
+    }
+    .sell-with-us-heading p {
+        font-size: 24px;
+        font-weight: 100;
+    }
+    .sell-with-us-heading {
+        padding: 13.9% 0px;
+    }
+    .logo-nav img {
+        width: 200px !important;
+    }
+    ul.top-nav-bar {
+        margin-top: 11px;
+    }
+    ul.top-nav-bar li a {
+        padding: 1px 8px !important;
+        font-size: 13px;
+    }
+    ul.top-nav-bar li:hover a {
+        padding: 1px 8px !important;
+    }
+    ul.top-nav-bar li:hover {
+        padding: 0px 5px !important;
+    }
+    .banner_text h2 {
+        color: black;
+        font-family: "Bebas Neue", cursive;
+        font-size: 55px;
+        line-height: 45px;
+        margin-bottom: 10px;
+    }
+    .dropdown-content {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+    }
+    .home-scribes-banner-section {
+        background-size: cover;
+        height: 620px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .scribes-content-here h2 {
+        font-size: 88px;
+        line-height: 85px;
+    }
+    .last-bottom-pd {
+        padding-bottom: 30px;
+        padding-top: 0px;
+    }
+    .blog-content-img-holder-box h4 {
+        width: 100%;
+        height: 48px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .blog-content-img-holder-box p {
+        width: 100%;
+        font-size: 13px;
+    }
+    .home-contact-us-heading h2 {
+        font-size: 92px;
+    }
+    .blog-content-img-holder-box b {
+        margin-bottom: 15px;
+        display: block;
+    }
+    .form_contact_box {
+        width: 78%;
+        margin: 10px auto 0px;
+    }
+    .product-content p.double-border {
+        font-size: 14px;
+    }
+    .product-content span p {
+        margin: 3px 10px;
+        font-size: 14px;
+    }
+    .heading-hold h4 {
+        font-size: 18px;
+        color: #000;
+    }
+    .terms-conditions-content {
+        margin-top: -35px;
+    }
+    .privacy-policy-content {
+        margin-top: -30px;
+    }
+    .section_three_des_text {
+        width: 100%;
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+
+.banner-inner-content-sell-with-us {
+    background-color: #ffffffa3;
+    margin-top: 34px;
+    padding: 5px;
+    text-align: center;
+}
+.banner-inner-content-sell-with-us h3 {
+    font-size: 17px;
+    margin-top: 0px;
+    font-weight: 600;
+    padding: 15px 15px 5px;
+}
+    .share-button.sharer .social.active.top {
+    transform: scale(1) translateY(10px) !important;
+}
+li.share-button.sharer button.share-btn {
+    background-color: #000;
+    border-radius: 4px;
+    color: #fff;
+    border: unset;
+    font-size: 12px;
+}
+.social .fa {
+    padding: 12px 0px !important;
+    background-color: unset !important;
+}
+    .tab-content>.active {
+        display: block;
+        background-color: #ffff !important;
+        color: #000 !important;
+        border-radius: unset !important;
+        padding: 0px !important;
+        margin-top: 30px;
+    }
+    .terms-conditions-content {
+        margin-top: -35px;
+    }
+    .terms-conditions-content ul li {
+        font-size: 16px;
+    }
+    .terms-conditions-content p {
+        font-size: 16px;
+    }
+    .section_three_des_text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .section_four_text h2 {
+        font-size: 45px;
+        line-height: 48px;
+    }
+    .section_three_des_text p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .section_four_box img {
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        display: block;
+        margin-left: auto;
+        width: 100% !IMPORTANT;
+        float: none;
+    }
+    .privacy-policy-content {
+        margin-top: -30px;
+    }
+    .privacy-policy-content p {
+        font-size: 15px;
+    }
+    .step-one.your-bids-tags {
+        margin-bottom: 40px;
+    }
+    .desktop-pd-hold2 {
+        margin-top: 70px;
+    }
+    .desktop-pd-hold1 {
+        margin-top: 145px;
+    }
+    .product-img-heading .heading-hold {
+        margin-bottom: -20px;
+        padding-bottom: 0px;
+    }
+    .blog-left-icons-shape.slb-page-hold img {
+        position: absolute;
+        width: 145px;
+        left: -4px;
+        top: -10px;
+        z-index: -1;
+    }
+    .heading-box.second-white-heading {
+        background-color: #e5e5e5;
+        box-shadow: 0px 0px 131px 0px #e5e5e5, 50px 0px 131px 0px #e5e5e5;
+    }
+    .seller-top-pd {
+        padding-top: 85px;
+    }
+    .upload-images-and-files {
+        margin-top: 20px;
+    }
+    .sell-with-heading--second h2 {
+        margin-top: -20px;
+        margin-bottom: 0px !important;
+    }
+    .card-heads-h {
+        padding: 8px 0px;
+        width: 85%;
+    }
+    .card-heads-h h5 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .chatt-innter-content a {
+        padding: 4px 9px;
+    }
+    .home-blog-section.vehicle-des-pd-top {
+        margin-bottom: 0px;
+    }
+    .chatt-innter-content p {
+        font-size: 13px;
+        margin-top: 12px;
+    }
+    .img-holder img {
+        width: 35px;
+    }
+    .heading-box.cutsom-white-bg.card-heads-h {
+        box-shadow: 2px 0px 26px 25px rgb(255 255 255 / 100%);
+    }
+    .vehicles-addiction-timmers span {
+        display: inline-flex;
+        font-size: 18px;
+        font-weight: 800;
+    }
+    .border-input-hold-second-cards textarea {
+        width: 100%;
+    }
+    .cards-footer {
+        margin-bottom: 30px;
+    }
+    .show-bids-and-chattes ul li .tages {
+        flex-direction: column;
+    }
+    .vehicles-addiction-bidding-cards h5 {
+        font-size: 18px;
+    }
+    .vehicles-addiction-bidding-cards h5 p {
+        font-size: 18px;
+    }
+    .border-input-hold {
+        width: 100%;
+    }
+    li.btn_box_border {
+        margin: 0px 0px 8px 0px;
+    }
+    .vehicles-addiction-bidding-cards p {
+        font-size: 14px;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+    .heading-inner-pd {
+        padding: 30px 20px;
+    }
+    .double-border {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .galler-slider-imgsrow .box1 {
+        text-align: center;
+        width: auto;
+        max-width: unset !important;
+        padding: 0px;
+    }
+    .galler-slider-imgsrow .box1 p {
+        margin-bottom: 0px;
+    }
+    .all-images-slides h4 {
+        margin-left: unset !important;
+        text-align: center !important;
+        font-size: 25px;
+    }
+    .galler-slider-imgsrow {
+        display: inline-flex;
+        justify-content: center;
+    }
+    .galler-slider-imgsrow a img {
+        margin: 10px !important;
+    }
+    .vehicles-description-content-inner span {
+        font-size: 22px;
+        text-align: center;
+    }
+    .vehicles-description-content-inner p {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+    .vd-content-heads-box-shadow-left span.second {
+        width: 100%;
+    }
+    .vd-content-heads-box-shadow-left span.firts {
+        width: 100%;
+    }
+    .vd-content-heads h2 {
+        line-height: 30px;
+        margin-bottom: 0px !important;
+    }
+    .vehicles-banner-lists-01 {
+        height: auto;
+    }
+    .vehicles-banner-lists-01 a img {
+        width: 100%;
+    }
+    .vehicles-banner-lists-02 {
+        height: auto;
+    }
+    .vehicles-banner-lists-02 a img {
+        width: 100%;
+    }
+    .vehicles-banner-lists-03 {
+        height: auto;
+    }
+    .vehicles-banner-lists-03 a img {
+        width: 100%;
+    }
+    .vehicles-banner-lists-04 {
+        height: auto;
+    }
+    .vehicles-banner-lists-04 a img {
+        width: 100%;
+    }
+    .video-play-icons {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 70%);
+        width: 45px !important;
+    }
+    .main-heading-cl-pos .heading-box.cutsom-white-bg h2 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 33px !important;
+        line-height: 40px;
+    }
+    .main-heading-cl-pos .heading-box.cutsom-white-bg span {
+        display: block;
+        position: relative;
+        top: 10px;
+    }
+    .current-bid-tags {
+        display: inline-grid;
+        margin-left: 0px;
+        position: relative;
+        top: 0px;
+    }
+    .register-login-makebid {
+        text-align: center;
+        margin-bottom: 38px;
+    }
+    .register-login-makebid ul li a.book-mark-icons {
+        left: 0px;
+    }
+    .vehicles-description-conetnst-head h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .vehicle-des-pd-top {
+        padding-top: 25px;
+    }
+    .vehicles-description-conetnst-head p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .register-login-makebid ul li a.regisder-bids {
+        margin-top: 0px;
+    }
+    .live-bid-hits-tags {
+        text-align: center;
+    }
+    .bids-times {
+        margin-left: 0px;
+        margin: 20px 0px 0px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .cutsom-white-bg {
+        background-color: #fff;
+        box-shadow: 0px 0px 26px 15px rgb(255 255 255 / 100%);
+    }
+    .user-profile-tabs {
+        display: flex;
+    }
+    .user-profile.section.hold {
+        margin: 40px 0px 50px;
+    }
+    .detail-heading br {
+        display: none;
+    }
+    ul.vehicles-models-detail {
+        padding: 0px;
+        margin: 10px 0px;
+    }
+    .heading-box.cutsom-white-bg h2.reduce-size {
+        font-size: 33px;
+        margin-top: -19px;
+    }
+    .heading-border-section {
+        margin-bottom: 40px;
+    }
+    .cutsom-white-bg {
+        background-color: #fff;
+        box-shadow: 0px 0px 26px 15px rgb(255 255 255 / 100%);
+    }
+    .heading-box {
+        width: 80%;
+    }
+    ul.vehicles-models-detail li {
+        list-style: none;
+        border-bottom: 1px solid #8d8d8d;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .main-heading-cl-pos span.left {
+        content: "";
+        box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: -102px 0px 49px 52px rgb(255 255 255);
+        -moz-box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        right: -30px;
+        position: absolute;
+        top: 25px;
+        width: 100px;
+        z-index: 99;
+    }
+    .main-heading-cl-pos span.Right {
+        content: "";
+        box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: -102px 0px 49px 52px rgb(255 255 255);
+        -moz-box-shadow: -92px 4px 5px 0px rgba(255, 255, 255, 0.3);
+        left: 170px;
+        position: absolute;
+        top: 49px;
+        width: 100px;
+        z-index: 99;
+    }
+    .sell-with-us-heading.vehicle-resp-hold {
+        padding: unset;
+    }
+    .user-profile-tabs ul li a.btn-active {
+        margin-right: 0px !important;
+    }
+    .user-profile-tabs ul li a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    .heading-box h2 {
+        font-size: 27px;
+        padding: 7px 0px 1px 0px;
+    }
+    .heading-border-section span.firts {
+        border: 8px solid #000;
+        top: 0px;
+    }
+    .heading-border-section span.second {
+        border: 8px solid #000;
+        top: 37px;
+    }
+    .spot-light-end-section-bg {
+        padding: 35px 0px;
+        margin-top: -30px;
+    }
+    .spot-light-blog-top-pd {
+        padding-top: 95px;
+    }
+    .banner-slider-content-hold-second h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 0px;
+    }
+    .spoligth-second-content {
+        padding-top: 85px;
+        font-size: 16px;
+    }
+    .spoligth-second-content span {
+        font-size: 17px;
+    }
+    .slb-content-img-holder-box iframe {
+        margin: 10px 0px 15px;
+        height: 200px !important;
+    }
+    .slb-content-img-holder-box img {
+        margin-top: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .slb-content-img-holder-box p {
+        margin-top: 20px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .photo-and-description-section {
+        width: 100%;
+        margin: auto;
+    }
+    .upload-images-and-files a.btn_border {
+        padding: 5px 12px !important;
+    }
+    .sell-with-heading--second h2 {
+        font-size: 22px;
+    }
+    .sellers-receives-content p {
+        width: 100%;
+    }
+    .contact_login_box {
+        width: 100%;
+    }
+    .seller-middle-banner {
+        height: 150px;
+        margin-bottom: 30px;
+    }
+    .register-form-head .actions-btn-hold.btn_box_border {
+        margin: 20px 0px 20px;
+        margin-bottom: 0px !important;
+    }
+    .seller-bottom-banner {
+        height: 150px;
+    }
+    .heading-box.back-white-header img {
+        width: 210px;
+        margin: 16px 0px;
+    }
+    .form_contact_box.register-form {
+        width: 90%;
+    }
+    .form_contact_box.register-form p {
+        margin-bottom: 20px;
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+    .heading-box.back-white-header {
+        background-color: #fff;
+        width: 75%;
+        box-shadow: 0px 0px 30px 34px rgb(255 255 255);
+    }
+    .sell-ypur-vehicles-content br {
+        display: none;
+    }
+    .banner.slider.section.hold {
+        height: auto !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-bottom: 25px;
+        padding: 20px 0px;
+    }
+    .page_button_box.arrow-box .btn_box_border.arrow-down-btn {
+        border: 1px solid #fff;
+        border-radius: 30px;
+        margin: 0px 0px 0px 0px;
+        padding: 3px 2px 3px !important;
+    }
+    .page_button_box.arrow-box .btn_box_border.arrow-down-btn .btn_border i.fal.fa-long-arrow-down {
+        font-size: 20px;
+    }
+    .page_button_box.arrow-box .btn_box_border.arrow-down-btn .btn_border {
+        padding: 8px 6px;
+        border: 1px solid;
+        border-radius: 30px;
+        padding-top: 4px;
+        padding-bottom: 20px;
+    }
+    .banner-slider-content-hold h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 35px;
+        line-height: 39px;
+        margin-bottom: 10px;
+    }
+    .sell-with-us-heading p {
+        font-size: 16px;
+        font-weight: 100;
+    }
+    .sell-with-us-content p {
+        font-size: 16px;
+        margin-right: 0px;
+        line-height: 26px;
+    }
+    .sellers-receives-content ul {
+        width: 100%;
+        padding: 0px 15px;
+    }
+    .sellers-receives-content ul li {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+    .sellers-receives-content span {
+        margin-bottom: 20px;
+        display: block;
+        font-size: 20px;
+    }
+    .sellers-receives-content br {
+        display: none;
+    }
+    .footer_main_box {
+        background-color: #000;
+        padding: 40px 0px 0px 0px;
+    }
+    .social-media-links.show-mob-rep ul li {
+        display: inline-block;
+        margin: 0px 5px;
+    }
+    .last-bottom-pd {
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+    .social-media-links.show-desktop {
+        display: none;
+    }
+    .social-media-links.show-mob-rep {
+        display: block;
+    }
+    .social-media-links {
+        float: unset;
+    }
+    ul.top-nav-bar.desktop-hold {
+        display: none;
+    }
+    .banner_text {
+        top: 50px;
+    }
+    .banner_text p {
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .banner_text h2 {
+        color: black;
+        font-family: "Bebas Neue", cursive;
+        font-size: 40px;
+        line-height: 43px;
+        margin-bottom: 10px;
+    }
+    #hero1 {
+        position: relative;
+        z-index: 1050;
+        background-position: center 100%;
+        background-size: cover;
+    }
+    ul.top-nav-bar {
+        text-align: end;
+        margin-bottom: 0px;
+        margin-top: 70px;
+        line-height: 30px;
+        margin-right: 20px;
+        z-index: 11;
+    }
+    ul.top-nav-bar li {
+        display: block;
+        color: #000;
+        border-radius: 30px;
+        padding: 0px 4px !important;
+    }
+    .only-responsive-show {
+        display: block;
+    }
+    .logo-nav img {
+        width: 230px !important;
+    }
+    .header-humburger .only-responsive-show {
+        position: absolute;
+        right: 0px;
+    }
+    .header-humburger {
+        position: relative;
+    }
+    ul.top-nav-bar li {
+        display: block !important;
+        border-radius: 30px;
+        padding: 0px 13px !important;
+        margin-bottom: 10px;
+    }
+    ul.top-nav-bar li:hover,
+    .active {
+        display: inline-block !important;
+        background-color: #000;
+        color: #fff !important;
+        border-radius: 30px;
+        padding: 0px 13px !important;
+        margin-bottom: 10px;
+    }
+    ul.top-nav-bar li.active {
+        display: inline-block !important;
+        background-color: #000;
+        color: #fff !important;
+        border-radius: 30px;
+        padding: 0px 13px !important;
+        margin-bottom: 10px;
+    }
+    ul.top-nav-bar li.active a {
+        color: #fff;
+    }
+    ul.top-nav-bar li:hover a {
+        border: 1px solid #fff;
+        border-radius: 30px;
+        padding: 1px 13px !important;
+        color: #fff !important;
+        margin: 4px -9px;
+    }
+    ul.top-nav-bar li a {
+        border: 1px solid #fff;
+        border-radius: 30px;
+        padding: 1px 13px !important;
+        color: #000;
+        margin: 4px -9px;
+        z-index: 11;
+    }
+    .search-box {
+        padding: 40px 0px 20px;
+    }
+    .filter-box-right {
+        padding: 0px 0px 0px;
+        float: right;
+        margin-bottom: 10px;
+    }
+    .easy-autocomplete input {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+    .search-box .input-group i.fas.fa-search {
+        color: #636363;
+        position: absolute;
+        top: 2px;
+        right: 0px;
+        z-index: 9;
+        font-size: 24px;
+        float: right;
+    }
+    .product-featur-row ul li {
+        margin: 5px 0px !important;
+    }
+    li.btn_box_border {
+        padding: 1px 3px 2px !important;
+    }
+    a.btn_border {
+        font-size: 13px !important;
+    }
+    .dropdown-content.mob-resp-pos {
+        position: absolute;
+        padding: 30px 20px;
+        left: 0px;
+        right: 0px;
+    }
+    .pop-main-btn-hold {
+        text-align: left !important;
+    }
+    .heading-box h2 {
+        padding: 12px 0px 9px 0px !important;
+    }
+    .product-box .heading-hold h4 {
+        font-size: 18px;
+        color: #000;
+    }
+    ul.icons-section {
+        margin-top: -5px;
+    }
+    ul.icons-section li a i {
+        background-color: #000;
+        padding: 4px 5px;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 12px;
+    }
+    .product-content p.double-border {
+        margin-bottom: 3px;
+        font-size: 14px;
+        padding-bottom: 3px;
+    }
+    .product-content span p {
+        margin: 3px 10px;
+        font-size: 14px;
+    }
+    .head-bg-color p {
+        font-size: 12px;
+    }
+    .actions-btn-hold.btn_box_border {
+        margin: 0px auto 20px;
+        display: inline-block;
+        text-align: center;
+    }
+    .scribes-content-here h6 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+    }
+    .scribes-content-here h2 {
+        font-size: 48px;
+        line-height: 54px;
+    }
+    .scribes-content-here {
+        padding: 0px !important;
+    }
+    .home-scribes-banner-section {
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        padding: 40px 0px;
+    }
+    .form_box input {
+        opacity: 0.8;
+        border-radius: 7px;
+        padding: 5px 10px;
+        width: 100% !important;
+        border: none;
+        display: block;
+        margin: 0px 0px !important;
+    }
+    .filter-box-right ul {
+        padding: 0px;
+        margin: 0px;
+    }
+    .product-shadow-box {
+        display: block;
+        font-size: 11px;
+        background: rgb(0, 0, 0);
+        background: linear-gradient( 90deg, rgb(0 0 0) 19%, rgb(0 0 0 / 14%) 100%, rgba(0, 212, 255, 1) 100%);
+        margin-bottom: 25px;
+        padding: 5px 8px 5px 5px;
+        font-weight: 500;
+    }
+    .head-bg-color p {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+    .timging-tage {
+        text-align: left;
+    }
+    .head-bg-color {
+        text-align: left;
+    }
+    .current-bids {
+        text-align: left;
+    }
+    .head-bg-color,
+    .timging-tage,
+    .current-bids {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .blog-left-icons-shape img {
+        position: absolute;
+        width: 170px;
+        left: -10px;
+        top: 27px;
+    }
+    .blog-content-img-holder-box h4 {
+        width: 100%;
+    }
+    .blog-content-img-holder-box b {
+        margin-bottom: 20px;
+        display: block;
+    }
+    .btn_box_border {
+        padding: 2px 4px 3px;
+    }
+    .my-acconut-content p {
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .home-contact-us-heading h2 {
+        font-size: 70px;
+        letter-spacing: 4px;
+    }
+    .home-contact-us-heading p {
+        display: inline-block;
+        width: 100%;
+        color: #4d4d4d;
+        margin-top: -10px;
+    }
+    .contact_left_side_box {
+        float: none;
+        width: 100%;
+        padding: 0px;
+    }
+    .contact_right_side_box {
+        float: none;
+        width: 100%;
+        padding: 0px;
+    }
+    .form_contact_box {
+        width: 100%;
+        margin: 40px auto;
+    }
+    .home-contact-us-section {
+        height: 1040px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative !important;
+        right: 0;
+        left: 0;
+        width: 100%;
+        background-position: center 100%;
+    }
+    .radio_btn_box span {
+        margin: 0px 0px 0px 0px;
+    }
+    .radio_btn_box ul li {
+        margin-right: 0px;
+        display: block;
+        text-align: left;
+    }
+    .contact_form_box .radio_btn_box {
+        margin-bottom: 30px;
+    }
+    .radio_btn_box ul li span input {
+        position: absolute;
+        margin-top: 3px;
+    }
+    .footer-heading-contents ul {
+        padding: 0px;
+        margin: 15px 0px;
+    }
+    .footer-bottom-bar {
+        text-align: center;
+        margin: 10px 0px;
+    }
+    .footer-bottom-bar ul li {
+        list-style: none;
+        margin-bottom: 0px;
+    }
+    .footer-bottom-bar ul span {
+        display: none;
+    }
+    .logo-nav {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    .footer-heading-contents ul {
+        padding: 0px;
+        margin: 15px 0px;
+        text-align: center;
+    }
+    .footer-heading-contents h5 {
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+/*////////////  Responsive Media Style End Here //////////////////////*/

@@ -1,0 +1,74 @@
+.country_select{
+    width: 100%;
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 6px;
+    padding: 7px;
+    margin-bottom: 0px;
+}
+.hide{
+    display: none;
+}
+.intl-tel-input {
+    width: 100%;
+}
+.valid-msg{
+    color: green;
+}
+
+.error-msg{
+    color: red;
+}
+
+.error{
+    color: red;
+}
+
+.errorbox{
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    font-size: 14px;
+    text-align: initial;
+}
+img.img-fluid {
+    width: 160px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.imgcatlog {
+  border: none;
+  padding: 0px;
+  width: 150px;
+}
+
+.img-thumbnail1 {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    height: 200px;
+    width: 350px;
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 22px;
+}
+.intl-tel-input .selected-flag .iti-arrow {
+   
+    right: 2px !important; 
+}

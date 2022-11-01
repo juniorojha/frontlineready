@@ -1,0 +1,75 @@
+
+
+cars 
+  id,reg_no,make_id,model,variant,year,mileage,gearbox,steering_position,engine_size,color,chassis_no,country,city,former_keepers,is_aucation,description,current_bid_id,aucation_start_datetime,aucation_end_datetime.price
+
+  exterior  => wheels_tyres,bodywork,paint,glass_trim
+  interior => seats,dashboard,steering_wheel
+  mechanics => engine_gearbox,suspension_brakes,the_drive,electrics
+  history_paperwork =>
+     date,type,mileage
+
+
+cars_media
+  id,type(ex),type_id,media_type(image/video),media
+
+
+bid
+ id,car_id,amount,user_id,datetime
+
+
+
+comment
+  id,car_id,user_id,datetime,comment,reply_id
+
+
+Make
+  - id
+  - name
+
+
+contact us 
+  name,country,email,phone,message,in_interest
+
+the spotlight
+  id,title,image,short_desc,read_more_desc
+
+
+subscriber
+  id,email
+
+user
+ username,country,phone,email,password,image
+
+sales_inquiry
+ id,name,email,phone,country,select_region
+
+pages
+  id,page_name,meta-title,meta-description,content
+
+frq 
+  id,question,answer
+
+setting
+ email,phone,address,facebook_id,twitter_id,instgram_id,currency,timezone
+
+
+
+
+php artisan make:model UserPaymentMethod --migration
+
+php artisan make:model UserInvoiceAddress --migration
+
+php artisan make:model State --migration
+
+   
+
+   spotlight
+users
+subscriber
+contact us 
+setting
+
+
+
+approve
