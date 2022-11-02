@@ -68,7 +68,7 @@
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('sell-with-us')}}">Sell With Us</a></li>
-                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li>
+                     <!-- <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li> -->
                      @if(Auth::id())
                               <li class="<?=Session::get("menu_active")==4?'active':''?>">
                                  <a href="{{route('myaccount')}}">My Account</a>
