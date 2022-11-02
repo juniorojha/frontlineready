@@ -60,14 +60,13 @@
                   </div>
                   <div class="logo-nav">
                      <a href="{{route('home')}}">
-                     <img src="{{asset('public/theme/images/logo2.png')}}" style="width:340px;">
+                     <img src="{{asset('public/logo/grayscale_transparent.png')}}" style="width: 138px;height: 88px;">
                      </a>
                   </div>
                </div>
                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
-                     <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('frq')}}">FAQ</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('sell-with-us')}}">Sell With Us</a></li>
                      <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li>
                      @if(Auth::id())
@@ -94,13 +93,13 @@
       @yield('content')
       <div class="footer_main_box">
          <div class="container">
-            <div class="row">
+           <!-- <div class="row">
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="logo-nav">
-                     <img src="{{asset('public/theme/images/logo-white.png')}}">
+                     <img src="{{asset('public/logo/original_logo.png')}}">
                   </div>
                </div>
-            </div>
+            </div>-->
             <div class="row">
                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
@@ -119,7 +118,7 @@
                      <ul>
                         <li><a href="{{route('sell-with-us')}}">Sell with us</a></li>
                         <li><a href="{{route('sell-with-us')}}#submit_entry_from">Submit an entry</a></li>
-                        <li><a href="{{route('frq')}}">FAQs</a></li>
+                     
                      </ul>
                   </div>
                </div>
@@ -167,10 +166,8 @@
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="footer-bottom-bar">
                      <ul>
-                        <li>Copyright © {{date('Y')}} Curating Cars. All Rights Reserved.</li>
-                        <span>|</span>
-                        <li>This website is designed and developed by <a href="https://www.startekgroup.com/"
-                           target="_blank">Star Tek Group</a>.</li>
+                        <li>Copyright © {{date('Y')}} Frontline Ready.</li>
+                        
                      </ul>
                   </div>
                </div>
@@ -192,7 +189,7 @@
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                         <div class="heading-box back-white-header">
-                           <img src="{{asset('public/theme/images/logo2.png')}}">
+                           <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                         </div>
                      </div>
                   </div>
@@ -369,7 +366,7 @@ Please add a payment method to you account. My Account -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script> 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data-2012-2022.min.js"></script>
-      <script type="text/javascript" src="{{asset('public/theme/js/script.js?v=1.23')}}"></script>      
+      <script type="text/javascript" src="{{asset('public/theme/js/script.js?v=1.2345')}}"></script>      
       <script type="text/javascript" src="{{asset('public/theme/js/core.js?v=1.5656')}}"></script>
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
@@ -424,7 +421,7 @@ Please add a payment method to you account. My Account -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="heading-box back-white-header">
-                                        <img src="{{asset('public/theme/images/logo2.png')}}">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -466,7 +463,7 @@ Please add a payment method to you account. My Account -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="heading-box back-white-header">
-                                        <img src="{{asset('public/theme/images/logo2.png')}}">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -507,7 +504,7 @@ Please add a payment method to you account. My Account -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="heading-box back-white-header">
-                                        <img src="{{asset('public/theme/images/logo2.png')}}">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -551,7 +548,7 @@ Please add a payment method to you account. My Account -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="heading-box back-white-header">
-                                        <img src="{{asset('public/theme/images/logo2.png')}}">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -612,7 +609,7 @@ Please add a payment method to you account. My Account -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="heading-box back-white-header">
-                                        <img src="{{asset('public/theme/images/logo2.png')}}">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
                                     </div>
                                 </div>
                             </div>

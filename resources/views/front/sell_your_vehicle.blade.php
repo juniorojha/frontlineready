@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - Sell Your Vehicle
+Frontline Ready - Sell Your Vehicle
 @stop
 @section('meta-data')
 @stop

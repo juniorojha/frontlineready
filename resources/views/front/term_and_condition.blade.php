@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - Term & Condition / Privacy Policy
+Frontline Ready - Term & Condition / Privacy Policy
 @stop
 @section('meta-data')
 @stop

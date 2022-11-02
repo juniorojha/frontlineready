@@ -32,7 +32,7 @@ telInput.intlTelInput({
   geoIpLookup: function(callback) {
   $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
      
-    var countryCode = (resp && resp.country) ? resp.country : "IN";
+    var countryCode = "US";
     
     
     $(".country").val(countryCode);
@@ -103,7 +103,7 @@ telInput3.intlTelInput({
   geoIpLookup: function(callback) {
   $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
      
-    var countryCode = (resp && resp.country) ? resp.country : "IN";
+     var countryCode = "US";
     
    
     

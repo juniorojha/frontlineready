@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - Cookie Policy
+Frontline Ready- Cookie Policy
 @stop
 @section('meta-data')
 @stop

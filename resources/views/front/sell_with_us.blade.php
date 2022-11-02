@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - Sell With Us
+Frontline Ready - Sell With Us
 @stop
 @section('meta-data')
 @stop
@@ -10,7 +10,7 @@ Curating Cars - Sell With Us
         <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="banner-slider-content-hold sell-with-us-heading">
-                    <h2 style="margin-top:55px">Created with Passion. Curated for You.</h2>
+                    <h2 style="margin-top:55px">Created with Passion. Frontline Ready for You.</h2>
                  <!--  <p>SELL YOUR CLASSIC OR PERFORMANCE WITH US</p>-->
                 </div>
             </div>

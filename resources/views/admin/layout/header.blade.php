@@ -1,6 +1,6 @@
 <div class="app-header__logo">
-               <?php $logo = asset('public/theme/images/logo-white.png');?>
-               <img src="{{$logo}}" style="    width: 200px;">
+               <?php $logo = asset('public/logo/transparent_logo.png');?>
+               <img src="{{$logo}}" style="    width: 130px;">
                   <!-- <div  style="background-image:url('{{$logo}}')"></div> -->
                <div class="header__pane ml-auto">
                   <div>

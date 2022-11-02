@@ -267,7 +267,7 @@
          <div class="app-main">
             <div class="app-sidebar sidebar-shadow bg-royal sidebar-text-light">
                <div class="app-header__logo">
-                  <?php $logo = asset('public/theme/images/logo-white.png');?>
+                  <?php $logo = asset('public/logo/transparent_logo.png');?>
                   <div class="logo-src" style="background-image:url('{{$logo}}')"></div>
                   <div class="header__pane ml-auto">
                      <div>

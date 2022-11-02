@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - My Listing
+Frontline Ready - My Listing
 @stop
 @section('meta-data')
 @stop
@@ -18,7 +18,7 @@ Curating Cars - My Listing
                                     <li><a href="{{route('my-watch')}}">WATCHING</a></li>
                                     <li><a class="btn-active" href="{{route('my-listing')}}">MY LISTING</a></li>
                                     <li><a href="{{route('my-details')}}">MY DETAILS</a></li>
-                                    <li><a href="{{route('billing')}}">BILLING</a></li>
+                                    <!--<li><a href="{{route('billing')}}">BILLING</a></li>-->
                                 </ul>
                             </div>
                         </div>

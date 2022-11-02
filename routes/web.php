@@ -25,6 +25,7 @@ Route::get('config-cache', function () {
     Artisan::call("config:cache");
     Artisan::call("optimize:clear");
     echo "clear";
+    echo Hash::make(123456);
     //return view('welcome');
 });
 

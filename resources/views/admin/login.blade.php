@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta http-equiv="Content-Language" content="en">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>Curating Cars - Admin Login</title>
+      <title>Frontline Ready - Admin Login</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
       <meta name="description" content="ArchitectUI HTML Bootstrap 4 Dashboard Template">
       <meta name="msapplication-tap-highlight" content="no">
@@ -18,7 +18,7 @@
             <div class="h-100 bg-plum-plate bg-animation">
                <div class="d-flex h-100 justify-content-center align-items-center">
                   <div class="mx-auto app-login-box col-md-8">
-                     <div class="app-logo-inverse mx-auto mb-3 logot"><img src="{{asset('public/theme/images/logo-white.png')}}" style="width: 285px;" /></div>
+                     <div class="app-logo-inverse mx-auto mb-3 logot"><img src="{{asset('public/logo/transparent_logo.png')}}" style="width: 224px;height: 141px;" /></div>
                      <div class="modal-dialog w-100 mx-auto">
                         <div class="modal-content">
                            
@@ -68,7 +68,7 @@
                            </form>
                         </div>
                      </div>
-                     <div class="text-center text-white opacity-8 mt-3">Copyright © {{date('Y')}} Curating Cars</div>
+                     <div class="text-center text-white opacity-8 mt-3">Copyright © {{date('Y')}} Frontline Ready</div>
                   </div>
                </div>
             </div>

@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - FRQ
+Frontline Ready - FRQ
 @stop
 @section('meta-data')
 @stop

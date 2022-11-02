@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - Billing
+Frontline Ready - Billing
 @stop
 @section('meta-data')
 @stop

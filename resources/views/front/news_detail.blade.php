@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Curating Cars - {{$data->title}}
+Frontline Ready - {{$data->title}}
 @stop
 @section('meta-data')
 @stop
