@@ -235,7 +235,7 @@ class FrontController extends Controller
             // $user->email = $request->get('email');
             // try {
                  Mail::send('email.user_verification', ['user' => $user], function($message) use ($user){
-                     $message->to($user->email,$user->username)->subject('Curating Cars');
+                     $message->to($user->email,$user->username)->subject('Frontline Ready');
                 });
             // }catch (\Exception $e) {
            //  }
@@ -262,12 +262,12 @@ class FrontController extends Controller
                 }
         try{
               $txt = '<html><head><title>New Contact Detail</title></head><body><p><strong>New Contact Detail</strong></p><table><tr><th>Name</th><th>'.$request->get("name").'</th></tr><tr><th>Email</th><th>'.$request->get("email").'</th></tr><tr><th>Country</th><th>'.$store->country.'</th></tr><tr><th>Phone</th><th>'.$request->get("phone").'</th></tr><tr><th>Message</th><th>'.$request->get("message").'</th></tr><tr><th>Country</th><th>'.$interested_In.'</th></tr></table></body></html>';
-                $to = "support@curatingcars.com";
+                $to = "support@frontlinereadyrtx.com";
                 $subject = "New Contact Detail";
                 $txt = $txt;
-                $headers = "From: support@curatingcars.com \r\n";
-                $headers .= "Reply-To: support@curatingcars.com \r\n";
-                $headers .= "CC: support@curatingcars.com\r\n";
+                $headers = "From: support@frontlinereadyrtx.com \r\n";
+                $headers .= "Reply-To: support@frontlinereadyrtx.com \r\n";
+                $headers .= "CC: support@frontlinereadyrtx.com\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $result = mail($to,$subject,$txt,$headers);
