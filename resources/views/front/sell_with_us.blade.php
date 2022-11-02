@@ -10,7 +10,7 @@ Frontline Ready - Sell With Us
         <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="banner-slider-content-hold sell-with-us-heading">
-                    <h2 style="margin-top:55px">Created with Passion. Frontline Ready for You.</h2>
+                    <h2 style="margin-top:55px">The auto dealer exclusively for dealers.</h2>
                  <!--  <p>SELL YOUR CLASSIC OR PERFORMANCE WITH US</p>-->
                 </div>
             </div>
@@ -28,8 +28,7 @@ Frontline Ready - Sell With Us
             <div class="row seller-top-pd">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin: auto;">
                     <div class="sell-with-us-content">
-                        <p>We don’t charge any commission or listing fees to our sellers.</p>
-                        <p>We 'eliminate all' obstacles in the way of purchasing interesting and desirable vehicles from honest sellers 'by simply charging the buyer a reasonable' commission of just 5% + VAT.</p>
+                        <p>At Front Line Ready, we do exactly what our name says – provide front line ready cars to automotive dealers. We're passionate about vehicles and making sure retail dealers have an effective and efficient method of acquiring inventory.  We understand the challenges in today's environment with shortages of inventory and more competition for every vehicle.  Our goal is to help our partner dealers buy and sell more cars. Period.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -39,17 +38,53 @@ Frontline Ready - Sell With Us
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
+                    <div class="sell-with-us-content">
+                        <span>How it Works</span>
+                        <p>We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.  We then certify our cars for 30 days or 1,000 miles. <br/>
+                        It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. <br/> Contact us to learn more.
+                    </p>
+                    </div>
+                </div>
+            </div>       
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
+                    <div class="sell-with-us-content">
+                        <span>How we are different</span>
+                        <table class="tg_table">
+                            <thead>
+                              <tr>
+                                <th class="tg-0lax">Approach to Buying</th>
+                                <th class="tg-0lax">Reconditioning Process</th>
+                                <th class="tg-0lax">Technology Platform</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="tg-1lax">Not every vehicle is for us. We buy from individuals and look for cars with less than 100,000 miles with only minor imperfections. We are experts in evaluating and buying vehicles.</td>
+                                <td class="tg-1lax">Our vehicles are put through a 100+ point inspection and any maintenance or cometic issues are addressed. Only vehicles that reach at least a 4.0 out of 5 are certified as Front Line Ready.</td>
+                                <td class="tg-1lax">We utilize proprietary technology to both buy and sell.  This allows both the seller and our dealer partners to have transparency in the process.  We make it easy.</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>       
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sellers-receives-content">
-                        <span>You have nothing to lose because we take care of everything for you, including:</span>
-                        <ul>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Professional 'photography' and videography 'services' of your vehicle.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">The car stays with you, so there’s no need to worry about transportation or the chance of your car being damaged.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Our listings are the most accurate, detailed and transparent pieces of automotive narrative that you will find anywhere in the industry.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">'In achieving' the best price, we market to purchasers in the UK, Europe, UAE and Asia.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">We’ll even 'negotiate' with potential 'buyers' on your behalf so you don’t have to.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">'The team at Curating Cars' are true petrolhead professionals and engineers 'who hail' from the world of Formula One, 'a'erospace and 'a'utomotive journalism.</p></li>
-                        </ul>
+                        <span>How Our Auctions Work</span>
+                        <p>The process at Front Line Ready is very simple.</p>
+                        <ol>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Register as a dealer (see below).</p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Visit our site and review our inventory.</p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will have pictures and detailed vehicle information.  If you have additional questions on a vehicle, call us.</p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will have a starting minimum floor bid and a Buy it Now price.</p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will give the option to submit a maximum proxy bid or next bid increment ($100 bid increments) </p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing lasts 10 days with a stated countdown unless the Buy it Now option is exercised.</p></li>
+                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">If you win, the vehicle is delivered to your facility.</p></li>
+                        </ol>
+                        <p>That's it.  Sound easy enough?</p>
                     </div>
                 </div>
             </div>
@@ -58,7 +93,7 @@ Frontline Ready - Sell With Us
     <div class="seller-middle-banner"><div class="container">
           <div class="row">
             <div class="banner-inner-content-sell-with-us">
-        <h3>Take A Ride With Us!</h3>
+        <h3>Take a Ride With Us!</h3>
         </div>
         </div>
      </div></div>
@@ -82,7 +117,7 @@ Frontline Ready - Sell With Us
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form_contact_box seller-form-hold">
-                    <p>'Submit your details' below and one of our team will contact you within 24 hours.</p>
+                    <p>If you are interested in learning more about our online auctions, please fill out the form below and one of our representatives will follow up with you directly.</p>
                     <form id="sell_with_us">
                         <ul id="sell_error"></ul>
                         <div class="contact_form_box register-form-head">

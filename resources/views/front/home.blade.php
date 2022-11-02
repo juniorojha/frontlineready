@@ -65,8 +65,8 @@ Frontline Ready - Home
                <div class="container row-fluid">
                   <div class="banner_text">
                      <div class="text-part">
-                        <h2>Created with Passion. Curated for You.</h2>
-                        <p>Auctioning the most unusual and desirable cars across The Middle East, Europe & Asia!</p>
+                        <h2>The auto dealer exclusively for dealers.</h2>
+                        <p></p>
                      </div>
                   </div>
                </div>
@@ -707,7 +707,7 @@ Frontline Ready - Home
          <div class="container">
             <div class="home-contact-us-heading">
                <h2>Contact us</h2>
-               <p>Reach out to list, to buy, to talk shop, even better, to feed that need for speed!</p>
+               <p>If you are interested in learning more about our online auctions, please fill out the form below and one of our representatives will follow up with you directly.</p>
             </div>
             <div class="form_contact_box">
                <form action="#" method="post" id="contactus_from">
