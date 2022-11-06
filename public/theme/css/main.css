@@ -2198,7 +2198,7 @@ a.show-password {
     width: 100%;
 }
 
-.sellers-receives-content span {
+.sellers-receives-content, .sell-with-us-content span {
     font-weight: 700;
     color: #4d4d4d;
     margin-bottom: 30px;

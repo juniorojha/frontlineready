@@ -238,7 +238,7 @@
                                     <li>
                                        <input class="form-check-input" type="checkbox" name="term1" value="1" id="cond_reg_1">
                                        <p> By registering I agree to the <a style="text-decoration: underline;" href="{{route('term-privacy')}}">terms &amp; conditions</a> of the
-                                          Curating Cars.
+                                          Frontline Ready.
                                        </p>
                                        <span id="error_term1" class="error"></span>
                                     </li>
