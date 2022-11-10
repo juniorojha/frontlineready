@@ -5,6 +5,20 @@ Frontline Ready - Home
 @section('meta-data')
 @stop
 @section('content')
+<style type="text/css">
+    button.btn_border {
+        border: 1px solid white;
+        display: inline-block;
+        border-radius: 100px;
+        width: 100%;
+        border-color: black;
+        padding: 0px 20px;
+        font-weight: 400;
+    }
+    button:hover {
+    color: unset;
+}
+</style>
 <script>
     
     	
@@ -172,34 +186,69 @@ Frontline Ready - Home
         </div>
         <span class="second"></span>
     </div>
-    <div class="container">
+    <div class="container" id="delarship_reg">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form_contact_box seller-form-hold">
                     <p>If you are interested in learning more about our online auctions, please fill out the form below and one of our representatives will follow up with you directly.</p>
-                    <form id="sell_with_us">
-                        <ul id="sell_error"></ul>
+                    <form id="reg1_registation_form">
+                        <ul id="reg1_error"></ul>
                         <div class="contact_form_box register-form-head">
                            <input type="hidden" name="vaildphoneno" id="vaildphoneno" class="vaildphoneno"> 
                            <input type="hidden" name="countrycode" id="countrycode" class="countrycode">
                             <div class="contact_login_box">
                                 <label>Name :</label>
-                                <input type="text" name="name" id="seller_name">
+                                <input type="text" name="name" id="reg1_name">
+                                <label>Dealership Name :</label>
+                                <input type="text" name="dealership_name" id="reg1_dealership_name">
+                                <label>Dealership P Number :  <button type="button"  data-toggle="tooltip" data-placement="right" title="or State’s applicable Dealer License number" style="border-radius: 75%;border: 1px solid black;padding: 0px 8px;background: lightgray;"><i class="fa fa-info"></i></button></label>
+                                <input type="text" name="dealership_p_number" id="reg1_dealership_p_number">
+                                <label class="full-field">
+                                    <span class="form-label">Address*</span>
+                                    <input
+                                      id="reg1_address"
+                                      name="address"
+                                      required
+                                      autocomplete="off"
+                                    />
+                                  </label>
+                                  <label class="full-field">
+                                    <span class="form-label">street address</span>
+                                    <input id="reg1_street_address" name="street_address" />
+                                  </label>
+                                  <label class="full-field">
+                                    <span class="form-label">City*</span>
+                                    <input id="reg1_locality" name="city" required />
+                                  </label>
+                                  <label class="slim-field-left">
+                                    <span class="form-label">State/Province*</span>
+                                    <input id="reg1_state" name="state" required />
+                                  </label>
+                                  <label class="slim-field-right" for="postal_code">
+                                    <span class="form-label">Postal code*</span>
+                                    <input id="reg1_postcode" name="postcode" required />
+                                  </label>
+                                  <label class="full-field">
+                                    <span class="form-label">Country/Region*</span>
+                                    <input id="reg1_country" name="country" required />
+                                  </label>
                                 <label>Email :</label>
-                                <input type="email" name="email" id="seller_email">
+                                <input type="email" name="email" id="reg1_email">
                                 <label>Phone Number :</label>
-                                <input type="tel" name="phone" class="phone numberonly" required="" id="phone" maxlength="10">
+                                <input type="tel" name="phone" class="phone numberonly" required="" id="phone_pay" maxlength="10">
                                 <span id="error_reg_phone" class="error error_contact_phone"></span>
                                 <span id="valid-msg" class="hide valid-msg">Valid</span>
                                 <span id="error-msg" class="hide error-msg">Invalid number</span>
-                                <label>Model :</label>
-                                <input type="text" name="model" id="model">
+                                <label>Password :</label>
+                                <input type="password" name="password" id="reg1_password">
+                                <label>Conform Password :</label>
+                                <input type="password" name="cpassword" id="reg1_cpassword">
                             </div>
                             <div class="end-border-and-btn">
                                 <!-- data-bs-toggle="modal"
                                         data-bs-target="#myModalsell-out-sumit1" -->
                                 <div class="actions-btn-hold btn_box_border">
-                                    <a class="btn_border" href="javascript:sellwithus()" style="padding:0px 45px;" >SUBMIT <i
+                                    <a class="btn_border" href="javascript:dealerregisteruser('reg1')" style="padding:0px 45px;" >SUBMIT <i
                                             class="fal fa-long-arrow-right" style="margin-left: 8px;"
                                             aria-hidden="true"></i></a>
                                 </div>
@@ -212,7 +261,87 @@ Frontline Ready - Home
     </div>
 @stop
 @section('footer')
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9Q9MOTLukAh9rokc-_gN3wVNmf66Ve9M&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
 <script type="text/javascript">
+   var autocomplete;
+var address1Field;
+var address2Field;
+var postalField;
+
+function initAutocomplete() {
+  address1Field = document.querySelector("#reg1_address");
+  address2Field = document.querySelector("#reg1_street_address");
+  postalField = document.querySelector("#reg1_postcode");
+  // Create the autocomplete object, restricting the search predictions to
+  // addresses in the US and Canada.
+  autocomplete = new google.maps.places.Autocomplete(address1Field, {
+    componentRestrictions: {  },
+    fields: ["address_components", "geometry"],
+    types: ["address"],
+  });
+  address1Field.focus();
+  // When the user selects an address from the drop-down, populate the
+  // address fields in the form.
+  autocomplete.addListener("place_changed", fillInAddress);
+}
+
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  const place = autocomplete.getPlace();
+  var address1 = "";
+  var postcode = "";
+
+  // Get each component of the address from the place details,
+  // and then fill-in the corresponding field on the form.
+  // place.address_components are google.maps.GeocoderAddressComponent objects
+  // which are documented at http://goo.gle/3l5i5Mr
+  for (const component of place.address_components) {
+    // @ts-ignore remove once typings fixed
+    const componentType = component.types[0];
+
+    switch (componentType) {
+      case "street_number": {
+        address1 = `${component.long_name} ${address1}`;
+        break;
+      }
+
+      case "route": {
+        address1 += component.short_name;
+        break;
+      }
+
+      case "postal_code": {
+        postcode = `${component.long_name}${postcode}`;
+        break;
+      }
+
+      case "postal_code_suffix": {
+        postcode = `${postcode}-${component.long_name}`;
+        break;
+      }
+      case "locality":
+        document.querySelector("#reg1_locality").value = component.long_name;
+        break;
+      case "administrative_area_level_1": {
+        document.querySelector("#reg1_state").value = component.short_name;
+        break;
+      }
+      case "country":
+        document.querySelector("#reg1_country").value = component.long_name;
+        break;
+    }
+  }
+
+  address1Field.value = address1;
+  postalField.value = postcode;
+  address2Field.focus();
+}
+
+window.initAutocomplete = initAutocomplete;
    function clearallinput(){
        $(".closebox").removeAttr('checked');
    }

@@ -246,7 +246,143 @@ function detaillogin(val){
     $("#same_page").val(1);
     changemodel(val);
 }
+function dealerregisteruser(val){
+	//alert("hey");
+	var name = $("#"+val+"_name").val();
+	var dealership_name = $("#"+val+"_dealership_name").val();
+	var dealership_p_number = $("#"+val+"_dealership_p_number").val();
+	var address = $("#"+val+"_address").val();
+	var street_address = $("#"+val+"_street_address").val();
+	var city = $("#"+val+"_locality").val();
+	var state = $("#"+val+"_state").val();
+	var country = $("#"+val+"_country").val();
+    var email = $("#"+val+"_email").val();
+    var password = $("#"+val+"_password").val();
+    if(val=="reg1"){
+    	var phone = $("#phone_pay").val();
+    }else{
+    	var phone = $("#"+val+"_phone").val();
+    }
+    
+    var cpwd = $("#"+val+"_cpassword").val();
+    
+   
+    var msg = "";
+    var txt = "";
+   
+    if(name==""){
+        txt = txt+"<li>Name is required</li>";
+		msg=1;
+    }
+    if(dealership_name==""){
+        txt = txt+"<li>Dealership name is required</li>";
+		msg=1;
+    }
+    if(dealership_p_number==""){
+        txt = txt+"<li>Dealership P Number is required</li>";
+		msg=1;
+    }
+    if(address==""){
+        txt = txt+"<li>Address is required</li>";
+		msg=1;
+    }
+    if(street_address==""){
+        txt = txt+"<li>Street Address is required</li>";
+		msg=1;
+    }
+    if(city==""){
+        txt = txt+"<li>City is required</li>";
+		msg=1;
+    }
+    if(state==""){
+        txt = txt+"<li>State is required</li>";
+		msg=1;
+    }
+    if(email==""){
+        txt = txt+"<li>Please enter your email address.</li>";
+		msg=1;
+    }else{
+		if (!validateEmail(email)) {
+			txt = txt+"<li>Please enter vaild email address.</li>";
+			msg=1;
+        }
+    }
+    if(password==""){
+        txt = txt+"<li>Please enter your password.</li>";
+		msg=1;
+    }else{
+    	 if (password.length >= 8){
 
+	     }else{
+	     	 txt = txt+"<li>At least 1 digit.At least 8 character.</li>";     	 
+	     	 msg=1;
+	     	 if(password.match(/[0-9]/g)){
+	     	
+		     }else{
+		     	txt = txt+"<li>At least 1 digit.</li>";     	 
+		     	 msg=1;
+		     } 
+	     }
+    }  
+    if(cpwd==""){
+        txt = txt+"<li>Please enter your confirm password.</li>";
+		msg=1;
+
+    }else{
+    	if(password!=cpwd){
+			txt = txt+"<li>Confirm password and password must be same.</li>";
+			msg=1;
+	    }
+    }
+    
+    if(country==""){
+		txt = txt+"<li>Please enter country.</li>";
+		msg=1;
+	}
+	if(phone==""){
+		txt = txt+"<li>Please enter phone number.</li>";
+		msg=1;
+	}else{
+		if($("#vaildphoneno_reg").val()!=1){
+			txt = txt+"<li>Please enter vaild phone number.</li>";
+			msg=1;
+	    }
+	}
+	
+	
+	
+	
+	if(msg==""){
+		$.ajaxSetup({
+			headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+		});
+		$.ajax({
+                   	url: $("#site_url").val()+"/register_user",
+					method: 'post',
+					data: $('#'+val+'_registation_form').serialize(),
+					success: function(response){
+						if(response==1){
+						   	$('#'+val+'_registation_form').trigger("reset");                      
+	                        changemodel("reg_pharse_2_content");	                       
+						}else if(response==2){ // email not unqiue
+							$("#"+val+"_error").html("Email address already exist.");
+    	 					$("#"+val+"_error").addClass("errorbox");
+						}else if(response==3){
+							$("#"+val+"_error").html("Username must be unique.");
+    	 					$("#"+val+"_error").addClass("errorbox");
+						}else{
+
+						}                        
+
+                    }
+        });
+    }else{
+    	 $("#"+val+"_error").html(txt);
+    	 $("#"+val+"_error").addClass("errorbox");
+    }
+}
 function registeruser(){
 	//alert("hey");
 	var username = $("#reg_username").val();

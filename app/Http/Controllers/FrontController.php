@@ -86,7 +86,7 @@ class FrontController extends Controller
         $ip = $_SERVER['REMOTE_ADDR'];
         $ipInfo = file_get_contents('http://ip-api.com/json/' . $ip);
         $ipInfo = json_decode($ipInfo);
-        $timezone = $ipInfo->timezone;
+        $timezone = isset($ipInfo->timezone)?$ipInfo->timezone:'';
         return $timezone;
     }
     
@@ -346,8 +346,16 @@ class FrontController extends Controller
             return 2;
         }else{
             $store = new User();
-            $store->username = $request->get("username");
+            $store->name = $request->get("name");
+            $store->dealership_name = $request->get("dealership_name");
+            $store->address = $request->get("address");
+            $store->dealership_p_number = $request->get("dealership_p_number");
+            $store->street_address = $request->get("street_address");
+            $store->city = $request->get("city");
+            $store->state = $request->get("state");
+            $store->postcode = $request->get("postcode");
             $store->email = $request->get("email");
+            $store->country = $request->get("country");
             $store->password = Hash::make($request->get("password"));
             $store->phone = $request->get('countrycode')." ".$request->get("phone");
             $getcountry  = Country::where("sortname",$request->get("country"))->first();
