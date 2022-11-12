@@ -783,6 +783,14 @@ class FrontController extends Controller
         return view("front.sell_with_us",compact("setting","country","make_list"));
     }
 
+    public function about_us(){
+        $setting = Setting::find(1);
+        $country = Country::all();
+        $make_list = Make::all();
+         Session::put("menu_active",'2');
+        return view("front.about_us",compact("setting","country","make_list"));
+    }    
+
     public function post_newsletter_user(Request $request){
         $news = Subscriber::where("email",$request->get("email"))->first();
         if(empty($news)){
