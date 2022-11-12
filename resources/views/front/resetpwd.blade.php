@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - In The Spotlight
+Front Line Ready - In The Spotlight
 @stop
 @section('meta-data')
 @stop

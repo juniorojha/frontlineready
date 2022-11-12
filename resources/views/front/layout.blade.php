@@ -67,7 +67,7 @@
                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
-                     <!-- <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('sell-with-us')}}">Sell With Us</a></li> -->
+                     <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">Sell With Us</a></li>
                      <!-- <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li> -->
                      @if(Auth::id())
                               <li class="<?=Session::get("menu_active")==4?'active':''?>">
@@ -167,7 +167,7 @@
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="footer-bottom-bar">
                      <ul>
-                        <li>Copyright © {{date('Y')}} Frontline Ready.</li>
+                        <li>Copyright © {{date('Y')}} Front Line Ready.</li>
                         
                      </ul>
                   </div>
@@ -239,7 +239,7 @@
                                     <li>
                                        <input class="form-check-input" type="checkbox" name="term1" value="1" id="cond_reg_1">
                                        <p> By registering I agree to the <a style="text-decoration: underline;" href="{{route('term-privacy')}}">terms &amp; conditions</a> of the
-                                          Frontline Ready.
+                                          Front Line Ready.
                                        </p>
                                        <span id="error_term1" class="error"></span>
                                     </li>

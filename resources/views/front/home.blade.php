@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Home
+Front Line Ready - Home
 @stop
 @section('meta-data')
 @stop
@@ -93,7 +93,7 @@ Frontline Ready - Home
       </div>
       <!-- Slider end -->
       <!-- home-cars-and-search-sections Start -->
-          <div class="home-blog-section">
+        <div class="home-blog-section">
         <div class="blog-left-icons-shape slb-page-hold">
             <img src="{{asset('public/theme/images/shape-logo.png')}}">
         </div>
@@ -109,60 +109,360 @@ Frontline Ready - Home
                         <img src="{{asset('public/theme/images/sell-about.jpg')}}">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
-                    <div class="sell-with-us-content">
-                        <span>How it Works</span>
-                        <p>We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.  We then certify our cars for 30 days or 1,000 miles. <br/>
-                        It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. <br/> Contact us to learn more.
-                    </p>
-                    </div>
-                </div>
-            </div>       
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
-                    <div class="sell-with-us-content">
-                        <span>How we are different</span>
-                        <table class="tg_table">
-                            <thead>
-                              <tr>
-                                <th class="tg-0lax">Approach to Buying</th>
-                                <th class="tg-0lax">Reconditioning Process</th>
-                                <th class="tg-0lax">Technology Platform</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td class="tg-1lax">Not every vehicle is for us. We buy from individuals and look for cars with less than 100,000 miles with only minor imperfections. We are experts in evaluating and buying vehicles.</td>
-                                <td class="tg-1lax">Our vehicles are put through a 100+ point inspection and any maintenance or cometic issues are addressed. Only vehicles that reach at least a 4.0 out of 5 are certified as Front Line Ready.</td>
-                                <td class="tg-1lax">We utilize proprietary technology to both buy and sell.  This allows both the seller and our dealer partners to have transparency in the process.  We make it easy.</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>       
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="sellers-receives-content">
-                        <span>How Our Auctions Work</span>
-                        <p>The process at Front Line Ready is very simple.</p>
-                        <ol>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Register as a dealer (see below).</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Visit our site and review our inventory.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will have pictures and detailed vehicle information.  If you have additional questions on a vehicle, call us.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will have a starting minimum floor bid and a Buy it Now price.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing will give the option to submit a maximum proxy bid or next bid increment ($100 bid increments) </p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">Each listing lasts 10 days with a stated countdown unless the Buy it Now option is exercised.</p></li>
-                            <li><p style="margin-left:3px;width: 100%;text-align: justify;">If you win, the vehicle is delivered to your facility.</p></li>
-                        </ol>
-                        <p>That's it.  Sound easy enough?</p>
-                    </div>
-                </div>
-            </div>
+            </div>         
         </div>
     </div>
+    <div class="heading-border-section hide" id="header_1">
+         <span class="firts"></span>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>LIVE</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <!-- Product cars-box-first satrt-->
+      <div class="container hide" id="container_1">
+         <div class="row" id="live_cars_list">
+            
+           @foreach($get_car_live as $gc)
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="live_cars_{{$gc->id}}">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">LIVE</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}"></a>
+                        </div>
+                        <div class="heading-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->name}}</h4>
+                           </a>
+                          <ul class="icons-section">
+                              <li> @if(Auth::id())
+                                          <?php $color = $gc->is_like==1?'chartreuse':'white';  ?>
+                                        <a href="javascript:bookcar('{{$gc->id}}')"><i id="book_mark_{{$gc->id}}" class="fas fa-bookmark" style="color:{{$color}}" ></i></a>
+                                    @else
+                                       <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')"><i class="fas fa-bookmark"></i></a>
+                                    @endif</li>
+                               <li  class="share-button sharer"><button  type="button" class="share-btn"><i class="fas fa-share-alt"></i></button>
+                               <div class="social top center networks-5 ">
+ <!-- Facebook Share Button -->
+    <a class="fbtn share facebook" href="https://www.facebook.com/sharer/sharer.php?u={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-facebook"></i></a> 
+    <!-- Google Plus Share Button -->
+    <a class="fbtn share instagram" href="https://www.instagram.com/" target="_blank"><i class="fa  fa-instagram"></i></a> 
+    <!-- Twitter Share Button -->
+    <a class="fbtn share twitter" href="https://twitter.com/intent/tweet?text=title&amp;url={{route('vehicle-detail',['query'=>$gc->key_id])}}&amp;via=$gc->name" target="_blank"><i class="fa fa-twitter"></i></a> 
+       <!-- Pinterest Share Button -->
+    <!-- LinkedIn Share Button -->
+    <a class="fbtn share linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=url&amp;title=title&amp;source={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="product-content">
+                        <p class="double-border">{{$gc->short_desc}}</p>
+                        <span style="margin-top: 3px;margin-bottom: 3px;">
+                           <p>{{$gc->year}}</p>
+                           |
+                           @if($gc->steering_position==1)
+                           <p>LHD</p>
+                           @else
+                           <p>RHD</p>
+                           @endif
+                           |
+                           <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
+                           <p><div class=" btn_box_border active-btn-colors" style="margin:0px;"><a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}#bid_section" class="btn_border" >bid now</a></div></p>
+                        </span>
+                     </div>
+                     <div class="product-shadow-box">
+                        <div class="head-bg-color red">
+                              @if($gc->reserve_met==1)
+                                 <div class="head-bg-color green">
+                                    <p>RESERVE MET</p>
+                                </div>
+                                @elseif($gc->reserve_met==2)
+                                 <div class="head-bg-color red">
+                                    <p>RESERVE NOT MET</p>
+                                </div>
+                                @elseif($gc->reserve_met==3)
+                                 <div class="head-bg-color yellow">
+                                    <p>RESERVE NEARLY MET</p>
+                                </div>
+                                @endif
+                        </div>
+                        <div class="timging-tage">
+                           <p>Ends In : <span id="end_time_{{$gc->id}}">
+                               <?php 
+                                      $timestamp = $gc->aucation_enddate.' '.$gc->aucation_endtime;
+                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC');
+                                   
+                                      $new_date = $date->setTimezone(Session::get('timezone'));
+                                      $date =  \Carbon\Carbon::parse($new_date)->format('Y-m-d');
+                                      $time = \Carbon\Carbon::parse($new_date)->format('H:i:s');
+                                       
+                                      $date1 = $date." ".$time;
+                                    // echo $date1;
+                                     
+                               ?>
+                            <script type="text/javascript">
+                                updateTimer('{{$date1}}','{{$gc->id}}');
+                            </script>
+                            </span></p>
+                        
+                            
+                        </div>
+                        <div class="current-bids">
+                           <p>Current Bids : {{$gc->currency_symbol}}{{$gc->bid_price}}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn double-border">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="">All Auctions</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
+      <!-- Product cars-box-first end-->
+      <!-- Product cars-box-part2 satrt-->
+      <!-- main heading start -->
+     <div class="heading-border-section " id="header_2">
+         <span class="firts"></span>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>Coming soon</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <div class="container" id="container_2">
+         <div class="row" id="coming_car_list">
+             @foreach($get_car_coming as $gc)
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">Coming Soon</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}"></a>
+                        </div>
+                        <div class="heading-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->name}}</h4>
+                           </a>
+                           <ul class="icons-section">
+                              <li> @if(Auth::id())
+                                          <?php $color = $gc->is_like==1?'chartreuse':'white';  ?>
+                                        <a href="javascript:bookcar('{{$gc->id}}')"><i id="book_mark_{{$gc->id}}" class="fas fa-bookmark" style="color:{{$color}}" ></i></a>
+                                    @else
+                                       <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')"><i class="fas fa-bookmark"></i></a>
+                                    @endif</li>
+                               <li  class="share-button sharer"><button  type="button" class="share-btn"><i class="fas fa-share-alt"></i></button>
+                               <div class="social top center networks-5 ">
+ <!-- Facebook Share Button -->
+    <a class="fbtn share facebook" href="https://www.facebook.com/sharer/sharer.php?u={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-facebook"></i></a> 
+    <!-- Google Plus Share Button -->
+    <a class="fbtn share instagram" href="https://www.instagram.com/" target="_blank"><i class="fa  fa-instagram"></i></a> 
+    <!-- Twitter Share Button -->
+    <a class="fbtn share twitter" href="https://twitter.com/intent/tweet?text=title&amp;url={{route('vehicle-detail',['query'=>$gc->key_id])}}&amp;via=$gc->name" target="_blank"><i class="fa fa-twitter"></i></a> 
+       <!-- Pinterest Share Button -->
+    <!-- LinkedIn Share Button -->
+    <a class="fbtn share linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=url&amp;title=title&amp;source={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="product-content">
+                        <p class="double-border">{{$gc->short_desc}}</p>
+                        <span>
+                           <p>{{$gc->year}}</p>
+                           |
+                           @if($gc->steering_position==1)
+                           <p>LHD</p>
+                           @else
+                           <p>RHD</p>
+                           @endif
+                           |
+                           <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
+                        </span>
+                     </div>
+                     <div class="product-shadow-box">
+                       <div class="head-bg-color">
+                           <p></p>
+                        </div>
+                        
+                        <div class="current-bids">
+                           <p>Current Bids : No Bids</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn last-bottom-pd">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="">All Coming Soon Cars</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
+      <div class="heading-border-section hide" id="header_4">
+         <span class="firts"></span>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>Sold</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <div class="container hide" id="container_4">
+         <div class="row" id="sold_car_list">
+            @foreach($get_car_sold as $gc)
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">Sold</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}"></a>
+                        </div>
+                        <div class="heading-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->name}}</h4>
+                           </a>
+                           <ul class="icons-section">
+                               <li> @if(Auth::id())
+                                        <a href="javascript:bookcar('{{$gc->id}}')"><i id="book_mark_{{$gc->id}}" class="fas fa-bookmark"></i></a>
+                                    @else
+                                       <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')"><i class="fas fa-bookmark"></i></a>
+                                    @endif</li>
+                               <li><a href="javascript:void()" onClick="callShare('{{$gc->name}}','hetya','hetal');"><i class="fas fa-share-alt"></i></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="product-content">
+                        <p class="double-border">{{$gc->short_desc}}</p>
+                        <span>
+                           <p>{{$gc->year}}</p>
+                           |
+                           @if($gc->steering_position==1)
+                           <p>LHD</p>
+                           @else
+                           <p>RHD</p>
+                           @endif
+                           |
+                           <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
+                        </span>
+                     </div>
+                     <div class="product-shadow-box">
+                        <div class="head-bg-color green">
+                           <p> {{$gc->total_bid}} Bids</p>
+                        </div>
+                        <div class="timging-tage">
+                           <p>Sold Date : {{$gc->sold_date}}</p>
+                        </div>
+                        <div class="current-bids">
+                           <p>Winning Bid : {{$gc->currency_symbol}}{{$gc->winning_bid}}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+           <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn last-bottom-pd">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="">All Sold Cars</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
+      </div>
+      <!-- home-subscribe-now-banner satrt here  -->
+      <!-- Home Bloges style start here  -->
+      <div class="home-blog-section">
+         <div class="blog-left-icons-shape">
+            <img src="{{asset('public/theme/images/shape-logo.png')}}">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="blog-main-heading desktop-pd-hold1">
+                     <h3>In The Spotlight</h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               @foreach($spotLight as $sl)
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="blog-content-img-holder-box">
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <img src="{{asset('storage/app/public/news').'/'.$sl->image}}"> </a>
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}">
+                        <h4>{{$sl->title}}</h4>
+                     </a>
+                     <p>{{$sl->short_desc}}
+                     </p>
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <b>Read More</b> </a>
+                  </div>
+               </div>
+               @endforeach
+              
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="{{route('spotlight')}}">All News</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- Home Bloges style end here  -->
     <div class="seller-middle-banner"><div class="container">
           <div class="row">
             <div class="banner-inner-content-sell-with-us">
@@ -177,7 +477,7 @@ Frontline Ready - Home
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                     <div class="heading-box cutsom-white-bg sell-with-heading--second">
-                        <h2 style="">Register as a dealer to buy</h2>
+                        <h2 style="">Register to bid</h2>
                     </div>
                     <span class="left"></span>
                     <span class="Right"></span>

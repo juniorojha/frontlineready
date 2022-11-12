@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Sell Your Vehicle
+Front Line Ready - Sell Your Vehicle
 @stop
 @section('meta-data')
 @stop

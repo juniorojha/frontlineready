@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Vehicle Detail
+Front Line Ready - Vehicle Detail
 @stop
 @section('meta-data')
 @stop

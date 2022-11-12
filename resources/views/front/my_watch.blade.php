@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - My Watching
+Front Line Ready - My Watching
 @stop
 @section('meta-data')
 @stop

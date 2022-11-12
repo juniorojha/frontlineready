@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Billing
+Front Line Ready - Billing
 @stop
 @section('meta-data')
 @stop

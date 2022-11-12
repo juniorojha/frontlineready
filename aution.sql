@@ -53246,7 +53246,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `country_id`, `phone`, `email`, `email_verified_at`, `password`, `image`, `user_type`, `promotions_email_notification`, `trade_news_email_notification`, `outbid_sms_notification`, `watcher_comment_notification`, `email_verification`, `deleted_at`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Frontline Ready', 'Frontline Ready', NULL, '', 'admin@gmail.com', NULL, '$2y$10$PQubpSmDHmVDtlqAbmRI9uzcMklzv3UJKFf8QKMN9ShIudDs17m4G', '8258780061642243455.png', '1', '0', '0', '0', '0', 1, NULL, NULL, NULL, '2022-02-27 23:02:18'),
+(1, 'Front Line Ready', 'Front Line Ready', NULL, '', 'admin@gmail.com', NULL, '$2y$10$PQubpSmDHmVDtlqAbmRI9uzcMklzv3UJKFf8QKMN9ShIudDs17m4G', '8258780061642243455.png', '1', '0', '0', '0', '0', 1, NULL, NULL, NULL, '2022-02-27 23:02:18'),
 (52, NULL, 'gojha', '101', '+91 8989931090', 'ojha.iiitm@gmail.com', NULL, '$2y$10$Nf8xXBF22FRkgRxmtLkEnOLRa862Zo7MQFKy4VQSrW1Adh10UnJDS', NULL, '0', '0', '0', '0', '0', 0, NULL, NULL, '2022-10-31 23:22:42', '2022-10-31 23:22:42');
 
 -- --------------------------------------------------------

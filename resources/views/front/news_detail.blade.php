@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - {{$data->title}}
+Front Line Ready - {{$data->title}}
 @stop
 @section('meta-data')
 @stop

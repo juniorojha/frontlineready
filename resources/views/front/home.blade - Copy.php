@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Home
+Front Line Ready - Home
 @stop
 @section('meta-data')
 @stop

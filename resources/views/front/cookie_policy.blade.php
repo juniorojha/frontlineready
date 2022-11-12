@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready- Cookie Policy
+Front Line Ready- Cookie Policy
 @stop
 @section('meta-data')
 @stop

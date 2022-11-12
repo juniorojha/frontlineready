@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - In The Spotlight
+Front Line Ready - In The Spotlight
 @stop
 @section('meta-data')
 @stop
@@ -10,7 +10,7 @@ Frontline Ready - In The Spotlight
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="banner-slider-content-hold">
                     <h2>IN THE SPOTLIGHT</h2>
-                    <p>Exploring The Latest News Of Frontline Ready</p>
+                    <p>Exploring The Latest News Of Front Line Ready</p>
                 </div>
             </div>
         </div>

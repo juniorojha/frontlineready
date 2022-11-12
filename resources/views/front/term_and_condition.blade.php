@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Frontline Ready - Term & Condition / Privacy Policy
+Front Line Ready - Term & Condition / Privacy Policy
 @stop
 @section('meta-data')
 @stop
@@ -136,7 +136,7 @@ this agreement the following terms shall have the following meanings:</br></span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Live
      Chat”</span></b><span lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;means
      the online Service we offer directly on our Website for you to contact and
-     correspond with a member of Frontline Ready.</span></br></br></li>
+     correspond with a member of Front Line Ready.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><b><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Marketing
      and Communications Data”</span></b><span lang=EN-MY style='font-size:10.5pt;
@@ -702,7 +702,7 @@ reason for requesting a cancellation or amendment of a Bid/s.<br>
 Seller / Trade Seller to buy the&nbsp;listed Item / Vehicle.<br>
 &nbsp;<br>
 7.4 Bids (including winning bids) may be cancelled or retracted in limited and
-exceptional circumstances: these are at the sole discretion of Frontline Ready.
+exceptional circumstances: these are at the sole discretion of Front Line Ready.
 However, bids will not be cancelled or retracted if the Bidder has bid in
 error, or not read or understood the Bidding rules that are outlined in these
 Terms and Conditions and summerised on the Bidding panel from which they
@@ -1013,7 +1013,7 @@ seeking any contribution from us.<br>
 &nbsp;<br>
 9.6 Images and videos taken by a Curating Cars representative of the vehicle
 can be used for any publication or advertising purposes and remains the
-property of Frontline Ready. &nbsp;They are subject to royalty-free worldwide
+property of Front Line Ready. &nbsp;They are subject to royalty-free worldwide
 licence.</span></p>
 <p class="border"></p>
 <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
@@ -1359,7 +1359,7 @@ lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>This
 Policy sets out the essential details relating to your Personal Data
-relationship with Frontline Ready. The Policy applies to all Services and any
+relationship with Front Line Ready. The Policy applies to all Services and any
 associated Services that Curating Cars provides. From time to time, we may
 develop new or offer additional Services. If the introduction of these new or
 additional Services results in any change to the way we collect or process your
@@ -2098,7 +2098,7 @@ lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'
 From time to time we publish informative articles on the Site and take great
 care to make sure any statements are factually correct&nbsp;<u>at the time of
 publication</u>, however this can’t be guaranteed. &nbsp;Any statements, views
-or advice expressed in the articles are not the direct opinion of Frontline Ready.
+or advice expressed in the articles are not the direct opinion of Front Line Ready.
 &nbsp;Curating Cars is not liable for any outcome whatsoever from a User
 following such advice and Users are strongly advised to seek independent
 advice, or contact the relevant authorities directly. &nbsp;In summary, Curating

@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta http-equiv="Content-Language" content="en">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>Frontline Ready - Admin Login</title>
+      <title>Front Line Ready - Admin Login</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
       <meta name="description" content="ArchitectUI HTML Bootstrap 4 Dashboard Template">
       <meta name="msapplication-tap-highlight" content="no">
@@ -68,7 +68,7 @@
                            </form>
                         </div>
                      </div>
-                     <div class="text-center text-white opacity-8 mt-3">Copyright © {{date('Y')}} Frontline Ready</div>
+                     <div class="text-center text-white opacity-8 mt-3">Copyright © {{date('Y')}} Front Line Ready</div>
                   </div>
                </div>
             </div>

@@ -60,7 +60,7 @@ Route::get("check_username",[FrontController::class,"check_username"])->name("ch
 Route::get("news_details",[FrontController::class,"show_news_details"])->name("news-detail");
 Route::get("spotlight",[FrontController::class,"show_spotlight"])->name("spotlight");
 Route::post("newsletter_user",[FrontController::class,"post_newsletter_user"])->name("newsletter-user");
-Route::get("sell_with_us",[FrontController::class,"sell_with_us"])->name("sell-with-us");
+Route::get("about_us",[FrontController::class,"about_us"])->name("about-us");
 Route::get("sell_your_vehicle",[FrontController::class,"sell_your_vehicle"])->name("sell-your-vehicle");
 Route::get("vehicle_detail",[FrontController::class,"vehicle_detail"])->name("vehicle-detail");
 Route::get("my_watch",[FrontController::class,"show_my_watch"])->name("my-watch");

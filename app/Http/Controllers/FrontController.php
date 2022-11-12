@@ -235,7 +235,7 @@ class FrontController extends Controller
             // $user->email = $request->get('email');
             // try {
                  Mail::send('email.user_verification', ['user' => $user], function($message) use ($user){
-                     $message->to($user->email,$user->username)->subject('Frontline Ready');
+                     $message->to($user->email,$user->username)->subject('Front Line Ready');
                 });
             // }catch (\Exception $e) {
            //  }
