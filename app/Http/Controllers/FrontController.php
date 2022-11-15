@@ -86,7 +86,7 @@ class FrontController extends Controller
         $ip = $_SERVER['REMOTE_ADDR'];
         $ipInfo = file_get_contents('http://ip-api.com/json/' . $ip);
         $ipInfo = json_decode($ipInfo);
-        $timezone = isset($ipInfo->timezone)?$ipInfo->timezone:'';
+        $timezone = isset($ipInfo->timezone)?$ipInfo->timezone:'Asia/Kolkata';
         return $timezone;
     }
     
@@ -283,31 +283,30 @@ class FrontController extends Controller
                 $user = User::find($id);
                 if($user){
                         $user->email_verification = 1;
-                        $user->save();
-                        Session::flash('is_verified_falsh','1'); 
-                         return redirect()->route('home');
+                        $user->save(); 
+                         return redirect()->back();
                 }else{
                     
                      Session::flash('message',"Something Wrong"); 
                      Session::flash('alert-class', 'alert-danger');
-                     return redirect()->route('home');
+                     return redirect()->back();
                 }
                
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng");
                 Session::flash('alert-class', 'alert-danger');
-                 return redirect()->route('home');
+                 return redirect()->back();
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
                 Session::flash('alert-class', 'alert-danger');
-                 return redirect()->route('home');
+                 return redirect()->back();
         }catch (\Illuminate\Database\QueryException $e){
                \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
                 Session::flash('alert-class', 'alert-danger');
-                 return redirect()->route('home');
+                return redirect()->back();
         } 
         
     }
@@ -369,11 +368,14 @@ class FrontController extends Controller
                     $new->save();
                 }
             }
+            $setting = Setting::find(1);
             $user = User::find($store->id);
+            $user->system_admin = $setting->email;
+            $user->system_name = "Frontlineready";
             $user->key = $this->encryptstring($user->id);
             try {
                 Mail::send('email.user_verification', ['user' => $user], function($message) use ($user){
-                    $message->to($user->email,$user->username)->subject('Curatingcars');
+                    $message->to($user->system_admin,$user->system_name)->subject('Frontlineready');
                 });
             }catch (\Exception $e) {
             }

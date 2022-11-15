@@ -35,10 +35,10 @@
                         <div id="mySidenav" class="sidenav">
                            <a href="javascript:void(0)" class="closeNav closebtn">&times;</a>
                            <ul class="top-nav-bar">
-                              <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
-                              <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('frq')}}">FAQ</a></li>
-                              <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('sell-with-us')}}">Sell With Us</a></li>
-                              <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li>
+                              <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
+                     <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
+                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
+                             
                               @if(Auth::id())
                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
                                  <a href="{{route('myaccount')}}">My Account</a>
@@ -47,9 +47,6 @@
                                  <a href="{{route('user-logout')}}">Logout</a>
                               </li>
                               @else
-                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
-                                 <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('reg_pharse_1_content')">Register</a>
-                              </li>
                               <li class="<?=Session::get("menu_active")==5?'active':''?>">
                                  <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login</a>
                               </li>
@@ -66,9 +63,11 @@
                </div>
                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <ul class="top-nav-bar desktop-hold">
-                     <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
+                     <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                     <!-- <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('spotlight')}}">In The Spotlight</a></li> -->
+                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
+                     
+                    
                      @if(Auth::id())
                               <li class="<?=Session::get("menu_active")==4?'active':''?>">
                                  <a href="{{route('myaccount')}}">My Account</a>
@@ -77,10 +76,7 @@
                                  <a href="{{route('user-logout')}}">Logout</a>
                               </li>
                               @else
-                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
-                                 <a  href="{{route('home')}}#delarship_reg">Register</a>
-                                
-                              </li>
+                             
                               <li class="<?=Session::get("menu_active")==5?'active':''?>">
                                  <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">Login</a>
                               </li>
@@ -268,8 +264,8 @@
                      <div class="form_contact_box register-form">
                         <h2>REGISTRATION COMPLETE</h2>
                         <br>
-                        <p>Thank you for joining us.</p>
-                        <p>Please check your inbox for the verification email we’ve sent you.</p>
+                        <p>Thank you for registering!</p>
+                        <p>A Front Line Ready representative will be in contact with you shortly.</p>
                         <br>
                         <br>
                      </div>
@@ -312,7 +308,7 @@
                                  </div>
                               </div>
                               
-                              <p style="font-size: 14px; ">Don’t have an account yet? - <a href="javascript:changemodel('reg_pharse_1_content')" style="color: #0b68aa;text-decoration: underline; ">Register here</a>
+                              <p style="font-size: 14px; ">Don’t have an account yet? - <a href="{{route('home')}}#submit_entry_from" style="color: #0b68aa;text-decoration: underline; ">Register here</a>
                               </p>
                            </div>
                         </form>

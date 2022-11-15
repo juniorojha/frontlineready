@@ -5,23 +5,9 @@ Front Line Ready - Home
 @section('meta-data')
 @stop
 @section('content')
-<style type="text/css">
-    button.btn_border {
-        border: 1px solid white;
-        display: inline-block;
-        border-radius: 100px;
-        width: 100%;
-        border-color: black;
-        padding: 0px 20px;
-        font-weight: 400;
-    }
-    button:hover {
-    color: unset;
-}
-</style>
 <script>
     
-    	
+      
         
         function updateTimer(duration,id) {
                     var interVal=  setInterval(function () {
@@ -91,9 +77,8 @@ Front Line Ready - Home
                onclick="currentDiv(1)"></span>
          </div>
       </div>
-      <!-- Slider end -->
-      <!-- home-cars-and-search-sections Start -->
-        <div class="home-blog-section">
+      
+      <div class="home-blog-section">
         <div class="blog-left-icons-shape slb-page-hold">
             <img src="{{asset('public/theme/images/shape-logo.png')}}">
         </div>
@@ -112,7 +97,156 @@ Front Line Ready - Home
             </div>         
         </div>
     </div>
-    <div class="heading-border-section hide" id="header_1">
+   <div class="container filter-main-hold-pos" id="filter_section">
+         <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+               <div class="search-box">
+                  <div class="input-group" style="flex-wrap: unset;">
+                     <i class="fas fa-search"></i>
+                     <div class="easy-autocomplete">
+                        <input class="form-control autosearch-input-mobile" type="search"
+                           placeholder="Looking for something cool? Search here...." aria-label="Search"
+                            autocomplete="off" id="search_cars" name="search_cars" onkeypress="searchfilterresult()" onkeyup="searchfilterresult()">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+               <div class="filter-box-right">
+                  <ul>
+                     <li class="dropdown">
+                        <a href="javascript:;" onclick="filterdropdown()" class="dropbtn"><i
+                           class="fas fa-sliders-h"></i>
+                        Filters</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div id="filter_drop" class="dropdown-content mob-resp-pos">
+                  <div class="row g-3">
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="pop-main-btn-hold">
+                           <ul>
+                              <li class="btn_box_border "><a href="javascript:clearallinput()" class="btn_border">Clear</a></li>
+                              <li class="btn_box_border active-2"><a href="javascript:searchfilterresult()" class="btn_border">Close</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-megamenu">
+                           <h6 class="title">MANUFACTURER</h6>
+                           <ul class="list-unstyled">
+                              <?php $i=0;?>
+                              @foreach($makes as $m)
+                                 <li>
+                                    <span>
+                                    <input class="form-check-input closebox" type="checkbox" value="{{$m->id}}" name="make[]" id="make_{{$i}}">
+                                    <label class="form-check-label" for="make_{{$i}}">{{$m->name}} ({{$m->totalcars}})</label>
+                                    </span>
+                                 </li>
+                                 <?php $i++;?>
+                              @endforeach
+                             
+                           </ul>
+                        </div>
+                        <!-- col-megamenu.// -->
+                     </div>
+                     <!-- end col-3 -->
+                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-megamenu">
+                           <h6 class="title">SELLER TYPE</h6>
+                           <ul class="list-unstyled">
+                              <li>
+                                 <span>
+                                 <input class="form-check-input closebox" type="checkbox" name="seller_type[]" value="2" id="seller_type_2">
+                                 <label class="form-check-label" for="seller_type_2">Private ({{$privatecarcount}})</label>
+                                 </span>
+                              </li>
+                              <li>
+                                 <span>
+                                 <input class="form-check-input closebox" type="checkbox" name="seller_type[]" value="1" id="seller_type_1">
+                                 <label class="form-check-label" for="seller_type_1">Trade ({{$tradecarcount}})</label>
+                                 </span>
+                              </li>
+                              <li>
+                                 <span>
+                                 <input class="form-check-input closebox" type="checkbox" name="seller_type[]" value="3" id="seller_type_3">
+                                 <label class="form-check-label" for="seller_type_3">Managed ({{$managedcarcount}})</label>
+                                 </span>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- col-megamenu.// -->
+                     </div>
+                     <!-- end col-3 -->
+                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-megamenu">
+                           <h6 class="title">LOCATION OF CAR</h6>
+                           <ul class="list-unstyled">
+                              <?php $i=0;?>
+                              @foreach($get_country_list as $gc)
+                                 <li>
+                                    <span>
+                                    <input class="form-check-input closebox" type="checkbox" value="{{$gc->country_id}}" name="country_list[]" id="country_{{$i}}">
+                                    <label class="form-check-label" for="country_{{$i}}">{{$gc->country_name}}({{$gc->total_car}})</label>
+                                    </span>
+                                 </li>
+                                 <?php $i++;?>
+                              @endforeach
+                              
+                           </ul>
+                        </div>
+                        <!-- col-megamenu.// -->
+                     </div>
+                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-megamenu">
+                           <h6 class="title">DRIVER SIDE</h6>
+                           <ul class="list-unstyled">
+                              <li>
+                                 <span>
+                                 <input class="form-check-input closebox" type="checkbox" value="2" name="steering_position[]" id="right">
+                                 <label class="form-check-label" for="right">Right ({{$rhlcar}})</label>
+                                 </span>
+                              </li>
+                              <li>
+                                 <span>
+                                 <input class="form-check-input closebox" type="checkbox" value="1" name="steering_position[]" id="left">
+                                 <label class="form-check-label" for="left">Left({{$lhlcar}})</label>
+                                 </span>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- col-megamenu.// -->
+                     </div>
+                     <!-- end col-3 -->
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="product-featur-row">
+                  <ul>
+                    
+                     <li class="actions-btn-hold btn_box_border active-2" id="ls_2">
+                        <a class="btn_border" href="javascript:checkactivefilter(2)">Coming Soon (<span id="totalcommingsooncar">{{count($get_car_coming)}}</span>)</a>
+                     </li>
+                      <li class="actions-btn-hold btn_box_border" id="ls_1">
+                        <a class="btn_border" href="javascript:checkactivefilter(1)">Live (<span id="totallivecar">{{count($get_car_live)}}</span>)</a>
+                     </li>
+                     
+                     <li class="actions-btn-hold btn_box_border" id="ls_4">
+                        <a class="btn_border" href="javascript:checkactivefilter(4)">Recent Sales (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Search and filter end -->
+      <!-- main heading start -->
+      <div class="heading-border-section hide" id="header_1">
          <span class="firts"></span>
          <div class="container">
             <div class="row">
@@ -133,7 +267,7 @@ Front Line Ready - Home
          <div class="row" id="live_cars_list">
             
            @foreach($get_car_live as $gc)
-               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="live_cars_{{$gc->id}}">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                   <div class="product-box">
                      <div class="product-img-heading">
                         <div class="attributes">
@@ -175,7 +309,7 @@ Front Line Ready - Home
                      </div>
                      <div class="product-content">
                         <p class="double-border">{{$gc->short_desc}}</p>
-                        <span style="margin-top: 3px;margin-bottom: 3px;">
+                        <span style="margin-top: 5px;margin-bottom: 5px;">
                            <p>{{$gc->year}}</p>
                            |
                            @if($gc->steering_position==1)
@@ -185,7 +319,7 @@ Front Line Ready - Home
                            @endif
                            |
                            <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
-                           <p><div class=" btn_box_border active-btn-colors" style="margin:0px;"><a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}#bid_section" class="btn_border" >bid now</a></div></p>
+                           <p><div class=" btn_box_border active-btn-colors" style="margin:0px;margin-left: 70px;"><a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}#bid_section" class="btn_border" >bid now</a></div></p>
                         </span>
                      </div>
                      <div class="product-shadow-box">
@@ -208,22 +342,18 @@ Front Line Ready - Home
                            <p>Ends In : <span id="end_time_{{$gc->id}}">
                                <?php 
                                       $timestamp = $gc->aucation_enddate.' '.$gc->aucation_endtime;
-                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC');
-                                   
-                                      $new_date = $date->setTimezone(Session::get('timezone'));
+                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
+                                      $new_date = $date->setTimezone('UTC');
                                       $date =  \Carbon\Carbon::parse($new_date)->format('Y-m-d');
                                       $time = \Carbon\Carbon::parse($new_date)->format('H:i:s');
-                                       
                                       $date1 = $date." ".$time;
-                                    // echo $date1;
-                                     
+                                     // echo "hey".$date1 ;exit;
                                ?>
                             <script type="text/javascript">
-                                updateTimer('{{$date1}}','{{$gc->id}}');
-                            </script>
-                            </span></p>
-                        
-                            
+                        updateTimer('{{$date1}}','{{$gc->id}}');
+                     </script>
+                     </span></p>
+                     
                         </div>
                         <div class="current-bids">
                            <p>Current Bids : {{$gc->currency_symbol}}{{$gc->bid_price}}</p>
@@ -338,6 +468,103 @@ Front Line Ready - Home
             </div> -->
          </div>
       </div>
+
+      <div class="heading-border-section hide" id="header_3">
+         <span class="firts"></span>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>Private Sales</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <div class="container hide" id="container_3">
+         <div class="row" id="private_cars_list">
+            @foreach($get_car_private as $gc)
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">Private Sales</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}"></a>
+                        </div>
+                        <div class="heading-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->name}}</h4>
+                           </a>
+                           <ul class="icons-section">
+                              <li> @if(Auth::id())
+                                          <?php $color = $gc->is_like==1?'chartreuse':'white';  ?>
+                                        <a href="javascript:bookcar('{{$gc->id}}')"><i id="book_mark_{{$gc->id}}" class="fas fa-bookmark" style="color:{{$color}}" ></i></a>
+                                    @else
+                                       <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')"><i class="fas fa-bookmark"></i></a>
+                                    @endif</li>
+                               <li  class="share-button sharer"><button  type="button" class="share-btn"><i class="fas fa-share-alt"></i></button>
+                               <div class="social top center networks-5 ">
+ <!-- Facebook Share Button -->
+    <a class="fbtn share facebook" href="https://www.facebook.com/sharer/sharer.php?u={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-facebook"></i></a> 
+    <!-- Google Plus Share Button -->
+    <a class="fbtn share instagram" href="https://www.instagram.com/" target="_blank"><i class="fa  fa-instagram"></i></a> 
+    <!-- Twitter Share Button -->
+    <a class="fbtn share twitter" href="https://twitter.com/intent/tweet?text=title&amp;url={{route('vehicle-detail',['query'=>$gc->key_id])}}&amp;via=$gc->name" target="_blank"><i class="fa fa-twitter"></i></a> 
+       <!-- Pinterest Share Button -->
+    <!-- LinkedIn Share Button -->
+    <a class="fbtn share linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=url&amp;title=title&amp;source={{route('vehicle-detail',['query'=>$gc->key_id])}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="product-content">
+                        <p class="double-border">{{$gc->short_desc}}</p>
+                        <span>
+                           <p>{{$gc->year}}</p>
+                           |
+                           @if($gc->steering_position==1)
+                           <p>LHD</p>
+                           @else
+                           <p>RHD</p>
+                           @endif
+                           |
+                           <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
+                        </span>
+                     </div>
+                     <div class="product-shadow-box">
+                        <div class="head-bg-color red">
+                           <p>RESERVE NOT MET</p>
+                        </div>
+                        <div class="timging-tage">
+                           <p>Ends In : 10:12:37</p>
+                        </div>
+                        <div class="current-bids">
+                           <p>Current Bids : €20,000</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn last-bottom-pd">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="">All Buy Now Cars</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
       <div class="heading-border-section hide" id="header_4">
          <span class="firts"></span>
          <div class="container">
@@ -421,6 +648,29 @@ Front Line Ready - Home
             </div> -->
          </div>
       </div>
+      <div class="home-scribes-banner-section">
+         <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="scribes-content-here">
+                  <h6>Subscribe Now</h6>
+                  <h2>Be the first to receive News & updates!</h2>
+               </div>
+               <div class="form_box">
+                  <form id="subscriber_form" method="post" action="javascript:void(0)">
+                     <span class="error_msg" id="reg_error_name"></span>
+                     <input type="email" name="email" id="sub_email" placeholder="Email :" onblur="removeemail(this.value,'sub_email_error')">
+                     <span id="sub_email_error" class="error"></span>
+                     <br>
+                     <div class="btn_box_border whit-color">
+                        <a class="btn_border whit-color" href="javascript:subscriberuser()">
+                        SUBSCRIBE <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
       </div>
       <!-- home-subscribe-now-banner satrt here  -->
       <!-- Home Bloges style start here  -->
@@ -462,16 +712,44 @@ Front Line Ready - Home
          </div>
       </div>
       </div>
-      <!-- Home Bloges style end here  -->
-    <div class="seller-middle-banner"><div class="container">
-          <div class="row">
-            <div class="banner-inner-content-sell-with-us">
-        <h3>Take a Ride With Us!</h3>
-        </div>
-        </div>
-     </div></div>
-
-    <div class="heading-border-section" id="submit_entry_from">
+      <div class="home-blog-section">
+         <div class="blog-left-icons-shape">
+            <img src="{{asset('public/theme/images/shape-logo.png')}}">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="blog-main-heading desktop-pd-hold1">
+                     <h3>In The Spotlight</h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               @foreach($spotLight as $sl)
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <div class="blog-content-img-holder-box">
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <img src="{{asset('storage/app/public/news').'/'.$sl->image}}"> </a>
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}">
+                        <h4>{{$sl->title}}</h4>
+                     </a>
+                     <p>{{$sl->short_desc}}
+                     </p>
+                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <b>Read More</b> </a>
+                  </div>
+               </div>
+               @endforeach
+              
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="{{route('spotlight')}}">All News</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+       <div class="heading-border-section" id="submit_entry_from">
         <span class="firts"></span>
         <div class="container">
             <div class="row">
@@ -558,10 +836,11 @@ Front Line Ready - Home
             </div>
         </div>
     </div>
-    </div>
+      </div>
+     
+      <input type="hidden" id="filter_id" value="{{isset($id)?$id:0}}"/>
 @stop
 @section('footer')
-
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9Q9MOTLukAh9rokc-_gN3wVNmf66Ve9M&callback=initAutocomplete&libraries=places&v=weekly"
       defer
@@ -579,11 +858,11 @@ function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // addresses in the US and Canada.
   autocomplete = new google.maps.places.Autocomplete(address1Field, {
-    componentRestrictions: {  },
+    componentRestrictions: {country: ["us"]},
     fields: ["address_components", "geometry"],
     types: ["address"],
   });
-  address1Field.focus();
+  //address1Field.focus();
   // When the user selects an address from the drop-down, populate the
   // address fields in the form.
   autocomplete.addListener("place_changed", fillInAddress);
@@ -642,6 +921,7 @@ function fillInAddress() {
 }
 
 window.initAutocomplete = initAutocomplete;
+
    function clearallinput(){
        $(".closebox").removeAttr('checked');
    }
@@ -700,15 +980,15 @@ window.initAutocomplete = initAutocomplete;
    }
    
    function callShare()
-	   {
-		   //alert(arguments[0]+" "+arguments[1]+" "+arguments[2]);
-		   var shareData = {
-			title: arguments[0],
-			text: arguments[0],
-			url: arguments[1],
-      		}
-		navigator.share(shareData);
-	   }
+      {
+         //alert(arguments[0]+" "+arguments[1]+" "+arguments[2]);
+         var shareData = {
+         title: arguments[0],
+         text: arguments[0],
+         url: arguments[1],
+            }
+      navigator.share(shareData);
+      }
 
          $(window).on('load resize', function () {
 

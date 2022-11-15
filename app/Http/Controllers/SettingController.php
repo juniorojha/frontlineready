@@ -139,10 +139,10 @@ class SettingController extends Controller
                 $getsetting->facebook_id = $request->get("facebook_id");
                 $getsetting->twitter_id = $request->get("twitter_id");
                 $getsetting->instgram_id = $request->get("instgram_id");
-                $getsetting->fees_info = $request->get("fees_info");
+               // $getsetting->fees_info = $request->get("fees_info");
                 $getsetting->timezone  =$request->get("timezone");
                 //$getsetting->timezone = 1;
-                $getsetting->txt_charge = $request->get("txt_charge");
+              //  $getsetting->txt_charge = $request->get("txt_charge");
                 $getsetting->save();
                 Session::flash('message',"General Setting Update Successfully"); 
                 Session::flash('alert-class', 'alert-success');

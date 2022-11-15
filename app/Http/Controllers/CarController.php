@@ -892,7 +892,10 @@ class CarController extends Controller
             ->editColumn('current_bid', function ($car) {
                 if(isset($car->current_bid_id)){
                     $data = Comment::find($car->current_bid_id);
-                    return User::find($data->user_id)?User::find($data->user_id)->username:'';
+                    if($data){
+                        return User::find($data->user_id)?User::find($data->user_id)->username:'';
+                    }
+                    
                 }
             }) 
             ->editColumn('bid_by', function ($car) {

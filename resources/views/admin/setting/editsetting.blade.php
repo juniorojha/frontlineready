@@ -59,10 +59,7 @@ Edit General Setting
                <label for="instgram_id" class="">Instgram Id <span class="error">*</span></label>
                <input name="instgram_id" id="instgram_id" placeholder="Enter Instgram Id" type="text" value="{{isset($setting->instgram_id)?$setting->instgram_id:''}}" class="form-control">
             </div>
-            <div class="position-relative form-group">
-               <label for="txt_charge" class="">Txt Charges<span class="error">*</span></label>
-               <input name="txt_charge" id="txt_charge" placeholder="Enter Txt Charges" type="number" value="{{isset($setting->txt_charge)?$setting->txt_charge:''}}" class="form-control">
-            </div>
+            
              <div class="position-relative form-group">
                            <label for="timezone" class=" form-control-label">
                           Timezone
@@ -75,10 +72,7 @@ Edit General Setting
                               @endforeach
                            </select>
                         </div>
-            <div class="position-relative form-group">
-               <label for="instgram_id" class="">Fees Info <span class="error">*</span></label>
-               <textarea id="fees_info" name="fees_info">{{isset($setting->fees_info)?$setting->fees_info:''}}</textarea>
-            </div>
+            
             
             <button class="mt-1 btn btn-primary">Submit</button>
          </form>
@@ -88,7 +82,6 @@ Edit General Setting
 @stop
 @section('footer')
 <script type="text/javascript">
-CKEDITOR.replace('fees_info');
     $(document).ready(function() {
              $("#save_setting_form").validate({
                  rules: {

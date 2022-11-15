@@ -84,11 +84,7 @@
                            </a>
                         </li>
                         
-                        <li class="">
-                           <a href="{{route('remove-card-request')}}" >
-                           <i class="metismenu-icon pe-7s-id"></i>Card Request
-                           </a>
-                        </li>
+                       
                         
                         <li  
                            >
@@ -108,11 +104,11 @@
                                  </a>
                               </li>
                           
-                              <li>
+                             <!--  <li>
                                  <a href="{{route('frqlist')}}" >
                                  <i class="metismenu-icon"></i>FAQ Section
                                  </a>
-                              </li>
+                              </li> -->
                               
                            </ul>
                         </li>

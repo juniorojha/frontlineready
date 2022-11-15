@@ -38,8 +38,7 @@ Users List
                <th>Email</th>
                <th>Phone</th>
                <th>View</th>
-               <th>Invoice Address</th>
-               <th>Payment Method</th>
+               <th>Status</th>
                <th>Action</th>
             </tr>
          </thead>
@@ -50,9 +49,8 @@ Users List
                <th>Country</th>
                <th>Email</th>
                <th>Phone</th>
-                <th>View</th>
-               <th>Invoice Address</th>
-               <th>Payment Method</th>
+               <th>View</th>
+               <th>Status</th>
                <th>Action</th>
             </tr>
          </tfoot>
@@ -86,29 +84,16 @@ Users List
            data: 'view',
            name: 'view'
        },{
-           data: 'invoice_address',
-           name: 'invoice_address'
-       },{
-           data: 'payment_method',
-           name: 'payment_method'
+           data: 'status',
+           name: 'status'
        }, {
            data: 'action',
            name: 'action'
        }
    ],columnDefs: [{
-            targets: 6,
-            render: function (data) {
-                    return '<a href="javascript:void()" onclick="invoicedata('+data+')" class="btn btn-primary" data-toggle="modal" data-target="#invoice_address">Invoice Address</a>';                
-            }
-        },{
             targets: 5,
             render: function (data) {
                     return '<a href="javascript:void()" onclick="userdata('+data+')" class="btn btn-primary" data-toggle="modal" data-target="#user_info_data">View</a>';                
-            }
-        },{
-            targets: 7,
-            render: function (data) {
-                  return '<a href="javascript:void()" onclick="paymentdata('+data+')" class="btn btn-primary" data-toggle="modal" data-target="#payment_info">Payment Info</a>';          
             }
         }],
    order: [

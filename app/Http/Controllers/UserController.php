@@ -43,7 +43,7 @@ class UserController extends Controller
                 return $user->id;
             })
             ->editColumn('username', function ($user) {
-                return $user->username;
+                return $user->name;
             })            
             ->editColumn('country', function ($user) {
                 return Country::find($user->country_id)?Country::find($user->country_id)->name:'';
@@ -63,11 +63,24 @@ class UserController extends Controller
             ->editColumn('view', function ($user) {
                 return $user->id;
             })
+            ->editColumn('status', function ($user) {
+                if($user->email_verification==0){
+                    return "Inactivated";
+                }else{
+                    return "Activated";
+                }
+            })
             ->editColumn('action', function ($user) {
                 
                 $delete = route('delete-user', ['query'=>$this->encryptstring($user->id)]);
-                 $edit = route('user-cars-list', ['id'=>$this->encryptstring($user->id)]);
-                return '<a  href="'.$edit.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Cars</a><a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>';              
+                $edit = route('user-cars-list', ['id'=>$this->encryptstring($user->id)]);
+                $approve = route('email-verified', ['query'=>$this->encryptstring($user->id)]);
+                $txt="";
+                if($user->email_verification==0){
+                    $txt = '<a  href="'.$approve.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Activate</a>';
+                }
+                return '<a  href="'.$edit.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Cars</a><a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>'.$txt;  
+
             })    
             ->addIndexColumn()           
             ->make(true);
