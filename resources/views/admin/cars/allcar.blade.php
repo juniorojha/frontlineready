@@ -29,26 +29,29 @@ All Cars
          {{ Session::get('message') }}
       </div>
       @endif
+      <div class="row" style="margin-left: 5px;margin-bottom: 10px;">
+         <a href="{{route('save-car', ['user_id'=>0,'id'=>0,'tab'=>0])}}" class="btn btn-primary">Add New Car</a>
+      </div>
       <table style="width: 100%;" id="cartable" class="table table-hover table-striped table-bordered">
          <thead>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>View</th>
-               <th>Aucation Status</th>
+               <th>FLR Report</th>
+               <th>Status</th>
                <th>Action</th>
             </tr>
          </thead>
          <tfoot>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>View</th>
-               <th>Aucation Status</th>
+               <th>FLR Report</th>
+               <th>Status</th>
                <th>Action</th>
             </tr>
          </tfoot>
@@ -68,17 +71,17 @@ All Cars
                orderable: false,
                searchable: false 
             },{
-           data: 'reg_no',
-           name: 'reg_no'
+           data: 'image',
+           name: 'image'
        },{
-           data: 'name',
-           name: 'name'
-       },{
-           data: 'seller_name',
-           name: 'seller_name'
+           data: 'vin',
+           name: 'vin'
        },{
            data: 'more',
            name: 'more'
+       },{
+           data: 'flr_report',
+           name: 'flr_report'
        },{
            data: 'aucation_status',
            name: 'aucation_status'
@@ -87,10 +90,19 @@ All Cars
            name: 'action'
        }
    ],columnDefs: [{
+            targets: 1,
+            render: function (data) {
+                    return '<img src="'+data+'" style="width:250px;height:150px;border-radius:10px"/>';                
+            }
+        },{
+            targets: 3,
+            render: function (data) {
+                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';                
+            }
+        },{
             targets: 4,
             render: function (data) {
-                   // var path = '{{url("vehicle_detail?query=")}}'+data;
-                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';                
+                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">View</a>';                
             }
         },{
             targets: 5,
@@ -99,8 +111,6 @@ All Cars
                   return '<p class="btn-danger" style="text-align: center;width: 50px;border-radius: 6px;">Live</p>';  
                }else if(data==2){
                   return '<p class="btn-secondary" style="text-align: center;width: 108px;border-radius: 11px;padding: 4px;">Coming Soon</p>'; 
-               }else if(data==3){
-                  return '<p class="btn-warning" style="text-align: center;width: 75px;border-radius: 6px;">Private sales</p>'; 
                }else if(data==4){
                   return '<p class="btn-info" style="text-align: center;width: 50px;border-radius: 6px;">Sold</p>'; 
                }else{

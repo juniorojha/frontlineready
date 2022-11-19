@@ -11,17 +11,12 @@ use App\Models\Country;
 use App\Models\Subscriber;
 use App\Models\Setting;
 use App\Models\SpotLight;
-use App\Models\CarInfo;
+use App\Models\Car;
+use App\Models\CarImages;
 use App\Models\Make;
 use App\Models\State;
 use App\Models\Currency;
 use App\Models\City;
-use App\Models\CarExterior;
-use App\Models\CarInterior;
-use App\Models\CarMechanics;
-use App\Models\CarMedia;
-use App\Models\CarHistory;
-use App\Models\CarsHistoryData;
 use App\Models\UserOld;
 use App\Models\ResetPassword;
 use App\Models\UserInvoiceAddress;
@@ -71,105 +66,44 @@ class FrontController extends Controller
         ]);
    
         dd('done');
-    }
-    
-    public function remove_card(){
-        $store = new Removecard();
-        $store->user_id = Auth::id();
-        $store->save();
-        Session::flash('message_card',"Request Send Successfully"); 
-        Session::flash('alert-class', 'alert-success');
-        return redirect()->route('billing');
-    }
+    }   
+   
     
     public function get_local_time(){  
         $ip = $_SERVER['REMOTE_ADDR'];
         $ipInfo = file_get_contents('http://ip-api.com/json/' . $ip);
         $ipInfo = json_decode($ipInfo);
-        $timezone = isset($ipInfo->timezone)?$ipInfo->timezone:'Asia/Kolkata';
+        $timezone = isset($ipInfo->timezone)?$ipInfo->timezone:'Asia/Oral';
         return $timezone;
     }
     
     public function show_home(Request $request){       
         Session::put("timezone",$this->get_time_zone_name());
         Session::put("current_timezone",$this->get_local_time());
-        
-       
         try{
                 $setting = Setting::find(1);
-                $country = Country::all();
                 $id = $request->get("id");
                 $spotLight = SpotLight::take(3)->orderby("id","DESC")->get();
                 foreach($spotLight as $sl){
                     $sl->query_id = $this->encryptstring($sl->id);
                 }
                 Session::put("menu_active",'1');
-                $get_car_coming = CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("status",'2')->get();
+                $get_car_coming = Car::whereNull('deleted_at')->where("status",'2')->get();
                 foreach ($get_car_coming as $k) {
                     $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;
                 }
-                $get_car_live = CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("status",'1')->get();
+                $get_car_live = Car::whereNull('deleted_at')->where("status",'1')->get();
                 foreach ($get_car_live as $k) {
-                    $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;
-                   // $k->reserve_met = 2;
-                    $str = explode("-",$k->currency);
-                    $k->currency_symbol = isset($str[1])?$str[1]:'';
-                    $k->bid_price = Comment::find($k->current_bid_id)?Comment::find($k->current_bid_id)->amount:'0.00';
-                    $bid_price = str_replace(",","",$k->bid_price);
-                    if($k->reserve_price<=$bid_price){
-                        $k->reserve_met = 1;
-                    }
-                    else{
-                        $minus = $k->reserve_price-$bid_price;
-                        if($minus<=1000){
-                            $k->reserve_met = 3;
-                        }else{
-                            $k->reserve_met = 2;
-                        }                        
-                    }
+                    $k->key_id = $this->encryptstring($k->id);                   
                 }
-                $get_car_private = CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("status",'3')->get();
-                foreach ($get_car_private as $k) {
-                    $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;
-                    $str = explode("-",$k->currency);
-                    $k->currency_symbol = isset($str[1])?$str[1]:'';
-                    
-                }
-                $get_car_sold = CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("status",'4')->get();
+                $get_car_sold = Car::whereNull('deleted_at')->where("status",'4')->get();
                 foreach ($get_car_sold as $k) {
-                    $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;
-                    $str = explode("-",$k->currency);
-                    $k->currency_symbol = isset($str[1])?$str[1]:'';
+                    $k->key_id = $this->encryptstring($k->id);                   
                 }
                 
                 $makes = Make::wherenull('deleted_at')->get();
-                foreach($makes as $tm){
-                    $tm->totalcars = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("make_id",$tm->id)->get());
-                }
-                $privatecarcount = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("seller_type",'2')->get());
-                $tradecarcount = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("seller_type",'1')->get());
-                $managedcarcount = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("seller_type",'3')->get());
-                $rhlcar = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("steering_position",'2')->get());
-                $lhlcar = count(CarInfo::whereNull('deleted_at')->where("is_approve",'1')->where("steering_position",'1')->get());
-                $get_country_list = DB::table('car_infos') ->select('country_id') ->groupBy('country_id')->get();
-                foreach($get_country_list as $gcl){
-                     $gcl->total_car = count(CarInfo::where('country_id',$gcl->country_id)->get());
-                     $gcl->country_name = Country::find($gcl->country_id)?Country::find($gcl->country_id)->name:'';
-                }
-
-                return view("front.home",compact("rhlcar","id","get_country_list","lhlcar","privatecarcount","tradecarcount","managedcarcount","makes","setting","country","spotLight","get_car_coming","get_car_live","get_car_private","get_car_sold"));
+                
+                return view("front.home",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
@@ -383,95 +317,6 @@ class FrontController extends Controller
         }
     }
 
-    public function update_invoice_detail(Request $request){
-        $store = UserInvoiceAddress::where("user_id",Auth::id())->first();
-        if(empty($store)){
-            $store = new UserInvoiceAddress();
-            $store->user_id = Auth::id();
-        }
-        $store->company_name = $request->get("company_name");
-        $store->billing_address = $request->get("billing_address");
-        $getcountry  = Country::where("sortname",$request->get("country"))->first();
-        $store->country_id = isset($getcountry)?$getcountry->id:'';
-        $store->state_id = $request->get("state");
-        $store->city_id = $request->get("city");
-        $store->pincode = $request->get("pincode");
-        $store->phone = $request->get("phone");
-        $store->vat_no = $request->get("vat_no");
-        $store->country_code = $request->get("countrycode");
-        $store->save();
-        return 1;
-    }
-
-    public function update_payment_detail(Request $request){
-        
-        try{
-                $setting = Setting::find(1);
-                $store = UserPaymentMethod::where("user_id",Auth::id())->first();
-                if(empty($store)){
-                    $store = new UserPaymentMethod();
-                    $store->user_id = Auth::id();
-                    
-                    
-                    try{
-                            \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-                            $customer = \Stripe\Customer::create([
-                                'source' => $request->get('stripe_token'),
-                                'email' => Auth::user()->email,
-                                'name'=> $request->get("name_on_card"),
-                            ]);
-                  } catch (\Stripe\Exception\RateLimitException $e) {
-                          return $e->getMessage();
-                  } catch (\Stripe\Exception\InvalidRequestException $e) {
-                          return $e->getMessage();
-                  } catch (\Stripe\Exception\AuthenticationException $e) {
-                          return $e->getMessage();
-                  } catch (\Stripe\Exception\ApiConnectionException $e) {
-                          return $e->getMessage();
-                  } catch (\Stripe\Exception\ApiErrorException $e) {
-                          return $e->getMessage();
-                  } catch (Exception $e) {
-                          return $e->getMessage();
-                  }
-                  
-                    $store->stripe_customer_id = isset($customer->id)?$customer->id:'';
-                }
-                $store->name_on_card = $request->get("name_on_card");
-                $store->billing_address = $request->get("billing_address");
-                $getcountry  = Country::where("sortname",$request->get("country"))->first();
-                $store->country_id = isset($getcountry)?$getcountry->id:'';
-                $store->state_id = $request->get("state");
-                $store->city_id = $request->get("city");
-                $store->pincode = $request->get("pincode");
-                $store->phone = $request->get("phone");
-                $store->country_code = $request->get("countrycode");
-                $store->save();
-                
-                
-                 $store = UserInvoiceAddress::where("user_id",Auth::id())->first();
-        if(empty($store)){
-            $store = new UserInvoiceAddress();
-            $store->user_id = Auth::id();
-        }
-        $store->company_name = $request->get("company_name");
-        $store->billing_address = $request->get("billing_address");
-        $getcountry  = Country::where("sortname",$request->get("country"))->first();
-        $store->country_id = isset($getcountry)?$getcountry->id:'';
-        $store->state_id = $request->get("state");
-        $store->city_id = $request->get("city");
-        $store->pincode = $request->get("pincode");
-        $store->phone = $request->get("phone");
-        $store->vat_no = $request->get("vat_no");
-        $store->country_code = $request->get("countrycode");
-        $store->save();
-        
-                return 1;
-        }catch(Exception $e){
-                return 0;
-        }
-        
-    }
-
 
     public function post_sell_with_us(Request $request){
         try{
@@ -535,7 +380,7 @@ class FrontController extends Controller
         }
         $setting = Setting::find(1);
         $country = Country::all();
-        $getlivecar = CarInfo::where("status",'1')->get();
+        $getlivecar = Car::where("status",'1')->get();
         $livecars = array();
 
         foreach($getlivecar as $k){
@@ -580,13 +425,7 @@ class FrontController extends Controller
            
         }
 
-        /*$get_cars = DB::table('payment_histories')
-                 ->select('comments.car_id')
-                 ->join('comments', 'comments.car_id', '!=', 'payment_histories.car_id')
-                 ->where('comments.type','1')
-                 ->where('comments.user_id',Auth::id())
-                 ->groupBy('comments.car_id') 
-                 ->toSql();*/
+       
                 
         Session::put("menu_active",'4');
         return view("front.myaccount",compact("setting","country","livecars","wincars"));
@@ -652,74 +491,7 @@ class FrontController extends Controller
         return view("front.my_details",compact("setting","country"));
     }
 
-    public function show_billing(){
-        if(empty(Auth::id())){
-            return redirect()->route('home');
-        }
-        $setting = Setting::find(1);
-        $country = Country::all();
-        Session::put("menu_active",'4');
-        $invoicedata = UserInvoiceAddress::where("user_id",Auth::id())->first();
-        $billingdata = UserPaymentMethod::where("user_id",Auth::id())->first();
-        $request_removecard = Removecard::where("user_id",Auth::id())->first()?1:0;
-        $state_data_invoice= array();
-        $city_data_invoice = array();
-       
-
-        $state_data_pay= array();
-        $city_data_pay = array();
-        
-        $setting = Setting::find(1);
-        $card_data = array();
-        $month ="";
-        $year = "";
-        $last4 = "";
-        $brand = "";
-        if(isset($billingdata)){
-             try{
-                             $stripe = new \Stripe\StripeClient($setting->stripe_secret);
-                            $card_data = $stripe->customers->allSources(
-                                  $billingdata->stripe_customer_id,
-                                  ['object' => 'card', 'limit' => 3]
-                                );
-                                
-                                $month = $card_data['data'][0]['exp_month'];
-                                $year = $card_data['data'][0]['exp_year'];
-                                $last4 = $card_data['data'][0]['last4'];
-                                $brand = $card_data['data'][0]['brand'];
-                           
-                    } catch (\Stripe\Exception\RateLimitException $e) {
-                         /* Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                    } catch (\Stripe\Exception\InvalidRequestException $e) {
-                         /* Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                    } catch (\Stripe\Exception\AuthenticationException $e) {
-                         /* Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                    } catch (\Stripe\Exception\ApiConnectionException $e) {
-                         /* Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                    } catch (\Stripe\Exception\ApiErrorException $e) {
-                       /*   Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                    } catch (Exception $e) {
-                        /*  Session::flash('message', $e->getMessage()); 
-                          Session::flash('alert-class', 'alert-danger');
-                          return redirect()->back();*/
-                   }
-           
-
-        }
-        
-        return view("front.billing",compact("setting","country","invoicedata","state_data_invoice","city_data_invoice","state_data_pay","city_data_pay","billingdata","month","year","last4","brand",'request_removecard'));
-    }
-
+  
     public function user_logout(){
         Auth::logout();
         return redirect()->route('home');
@@ -812,80 +584,21 @@ class FrontController extends Controller
 
     public function vehicle_detail(Request $request){
      try{
-                $id = $this->decyptstring($request->get("query"));
-              
+                $id = $this->decyptstring($request->get("query"));              
                 $make_data = Make::whereNull('deleted_at')->get();
-                $data = CarInfo::find($id);
-                $country = Country::all();
-                $currency = Currency::all();
-                $setting = Setting::find(1);
-                $city_data = array();
-                views($data)->record();
+                $data = Car::find($id);                
+                $setting = Setting::find(1);  
                 if(isset($data)){
-                    $data->exterior = CarExterior::where("car_id",$id)->first();
-                    $data->make_id = Make::find($data->make_id)?Make::find($data->make_id)->name:'';
-                    $data->country_id = Country::find($data->country_id)?Country::find($data->country_id)->name:'';
-                    $data->city_id = City::find($data->city_id)?City::find($data->city_id)->name:'';
-                    $data->exteriormedia = CarMedia::where("car_id",$id)->where("type",'1')->get();
-                    $data->interior = CarInterior::where("car_id",$id)->first();
-                    $data->interiormedia = CarMedia::where("car_id",$id)->where("type",'2')->get();
-                    $data->mechanics = CarMechanics::where("car_id",$id)->first();
-                    $data->mechanicsmedia = CarMedia::where("car_id",$id)->where("type",'3')->get();
-                    $data->history = CarHistory::where("car_id",$id)->first();
-                    $data->historymedia = CarMedia::where("car_id",$id)->where("type",'4')->get();
-                    $data->historydata =  CarsHistoryData::where("car_id",$id)->get();
-                    $data->videodata = CarMedia::where("car_id",$id)->where("type",'5')->get();
-                    $data->user_name = User::find($data->user_id)?User::find($data->user_id)->username:'';
-                    $data->is_like = UserWatching::where("car_id",$data->id)->where("user_id",Auth::id())->first()?1:0;
-                    $data->reserve_met = 2;
-
-                    $str = explode("-",$data->currency);
-                    $data->currency_symbol = isset($str[1])?$str[1]:'';
+                   
+                    $data->make_id = Make::find($data->make)?Make::find($data->make)->name:'';                   
                     $data->bid_price = 0;
-                    if(isset($data->price)&&$data->current_bid_id!=""){
-                        
+                    if(isset($data->price)&&$data->current_bid_id!=""){                        
                         $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->price;
                     }
-                    $data->totalViews = views($data)->unique()->count();                    
-                    $data->Comment = Comment::where('car_id',$data->id)->get();
-                    foreach($data->Comment as $dc){
-                           if($dc->type==2){
-                                    date_default_timezone_set('Asia/Calcutta');
-                                    $datetime = new DateTime($dc->datetime);
-                                    if(!empty(Session::get('timezone'))){
-                                        $la_time = new DateTimeZone(Session::get('timezone'));
-                                        $datetime->setTimezone($la_time);
-                                        $dc->datetime = $datetime->format('Y-m-d H:i');
-                                    }                                    
-                           }                          
-                    }
-                    if($data->status==1){
-
-                            date_default_timezone_set('Asia/Calcutta');
-                            $datetime = new DateTime($data->aucation_enddate." ".$data->aucation_endtime);
-                            if(!empty(Session::get('timezone'))){
-                                $la_time = new DateTimeZone(Session::get('timezone'));
-                                $datetime->setTimezone($la_time);
-                                $data->livedatetime = $datetime->format('Y-m-d H:i');
-
-                            } 
-                    }
-                   
-
-
-
-                    $bid_price = str_replace(",","",$data->bid_price);
-                    if($data->reserve_price<=$bid_price){
-                        $data->reserve_met = 1;
-                    }
-                    else{
-                        $minus = $data->reserve_price-$bid_price;
-                        if($minus<=1000){
-                            $data->reserve_met = 3;
-                        }else{
-                            $data->reserve_met = 2;
-                        }                        
-                    }
+                                     
+                    $data->Comment = Comment::where('car_id',$data->id)->get();                    
+                    
+                    $bid_price = str_replace(",","",$data->bid_price);                   
                     
                     foreach($data->Comment as $dc){
                         $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->username:'';
@@ -900,6 +613,7 @@ class FrontController extends Controller
                             $dc->image = asset('storage/app/public/profile/user-thumb.jpg');
                         }
                     }
+                    $data->images = CarImages::where("car_id",$data->id)->get();
                 }
 
                
@@ -909,8 +623,7 @@ class FrontController extends Controller
                 }else{
                     Session::put("menu_active",'5');
                 }
-                $is_payment_added  = UserPaymentMethod::where("user_id",Auth::id())->first()?1:0;
-                return view("front.vehicle_detail",compact("setting","country","data","id","make_data",'is_payment_added'));
+                return view("front.vehicle_detail",compact("setting","data","id","make_data"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
@@ -942,7 +655,6 @@ class FrontController extends Controller
     public function fetch_visitor(Request $request){
         $data = CarInfo::find($request->get('car_id'));
         if(isset($data)){
-            $views = views($data)->unique()->count();
             $bid_amount = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:0;
            
             $current_amount = str_replace(",","",$bid_amount);

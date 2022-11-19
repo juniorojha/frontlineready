@@ -5,7 +5,7 @@ Front Line Ready - Vehicle Detail
 @section('meta-data')
 @stop
 @section('content')
-
+<link rel="stylesheet" href="{{asset('public/css/style.css?v=1.1')}}"></style>
 <script>
     
         function updateTimer(duration) {
@@ -57,64 +57,51 @@ Front Line Ready - Vehicle Detail
    
   
     </script>
-<?php $path = asset('storage/app/public/cars/banner').'/'.$data->banner;?>
-  <div class="banner slider section hold" style="background-image: url('<?=$path?>');">
-        <div class="container">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="banner-slider-content-hold sell-with-us-heading">
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Banner Slider end -->
-
-    <!--Vahicle Description style start here -->
-    <div class="my-accont-section">
-        <div class="heading-border-section"> <span class="firts"></span>
+    <div class="row" style="    margin-top: 50px;">
+        <div class="col-md-6">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                        <div class="heading-box cutsom-white-bg">
-                            <h2 class="reduce-size">{{$data->name}}</h2>
-                        </div>
-                        <span class="left"></span>
-                        <span class="Right"></span>
-                    </div>
-                </div>
-            </div> <span class="second"></span>
+<!-- Flickity HTML init -->
+<div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+  <div class="carousel-cell"><img src="{{asset('storage/app/public/cars/banner').'/'.$data->thumbail}}" style="width: 100%;height: inherit;"/></div>
+   @if(isset($data->images))
+        @foreach($data->images as $di)
+            <div class="carousel-cell"><img src="{{asset('storage/app/public/cars/banner').'/'.$di->image}}" style="width: 100%;height: inherit;"/></div>
+        @endforeach
+   @endif
+</div>
+
+<div class="carousel carousel-nav"
+  data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+  <div class="carousel-cell"><img src="{{asset('storage/app/public/cars/banner').'/'.$data->thumbail}}" style="width: 150px;height: inherit;"/></div>
+  
+  @if(isset($data->images))
+        @foreach($data->images as $di)
+            <div class="carousel-cell"><img src="{{asset('storage/app/public/cars/banner').'/'.$di->image}}" style="width: 150px;height: inherit;"/></div>
+        @endforeach
+   @endif
+  
+  
+</div>
+
+</div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="vehicles-description-section">
-                        <!--<h4>Guide Price</h4>
-                        <p>€40,000 - €60,000</p>-->
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <ul class="vehicles-models-detail">
                         <li> <span>Make</span>
                             <p>{{$data->make_id}}</p>
                         </li>
-                        <li> <span>Manufacture Year</span>
+                        <li> <span>Year</span>
                             <p>{{$data->year}}</p>
                         </li>
-                        <li> <span>Steering Position</span>
-                            @if($data->steering_position==2)
-                                <p>Right-hand Drive</p>
-                            @else
-                                <p>Left-hand Drive</p>
-                            @endif
+                        <li> <span>VIN</span>
+                            <p>{{$data->vin}}</p>
                         </li>
-                        <li> <span>Chassis Number</span>
-                            <p>{{$data->chassis_no}}</p>
+                         <li> <span>Transmission</span>
+                            <p>{{$data->transmission}}</p>
                         </li>
-                        <li> <span>Former Keepers</span>
-                            <p>{{$data->former_keepers}}</p>
-                        </li>
+                        
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -128,21 +115,21 @@ Front Line Ready - Vehicle Detail
                         <li> <span>Engine Size</span>
                             <p>{{$data->engine_size}}</p>
                         </li>
-                        <li> <span>Country</span>
-                            <p>{{$data->country_id}}</p>
+                        <li> <span>Stock</span>
+                            <p>{{$data->stock}}</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <ul class="vehicles-models-detail">
-                        <li> <span>Variant</span>
-                            <p>{{$data->variant}}</p>
+                        <li> <span>Exterior Color</span>
+                            <p>{{$data->exterior_color}}</p>
                         </li>
-                        <li> <span>Gearbox</span>
-                            <p>{{$data->gearbox}}</p>
+                        <li> <span>Interior Color</span>
+                            <p>{{$data->interior_color}}</p>
                         </li>
-                        <li> <span>Color</span>
-                            <p>{{$data->color}}</p>
+                        <li> <span>Interior Materia</span>
+                            <p>{{$data->interior_materia}}</p>
                         </li>
                         <li> <span>Town/City</span>
                             <p>{{$data->city_id}}</p>
@@ -151,636 +138,26 @@ Front Line Ready - Vehicle Detail
                 </div>
             </div>
         </div>
-        <div class="current-bid-register-tab-banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                        <div class="live-bid-hits-tags">
-                            @if($data->status==1)
-                             <a href="">Live</a>
-                            @elseif($data->status==2)
-                            <a href="">Coming Soon</a>
-                            @elseif($data->status==3)
-                            <a href="">Private sales</a>
-                            @elseif($data->status==4)
-                            <a href="">Sold</a>
-                            @endif
-                            
-                            <div class="bids-times"> <span class="end-in">
-                                @if($data->status==1)
-                                
-                                 <?php 
-                                  
-                                      $timestamp = $data->aucation_enddate.' '.$data->aucation_endtime;
-                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC');
-                                   
-                                      $new_date = $date->setTimezone(Session::get('timezone'));
-                                      $date =  \Carbon\Carbon::parse($new_date)->format('Y-m-d');
-                                      $time = \Carbon\Carbon::parse($new_date)->format('H:i:s');
-                                      $date1 = $date." ".$time;
-                                     //echo ;
-                                    
-                               ?>
-                            <script type="text/javascript">
-                                updateTimer('{{$date1}}');
-                            </script>
-                                Ends In :</span>
-                                <ul>
-                                    <li> <span id="day_car">0</span>
-                                        <p >Days</p>
-                                    </li>
-                                    <li> <span id="hour_car">00</span>
-                                        <p >Hours</p>
-                                    </li>
-                                    <li> <span id="min_car">00</span>
-                                        <p >Min</p>
-                                    </li>
-                                    <li> <span id="sec_car">00</span>
-                                        <p >Sec</p>
-                                    </li>
-                                </ul>
-                                 @endif
-                            </div>
-                           
-                            @if($data->status==1)
-                            <div class="current-bid-tags">
-                                <p>Current Bid : <span>{{$data->currency_symbol}}{{$data->bid_price}}</span></p>
-                                  <?php 
-                                            if($data->reserve_met==1){
-                                                $color = "green";
-                                            }else if($data->reserve_met==2){
-                                                $color = "red";
-                                            }else if($data->reserve_met==3){
-                                                $color = "yellow";
-                                            }
+    </div>
+    
 
-                                  ?>
-                                 <div class="head-bg-color {{$color}}"  id="reverse_status_bid" style="max-width: 100%;">
-                                    <p id="reverser_status">
-                                        @if($data->reserve_met==1)
-                                            RESERVE MET
-                                        @elseif($data->reserve_met==2)
-                                            RESERVE NOT MET
-                                        @elseif($data->reserve_met==3)
-                                            RESERVE NEARLY MET
-                                        @endif
-                                   </p>
-                                </div>                                
-                            </div>
-                            @endif
-                       
-                            @if($data->status==4)
-                            <div class="current-bid-tags" style="width:170px;margin-left: 0px;">
-                                <p style="font-weight: 600;font-size: 15px;">Sold Date </p>
-                                <div class="head-bg-color" style="    max-width: 50%;">
-                                    <p style="padding:0px;">{{$data->sold_date}}</p>
-                                </div>
-                            </div>
-                            <div class="current-bid-tags" style="width:170px">
-                                <p style="font-weight: 600;font-size: 15px;">Winning Bid </p>
-                                <div class="head-bg-color">
-                                    <p style="padding:0px">{{$data->currency_symbol}}{{$data->winning_bid}}</p>
-                                </div>
-                            </div>
-                            <div class="current-bid-tags" style="width:170px">
-                                <p style="font-weight: 600;font-size: 15px;">Total Bid </p>
-                                <div class="head-bg-color">
-                                    <p style="padding:0px">{{$data->total_bid}}</p>
-                                </div>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="register-login-makebid" style="">
-                            <ul>
-                                  @if(Auth::id())
-                                  <?php $color = $data->is_like==1?'chartreuse':'black';  ?>
-                                  <li>
-                                      @if($data->status==1)
-                                       <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Make Your Bid</a>
-                                      @endif
-                                   <a href="javascript:bookcardetail('{{$data->id}}')" style="height: 40px;" class="book-mark-icons"> <i class="fas fa-bookmark" id="book_mark_{{$data->id}}"
-                                            aria-hidden="true" style="color:'{{$color}}'"></i> </a>
-                                  </li>
-                                   
-                                  @else
-                                  
-                                <li> <a class="regisder-bids" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login <br>
-                                        To Make A Bid</a> </li>
-                                        @endif
-                                        
-                                       
-                               
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+
+    <!--Banner Slider end -->
+
+    <!--Vahicle Description style start here -->
+    <div class="my-accont-section">
+        
 
         <div class="home-blog-section vehicle-des-pd-top">
-            <div class="blog-left-icons-shape slb-page-hold">
-                <img src="{{asset('public/theme/images/shape-logo.png')}}">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="blog-main-heading vehicles-description-conetnst-head">
-                            <h2>Introduction</h2>
-                           <?= html_entity_decode($data->description)?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="heading-border-section" style="margin-bottom: 10px;">
-                <span class="firts"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                            <div class="heading-box cutsom-white-bg">
-                                <span>VEHICLE OWNER</span>
-                                <h2 style="font-family: 'Montserrat';font-size: 35px;padding: 0px;">{{$data->user_name}}</h2>
-                            </div>
-                            <span class="left"></span>
-                            <span class="Right"></span>
-                        </div>
-                    </div>
-                </div>
-                <span class="second"></span>
-            </div>
-            <div class="end-border-and-btn">
-                <div class="actions-btn-hold btn_box_border active-btn-colors">
-                    <a class="btn_border" href="javascript:void()" id="contact_seller" style="padding:0px 45px;">Contact Seller</a>
-                </div>
-            </div>
-            @if(isset($data->exterior->banner))
-            <?php 
-                    if($data->exterior->video_type==2){
-                        $url  = $data->exterior->media;
-                    }else{
-                        $url = asset('storage/app/public/cars/video').'/'.$data->exterior->media;
-                    }
-            ?>
-            <div class="vehicles-banner-lists-01">
-                <a href="{{$url}}" data-toggle="lightbox"><img src="{{asset('storage/app/public/cars/exterior').'/'.$data->exterior->banner}}" style="width:100%">
-                    <img class="video-play-icons" src="{{asset('public/theme/images/video-play.png')}}" >
-                </a>
-                <a href="{{$url}}" data-remote="{{$url}}" data-toggle="lightbox">
-
-                </a>
-            </div>
-            @endif
-            <div class="heading-border-section vd-content-heads-box-shadow-left">
-                <span class="firts"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                            <div class="heading-box cutsom-white-bg vd-content-heads">
-                                <h2>Exterior</h2>
-                            </div>
-                            <span class="left"></span>
-                            <span class="Right"></span>
-                        </div>
-                    </div>
-                </div>
-                <span class="second"></span>
-            </div>
-            <div class="container">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="vehicles-description-content-inner">
-                        <span>Wheels & Tyres</span>
-                        <?= isset($data->exterior->wheels_tyres)?html_entity_decode($data->exterior->wheels_tyres):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Bodywork</span>
-                        <?= isset($data->exterior->bodywork)?html_entity_decode($data->exterior->bodywork):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Paint</span>
-                        <?= isset($data->exterior->paint)?html_entity_decode($data->exterior->paint):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Glass & Trim</span>
-                        <?= isset($data->exterior->glass_trim)?html_entity_decode($data->exterior->glass_trim):'';?>
-                    </div>
-                </div>
-            </div>
-             @if(isset($data->interior->banner))
-            <?php 
-                    if($data->interior->video_type==2){
-                        $url  = $data->interior->media;
-                    }else{
-                        $url = asset('storage/app/public/cars/video').'/'.$data->interior->media;
-                    }
-            ?>
-            <div class="vehicles-banner-lists-02">
-                <a href="{{$url}}" data-toggle="lightbox" target="_blank"><img src="{{asset('storage/app/public/cars/interior').'/'.$data->interior->banner}}" style="width:100%">
-                    <img class="video-play-icons" src="{{asset('public/theme/images/video-play.png')}}">
-                </a>
-                <a href="{{$url}}" data-remote="{{$url}}" data-toggle="lightbox">
-
-                </a>
-            </div>
-            @endif
-            <div class="heading-border-section vd-content-heads-box-shadow-left">
-                <span class="firts"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                            <div class="heading-box cutsom-white-bg vd-content-heads">
-                                <h2>Interior</h2>
-                            </div>
-                            <span class="left"></span>
-                            <span class="Right"></span>
-                        </div>
-                    </div>
-                </div>
-                <span class="second"></span>
-            </div>
-            <div class="container">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="vehicles-description-content-inner">
-                        <span>Seats & Carpets</span>
-                        <?= isset($data->interior->seats)?html_entity_decode($data->interior->seats):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Dashboard</span>
-                        <?= isset($data->interior->dashboard)?html_entity_decode($data->interior->dashboard):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Steering Wheel / Gear Stick</span>
-                        <?= isset($data->interior->steering_wheel)?html_entity_decode($data->interior->steering_wheel):'';?>
-                    </div>
-                </div>
-            </div>
-             @if(isset($data->mechanics->banner))
-            <?php 
-                    if($data->mechanics->video_type==2){
-                        $url  = $data->mechanics->media;
-                    }else{
-                        $url = asset('storage/app/public/cars/video').'/'.$data->mechanics->media;
-                    }
-            ?>
-            <div class="vehicles-banner-lists-03">
-                <a href="{{$url}}" data-toggle="lightbox"><img src="{{asset('storage/app/public/cars/mechanics').'/'.$data->mechanics->banner}}" style="width:100%">
-                    <img class="video-play-icons" src="{{asset('public/theme/images/video-play.png')}}">
-                </a>
-                <a href="{{$url}}" data-remote="{{$url}}" data-toggle="lightbox">
-
-                </a>
-            </div>
-            @endif
-            <div class="heading-border-section vd-content-heads-box-shadow-left">
-                <span class="firts"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                            <div class="heading-box cutsom-white-bg vd-content-heads">
-                                <h2>Mechanics</h2>
-                            </div>
-                            <span class="left"></span>
-                            <span class="Right"></span>
-                        </div>
-                    </div>
-                </div>
-                <span class="second"></span>
-            </div>
-            <div class="container">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="vehicles-description-content-inner">
-                        <span>Engine & Gearbox</span>
-                        <?= isset($data->mechanics->engine_gearbox)?html_entity_decode($data->mechanics->engine_gearbox):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Suspension & Brakes</span>
-                        <?= isset($data->mechanics->suspension_brakes)?html_entity_decode($data->mechanics->suspension_brakes):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>The Drive</span>
-                        <?= isset($data->mechanics->the_drive)?html_entity_decode($data->mechanics->the_drive):'';?>
-                    </div>
-                    <div class="vehicles-description-content-inner">
-                        <span>Electrics & Other</span>
-                        <?= isset($data->mechanics->electrics)?html_entity_decode($data->mechanics->electrics):'';?>
-                    </div>
-                </div>
-            </div>
-             <?php 
-                              if(isset($data->history->banner)){
-                                  $path= url('/')."/storage/app/public/cars/history"."/".$data->history->banner;
-                              }
-                              else{
-                                  $path=asset('public/images/car_placeholder.png');
-                              }
-                              ?>
-                              @if(isset($data->history->banner))
-            <div class="vehicles-banner-lists-04" style="background-image:url('{{$path}}')"></div>
-            @endif
-            <div class="heading-border-section vd-content-heads-box-shadow-left">
-                <span class="firts"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                            <div class="heading-box cutsom-white-bg vd-content-heads">
-                                <h2>History &<br> Paperwork
-                                </h2>
-                            </div>
-                            <span class="left"></span>
-                            <span class="Right"></span>
-                        </div>
-                    </div>
-                </div>
-                <span class="second"></span>
-            </div>
-            <div class="container double-border">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="vehicles-description-content-inner">
-                        <?= isset($data->history->description)?html_entity_decode($data->history->description):'';?>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="center-align">Date</th>
-                                    <th class="center-align">Type</th>
-                                    <th class="center-align">Mileage</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(isset($data->historydata))
-                                    @foreach($data->historydata as $dh)
-                                        <tr>
-                                            <td class="center-align">{{$dh->date}}</td>
-                                            <td class="center-align">{{$dh->type}}</td>
-                                            <td class="center-align">{{$dh->mileage}}</td>
-                                        </tr>
-                                   @endforeach
-                                @endif
-                                                                
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
+           
+         
 
             <div class="container">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                    <div class="heading-box cutsom-white-bg" style="box-shadow: unset;">
-                        <h2 style="font-size: 75px;">ALL IMAGES</h2>
-                    </div>
-                    <span class="left"></span>
-                    <span class="Right"></span>
-                </div>
-                 @if(isset($data->exteriormedia)&&count($data->exteriormedia)>0)
-                <div class="row double-border">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="all-images-slides">
-                            <div class="end-border-and-btn" style="text-align: right;margin-bottom: 10px;">
-                                <h4 style="font-weight: 700;float: left;margin-top: 14px;margin-left:-10px;">Exterior
-                                </h4>
-                                
-                                    <?php $i=0;?>
-                                    @if(isset($data->exteriormedia))
-                                        @foreach($data->exteriormedia as $dh)
-                                            @if($i==0)
-                                            <div class="actions-btn-hold btn_box_border" style=" margin: 10px 0px;">
-                                              <a class="btn_border" href="{{asset('storage/app/public/cars/exterior').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images">VIEW ALL</a>
-                                              <?php break;?>
-                                              </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                
-                            </div>
-                        </div>
-                        <div class="row galler-slider-imgsrow">
-                            @if(isset($data->exteriormedia))
-                                    @foreach($data->exteriormedia as $dh)                                     
-                                        <a href="{{asset('storage/app/public/cars/exterior').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images"
-                                            class="col-lg-13">
-                                            <img src="{{asset('storage/app/public/cars/exterior').'/'.$dh->media}}" class="img-fluid">
-                                        </a>
-                                   @endforeach
-                             @endif
-                             @if(isset($data->exteriormedia))
-                                    @foreach($data->exteriormedia as $dh)
-                                        <div data-toggle="lightbox" data-gallery="hidden-images" data-src="{{asset('storage/app/public/cars/exterior').'/'.$dh->media}}" data-title="Hidden item 0"></div>
-                                   @endforeach
-                             @endif
-                              <div class="Gallery" style="display: none;"></div>
-                           
-                        </div>
-                    </div>
-                </div>
-                </div>
-                @endif
-                @if(isset($data->interiormedia)&&count($data->interiormedia)>0)
-                <div class="row double-border">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="all-images-slides">
-                            <div class="end-border-and-btn" style="text-align: right;margin-bottom: 10px;">
-                                <h4 style="font-weight: 700;float: left;margin-top: 14px;margin-left:-10px;">Interior
-                                </h4>
-                               
-                                    <?php $i=0;?>
-                                    @if(isset($data->interiormedia))
-                                        @foreach($data->interiormedia as $dh)
-                                            @if($i==0)
-                                             <div class="actions-btn-hold btn_box_border" style=" margin: 10px 0px;">
-                                              <a class="btn_border" href="{{asset('storage/app/public/cars/interior').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images">VIEW ALL</a>
-                                              <?php break;?>
-                                              </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                
-                            </div>
-                        </div>
-                        <div class="row galler-slider-imgsrow">
-                            <?php $i=10;?>
-                            @if(isset($data->interiormedia))
-                                    @foreach($data->interiormedia as $dh)
-                                        <a href="{{asset('storage/app/public/cars/interior').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images" class="col-lg-13">
-                                            <img src="{{asset('storage/app/public/cars/interior').'/'.$dh->media}}" class="img-fluid">
-                                        </a>                                        
-                                   @endforeach
-                             @endif
-                              @if(isset($data->interiormedia))
-                                    @foreach($data->interiormedia as $dh)
-                                        <div data-toggle="lightbox" data-gallery="hidden-images" data-src="{{asset('storage/app/public/cars/interior').'/'.$dh->media}}" data-title="Hidden item 0"></div>
-                                   @endforeach
-                             @endif
-                        </div>
-                    </div>
-                </div>
-                </div>
-                @endif
-                @if(isset($data->mechanicsmedia)&&count($data->mechanicsmedia)>0)
-
-                <div class="row double-border">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="all-images-slides">
-                            <div class="end-border-and-btn" style="text-align: right;margin-bottom: 10px;">
-                                <h4 style="font-weight: 700;float: left;margin-top: 14px;margin-left:-10px;">Mechanics
-                                </h4>
-                                
-                                    <?php $i=0;?>
-                                    @if(isset($data->mechanicsmedia))
-                                        @foreach($data->mechanicsmedia as $dh)
-                                            @if($i==0)
-                                            <div class="actions-btn-hold btn_box_border" style=" margin: 10px 0px;">
-                                              <a class="btn_border" href="{{asset('storage/app/public/cars/mechanics').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images">VIEW ALL</a>
-                                              <?php break;?>
-                                              </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                
-                            </div>
-                        </div>
-                        <div class="row galler-slider-imgsrow">
-                            @if(isset($data->mechanicsmedia))
-                                    @foreach($data->mechanicsmedia as $dh)
-                                        <a href="{{asset('storage/app/public/cars/mechanics').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images" class="col-lg-13">
-                                            <img src="{{asset('storage/app/public/cars/mechanics').'/'.$dh->media}}" class="img-fluid">
-                                        </a>
-                                   @endforeach
-                             @endif
-                             @if(isset($data->mechanicsmedia))
-                                    @foreach($data->mechanicsmedia as $dh)
-                                        <div data-toggle="lightbox" data-gallery="hidden-images" data-src="{{asset('storage/app/public/cars/mechanics').'/'.$dh->media}}" data-title="Hidden item 0"></div>
-                                   @endforeach
-                             @endif
-                        </div>
-                    </div>
-                </div>
-                </div>
-                @endif
- @if(isset($data->historymedia)&&count($data->historymedia)>0)
-                <div class="row double-border">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="all-images-slides">
-                            <div class="end-border-and-btn" style="text-align: right;margin-bottom: 10px;">
-                                <h4 style="font-weight: 700;float: left;margin-top: 14px;margin-left:-10px;">History &
-                                    Paperwork</h4>
-                                
-                                    <?php $i=0;?>
-                                    @if(isset($data->historymedia))
-                                        @foreach($data->historymedia as $dh)
-                                            @if($i==0)
-                                            <div class="actions-btn-hold btn_box_border" style=" margin: 10px 0px;">
-                                              <a class="btn_border" href="{{asset('storage/app/public/cars/history').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images">VIEW ALL</a>
-                                              <?php break;?>
-                                              </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                
-                            </div>
-                        </div>
-                        <div class="row galler-slider-imgsrow">
-                            @if(isset($data->historymedia))
-                                    @foreach($data->historymedia as $dh)
-                                        <a href="{{asset('storage/app/public/cars/history').'/'.$dh->media}}" data-toggle="lightbox" data-gallery="hidden-images" class="col-lg-13">
-                                            <img src="{{asset('storage/app/public/cars/history').'/'.$dh->media}}" class="img-fluid">
-                                        </a>
-                                   @endforeach
-                             @endif
-                             @if(isset($data->historymedia))
-                                    @foreach($data->historymedia as $dh)
-                                        <div data-toggle="lightbox" data-gallery="hidden-images" data-src="{{asset('storage/app/public/cars/history').'/'.$dh->media}}" data-title="Hidden item 0"></div>
-                                   @endforeach
-                             @endif
-                        </div>
-                    </div>
-                </div>
-                </div>
-                @endif
-                <div class="row double-border">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="all-images-slides">
-                            <div class="end-border-and-btn" style="text-align: right;margin-bottom: 10px;">
-                                <h4 style="font-weight: 700;float: left;margin-top: 14px;margin-left:-10px;">All Video
-                                </h4>
-                               
-                                     @if(isset($data->exterior->banner))
-                                     <?php 
-                                            if($data->exterior->video_type==2){
-                                                $url  = $data->exterior->media;
-                                            }else{
-                                                $url = asset('storage/app/public/cars/video').'/'.$data->exterior->media;
-                                            }
-                                    ?>
-                                     <div class="actions-btn-hold btn_box_border" style=" margin: 10px 0px;">
-                                    <a class="btn_border" href="{{$url}}" data-toggle="lightbox">VIEW ALL</a>
-                                    </div>
-                                     @endif
-                                
-                            </div>
-                        </div>
-                        <div class="row galler-slider-imgsrow">
-                            <div class="box1 col-lg-2">                            
-                                @if(isset($data->exterior->banner))
-                                    <?php 
-                                            if($data->exterior->video_type==2){
-                                                $url  = $data->exterior->media;
-                                            }else{
-                                                $url = asset('storage/app/public/cars/video').'/'.$data->exterior->media;
-                                            }
-                                    ?>
-                                        <p>
-                                            <a href="{{$url}}" data-toggle="lightbox" class="col-lg-13">
-                                                <img src="{{asset('storage/app/public/cars/exterior').'/'.$data->exterior->banner}}" class="img-fluid">
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <a href="{{$url}}" data-remote="{{$url}}"
-                                                data-toggle="lightbox"></a>
-                                        </p>
-                                @endif
-                            </div>
-                            <div class="box1 col-lg-2">
-                                @if(isset($data->interior->banner))
-                                    <?php 
-                                            if($data->interior->video_type==2){
-                                                $url  = $data->interior->media;
-                                            }else{
-                                                $url = asset('storage/app/public/cars/video').'/'.$data->interior->media;
-                                            }
-                                    ?>           
-                                        <p>
-                                            <a href="{{$url}}" data-toggle="lightbox" class="col-lg-13">
-                                                <img src="{{asset('storage/app/public/cars/interior').'/'.$data->interior->banner}}" class="img-fluid">
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <a href="{{$url}}" data-remote="{{$url}}" data-toggle="lightbox"></a>
-                                        </p>
-                                @endif
-                            </div>
-                            <div class="box1 col-lg-2">
-                                 @if(isset($data->mechanics->banner))
-                                    <?php 
-                                            if($data->mechanics->video_type==2){
-                                                $url  = $data->mechanics->media;
-                                            }else{
-                                                $url = asset('storage/app/public/cars/video').'/'.$data->mechanics->media;
-                                            }
-                                    ?>
-                                        <p>
-                                            <a href="{{$url}}" data-toggle="lightbox" class="col-lg-13">
-                                                <img src="{{asset('storage/app/public/cars/mechanics').'/'.$data->mechanics->banner}}" class="img-fluid">
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <a href="{{$url}}" data-remote="{{$url}}"
-                                                data-toggle="lightbox"></a>
-                                        </p>
-                                @endif                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+               
+       
                
                 @if($data->status==1)
                 <div class="row" id="bid_section">
@@ -981,7 +358,7 @@ Front Line Ready - Vehicle Detail
 @stop
 
 @section('footer')
-
+  <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.7/dist/index.bundle.min.js"></script>
 
 <script>

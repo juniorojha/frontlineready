@@ -18,26 +18,21 @@
                            <i class="metismenu-icon pe-7s-car"></i>Cars
                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                            </a>
-                           <ul      >
+                           <ul>
                               <li>
                                  <a href="{{route('all-cars')}}"  class="mm-active" >
                                  <i class="metismenu-icon"></i>All
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('live-car')}}" > <!---->
+                                 <a href="{{route('live-car')}}">
                                  <i class="metismenu-icon"></i>Live Auction
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('coming-soon')}}" > <!---->
+                                 <a href="{{route('coming-soon')}}">
                                  <i class="metismenu-icon">
                                  </i>Coming Soon
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="{{route('buy-now-cars')}}"> <!---->
-                                 <i class="metismenu-icon"></i> Private sales
                                  </a>
                               </li>
                              <li>
@@ -48,8 +43,7 @@
                            </ul>
                         </li>
                         
-                        <li  
-                           >
+                       <!--  <li>
                            <a href="#">
                            <i class="metismenu-icon pe-7s-news-paper"></i>In The SpotLight
                            <i class="metismenu-state-icon pe-7s-angle-down"></i>
@@ -62,22 +56,22 @@
                                  </a>
                               </li>
                            </ul>
-                        </li>
+                        </li> -->
                         <li class="">
                            <a href="{{route('users')}}" >
-                           <i class="metismenu-icon pe-7s-users"></i>Users
+                           <i class="metismenu-icon pe-7s-users"></i>Dealers
                            </a>
                         </li>
                         <li class="">
                            <a href="{{route('subscriber')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Subscriber
                            </a>
-                        </li>
+                        </li><!-- 
                          <li class="">
                            <a href="{{route('sales-help')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Sales Inquiry
                            </a>
-                        </li>
+                        </li> -->
                         <li class="">
                            <a href="{{route('contact-us-list')}}" >
                            <i class="metismenu-icon pe-7s-id"></i>Contact Us

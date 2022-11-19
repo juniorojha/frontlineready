@@ -991,7 +991,7 @@ li.share-button.sharer button.share-btn {
     justify-content: space-between;
     font-size: 11px;
     background: rgb(0, 0, 0);
-    background: linear-gradient( 90deg, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    /*background: linear-gradient( 90deg, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%);*/
     margin-bottom: 25px;
     padding: 4px 8px 4px px;
     font-weight: 500;

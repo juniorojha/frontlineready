@@ -13,13 +13,7 @@ Front Line Ready - My account
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                         <div class="heading-box cutsom-white-bg">
                             <div class="user-profile-tabs">
-                                <ul>
-                                    <li><a class="btn-active" href="{{route('myaccount')}}">MY BIDS</a></li>
-                                    <li><a href="{{route('my-watch')}}">WATCHING</a></li>
-                                    <li><a href="{{route('my-listing')}}">MY LISTING</a></li>
-                                    <li ><a href="{{route('my-details')}}">MY DETAILS</a></li>
-                                   <!-- <li><a href="{{route('billing')}}">BILLING</a></li>-->
-                                </ul>
+                               <h1>My Account</h1>
                             </div>
                         </div>
                         <span class="left"></span>
@@ -46,7 +40,7 @@ Front Line Ready - My account
                                             aria-controls="collapseOne">
                                             <div class="detail-heading">
                                                 <h6>
-                                                    LIVE AUCTIONS
+                                                    Current Bid
                                                     <p class="count">({{count($livecars)}})</p>
                                                 </h6>
                                                 <span>
@@ -141,7 +135,7 @@ Front Line Ready - My account
                                             aria-controls="collapseOne1">
                                             <div class="detail-heading">
                                                 <h6>
-                                                    WON
+                                                    Auction WON (Pending Payment)
                                                     <p class="count">({{count($wincars)}})</p>
                                                 </h6>
                                                 <span>
@@ -214,8 +208,8 @@ Front Line Ready - My account
                                             data-bs-target="#collapseOne2" aria-expanded="true"
                                             aria-controls="collapseOne2">
                                             <div class="detail-heading">
-                                                <h6>LOST
-                                                    <p class="count">(0)</p>
+                                                <h6> Auction WON (Payment Settle)
+                                                   
                                                 </h6>
                                                 <span>
                                                     <p class="close">

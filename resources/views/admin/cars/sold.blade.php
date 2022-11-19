@@ -34,14 +34,12 @@ Sold Cars
             <tr>
                <th>Id</th>
                <th>Image</th>
-               <th>Register No</th>
-               <th>Seller Name</th>
-               <th>Buyer Name</th>
+               <th>VIN</th>
+               <th>Dealership Name</th>
                <th>Sold Date</th>
                <th>Winning Bid</th>
                <th>Total Bid</th>
-               <th>Transaction Id</th>
-               <th>Commision Amount</th>
+               <th>Payment Status</th>
                <th>More</th>
                <th>Action</th>
             </tr>
@@ -50,14 +48,12 @@ Sold Cars
             <tr>
                <th>Id</th>
                <th>Image</th>
-               <th>Register No</th>
-               <th>Seller Name</th>
-               <th>Buyer Name</th>
+               <th>VIN</th>
+               <th>Dealership Name</th>
                <th>Sold Date</th>
                <th>Winning Bid</th>
                <th>Total Bid</th>
-               <th>Transaction Id</th>
-               <th>Commision Amount</th>
+               <th>Payment Status</th>
                <th>More</th>
                <th>Action</th>
             </tr>
@@ -80,11 +76,8 @@ Sold Cars
            data: 'image',
            name: 'image'
        },{
-           data: 'reg_no',
-           name: 'reg_no'
-       },{
-           data: 'seller_name',
-           name: 'seller_name'
+           data: 'vin',
+           name: 'vin'
        },{
            data: 'buyer_name',
            name: 'buyer_name'
@@ -98,11 +91,8 @@ Sold Cars
            data: 'total_bid',
            name: 'total_bid'
        },{
-           data: 'transaction_id',
-           name: 'transaction_id'
-       },{
-           data: 'amount',
-           name: 'amount'
+           data: 'payment_status',
+           name: 'payment_status'
        },{
            data: 'more',
            name: 'more'
@@ -116,7 +106,7 @@ Sold Cars
                     return '<img src="'+data+'" style="width:250px"/>';                
             }
         },{
-            targets: 10,
+            targets: 8,
             render: function (data) {
                 // var path = '{{url("vehicle_detail?id=")}}'+data;
                     return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';             

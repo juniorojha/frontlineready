@@ -33,9 +33,8 @@ Coming Soon Cars
          <thead>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>More</th>
                <th>Action</th>
             </tr>
@@ -43,9 +42,8 @@ Coming Soon Cars
          <tfoot>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>More</th>
                <th>Action</th>
             </tr>
@@ -65,14 +63,11 @@ Coming Soon Cars
                orderable: false,
                searchable: false 
             },{
-           data: 'reg_no',
-           name: 'reg_no'
+           data: 'image',
+           name: 'image'
        },{
-           data: 'car_name',
-           name: 'car_name'
-       },{
-           data: 'name',
-           name: 'name'
+           data: 'vin',
+           name: 'vin'
        },{
            data: 'more',
            name: 'more'
@@ -81,13 +76,16 @@ Coming Soon Cars
            name: 'action'
        }
    ],columnDefs: [{
-            targets: 4,
+            targets: 1,
             render: function (data) {
-                // var path = '{{url("vehicle_detail?id=")}}'+data;
-                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';             
+                    return '<img src="'+data+'" style="width:250px;height:150px;border-radius:10px"/>';                
             }
-        }
-   ],
+        },{
+            targets: 3,
+            render: function (data) {
+                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';                
+            }
+        }],
    order: [
        [0, "DESC"]
    ]

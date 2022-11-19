@@ -17,7 +17,7 @@
       <link href="{{asset('public/theme/css/bootstrap.min.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
          integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
-      <link href="{{asset('public/theme/css/main.css?v=1.695')}}" rel="stylesheet">
+      <link href="{{asset('public/theme/css/main.css?v=1.0')}}" rel="stylesheet">
       <link href="{{asset('public/theme/css/code.css?v=933')}}" rel="stylesheet">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen">
@@ -37,7 +37,7 @@
                            <ul class="top-nav-bar">
                               <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
+                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}#auction_section">Auctions</a></li>
                              
                               @if(Auth::id())
                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
@@ -65,7 +65,7 @@
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}">Auctions</a></li>
+                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}#auction_section">Auctions</a></li>
                      
                     
                      @if(Auth::id())
@@ -98,18 +98,17 @@
                </div>
             </div>-->
             <div class="row">
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>Auctions</h5>
                      <ul>
-                        <li><a href="{{route('home',['id'=>1])}}#filter_section">Live</a></li>
-                        <li><a href="{{route('home',['id'=>3])}}#filter_section">Private Sales</a></li>
-                        <li><a href="{{route('home',['id'=>1])}}#filter_section">Coming Soon</a></li>
-                        <li><a href="{{route('home',['id'=>4])}}#filter_section">Sold</a></li>
+                        <li><a href="{{route('home',['id'=>1])}}#auction_section">Live</a></li>
+                        <li><a href="{{route('home',['id'=>1])}}#auction_section">Coming Soon</a></li>
+                        <li><a href="{{route('home',['id'=>4])}}#auction_section">Sold</a></li>
                      </ul>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>Selling</h5>
                      <ul>
@@ -118,8 +117,8 @@
                      
                      </ul>
                   </div>
-               </div>
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               </div> -->
+               <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>About Us</h5>
                      <ul>
@@ -130,7 +129,7 @@
                      </ul>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>In The Spotlight</h5>
                      <div class="social-media-links show-desktop">
@@ -190,76 +189,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="row" id="reg_pharse_1_content"  >
-                     <div class="form_contact_box register-form">
-                        <p>Sign up now to start buying or selling.</p>
-                        <form id="user_registration_form">
-                           <ul id="reg_error"></ul>
-                           
-                           <input type="hidden" name="vaildphoneno" id="vaildphoneno_reg" class="vaildphoneno"> 
-                           <input type="hidden" name="countrycode" id="countrycode_reg" class="countrycode">
-                           <input type="hidden" name="vaildemail" id="vaildemail" > 
-                            <input type="hidden" name="vaildusername" id="vaildusername" > 
-                           <div class="contact_form_box register-form-head">
-                              <div class="contact_left_side_box">
-                                 <label>Username :</label>
-                                 <input type="text" name="username" id="reg_username" onchange="checkusername(this.value)">
-                                 <span id="error_reg_username" class="error"></span>
-                                 <label>Email :</label>
-                                 <input type="email" name="email" id="reg_email" onchange="check_email_reg(this.value)">
-                                 <span id="error_reg_email" class="error"></span>
-                                 <label>Password :</label>
-                                 <input type="password" name="password" id="reg_password">
-                                 <span id="error_reg_password" class="error"></span>
-                              </div>
-                              <div class="contact_right_side_box">
-                                 <label>Country :</label>
-                                 <select name="country" id="country_reg" required="" class="country_select country">
-                                    @foreach($country as $c)
-                                       <option value="{{$c->sortname}}">{{ucwords(strtolower($c->name))}}</option>
-                                    @endforeach
-                                 </select>
-                                 <span id="error_reg_country" class="error"></span>
-                                 <label>Phone Number :</label>
-                                 <input type="tel" name="phone" class="phone numberonly" required="" id="phone_reg" maxlength="10">
-                                 <span id="error_reg_phone" class="error error_contact_phone"></span>
-                                 <span id="valid-msg-reg" class="hide valid-msg">Valid</span>
-                                 <span id="error-msg-reg" class="hide error-msg">Invalid number</span>
-                                 
-                                 <label>Confirm Password :</label>
-                                 <input type="password" name="cpassword" id="cpassword_reg">
-                                 <span id="error_reg_confirm_password" class="error"></span>
-                              </div>
-                              <div class="register-check-popup-holder">
-                                 <ul>
-                                    <li>
-                                       <input class="form-check-input" type="checkbox" name="term1" value="1" id="cond_reg_1">
-                                       <p> By registering I agree to the <a style="text-decoration: underline;" href="{{route('term-privacy')}}">terms &amp; conditions</a> of the
-                                          Front Line Ready.
-                                       </p>
-                                       <span id="error_term1" class="error"></span>
-                                    </li>
-                                    <li>
-                                       <input class="form-check-input" type="checkbox" name="allow_newsletter" value="1" id="cond_reg_2">
-                                       <p> I would like to receive email newsletters from the Curating
-                                          Cars.
-                                       </p>
-                                    </li>
-                                 </ul>
-                              </div>
-                              
-                              <div class="end-border-and-btn">
-                                 <div class="actions-btn-hold btn_box_border">
-                                    <a class="btn_border" href="javascript:registeruser()" style="padding:0px 45px;">SEND <i
-                                       class="fal fa-long-arrow-right" style="margin-left: 8px;"
-                                       aria-hidden="true"></i></a>
-                                 </div>
-                              </div>
-                              <p style="font-size: 14px;">Aleady registered - <a href="javascript:changemodel('login_content')" style="text-decoration: underline;">Login here</a></p>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
+                 
                   <div class="row" id="reg_pharse_2_content">
                      <div class="form_contact_box register-form">
                         <h2>REGISTRATION COMPLETE</h2>

@@ -33,12 +33,10 @@ Live Cars
          <thead>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>Current Bid</th>
                <th>Total Bid</th>
-               <th>Reverse Met</th>
                <th>Aucation EndTime</th>
                <th>More</th>
                <th>Action</th>
@@ -47,12 +45,10 @@ Live Cars
          <tfoot>
             <tr>
                <th>Id</th>
-               <th>Register No</th>
-               <th>Name</th>
-               <th>Seller Name</th>
+               <th>Image</th>
+               <th>VIN</th>
                <th>Current Bid</th>
                <th>Total Bid</th>
-               <th>Reverse Met</th>
                <th>Aucation EndTime</th>
                <th>More</th>
                <th>Action</th>
@@ -69,27 +65,21 @@ Live Cars
            serverSide: true,
            ajax: '{{route("live-car-data-table")}}',
            columns: [{  data: 'DT_RowIndex',
-               name: 'DT_RowIndex',
-               orderable: false,
-               searchable: false 
-            },{
-                   data: 'reg_no',
-                   name: 'reg_no'
+                           name: 'DT_RowIndex',
+                           orderable: false,
+                           searchable: false 
+                },{
+                   data: 'image',
+                   name: 'image'
                },{
-                   data: 'car_name',
-                   name: 'car_name'
-               },{
-                   data: 'name',
-                   name: 'name'
+                   data: 'vin',
+                   name: 'vin'
                },{
                    data: 'current_bid',
                    name: 'current_bid'
                },{
                    data: 'total_bid',
                    name: 'total_bid'
-               },{
-                   data: 'reverse_met',
-                   name: 'reverse_met'
                },{
                    data: 'end_time',
                    name: 'end_time'
@@ -101,10 +91,14 @@ Live Cars
                    name: 'action'
                }
            ],columnDefs: [{
-            targets: 8,
+            targets: 1,
             render: function (data) {
-                 // var path = '{{url("vehicle_detail?id=")}}'+data;
-                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';             
+                    return '<img src="'+data+'" style="width:250px;height:150px;border-radius:10px"/>';                
+            }
+        },{
+            targets: 6,
+            render: function (data) {
+                    return '<a href="'+data+'" class="btn btn-primary" target="_blank">More</a>';                
             }
         }],
            order: [

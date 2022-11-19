@@ -1,16 +1,4 @@
-CKEDITOR.replace('description');
-CKEDITOR.replace('wheels_tyres');
-CKEDITOR.replace('bodywork');
-CKEDITOR.replace('paint');
-CKEDITOR.replace('glass_trim');
-CKEDITOR.replace('seats');
-CKEDITOR.replace('dashboard');
-CKEDITOR.replace('steering_wheel');
-CKEDITOR.replace('engine_gearbox');
-CKEDITOR.replace('suspension_brakes');
-CKEDITOR.replace('the_drive');
-CKEDITOR.replace('electrics');
-CKEDITOR.replace('vehicle_history');
+
 
 var row = $("#total_row").val();
 $(document).on("click", "#add-row", function () {

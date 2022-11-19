@@ -116,16 +116,12 @@ Route::group(['prefix' => 'admin'], function () {
 
             Route::get("allcars",[CarController::class,"show_all_cars"])->name("all-cars");
             Route::get("all_cars_data_table",[CarController::class,"show_all_cars_data_table"])->name("all-cars-data-table");
-            Route::get("save_car/{user_id}/{id}/{tab}",[CarController::class,"show_save_car"])->name("save-car");
+            Route::get("save_car/{id}",[CarController::class,"show_save_car"])->name("save-car");
             Route::get("delete_car/{id}",[CarController::class,"show_delete_car"])->name("delete-car");
             Route::post("post_car_general_info",[CarController::class,"post_car_general_info"])->name('post-car-general-info');
             Route::get('get_city_list_by_country_id/{id}',[CarController::class,"get_city_list_by_country_id"])->name('get-city-list-by-country_id');
-            Route::post("update_car_exterior",[CarController::class,"update_car_exterior"])->name("save-car-exterior");
-            Route::post("update_car_interior",[CarController::class,"update_car_interior"])->name("update-car-interior");
-            Route::post("update_car_mechanics_info",[CarController::class,"update_car_mechanics_info"])->name('update-car-mechanics-info');
-            Route::post("update_car_history",[CarController::class,"update_car_history"])->name("update-car-history");
-            Route::post("update_car_video",[CarController::class,"update_car_video"])->name('update-car-videos');
-            Route::get('get_media/{type}/{id}',[CarController::class,"get_media"])->name('get-media');
+           
+            Route::get('get_media/{id}',[CarController::class,"get_media"])->name('get-media');
             Route::post("save_aucation_time",[CarController::class,"save_aucation_time"])->name('save-aucation-time');
             Route::get('change_car_status',[CarController::class,"change_car_status"])->name('change-car-status');
             Route::get("sold_cars",[CarController::class,"show_sold_cars"])->name("sold-cars");
