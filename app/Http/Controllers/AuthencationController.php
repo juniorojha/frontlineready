@@ -8,6 +8,7 @@ use Auth;
 use App\Models\User;
 use Hash;
 use App\Models\CarInfo;
+use App\Models\Car;
 use App\Models\ContactUs;
 use App\Models\SalesInquiry;
 use App\Models\Country;
@@ -54,10 +55,10 @@ class AuthencationController extends Controller
     }
 
     public function show_dashboard(){
-        $allcars = count(CarInfo::whereNull('deleted_at')->get());
-        $livecars = count(CarInfo::whereNull('deleted_at')->where("status",'1')->get());
-        $comingsooncars = count(CarInfo::whereNull('deleted_at')->where("status",'2')->get());
-        $privatesales = count(CarInfo::whereNull('deleted_at')->where("status",'3')->get());
+        $allcars = count(Car::whereNull('deleted_at')->get());
+        $livecars = count(Car::whereNull('deleted_at')->where("status",'1')->get());
+        $comingsooncars = count(Car::whereNull('deleted_at')->where("status",'2')->get());
+        $privatesales = count(User::where("user_type",'0')->get());
         return view("admin.dashboard",compact('allcars','livecars','comingsooncars','privatesales'));
     }
 

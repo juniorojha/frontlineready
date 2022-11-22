@@ -62,8 +62,8 @@ Dashboard
       <div class="card mb-3 widget-content bg-happy-itmeo">
          <div class="widget-content-wrapper text-white">
             <div class="widget-content-left">
-               <div class="widget-heading">Total Cars</div>
-               <div class="widget-heading"> For Private Sales</div>
+               <div class="widget-heading">Total </div>
+               <div class="widget-heading"> DealerShip</div>
             </div>
             <div class="widget-content-right">
                <div class="widget-numbers text-white"><span>{{$privatesales}}</span></div>
@@ -72,7 +72,7 @@ Dashboard
       </div>
    </div>
 </div>
-<div class="main-card mb-3 card">
+<!-- <div class="main-card mb-3 card">
     <div class="card-header">
         Live Cars
     </div>
@@ -106,7 +106,7 @@ Dashboard
          </tfoot>
       </table>
    </div>
-</div>
+</div> -->
 @stop
 @section('footer')
 <script type="text/javascript">

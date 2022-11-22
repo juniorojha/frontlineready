@@ -484,8 +484,7 @@ Please add a payment method to you account. My Account -->
                                     <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">
                                         You agree to purchase if your bid meets or exceeds the reserve price.</p>
                                     <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">Bid are legally binding and may not be retracted.</p>
-                                        <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">
-                                        if you win the auction,you agree to pay a fee <span id="commission"></span> to Curating Cars</p>
+                                        
                                     <br>
                                     <br>
                                     <p class="row" style="display: inline-table;font-weight: 800;font-size: x-large;">Your Bid :<span id="bid_currency" style='padding-right: 0px;color: green;'>$</span><span style="padding-left: 0px;color: green;" id="place_bid_amount">0</span></p>
@@ -545,9 +544,7 @@ Please add a payment method to you account. My Account -->
                                     <h2>YOUR BID WAS ACCEPTED</h2>
                                     <br>
                                     <p class="row" style="font-weight: 800;font-size: x-large;"><span  style='padding-right: 0px;color: green;'>Your Bid :</span><span  style='padding-right: 0px;color: green;' id="dis_bid_amount">$20,000</span><span style='    font-size: small;'>was accepted</span></p>
-                                    <br>
-                                    <p>We will notify you immediately if you are outbid.</p>
-                                    <br>
+                                   
                                     <p>Thanks <span id="bid_user_name">Sam</span>!</p>
                                 </div>
                                 <ul style="text-align: center;">

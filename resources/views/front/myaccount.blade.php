@@ -63,20 +63,15 @@ Front Line Ready - My account
                                                     @foreach($livecars as $gc)
                                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="cars-detail-col-left">
-                                                            <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}">
+                                                            <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="cars-detail-col-right">
                                                             <div
                                                                 class="main-heads-cars-user-detail-box1 boder-one-line">
-                                                                <h5>{{$gc->name}}</h5>
-                                                                <span class="icons"> @if(Auth::id())
-                                          <?php $color = $gc->is_like==1?'chartreuse':'white';  ?>
-                                        <a href="javascript:bookcar('{{$gc->id}}')"><i id="book_mark_{{$gc->id}}" class="fas fa-bookmark" style="color:{{$color}}" ></i></a>
-                                    @else
-                                       <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')"><i class="fas fa-bookmark"></i></a>
-                                    @endif
+                                                                <h5>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h5>
+                                                                <span class="icons">
                                                                 </span>
                                                                 <br>
                                                                 <p>STATUS</p>
@@ -85,17 +80,14 @@ Front Line Ready - My account
                                                             <div class="main-heads-cars-user-detail-box2">
                                                                 <div class="step-one">
                                                                     <p class="content-des">CURRENT BID</p>
-                                                                    <span class="content-price blue-tag">{{$gc->currency_symbol}}{{$gc->bid_price}}</span>
+                                                                    <span class="content-price blue-tag">$ {{$gc->bid_price}}</span>
                                                                 </div>
                                                                 <div class="step-one">
                                                                     <p class="content-des">ENDS</p>
                                                                     <span class="content-price red-tag"> <?php 
                                   
-                                                                            $date = $gc->aucation_enddate." ".$gc->aucation_endtime;
-                                                                       ?>
-                                                                    <script type="text/javascript">
-                                                                        updateTimer('{{$date}}','{{$gc->id}}');
-                                                                    </script></span>
+                                                                            $date = $gc->end_date;
+                                                                       ?></span>
                                                                 </div>
                                                                 <div class="step-one">
                                                                     <p class="content-des">BIDS</p>
@@ -103,17 +95,9 @@ Front Line Ready - My account
                                                                 </div>
                                                                 <div class="step-one your-bids-tags">
                                                                     <h6>Your Bid</h6>
-                                                                    <span class="content-price">€32,250</span>
+                                                                    <span class="content-price">$ 500</span>
                                                                     <br>
-                                                                    <p class="red-tag">You’ve been outbid!</p>
                                                                     <br>
-                                                                    <div class="end-border-and-btn"
-                                                                        style="text-align: right;">
-                                                                        <div class="actions-btn-hold btn_box_border"
-                                                                            style=" margin: 10px 0px;"> <a
-                                                                                class="btn_border" href="">PLACE BID</a>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

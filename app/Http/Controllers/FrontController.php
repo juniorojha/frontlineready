@@ -591,9 +591,9 @@ class FrontController extends Controller
                 if(isset($data)){
                    
                     $data->make_id = Make::find($data->make)?Make::find($data->make)->name:'';                   
-                    $data->bid_price = 0;
+                    $data->bid_price = $data->base_price;
                     if(isset($data->price)&&$data->current_bid_id!=""){                        
-                        $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->price;
+                        $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->base_price;
                     }
                                      
                     $data->Comment = Comment::where('car_id',$data->id)->get();                    
@@ -601,7 +601,7 @@ class FrontController extends Controller
                     $bid_price = str_replace(",","",$data->bid_price);                   
                     
                     foreach($data->Comment as $dc){
-                        $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->username:'';
+                        $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->name:'';
                         $ls = User::find($dc->user_id);
                         if($ls){
                              if($ls->image==""){
@@ -653,10 +653,10 @@ class FrontController extends Controller
     }
 
     public function fetch_visitor(Request $request){
-        $data = CarInfo::find($request->get('car_id'));
+        $data = Car::find($request->get('car_id'));
         if(isset($data)){
-            $bid_amount = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:0;
-           
+            $bid_amount = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->base_price;
+            $views = 0;
             $current_amount = str_replace(",","",$bid_amount);
             if($current_amount<=10000){
                 $getgap = BidGaps::find(1);
@@ -666,17 +666,8 @@ class FrontController extends Controller
                 $minmum_amount = $current_amount+$getgap->gap;
             }
             $bid_price = str_replace(",","",$bid_amount);
-                    if($data->reserve_price<=$bid_price){
-                        $reserve_met = 1;
-                    }
-                    else{
-                        $minus = $data->reserve_price-$bid_price;
-                        if($minus<=1000){
-                            $reserve_met = 3;
-                        }else{
-                            $reserve_met = 2;
-                        }                        
-                    }
+            $reserve_met = 0;
+            
             $arr = array("views"=>$views,"bid_amount"=>$bid_amount,'minmum_amount_next_bid'=>$minmum_amount,"reserve_met"=>$reserve_met);          
             return json_encode($arr);
         }else{
@@ -702,7 +693,7 @@ class FrontController extends Controller
             $store->amount = $request->get("bid_amount");
             $store->type = 1;
             $store->save();
-            CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+            Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
             $getmaxbid = MaxBid::where("car_id",$request->get("car_id"))->get();
             foreach($getmaxbid as $ge){
                 
@@ -725,7 +716,7 @@ class FrontController extends Controller
                         $store->amount = number_format($minmum_amount);
                         $store->type = 1;
                         $store->save();
-                        CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+                        Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
                     }
                 }
                 
@@ -759,7 +750,7 @@ class FrontController extends Controller
                 $store->amount = number_format($minmum_amount);
                 $store->type = 1;
                 $store->save();
-                CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+                Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
             }
             return Auth::user()->username;
         }

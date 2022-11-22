@@ -143,7 +143,7 @@ Front Line Ready - Home
          <div class="row" id="live_cars_list">
             
            @foreach($get_car_live as $gc)
-               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                   <div class="product-box">
                      <div class="product-img-heading">
                         <div class="attributes">
@@ -154,11 +154,11 @@ Front Line Ready - Home
                            </ul>
                         </div>
                         <div class="img-hold">
-                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->banner}}"></a>
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
                         </div>
                         <div class="heading-hold">
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
-                              <h4>{{$gc->name}}</h4>
+                               <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
                            </a>
                           <ul class="icons-section">
                            
@@ -166,46 +166,19 @@ Front Line Ready - Home
                         </div>
                      </div>
                      <div class="product-content">
-                        <p class="double-border">{{$gc->short_desc}}</p>
-                        <span style="margin-top: 5px;margin-bottom: 5px;">
-                           <p>{{$gc->year}}</p>
-                           |
-                           @if($gc->steering_position==1)
-                           <p>LHD</p>
-                           @else
-                           <p>RHD</p>
-                           @endif
-                           |
-                           <p>{{$gc->country_name}} <img src="https://ipdata.co/flags/{{$gc->country_sortname}}.png"></p>
-                           <p><div class=" btn_box_border active-btn-colors" style="margin:0px;margin-left: 70px;"><a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}#bid_section" class="btn_border" >bid now</a></div></p>
-                        </span>
+                       
                      </div>
                      <div class="product-shadow-box">
-                        <div class="head-bg-color red">
-                              @if($gc->reserve_met==1)
-                                 <div class="head-bg-color green">
-                                    <p>RESERVE MET</p>
-                                </div>
-                                @elseif($gc->reserve_met==2)
-                                 <div class="head-bg-color red">
-                                    <p>RESERVE NOT MET</p>
-                                </div>
-                                @elseif($gc->reserve_met==3)
-                                 <div class="head-bg-color yellow">
-                                    <p>RESERVE NEARLY MET</p>
-                                </div>
-                                @endif
-                        </div>
+                       
                         <div class="timging-tage">
                            <p>Ends In : <span id="end_time_{{$gc->id}}">
                                <?php 
-                                      $timestamp = $gc->aucation_enddate.' '.$gc->aucation_endtime;
+                                      $timestamp = date("Y-m-d H:i:s",strtotime($gc->end_date));
                                       $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
                                       $new_date = $date->setTimezone('UTC');
                                       $date =  \Carbon\Carbon::parse($new_date)->format('Y-m-d');
                                       $time = \Carbon\Carbon::parse($new_date)->format('H:i:s');
                                       $date1 = $date." ".$time;
-                                     // echo "hey".$date1 ;exit;
                                ?>
                             <script type="text/javascript">
                         updateTimer('{{$date1}}','{{$gc->id}}');
@@ -214,7 +187,7 @@ Front Line Ready - Home
                      
                         </div>
                         <div class="current-bids">
-                           <p>Current Bids : {{$gc->currency_symbol}}{{$gc->bid_price}}</p>
+                           <p>Current Bids : $ {{$gc->base_price}}</p>
                         </div>
                      </div>
                   </div>
@@ -254,23 +227,13 @@ Front Line Ready - Home
                         <div class="img-hold">
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
                         </div>
-                        <div class="heading-hold">
+                        <div class="heading-hold" style="    border: 1px solid black;padding: 7px;margin-bottom: 13px;">
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
                               <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
                            </a>
                            <ul class="icons-section">
                              
                            </ul>
-                        </div>
-                     </div>
-                     
-                     <div class="product-shadow-box">
-                       <div class="head-bg-color">
-                           <p>Current Bids</p>
-                        </div>
-                        
-                        <div class="current-bids">
-                           <p>No Bids</p>
                         </div>
                      </div>
                   </div>
@@ -402,19 +365,130 @@ Front Line Ready - Home
             </div>
               <div class="slider" id="slider">
                  <div class="slide" id="slide">
-
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
-                   <img class="item" src="http://localhost/client/frontlineready/storage/app/public/cars/banner/16651835601668831986.png">
+                    @foreach($get_car_live as $gc)
+                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item">
+                              <div class="product-box">
+                                 <div class="product-img-heading">
+                                    <div class="attributes">
+                                       <ul>
+                                          <li>
+                                             <p class="live">LIVE</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="img-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}" class=""></a>
+                                    </div>
+                                    <div class="heading-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                                           <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                                       </a>
+                                      <ul class="icons-section">
+                                       
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item">
+                              <div class="product-box">
+                                 <div class="product-img-heading">
+                                    <div class="attributes">
+                                       <ul>
+                                          <li>
+                                             <p class="live">LIVE</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="img-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}" class=""></a>
+                                    </div>
+                                    <div class="heading-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                                           <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                                       </a>
+                                      <ul class="icons-section">
+                                       
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item">
+                              <div class="product-box">
+                                 <div class="product-img-heading">
+                                    <div class="attributes">
+                                       <ul>
+                                          <li>
+                                             <p class="live">LIVE</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="img-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}" class=""></a>
+                                    </div>
+                                    <div class="heading-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                                           <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                                       </a>
+                                      <ul class="icons-section">
+                                       
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item">
+                              <div class="product-box">
+                                 <div class="product-img-heading">
+                                    <div class="attributes">
+                                       <ul>
+                                          <li>
+                                             <p class="live">LIVE</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="img-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}" class=""></a>
+                                    </div>
+                                    <div class="heading-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                                           <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                                       </a>
+                                      <ul class="icons-section">
+                                       
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item">
+                              <div class="product-box">
+                                 <div class="product-img-heading">
+                                    <div class="attributes">
+                                       <ul>
+                                          <li>
+                                             <p class="live">LIVE</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="img-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}" class=""></a>
+                                    </div>
+                                    <div class="heading-hold">
+                                       <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                                           <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                                       </a>
+                                      <ul class="icons-section">
+                                       
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                     @endforeach
+                   
+                  
                  </div>
                  <button class="ctrl-btn pro-prev">Prev</button>
                  <button class="ctrl-btn pro-next">Next</button>
@@ -423,45 +497,7 @@ Front Line Ready - Home
        
      </div>
      
-      <!-- home-subscribe-now-banner satrt here  -->
-      <!-- Home Bloges style start here  -->
-     <!--  <div class="home-blog-section">
-         <div class="blog-left-icons-shape">
-            <img src="{{asset('public/theme/images/shape-logo.png')}}">
-         </div>
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="blog-main-heading desktop-pd-hold1">
-                     <h3>In The Spotlight</h3>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               @foreach($spotLight as $sl)
-               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <div class="blog-content-img-holder-box">
-                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <img src="{{asset('storage/app/public/news').'/'.$sl->image}}"> </a>
-                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}">
-                        <h4>{{$sl->title}}</h4>
-                     </a>
-                     <p>{{$sl->short_desc}}
-                     </p>
-                     <a href="{{route('news-detail',['id'=>$sl->query_id])}}"> <b>Read More</b> </a>
-                  </div>
-               </div>
-               @endforeach
-              
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-               <div class="end-border-and-btn">
-                  <div class="actions-btn-hold btn_box_border">
-                     <a class="btn_border" href="{{route('spotlight')}}">All News</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
+     
       </div>
      
        <div class="heading-border-section" id="submit_entry_from">
@@ -562,6 +598,7 @@ Front Line Ready - Home
     ></script>
     <script src="{{asset('public/slider/dist/script.js')}}"></script>
 <script type="text/javascript">
+   productScroll();
    var autocomplete;
 var address1Field;
 var address2Field;

@@ -15,7 +15,6 @@
       <link rel="stylesheet" type="text/css" href="">
        <script type="text/javascript" src="{{asset('public/ckeditor/ckeditor.js?v=644')}}"></script> 
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
      
 <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -938,7 +937,6 @@
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-      <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
       
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -1072,50 +1070,3 @@
 </div>
 
 
-<script type="text/javascript">
-   $('#demo').daterangepicker({
-    "showISOWeekNumbers": true,
-    "timePicker": true,
-    "autoUpdateInput": true,
-    "locale": {
-        "cancelLabel": 'Clear',
-        "format": "YYYY/MM/DD  hh:mm A",
-        "separator": " @ ",
-        "applyLabel": "Apply",
-        "cancelLabel": "Cancel",
-        "fromLabel": "From",
-        "toLabel": "To",
-        "customRangeLabel": "Custom",
-        "weekLabel": "W",
-        "daysOfWeek": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
-        ],
-        "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-        "firstDay": 1
-    },
-    "linkedCalendars": true,
-    "showCustomRangeLabel": false,
-    "startDate": 1,
-    "endDate": 1,
-    "opens": "center"
-});
-</script>
