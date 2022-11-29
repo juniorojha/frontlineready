@@ -13,6 +13,12 @@
                            </a>
                         </li>
                         
+                        <li class="">
+                           <a href="{{route('upload_inventroy')}}" >
+                           <i class="metismenu-icon pe-7s-paint-bucket"></i>Upload Inventory
+                           </a>
+                        </li>
+                        
                         <li  class="">
                            <a href="#">
                            <i class="metismenu-icon pe-7s-car"></i>Cars

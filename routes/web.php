@@ -203,6 +203,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get("request_card_data_table",[SettingController::class,"request_card_data_table"])->name("request-card-data-table");
             Route::get("change_request_card_status",[SettingController::class,"change_request_card_status"])->name("change_request_card_status");
             
+            Route::get("upload_inventroy",[SettingController::class,"upload_inventroy"])->name("upload_inventroy");
+            Route::post("post_update_inventroy",[SettingController::class,"post_update_inventroy"])->name("post-update-inventroy");
+            
             
           /*  Route::get("payment_setting",[SettingController::class,"payment_setting"])->name("payment-setting");
             Route::post("update_payment_setting",[SettingController::class,"update_payment_setting"])->name("update-payment-setting");*/

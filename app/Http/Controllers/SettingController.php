@@ -29,6 +29,34 @@ class SettingController extends Controller
         return view("admin.setting.editsetting",compact('setting','timezone'));
     }
     
+    public function upload_inventroy(){
+        return view("admin.upload_inventroy");
+    }
+    
+    public function post_update_inventroy(Request $request){
+        $setting = Setting::find(1);
+        if($setting){
+            if($request->file("file")){
+                $old_image = $setting->inventroy_pdf;
+                $f = $request->file("file");
+                $filename = $f->getClientOriginalName();
+                $extension = $f->getClientOriginalExtension() ?: 'png';
+                $picture = rand().time() . '.' . $extension;
+                $destinationPath = Storage_path("app/public");
+                $f->move($destinationPath, $picture); 
+                $setting->inventroy_pdf = $picture;
+                $setting->save();
+                if($old_image!=""){
+                    $this->removeImage(storage_path("app/public").'/'.$old_image);  
+                }
+            }  
+            
+        }
+        Session::flash('message',"Inventroy Upload Successfully"); 
+        Session::flash('alert-class', 'alert-success');
+        return redirect()->back();
+    }
+    
     public function remove_card_request(){
         return view("admin.remove_card_request");
     }

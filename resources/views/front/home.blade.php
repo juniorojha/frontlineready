@@ -224,6 +224,19 @@ ul.slick-dots {
   
       </div>
      
+    
+         <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 18%;margin-bottom: 63px;">
+            @if(Auth::id())
+                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}" style="padding:0px 45px;" target="_blank">
+            @else
+                 <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">
+            @endif
+            
+            
+            
+                                        Download Inventroy <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
+                                </div>
+     
        <div class="heading-border-section" id="submit_entry_from">
         <span class="firts"></span>
         <div class="container">
