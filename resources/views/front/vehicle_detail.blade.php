@@ -6,14 +6,24 @@ Front Line Ready - Vehicle Detail
 @stop
 @section('content')
 <link rel="stylesheet" href="{{asset('public/css/style.css?v=1.1')}}"></style>
+<style type="text/css">
+    .sweet-alert h2 {
+    color: #575757;
+    font-size: 18px;
+}
+.sweet-alert button{
+    font-size: 15px;
+}
+</style>
 <script>
     
         function updateTimer(duration) {
             var interVal=  setInterval(function () {
             future = Date.parse(duration);
             date = new Date().toLocaleString("en-US", { timeZone: '<?=Session::get('timezone')?>' });
-             now = Date.parse(date);
+            now = Date.parse(date);
             diff = future - now;
+          //  console.log(diff);
        
              days = Math.floor(diff / (1000 * 60 * 60 * 24));
             hours = Math.floor(diff / (1000 * 60 * 60));
@@ -37,7 +47,7 @@ Front Line Ready - Vehicle Detail
             $("#day_car").html(d);
             $("#hour_car").html(h);
             $("#min_car").html(m);
-            $("#sec_car").html(s);
+           $("#sec_car").html(s);
             $("#day_car_bid").html(d);
             $("#hour_car_bid").html(h);
             $("#min_car_bid").html(m);
@@ -89,6 +99,9 @@ Front Line Ready - Vehicle Detail
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <ul class="vehicles-models-detail">
+                         <li> <span>Stock</span>
+                            <p>#{{$data->stock}}</p>
+                        </li>
                         <li> <span>Make</span>
                             <p>{{$data->make_id}}</p>
                         </li>
@@ -98,9 +111,7 @@ Front Line Ready - Vehicle Detail
                         <li> <span>VIN</span>
                             <p>{{$data->vin}}</p>
                         </li>
-                         <li> <span>Transmission</span>
-                            <p>{{$data->transmission}}</p>
-                        </li>
+                        
                         
                     </ul>
                 </div>
@@ -115,8 +126,8 @@ Front Line Ready - Vehicle Detail
                         <li> <span>Engine Size</span>
                             <p>{{$data->engine_size}}</p>
                         </li>
-                        <li> <span>Stock</span>
-                            <p>{{$data->stock}}</p>
+                        <li> <span>Transmission</span>
+                            <p>{{$data->transmission}}</p>
                         </li>
                     </ul>
                 </div>
@@ -128,25 +139,142 @@ Front Line Ready - Vehicle Detail
                         <li> <span>Interior Color</span>
                             <p>{{$data->interior_color}}</p>
                         </li>
-                        <li> <span>Interior Materia</span>
+                        <li> <span>Interior Material</span>
                             <p>{{$data->interior_materia}}</p>
                         </li>
-                        <li> <span>Town/City</span>
-                            <p>{{$data->city_id}}</p>
-                        </li>
+                       
                     </ul>
+                    
                 </div>
+                
+                    <a style="margin-left: 50px;width: 200px;color: white;    background: black;" href='{{url('/')."/storage/app/public/cars/report"."/".$data->flr_report}}' class="btn btn-primary" target="_blank">FLR Vehicle Report</a>
+                
+                
             </div>
         </div>
     </div>
     
 
 
-
+<div class="current-bid-register-tab-banner" style="margin-top:15px">
+            <div class="container">
+                <div class="row">
+                     @if($data->status==1)
+                    <div class="col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                        @else
+                        <div class="col-lg-12 col-md-9 col-sm-9 col-xs-12">
+                        @endif
+                        <div class="live-bid-hits-tags">
+                            @if($data->status==1)
+                             <a href="">Live</a>
+                            @elseif($data->status==2)
+                            <a href="">Coming Soon</a>
+                            
+                            @elseif($data->status==4)
+                            <a href="">Sold</a>
+                            @endif
+                            
+                            <div class="bids-times"> <span class="end-in">
+                                @if($data->status==1)
+                                
+                                 <?php 
+                                  
+                                       $timestamp = date("Y-m-d H:i:s",strtotime($data->end_date));
+                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
+                                      $new_date = $date->setTimezone('UTC');
+                                      $date1 =  \Carbon\Carbon::parse($new_date)->format('Y-m-d H:i:s');
+                                      
+                                    
+                               ?>
+                            <script type="text/javascript">
+                               updateTimer('{{$date1}}','{{$data->id}}');
+                            </script>
+                                Ends In :</span>
+                                <ul>
+                                    <li> <span id="day_car">0</span>
+                                        <p >Days</p>
+                                    </li>
+                                    <li> <span id="hour_car">00</span>
+                                        <p >Hours</p>
+                                    </li>
+                                    <li> <span id="min_car">00</span>
+                                        <p >Min</p>
+                                    </li>
+                                    <li> <span id="sec_car">00</span>
+                                        <p >Sec</p>
+                                    </li>
+                                </ul>
+                                 @endif
+                            </div>
+                            
+                            
+                           
+                            @if($data->status==1)
+                            <div class="current-bid-tags">
+                                <p>Current Bid : <span>$ {{$data->bid_price}}</span></p>
+                                 
+                                                               
+                            </div>
+                            @endif
+                       
+                            @if($data->status==4)
+                            <div class="current-bid-tags" style="width:170px;margin-left: 0px;">
+                                <p style="font-weight: 600;font-size: 15px;">Sold Date </p>
+                                <div class="head-bg-color" style="    max-width: 50%;">
+                                    <p style="padding:0px;">{{$data->sold_date}}</p>
+                                </div>
+                            </div>
+                            <div class="current-bid-tags" style="width:170px">
+                                <p style="font-weight: 600;font-size: 15px;">Winning Bid </p>
+                                <div class="head-bg-color">
+                                    <p style="padding:0px">$ {{$data->winning_bid}}</p>
+                                </div>
+                            </div>
+                            <div class="current-bid-tags" style="width:170px">
+                                <p style="font-weight: 600;font-size: 15px;">Total Bid </p>
+                                <div class="head-bg-color">
+                                    <p style="padding:0px">{{$data->total_bid}}</p>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                     @if($data->status==1)
+                   <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+                        @else
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        @endif
+                    
+                        <div class="register-login-makebid" style="">
+                            <ul>
+                                  @if(Auth::id())
+                                  
+                                  <li>
+                                      @if($data->status==1)
+                                       <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Make Your Bid</a>
+                                       <a class="regisder-bids" href="javascript:void()" onclick="buynow()" style="margin-left: 5px;">Buy Now ( $ {{$data->buy_now_price}})</a>
+                                      @endif
+                                   
+                                   
+                                  @else
+                                  
+                                <li> <a class="regisder-bids" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login <br>
+                                        To Make A Bid</a> </li>
+                                @endif
+                                        
+                                       
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!--Banner Slider end -->
 
     <!--Vahicle Description style start here -->
+     @if($data->status==1)
     <div class="my-accont-section">
         
 
@@ -159,7 +287,7 @@ Front Line Ready - Vehicle Detail
                
        
                
-                @if($data->status==1)
+               
                 <div class="row" id="bid_section">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
@@ -183,9 +311,9 @@ Front Line Ready - Vehicle Detail
                             <div class="heading-inner-pd">
                                 <div class="vehicles-addiction-bidding-cards">
                                     <h5>Current Bidding :
-                                        <p ><span id="car_currency">{{$data->currency_symbol}}</span><span id="bid_amount_html">{{$data->bid_price}}</span></p>
+                                        <p ><span id="car_currency">$ </span><span id="bid_amount_html">{{$data->base_price}}</span></p>
                                     </h5>
-                                    <p style="color:green">Minimum  Bid: {{$data->currency_symbol}}<span id="next_min_bid">0</span> </p>
+                                    <p style="color:green">Minimum  Bid: $<span id="next_min_bid">0</span> </p>
                                     <div class="form-group col-lg-12 col-md-12">
                                         <div class="border-input-hold">
                                             <input type="text" style="text-align: center;" name="bid_amount" id="bid_amount">
@@ -194,7 +322,7 @@ Front Line Ready - Vehicle Detail
                                     <ul>
                                         @if(empty(Auth::id()))
                                         <li class="btn_box_border">
-                                            <a class="btn_border" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('reg_pharse_1_content')">Register To Bid</a>
+                                            <a class="btn_border" href="{{route('home')}}#submit_entry_from" >Register To Bid</a>
                                         </li>
                                         <li class="btn_box_border active-btn-colors">
                                             <a class="btn_border" data-bs-toggle="modal" style="border: 1px solid #fff !important;color: #fff;" data-bs-target="#register_user_model" href="#" onclick="detaillogin('login_content')">Login To Bid</a>
@@ -229,11 +357,13 @@ Front Line Ready - Vehicle Detail
                                     <span>Ends : <p>
                                         
                                          <?php
-                                            $timestamp = $data->aucation_enddate.' '.$data->aucation_endtime;
+                                            $timestamp = date("Y-m-d H:i:s",strtotime($data->end_date));
                                             $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC');
                                    
                                             $new_date1 = $date->setTimezone(Session::get('current_timezone'));
-                                      echo $date =  \Carbon\Carbon::parse($new_date1)->format('l dS F');
+                                            echo $date =  \Carbon\Carbon::parse($new_date1)->format('l dS F');
+
+                                            
                                         ?>
                                         </p></span>
                                     <div class="bids-times">
@@ -252,15 +382,16 @@ Front Line Ready - Vehicle Detail
                                             </li>
                                         </ul>
                                     </div>
-                                    <b>Auction Views : <span id="car_views" style="font-size: 15px;font-weight: bolder;">{{$data->totalViews}}</span></b>
+                                    <!-- <b>Auction Views : <span id="car_views" style="font-size: 15px;font-weight: bolder;">{{$data->totalViews}}</span></b> -->
                                     <p>Last minute bidding and auction reserve - <a href="{{route('term-privacy')}}">learn more</a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="cards-footer">
-                            <img src="{{asset('public/theme/images/logo-white.png')}}">
+                            <img src="{{asset('public/logo/transparent_logo.png')}}">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
                         <div class="card-bg-gary">
@@ -308,7 +439,7 @@ Front Line Ready - Vehicle Detail
                                                    @if($dc->type==1) <!--bid user-->
                                                             <li class="bid_div">                                                    
                                                             <div class="tages">
-                                                                <p> {{$data->currency_symbol}}{{$dc->amount}} bid by {{$dc->username}}</p>
+                                                                <p> $ {{$dc->amount}} bid by {{$dc->username}}</p>
                                                                 <p>
                                                           <?php
                                                           
@@ -324,15 +455,15 @@ Front Line Ready - Vehicle Detail
                                                    @else <!--comment user-->
                                                    <li class="chat-bg-color comment_div" style="">
                                                 <div class="chat-box">
-                                                    <div class="img-holder"><img src="{{$dc->image}}"></div>
+                                                   
                                                     <div class="chatt-innter-content">
                                                         <span>{{$dc->username}}</span>
                                                         <p>{{$dc->comment}}</p>                                                     
                                                         <p class="time-show" id="time_show_{{$dc->id}}">
                                                         <?php
-                                                        $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i', $dc->datetime,'UTC');
-                                                       $td = $date->setTimezone(Session::get('current_timezone'));
-                                                    echo \Carbon\Carbon::parse($td)->format('Y-m-d @ h:i'); 
+                                                                $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i', date('Y-m-d H:i',strtotime($dc->datetime)),'UTC');
+                                                                $td = $date->setTimezone(Session::get('current_timezone'));
+                                                                echo \Carbon\Carbon::parse($td)->format('Y-m-d @ h:i'); 
                                                         ?></p>
                                                     </div>
 
@@ -347,13 +478,14 @@ Front Line Ready - Vehicle Detail
                             </div>
                         </div>
                         <div class="cards-footer">
-                            <img src="{{asset('public/theme/images/logo-white.png')}}">
+                            <img src="{{asset('public/logo/transparent_logo.png')}}">
                         </div>
                     </div>
                 </div>
-                @endif
+               
             </div>
        </div>
+        @endif
 <input type="hidden" name="timezone" id="timezone">
 @stop
 
@@ -373,21 +505,34 @@ Front Line Ready - Vehicle Detail
   }
 }
 
-function cardnotadded(){
+function buynow(){
      swal({
-        title: "Please add a payment method!",
+        title: " Are you sure you wish to purchase this vehicle?",
         text: "",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: '#DD6B55',
-        confirmButtonText: 'My Account',
-        cancelButtonText: "Cancel",
+        confirmButtonText: 'Yes, I wish to purchase',
+        cancelButtonText: "No, not at this time",
         closeOnConfirm: false,
         closeOnCancel: false
     },
     function(isConfirm){
     if (isConfirm){
-        window.location.href="{{route('billing')}}";
+            $.ajax({
+                url: '{{route("buy-now")}}',
+                method:'get',
+                data: { car_id:$("#car_id").val()},
+                success: function( data ) {
+                    if(data==1){
+                       $("#buynowmodal").modal('show');                        
+                    }else{
+                        alert("Something Getting Worng. Please Try Again!!");
+                        window.location.reload();
+                    }                 
+                }
+            });
+        
     } else {
         window.location.reload();
     }
@@ -442,22 +587,7 @@ setInterval(function () {
                         var txt = ""; 
                         var color = "";                     
                         $("#next_min_bid").html(numberWithCommas(str.minmum_amount_next_bid));
-                        if(str.reserve_met==1){
-                            txt = "RESERVE MET";
-                            color = "green";
-                        }
-                        if(str.reserve_met==2){
-                            txt = "RESERVE NOT MET";
-                            color = "red";
-                        }
-                        if(str.reserve_met==3){
-                            txt = "RESERVE NEARLY MET";
-                            color = "yellow";
-                        }
-                        $("#reverse_status_bid").removeClass("green");
-                        $("#reverse_status_bid").removeClass("red");
-                        $("#reverse_status_bid").removeClass("green");
-                        $("#reverse_status_bid").addClass(color);
+                        
                         $("#reverser_status").html(txt);
                         
                     }

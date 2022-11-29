@@ -75,14 +75,14 @@ ul.slick-dots {
                     h = h < 10 ? "0" + h : h;
                     if(d>0){
                         
-                       //     document.getElementById("end_time_"+id).innerHTML = d+" Day";
-                            document.getElementById("end_time_fe_"+id).innerHTML = d+" Day";
+                            document.getElementById("end_time_"+id).innerHTML = d+" Day";
+                         //   document.getElementById("end_time_fe_"+id).innerHTML = d+" Day";
                        
                         
                     }else{
                         
-                      //  document.getElementById("end_time_"+id).innerHTML = h+":"+m+":"+s;
-                        document.getElementById("end_time_fe_"+id).innerHTML = h+":"+m+":"+s;
+                        document.getElementById("end_time_"+id).innerHTML = h+":"+m+":"+s;
+                     //   document.getElementById("end_time_fe_"+id).innerHTML = h+":"+m+":"+s;
                        
                     }
                     //console.log(d+);
@@ -101,61 +101,53 @@ ul.slick-dots {
 </script>
 <!-- header End -->
       <!-- Slider Start -->
-      <div class="content display-container ">
-         <section id="hero1" class="mySlides hero fade-in">
-            <div class="inner cus-sliders">
-               <div class="container row-fluid">
-                  <div class="banner_text">
-                     <div class="text-part">
-                        <h2>The auto dealer exclusively for dealers.</h2>
-                        <p></p>
-                     </div>
-                  </div>
+     
+   <div class="container filter-main-hold-pos" id="auction_section" style="    margin-top: 50px;">
+        
+         <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="product-featur-row">
+                  <ul>
+                     <li class="actions-btn-hold btn_box_border active-2" id="ls_1">
+                        <a class="btn_border" href="javascript:checkactivefilter(1)">Live (<span id="totallivecar">{{count($get_car_live)}}</span>)</a>
+                     </li>
+                     <li class="actions-btn-hold btn_box_border" id="ls_2">
+                        <a class="btn_border" href="javascript:checkactivefilter(2)">Coming Soon (<span id="totalcommingsooncar">{{count($get_car_coming)}}</span>)</a>
+                     </li>
+                     
+                     
+                     <li class="actions-btn-hold btn_box_border" id="ls_4">
+                        <a class="btn_border" href="javascript:checkactivefilter(4)">Recent Sales (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
+                     </li>
+                  </ul>
                </div>
             </div>
-         </section>
-         <div class="header_dots">
-            <span class="w3-badge demo demo-1 w3-border w3-transparent w3-hover-white" id="badge1"
-               onclick="currentDiv(1)"></span>
          </div>
       </div>
-      
-      <div class="home-blog-section">
-        <div class="blog-left-icons-shape slb-page-hold">
-            <img src="{{asset('public/theme/images/shape-logo.png')}}">
-        </div>
-        <div class="container">
-            <div class="row seller-top-pd">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin: auto;">
-                    <div class="sell-with-us-content">
-                        <p>At Front Line Ready, we do exactly what our name says – provide front line ready cars to automotive dealers. We're passionate about vehicles and making sure retail dealers have an effective and efficient method of acquiring inventory.  We understand the challenges in today's environment with shortages of inventory and more competition for every vehicle.  Our goal is to help our partner dealers buy and sell more cars. Period.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="sell-with-us-img">
-                        <img src="{{asset('public/theme/images/sell-about.jpg')}}">
-                    </div>
-                </div>
-            </div>         
-        </div>
-    </div>
-
-
-     <div class="home-blog-section" style="margin-top: 50px;">
-         <div class="container" >
+      <!-- Search and filter end -->
+      <!-- main heading start -->
+      <div class="heading-border-section" id="header_1">
+         <span class="firts"></span>
+         <div class="container">
             <div class="row">
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                   <div class="heading-box">
-                     <h2>Featured Auctions</h2>
+                     <h2>LIVE</h2>
                   </div>
                   <span class="left"></span>
                   <span class="Right"></span>
                </div>
             </div>
-             <div class="wrapper">
-  <div class="my-slider">
-      @foreach($get_car_live as $gc)
-               <div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <!-- Product cars-box-first satrt-->
+      <div class="container" id="container_1">
+         <div class="row" id="live_cars_list">
+            
+           @foreach($get_car_live as $gc)
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                   <div class="product-box">
                      <div class="product-img-heading">
                         <div class="attributes">
@@ -166,20 +158,10 @@ ul.slick-dots {
                            </ul>
                         </div>
                         <div class="img-hold">
-                            @if(Auth::id())
-                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
-                               @else
-                               <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">
-                               @endif
-                               <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}">
-                               </a>
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
                         </div>
                         <div class="heading-hold">
-                            @if(Auth::id())
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
-                               @else
-                               <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">
-                               @endif
                                <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
                            </a>
                           <ul class="icons-section">
@@ -193,7 +175,7 @@ ul.slick-dots {
                      <div class="product-shadow-box">
                        
                         <div class="timging-tage">
-                           <p>Ends In : <span id="end_time_fe_{{$gc->id}}">
+                           <p>Ends In : <span id="end_time_{{$gc->id}}">
                                <?php 
                                       $timestamp = date("Y-m-d H:i:s",strtotime($gc->end_date));
                                       $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
@@ -215,102 +197,121 @@ ul.slick-dots {
                   </div>
                </div>
             @endforeach
-    </div>
-</div>
          </div>
-       
-     </div>
-     
-  
       </div>
-     
-       <div class="heading-border-section" id="submit_entry_from">
-        <span class="firts"></span>
-        <div class="container">
+     <div class="heading-border-section hide " id="header_2">
+         <span class="firts"></span>
+         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                    <div class="heading-box cutsom-white-bg sell-with-heading--second">
-                        <h2 style="">Register to bid</h2>
-                    </div>
-                    <span class="left"></span>
-                    <span class="Right"></span>
-                </div>
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>Coming soon</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
             </div>
-        </div>
-        <span class="second"></span>
-    </div>
-    <div class="container" id="delarship_reg">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="form_contact_box seller-form-hold">
-                    <p>If you are interested in learning more about our online auctions, please fill out the form below and one of our representatives will follow up with you directly.</p>
-                    <form id="reg1_registation_form">
-                        <ul id="reg1_error"></ul>
-                        <div class="contact_form_box register-form-head">
-                           <input type="hidden" name="vaildphoneno" id="vaildphoneno" class="vaildphoneno"> 
-                           <input type="hidden" name="countrycode" id="countrycode" class="countrycode">
-                            <div class="contact_login_box">
-                                <label>Name :</label>
-                                <input type="text" name="name" id="reg1_name">
-                                <label>Dealership Name :</label>
-                                <input type="text" name="dealership_name" id="reg1_dealership_name">
-                                <label>Dealership P Number :  <button type="button"  data-toggle="tooltip" data-placement="right" title="or State’s applicable Dealer License number" style="border-radius: 75%;border: 1px solid black;padding: 0px 8px;background: lightgray;"><i class="fa fa-info"></i></button></label>
-                                <input type="text" name="dealership_p_number" id="reg1_dealership_p_number">
-                                <label class="full-field">
-                                    <span class="form-label">Address*</span>
-                                    <input
-                                      id="reg1_address"
-                                      name="address"
-                                      required
-                                      autocomplete="off"
-                                    />
-                                  </label>
-                                  <label class="full-field">
-                                    <span class="form-label">street address</span>
-                                    <input id="reg1_street_address" name="street_address" />
-                                  </label>
-                                  <label class="full-field">
-                                    <span class="form-label">City*</span>
-                                    <input id="reg1_locality" name="city" required />
-                                  </label>
-                                  <label class="slim-field-left">
-                                    <span class="form-label">State/Province*</span>
-                                    <input id="reg1_state" name="state" required />
-                                  </label>
-                                  <label class="slim-field-right" for="postal_code">
-                                    <span class="form-label">Postal code*</span>
-                                    <input id="reg1_postcode" name="postcode" required />
-                                  </label>
-                                 <!-- <label class="full-field">
-                                    <span class="form-label">Country/Region*</span>-->
-                                    <input type="hidden" id="reg1_country" name="country" required value="USA"/>
-                                 <!-- </label>-->
-                                <label>Email :</label>
-                                <input type="email" name="email" id="reg1_email">
-                                <label>Phone Number :</label>
-                                <input type="tel" name="phone" class="phone numberonly" required="" id="phone_pay" maxlength="10">
-                                <span id="error_reg_phone" class="error error_contact_phone"></span>
-                                <span id="valid-msg" class="hide valid-msg">Valid</span>
-                                <span id="error-msg" class="hide error-msg">Invalid number</span>
-                                
-                            </div>
-                            <div class="end-border-and-btn">
-                                <!-- data-bs-toggle="modal"
-                                        data-bs-target="#myModalsell-out-sumit1" -->
-                                <div class="actions-btn-hold btn_box_border">
-                                    <a class="btn_border" href="javascript:dealerregisteruser('reg1')" style="padding:0px 45px;" >SUBMIT <i
-                                            class="fal fa-long-arrow-right" style="margin-left: 8px;"
-                                            aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                    </form>
-                </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <div class="container hide" id="container_2">
+         <div class="row" id="coming_car_list">
+             @foreach($get_car_coming as $gc)
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">Coming Soon</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
+                        </div>
+                        <div class="heading-hold" style="    border: 1px solid black;padding: 7px;margin-bottom: 13px;">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                           </a>
+                           <ul class="icons-section">
+                             
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+          
+         </div>
+      </div>
+
+ 
+      <div class="heading-border-section hide" id="header_4">
+         <span class="firts"></span>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>Sold</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+         <span class="second"></span>
+      </div>
+      <!-- main heading end -->
+      <div class="container hide" id="container_4">
+         <div class="row" id="sold_car_list">
+            @foreach($get_car_sold as $gc)
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="product-box">
+                     <div class="product-img-heading">
+                        <div class="attributes">
+                           <ul>
+                              <li>
+                                 <p class="live">Sold</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="img-hold">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
+                        </div>
+                        <div class="heading-hold" style="    border: 1px solid black;padding: 7px;margin-bottom: 13px;">
+                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                              <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                           </a>
+                           <ul class="icons-section">
+                              
+                           </ul>
+                        </div>
+                     </div>
+                    
+                  </div>
+               </div>
+            @endforeach
+           <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="end-border-and-btn last-bottom-pd">
+                  <div class="actions-btn-hold btn_box_border">
+                     <a class="btn_border" href="">All Sold Cars</a>
+                  </div>
+               </div>
+            </div> -->
+         </div>
       </div>
      
-      
+
+    
+     
+     
+      </div>
+     
+    
+     
+      <input type="hidden" id="filter_id" value="{{isset($id)?$id:0}}"/>
 @stop
 @section('footer')
 <script
@@ -408,7 +409,9 @@ function fillInAddress() {
         document.querySelector("#reg1_state").value = component.short_name;
         break;
       }
-      
+      case "country":
+        document.querySelector("#reg1_country").value = component.long_name;
+        break;
     }
   }
 
@@ -423,7 +426,69 @@ window.initAutocomplete = initAutocomplete;
        $(".closebox").removeAttr('checked');
    }
    
-  
+   if($("#filter_id").val()==1){
+       checkactivefilter(1);
+   }
+    if($("#filter_id").val()==2){
+       checkactivefilter(2);
+   }
+    if($("#filter_id").val()==3){
+       checkactivefilter(3);
+   }
+    if($("#filter_id").val()==4){
+       checkactivefilter(4);
+   }
+
+   function searchfilterresult(){
+      var makelist = new Array();
+      var sellertype = new Array();
+      var country_list = new Array();
+      var steering_position = new Array();
+      var search_cars = $("#search_cars").val();
+
+      $.each($("input[name='make[]']:checked"), function() {
+          makelist.push($(this).val());
+      });
+      $.each($("input[name='seller_type[]']:checked"), function() {
+          sellertype.push($(this).val());
+      });
+      $.each($("input[name='country_list[]']:checked"), function() {
+          country_list.push($(this).val());
+      });
+      $.each($("input[name='steering_position[]']:checked"), function() {
+          steering_position.push($(this).val());
+      });  
+      $.ajax({
+                  url: '{{url("searchcars")}}',
+                  method:'get',
+                  data: { makelist:makelist.toString(),sellertype:sellertype.toString(),country_list:country_list.toString(),steering_position:steering_position.toString(),search_cars:search_cars},
+                  success: function( data ) {
+                           var str = JSON.parse(data);
+                           $("#live_cars_list").html(str.livetxt);
+                           $("#coming_car_list").html(str.comingtxt);
+                           $("#private_cars_list").html(str.privatetxt);
+                           $("#sold_car_list").html(str.soldtxt);
+                           $("#totalcommingsooncar").html(str.comingcount);
+                           $("#totallivecar").html(str.livecount);
+                           $("#totalprivatecar").html(str.privatecount);
+                           $("#totalsoldcar").html(str.soldcount);
+
+                      
+                  }
+      }); 
+      $("#filter_drop").removeClass('show');
+   }
+   
+   function callShare()
+      {
+         //alert(arguments[0]+" "+arguments[1]+" "+arguments[2]);
+         var shareData = {
+         title: arguments[0],
+         text: arguments[0],
+         url: arguments[1],
+            }
+      navigator.share(shareData);
+      }
 
          $(window).on('load resize', function () {
 

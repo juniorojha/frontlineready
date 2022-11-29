@@ -60,7 +60,7 @@ Route::get("check_username",[FrontController::class,"check_username"])->name("ch
 Route::get("news_details",[FrontController::class,"show_news_details"])->name("news-detail");
 Route::get("spotlight",[FrontController::class,"show_spotlight"])->name("spotlight");
 Route::post("newsletter_user",[FrontController::class,"post_newsletter_user"])->name("newsletter-user");
-Route::get("about_us",[FrontController::class,"about_us"])->name("about-us");
+Route::get("about",[FrontController::class,"about_us"])->name("about-us");
 Route::get("sell_with_us",[FrontController::class,"sell_with_us"])->name("sell-with-us");
 Route::get("sell_your_vehicle",[FrontController::class,"sell_your_vehicle"])->name("sell-your-vehicle");
 Route::get("vehicle_detail",[FrontController::class,"vehicle_detail"])->name("vehicle-detail");
@@ -99,6 +99,10 @@ Route::post("update_payment_detail",[FrontController::class,"update_payment_deta
 Route::get("fetch_visitor",[FrontController::class,"fetch_visitor"])->name("fetch-visitor");
 Route::get("get_txt",[FrontController::class,"get_txt"]);
 
+Route::get("auction",[FrontController::class,"show_aucation"])->name("aucation");
+
+
+Route::get("buy_now",[FrontController::class,"buy_now"])->name("buy-now");
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get("/",[AuthencationController::class,"show_admin_login"])->name("login");
@@ -165,6 +169,7 @@ Route::group(['prefix' => 'admin'], function () {
 
             Route::get("buy_now_cars",[CarController::class,"show_buy_now_cars"])->name("buy-now-cars");
             Route::get("buy-now-cars-data-table",[CarController::class,"buy_now_cars_data_table"])->name("buy-now-cars-data-table");
+            Route::get("settle_car",[CarController::class,"settle_car"])->name("settle-car");
 
           
 

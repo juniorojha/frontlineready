@@ -152,19 +152,20 @@ Save Car Information
                   <div class="row">                    
                      <div class="form-group col-md-6 " id="aucation_end_datetime_div">
                         <?php 
-                                 $start_date = "";
+                                 $start_date = date('m/d/Y  h:m A');
+                                 $end_date = date('m/d/Y  h:m A');
                                  if(isset($data->start_date)){
-                                    $start_date = date("Y/m/d  h:m A",strtotime($data->start_date));      
+                                    $start_date = date("m/d/Y  h:m A",strtotime($data->start_date));      
                                  }
-                                 $end_date = "";
+                                 //$end_date = "";
                                  if(isset($data->end_date)){
-                                    $end_date = date("Y/m/d   h:m A",strtotime($data->end_date));      
+                                    $end_date = date("m/d/Y   h:m A",strtotime($data->end_date));      
                                  }
                                
 
                         ?>
                         <label for="aucation_enddate" class="">Aucation Start & End Date<span class="error">*</span></label>
-                        <input type="tex" name="aucation_date" id="demo" class="form-control" value="{{$start_date.' @ '.$end_date}}">
+                        <input type="text" name="aucation_date" id="demo" class="form-control" value="{{$start_date}} - {{$end_date}}">
                         <input type="hidden" id="car_start_date" value="{{$start_date}}"> 
                         <input type="hidden" id="car_end_date" value="{{$end_date}}">                        
                      </div>                     
@@ -214,6 +215,9 @@ Save Car Information
 <input type="hidden" id="siteurl" value="{{url('/')}}">
 <script type="text/javascript" src="{{asset('public/imageupload/image-uploader.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/js/car.js?v=1')}}"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 <script type="text/javascript">
  
 
@@ -255,6 +259,17 @@ Save Car Information
 });
 
 
-
+//$('#demo').daterangepicker({ startDate: $("#car_start_date").val(), endDate: $("#car_end_date").val() });
+</script>
+<script type="text/javascript">
+$(function() {
+    $('#demo').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+            format: 'MM/DD/YYYY h:mm A'
+        }
+    });
+});
 </script>
 @stop

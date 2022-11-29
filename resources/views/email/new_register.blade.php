@@ -143,26 +143,14 @@
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             
                                                 <tr>
-                                                    <td>Name</td>
-                                                    <td>{{$user->name}}</td>
+                                                    <td>User Name :- </td>
+                                                    <td>{{$user->username}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Dealership Name</td>
-                                                    <td>{{$user->dealership_name}}</td>
+                                                    <td>Password :- </td>
+                                                    <td>{{$user->newpassword}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Dealership P Number</td>
-                                                    <td>{{$user->dealership_p_number}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Phone</td>
-                                                    <td>{{$user->phone}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Email</td>
-                                                    <td>{{$user->email}}</td>
-                                                </tr>
-                                            
+                                               
                                             
                                         </table>
                                     </td>

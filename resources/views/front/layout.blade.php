@@ -37,9 +37,10 @@
                            <ul class="top-nav-bar">
                               <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}#auction_section">Auctions</a></li>
+                   
                              
                               @if(Auth::id())
+                                <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('aucation')}}">Auctions</a></li>
                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
                                  <a href="{{route('myaccount')}}">My Account</a>
                               </li>
@@ -65,10 +66,11 @@
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('home')}}#auction_section">Auctions</a></li>
+                  
                      
                     
                      @if(Auth::id())
+                        <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('aucation')}}">Auctions</a></li>
                               <li class="<?=Session::get("menu_active")==4?'active':''?>">
                                  <a href="{{route('myaccount')}}">My Account</a>
                               </li>
@@ -102,9 +104,9 @@
                   <div class="footer-heading-contents">
                      <h5>Auctions</h5>
                      <ul>
-                        <li><a href="{{route('home',['id'=>1])}}#auction_section">Live</a></li>
-                        <li><a href="{{route('home',['id'=>1])}}#auction_section">Coming Soon</a></li>
-                        <li><a href="{{route('home',['id'=>4])}}#auction_section">Sold</a></li>
+                        <li><a href="{{route('aucation',['id'=>1])}}">Live</a></li>
+                        <li><a href="{{route('aucation',['id'=>1])}}">Coming Soon</a></li>
+                        <li><a href="{{route('aucation',['id'=>4])}}">Sold</a></li>
                      </ul>
                   </div>
                </div>
@@ -294,7 +296,7 @@ Please add a payment method to you account. My Account -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data-2012-2022.min.js"></script>
       <script type="text/javascript" src="{{asset('public/theme/js/script.js?v=1.2345')}}"></script>      
-      <script type="text/javascript" src="{{asset('public/theme/js/core.js?v=01')}}"></script>
+      <script type="text/javascript" src="{{asset('public/theme/js/core.js?v=87989')}}"></script>
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
      
@@ -484,8 +486,7 @@ Please add a payment method to you account. My Account -->
                                     <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">
                                         You agree to purchase if your bid meets or exceeds the reserve price.</p>
                                     <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">Bid are legally binding and may not be retracted.</p>
-                                        <p style="font-size: 20px;line-height: 35px;    font-size: 16px;">
-                                        if you win the auction,you agree to pay a fee <span id="commission"></span> to Curating Cars</p>
+                                        
                                     <br>
                                     <br>
                                     <p class="row" style="display: inline-table;font-weight: 800;font-size: x-large;">Your Bid :<span id="bid_currency" style='padding-right: 0px;color: green;'>$</span><span style="padding-left: 0px;color: green;" id="place_bid_amount">0</span></p>
@@ -545,9 +546,7 @@ Please add a payment method to you account. My Account -->
                                     <h2>YOUR BID WAS ACCEPTED</h2>
                                     <br>
                                     <p class="row" style="font-weight: 800;font-size: x-large;"><span  style='padding-right: 0px;color: green;'>Your Bid :</span><span  style='padding-right: 0px;color: green;' id="dis_bid_amount">$20,000</span><span style='    font-size: small;'>was accepted</span></p>
-                                    <br>
-                                    <p>We will notify you immediately if you are outbid.</p>
-                                    <br>
+                                   
                                     <p>Thanks <span id="bid_user_name">Sam</span>!</p>
                                 </div>
                                 <ul style="text-align: center;">
@@ -565,6 +564,54 @@ Please add a payment method to you account. My Account -->
             </div>
         </div>
     </div>
+
+    
+    
+    <div class="modal fade" id="buynowmodal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="border:unset">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">X</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="border:unset; padding: 15px 0px;">
+                    <div class="heading-border-section" style="margin-bottom:0px">
+                        <span class="firts"></span>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="heading-box back-white-header">
+                                        <img src="{{asset('public/logo/grayscale_transparent.png')}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form_contact_box register-form">
+                                    <h4 style="font-weight: 800;">Congratulations! You have won this auction.</h4>
+                                    <br>
+                                    <p class="row" style="font-weight: 800;">A Front Line Ready representative will be contacting you. Remember – you have 48 hours to settle the transaction.</p>
+                                   
+                                    <p>Thank you for buying a Front Line Ready vehicle!</p>
+                                </div>
+                                <ul style="text-align: center;">
+                                    <li class="btn_box_border">
+                                            <a class="btn_border" href="javascript:void()" onclick="window.location.reload()">Back To Listing</a>
+                                        </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <span class="second"></span>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+            </div>
+        </div>
+    </div>
+
     
 
 <!-- The Modal 4th-poup end here -->

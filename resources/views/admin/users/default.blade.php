@@ -34,7 +34,6 @@ Users List
             <tr>
                <th>#</th>
                <th>User Name</th>
-               <th>Country</th>
                <th>Email</th>
                <th>Phone</th>
                <th>View</th>
@@ -46,7 +45,6 @@ Users List
             <tr>
                <th>#</th>
                <th>User Name</th>
-               <th>Country</th>
                <th>Email</th>
                <th>Phone</th>
                <th>View</th>
@@ -72,9 +70,6 @@ Users List
            data: 'username',
            name: 'username'
        },{
-           data: 'country',
-           name: 'country'
-       },{
            data: 'email',
            name: 'email'
        },{
@@ -91,7 +86,7 @@ Users List
            name: 'action'
        }
    ],columnDefs: [{
-            targets: 5,
+            targets: 4,
             render: function (data) {
                     return '<a href="javascript:void()" onclick="userdata('+data+')" class="btn btn-primary" data-toggle="modal" data-target="#user_info_data">View</a>';                
             }

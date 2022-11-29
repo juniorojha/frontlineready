@@ -106,6 +106,15 @@ Sold Cars
                     return '<img src="'+data+'" style="width:250px"/>';                
             }
         },{
+            targets: 7,
+            render: function (data) {
+                    if(data==1){
+                        return "<span class='btn-warning' style='border-radius: 50px; padding: 6px 15px;'>Pending</span>";
+                    }else{
+                        return "<span class='btn-success' style='border-radius: 50px; padding: 6px 15px;'>Settled</span>";
+                    }              
+            }
+        },{
             targets: 8,
             render: function (data) {
                 // var path = '{{url("vehicle_detail?id=")}}'+data;
@@ -117,5 +126,15 @@ Sold Cars
        [0, "DESC"]
    ]
    });
+   
+    function delete_record(url){
+         var msg = "Are you sure want to settle this car payment?";
+         if (confirm(msg)) {                
+                 window.location.href = url;                 
+         } else {
+             window.location.reload();
+         }
+     } 
+
 </script>
 @stop

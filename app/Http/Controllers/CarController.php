@@ -86,6 +86,38 @@ class CarController extends Controller
                 return redirect()->back();
         }
     }
+    
+    public function settle_car(Request $request){
+          try{
+                $data = Car::find($request->get("id"));
+                if($data){
+                    $data->payment_status = '2';
+                    $data->save();
+                    Session::flash('message',"This Car Payment Settle Successfully"); 
+                    Session::flash('alert-class', 'alert-success');
+                    return redirect()->back();
+                }else{
+                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+                }
+            }catch(Exception $e){
+                    \Log::info($e->getMessage());
+                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+            }catch (DecryptException $e) {
+                    \Log::info($e->getMessage());
+                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+            }catch (\Illuminate\Database\QueryException $e){
+                    \Log::info($e->getMessage());
+                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+            }    
+    }
 
     public function show_delete_car($id){
              try{
@@ -129,7 +161,7 @@ class CarController extends Controller
             $a['src'] = asset('storage/app/public/cars/banner/').'/'.$d->image;
             $ls[] = $a;
         }
-        return json_encode($ls);
+        return json_encode($data);
     }
 
    
@@ -196,7 +228,7 @@ class CarController extends Controller
                 $store->buy_now_price = $request->get("buy_now_price");
                 $store->base_price = $request->get("base_price");
                 $store->status = '2';
-                $dates = explode(" @ ",$request->get("aucation_date"));
+                $dates = explode(" - ",$request->get("aucation_date"));
                 if(isset($dates[0])){
                     $date = Carbon::createFromFormat('Y-m-d H:i',date("Y-m-d H:i",strtotime($dates[0])), $this->get_time_zone_name());
                     $date->setTimezone('UTC');
@@ -297,7 +329,7 @@ class CarController extends Controller
                 return count(Comment::where('car_id',$car->id)->where('type','1')->get());
             })
             ->editColumn('end_time', function ($car) {
-                    $timestamp = $data->end_date;
+                    $timestamp = $car->end_date;
                     $date = Carbon::createFromFormat('Y-m-d H:i', $timestamp, 'UTC');
                     $new_date = $date->setTimezone($this->get_time_zone_name()); 
                     return Carbon::parse($new_date)->format('Y-m-d H:i');
@@ -356,7 +388,7 @@ class CarController extends Controller
         $car =Car::whereNull('deleted_at')->where("status",4)->orderby('id','DESC')->get();
          return DataTables::of($car)            
             ->editColumn('image', function ($car) {
-                return asset("storage/app/public/cars/banner").'/'.$car->banner;
+                return asset("storage/app/public/cars/banner").'/'.$car->thumbail;
             }) 
             ->editColumn('vin', function ($car) {
                 return $car->vin;
@@ -377,11 +409,10 @@ class CarController extends Controller
             ->editColumn('sold_date', function ($car) {
                 return $car->sold_date;
             })
-            ->editColumn('amount', function ($car) {
-               $data = payment_history::where("car_id",$car->id)->first();
-                if(isset($data)){
-                    return $data->currency.$data->amount;
-                }
+            ->editColumn('payment_status', function ($car) {
+              
+                    return $car->payment_status;
+                
             })
             ->editColumn('winning_bid', function ($car) {
                 $str = explode("-",$car->currency);
@@ -391,8 +422,12 @@ class CarController extends Controller
             ->editColumn('total_bid', function ($car) {
                 return $car->total_bid;
             })
-            ->editColumn('action', function ($car) {               
-                return '';              
+            ->editColumn('action', function ($car) { 
+                $delete = route('settle-car', ['id'=>$car->id]);
+                if($car->payment_status==1){
+                     return '<a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Settle Payment</a>';
+                }
+                             
             }) 
             ->addIndexColumn()              
             ->make(true);

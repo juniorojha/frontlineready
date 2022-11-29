@@ -65,9 +65,9 @@ class UserController extends Controller
             })
             ->editColumn('status', function ($user) {
                 if($user->email_verification==0){
-                    return "Inactivated";
+                    return "Inactive";
                 }else{
-                    return "Activated";
+                    return "Active";
                 }
             })
             ->editColumn('action', function ($user) {
@@ -79,7 +79,7 @@ class UserController extends Controller
                 if($user->email_verification==0){
                     $txt = '<a  href="'.$approve.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Activate</a>';
                 }
-                return '<a  href="'.$edit.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Cars</a><a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>'.$txt;  
+                return '<a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>'.$txt;  
 
             })    
             ->addIndexColumn()           

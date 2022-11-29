@@ -103,7 +103,7 @@
 
 <body style="background-color: black; margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
-    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Thanks for registering with Frontlineready. Please click this link to complete your registration: </div>
+    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Thanks for registering with Curatingcars. Please click this link to complete your registration: </div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <!-- LOGO -->
         <tr>
@@ -132,36 +132,29 @@
     margin-bottom: 75px;">
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                            <p style="margin: 0;">We're excited to have you get started. First, you need to confirm your account. Just press the button below.</p>
+                            <p style="margin: 0;">We're excited to have we get recently new winning auction information.</p>
                         </td>
                     </tr>
                     <tr>
                         <td bgcolor="#ffffff" align="left">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table">
                                 <tr>
                                     <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             
                                                 <tr>
                                                     <td>Name</td>
-                                                    <td>{{$user->name}}</td>
+                                                    <td>{{$user->username}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Dealership Name</td>
-                                                    <td>{{$user->dealership_name}}</td>
+                                                    <td>Amount</td>
+                                                    <td>{{$user->bid_amount}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Dealership P Number</td>
-                                                    <td>{{$user->dealership_p_number}}</td>
+                                                    <td>stock</td>
+                                                    <td>{{$user->stock}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Phone</td>
-                                                    <td>{{$user->phone}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Email</td>
-                                                    <td>{{$user->email}}</td>
-                                                </tr>
+                                               
                                             
                                             
                                         </table>

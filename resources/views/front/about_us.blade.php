@@ -5,6 +5,16 @@ Front Line Ready - About Us
 @section('meta-data')
 @stop
 @section('content')
+<style>
+    td.tg-1lax {
+    text-align: justify;
+    padding: 6px 25px 5px 1px;
+}
+.sell-with-us-content p{
+    font-size: 18px;
+}
+</style>
+
 <?php $path = asset('public/theme/images/sell-banner.jpg');?>
   <div class="banner slider section hold" style="background-image: url('{{$path}}');">
         <div class="container">
@@ -24,7 +34,7 @@ Front Line Ready - About Us
             <img src="{{asset('public/theme/images/shape-logo.png')}}">
         </div>
         <div class="container">
-            <div class="row seller-top-pd">
+           <!-- <div class="row seller-top-pd">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin: auto;">
                     <div class="sell-with-us-content">
                         <p>At Front Line Ready, we do exactly what our name says – provide front line ready cars to automotive dealers. We're passionate about vehicles and making sure retail dealers have an effective and efficient method of acquiring inventory.  We understand the challenges in today's environment with shortages of inventory and more competition for every vehicle.  Our goal is to help our partner dealers buy and sell more cars. Period.</p>
@@ -35,21 +45,41 @@ Front Line Ready - About Us
                         <img src="{{asset('public/theme/images/sell-about.jpg')}}">
                     </div>
                 </div>
+            </div>-->
+             <div class="row" style="margin-top:50px">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>How it Works</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
+                    <div class="sell-with-us-content">
+                       
+                        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.  We then certify our cars for 30 days or 1,000 miles. <br/>
+                        &nbsp;&nbsp;&nbsp;It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. </p>
+                        <a href="{{route('home')}}#delarship_reg"><h3 style="display: flex;justify-content: center;    font-size: 24px;font-weight: 700;">Contact us to learn more.</h3></a>
+                    
+                    </div>
+                </div>
+            </div>     
+            <div class="row" style="margin-top:50px">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>How we are different</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
-                    <div class="sell-with-us-content">
-                        <span>How it Works</span>
-                        <p>We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.  We then certify our cars for 30 days or 1,000 miles. <br/>
-                        It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. <br/> Contact us to learn more.
-                    </p>
-                    </div>
-                </div>
-            </div>       
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
-                    <div class="sell-with-us-content">
-                        <span>How we are different</span>
+                    <div class="sell-with-us-content" style="margin-top:10px">
+                        
                         <table class="tg_table">
                             <thead>
                               <tr>
@@ -60,19 +90,28 @@ Front Line Ready - About Us
                             </thead>
                             <tbody>
                               <tr>
-                                <td class="tg-1lax">Not every vehicle is for us. We buy from individuals and look for cars with less than 100,000 miles with only minor imperfections. We are experts in evaluating and buying vehicles.</td>
-                                <td class="tg-1lax">Our vehicles are put through a 100+ point inspection and any maintenance or cometic issues are addressed. Only vehicles that reach at least a 4.0 out of 5 are certified as Front Line Ready.</td>
-                                <td class="tg-1lax">We utilize proprietary technology to both buy and sell.  This allows both the seller and our dealer partners to have transparency in the process.  We make it easy.</td>
+                                <td class="tg-1lax" style="text-align: justify;">Not every vehicle is for us. We buy from individuals and look for cars with less than 100,000 miles with only minor imperfections. We are experts in evaluating and buying vehicles.</td>
+                                <td class="tg-1lax" style="text-align: justify;">Our vehicles are put through a 100+ point inspection and any maintenance or cometic issues are addressed. Only vehicles that reach at least a 4.0 out of 5 are certified as Front Line Ready.</td>
+                                <td class="tg-1lax" style="text-align: justify;">We utilize proprietary technology to both buy and sell.  This allows both the seller and our dealer partners to have transparency in the process.  We make it easy.</td>
                               </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>       
+            </div>    
+             <div class="row" style="margin-top:50px">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
+                  <div class="heading-box">
+                     <h2>How Our Auctions Work</h2>
+                  </div>
+                  <span class="left"></span>
+                  <span class="Right"></span>
+               </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sellers-receives-content">
-                        <span>How Our Auctions Work</span>
+                       
                         <p>The process at Front Line Ready is very simple.</p>
                         <ol>
                             <li><p style="margin-left:3px;width: 100%;text-align: justify;">Register as a dealer (see below).</p></li>
@@ -89,7 +128,7 @@ Front Line Ready - About Us
             </div>
         </div>
     </div>
-    <div class="seller-middle-banner"><div class="container">
+    <div class="seller-middle-banner" style="margin-bottom:0px"><div class="container">
           <div class="row">
             <div class="banner-inner-content-sell-with-us">
         <h3>Take a Ride With Us!</h3>
@@ -99,45 +138,8 @@ Front Line Ready - About Us
 
     </div>
 
- <!--    <div class="heading-border-section">
-        <span class="firts"></span>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
-                    <div class="heading-box cutsom-white-bg sell-with-heading--second">
-                        <h2>SELL YOUR VEHICLE</h2>
-                    </div>
-                    <span class="left"></span>
-                    <span class="Right"></span>
-                </div>
-            </div>
-        </div>
-        <span class="second"></span>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="sell-ypur-vehicles-content">
-                    <p>Alternatively submit the full details of your vehicle here so we can provide a no-obligation</p>
-                    <p>valuation and potentially progress to a full listing:</p>
-                    <div class="end-border-and-btn">
-                        <div class="actions-btn-hold btn_box_border">
-                            <a class="btn_border" href="{{route('sell-your-vehicle')}}" style="padding:0px 45px;">SUBMIT AN
-                                ENTRY <i class="fal fa-long-arrow-right" style="margin-left: 8px;"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <p>If you have any questions then please do speak to a member of the team,</p>
-                    <p>the relevant details for your country can be found on our <a href="#" style="
-                        text-decoration: underline;
-                    ">contact page</a></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="seller-bottom-banner"></div>
+
+   
 @stop
 @section('footer')
 @stop

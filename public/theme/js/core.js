@@ -257,14 +257,14 @@ function dealerregisteruser(val){
 	var state = $("#"+val+"_state").val();
 	var country = $("#"+val+"_country").val();
     var email = $("#"+val+"_email").val();
-    var password = $("#"+val+"_password").val();
+  //  var password = $("#"+val+"_password").val();
     if(val=="reg1"){
     	var phone = $("#phone_pay").val();
     }else{
     	var phone = $("#"+val+"_phone").val();
     }
     
-    var cpwd = $("#"+val+"_cpassword").val();
+    //var cpwd = $("#"+val+"_cpassword").val();
     
    
     var msg = "";
@@ -307,33 +307,7 @@ function dealerregisteruser(val){
 			msg=1;
         }
     }
-    if(password==""){
-        txt = txt+"<li>Please enter your password.</li>";
-		msg=1;
-    }else{
-    	 if (password.length >= 8){
-
-	     }else{
-	     	 txt = txt+"<li>At least 1 digit.At least 8 character.</li>";     	 
-	     	 msg=1;
-	     	 if(password.match(/[0-9]/g)){
-	     	
-		     }else{
-		     	txt = txt+"<li>At least 1 digit.</li>";     	 
-		     	 msg=1;
-		     } 
-	     }
-    }  
-    if(cpwd==""){
-        txt = txt+"<li>Please enter your confirm password.</li>";
-		msg=1;
-
-    }else{
-    	if(password!=cpwd){
-			txt = txt+"<li>Confirm password and password must be same.</li>";
-			msg=1;
-	    }
-    }
+   
     
     if(country==""){
 		txt = txt+"<li>Please enter country.</li>";
@@ -343,10 +317,7 @@ function dealerregisteruser(val){
 		txt = txt+"<li>Please enter phone number.</li>";
 		msg=1;
 	}else{
-		if($("#vaildphoneno_reg").val()!=1){
-			txt = txt+"<li>Please enter vaild phone number.</li>";
-			msg=1;
-	    }
+	
 	}
 	
 	
@@ -364,7 +335,8 @@ function dealerregisteruser(val){
 					data: $('#'+val+'_registation_form').serialize(),
 					success: function(response){
 						if(response==1){
-						   	$('#'+val+'_registation_form').trigger("reset");                      
+						   	$('#'+val+'_registation_form').trigger("reset");    
+                                   $("#register_user_model").modal('show');                  
 	                        changemodel("reg_pharse_2_content");	                       
 						}else if(response==2){ // email not unqiue
 							$("#"+val+"_error").html("Email address already exist.");

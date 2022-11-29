@@ -77,33 +77,66 @@ class FrontController extends Controller
         return $timezone;
     }
     
-    public function show_home(Request $request){       
-        Session::put("timezone",$this->get_time_zone_name());
-        Session::put("current_timezone",$this->get_local_time());
-        try{
+    public function show_aucation(Request $request){
+         try{
                 $setting = Setting::find(1);
                 $id = $request->get("id");
                 $spotLight = SpotLight::take(3)->orderby("id","DESC")->get();
                 foreach($spotLight as $sl){
                     $sl->query_id = $this->encryptstring($sl->id);
+                    $sl->make = Make::find($sl->make)?Make::find($sl->make)->name:'';
                 }
                 Session::put("menu_active",'1');
                 $get_car_coming = Car::whereNull('deleted_at')->where("status",'2')->get();
                 foreach ($get_car_coming as $k) {
                     $k->key_id = $this->encryptstring($k->id);
+                    $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
                 $get_car_live = Car::whereNull('deleted_at')->where("status",'1')->get();
                 foreach ($get_car_live as $k) {
-                    $k->key_id = $this->encryptstring($k->id);                   
+                    $k->key_id = $this->encryptstring($k->id); 
+                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
                 $get_car_sold = Car::whereNull('deleted_at')->where("status",'4')->get();
                 foreach ($get_car_sold as $k) {
-                    $k->key_id = $this->encryptstring($k->id);                   
+                    $k->key_id = $this->encryptstring($k->id);  
+                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
-                
+                 Session::put("menu_active",'3');
                 $makes = Make::wherenull('deleted_at')->get();
                 
-                return view("front.home",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
+                return view("front.aucation",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
+        }catch(Exception $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        }catch (DecryptException $e) {
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        }catch (\Illuminate\Database\QueryException $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        } 
+    }
+    
+    public function show_home(Request $request){       
+        Session::put("timezone",$this->get_time_zone_name());
+        Session::put("current_timezone",$this->get_local_time());
+        try{
+                $setting = Setting::find(1);
+                $makes = Make::wherenull('deleted_at')->get();
+                // $get_car_live = Car::whereNull('deleted_at')->where("status",'1')->get();
+                 $get_car_live = Car::whereNull('deleted_at')->get();
+                foreach ($get_car_live as $k) {
+                    $k->key_id = $this->encryptstring($k->id);                   $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+                }
+                 Session::put("menu_active",'1');
+                return view("front.home",compact("setting","get_car_live"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
@@ -164,9 +197,9 @@ class FrontController extends Controller
     }
 
     public function sendemail(Request $request){
-             $user = User::find(3);
+             $user = User::find(1);
              $user->key = 1;
-            // $user->email = $request->get('email');
+             $user->email = 'hetaljogadiya48@gmail.com';
             // try {
                  Mail::send('email.user_verification', ['user' => $user], function($message) use ($user){
                      $message->to($user->email,$user->username)->subject('Front Line Ready');
@@ -210,22 +243,38 @@ class FrontController extends Controller
         }
         return "Thank you For Getting in Touch With Us. We connect with You Very soon";       
     }
+    
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 
     public function emailverified(Request $request){
         try{
                 $id = $this->decyptstring($request->get('query'));
                 $user = User::find($id);
                 if($user){
+                        $newpassword = $this->generateRandomString(5);
                         $user->email_verification = 1;
+                        $user->username = $this->generateRandomString(8);
+                        $user->password = Hash::make($newpassword);
                         $user->save(); 
-                         return redirect()->back();
+                        $user->newpassword = $newpassword;
+                        $setting = Setting::find(1);
+                        Mail::send('email.new_register', ['user' => $user], function($message) use ($user){
+                             $message->to($user->email,$user->name)->subject('Front Line Ready');
+                        });
+                        return redirect()->back();
                 }else{
-                    
                      Session::flash('message',"Something Wrong"); 
                      Session::flash('alert-class', 'alert-danger');
                      return redirect()->back();
                 }
-               
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng");
@@ -289,7 +338,6 @@ class FrontController extends Controller
             $store->postcode = $request->get("postcode");
             $store->email = $request->get("email");
             $store->country = $request->get("country");
-            $store->password = Hash::make($request->get("password"));
             $store->phone = $request->get('countrycode')." ".$request->get("phone");
             $getcountry  = Country::where("sortname",$request->get("country"))->first();
             $store->country_id = isset($getcountry)?$getcountry->id:'';
@@ -387,48 +435,37 @@ class FrontController extends Controller
             $getcars = Comment::where("car_id",$k->id)->where("user_id",Auth::id())->where("type",'1')->first();
             if($getcars){
                     $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;                  
-                    $str = explode("-",$k->currency);
-                    $k->currency_symbol = isset($str[1])?$str[1]:'';
+                    
                     $k->bid_price = Comment::find($k->current_bid_id)?Comment::find($k->current_bid_id)->amount:'0.00';
                     $bid_price = str_replace(",","",$k->bid_price);
                     $k->total_bid = count(Comment::where("car_id",$k->id)->where("type",'1')->get());
-                    if($k->reserve_price<=$bid_price){
-                        $k->reserve_met = 1;
-                    }
-                    else{
-                        $minus = $k->reserve_price-$bid_price;
-                        if($minus<=1000){
-                            $k->reserve_met = 3;
-                        }else{
-                            $k->reserve_met = 2;
-                        }                        
-                    }                
+                    $k->my_bid = Comment::where("car_id",$k->id)->where("type",'1')->where("user_id",Auth::id())->orderby("id","DESC")->first();
+                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+                                   
                 $livecars[] = $k;
             }
         }
         $wincars = array();
-        $getwincars = payment_history::where("buyer_id",Auth::id())->get();
-        foreach($getwincars as $gl){
-              $k =CarInfo::find($gl->id);
-              if($k){
+        $aucation_win_pay_pending = Car::where("status",'4')->where("payment_status",'1')->get();
+        $aucation_win_pay_settle = Car::where("status",'4')->where("payment_status",'2')->get();
+        foreach($aucation_win_pay_pending as $k){
                     $k->key_id = $this->encryptstring($k->id);
-                    $k->country_name = Country::find($k->country_id)?Country::find($k->country_id)->name:'';
-                    $k->country_sortname = Country::find($k->country_id)?strtolower(Country::find($k->country_id)->sortname):'';
-                    $k->is_like = UserWatching::where("car_id",$k->id)->where("user_id",Auth::id())->first()?1:0;
-                    $str = explode("-",$k->currency);
-                    $k->currency_symbol = isset($str[1])?$str[1]:'';
-                    $wincars[] = $k;
-              }                  
-           
+                    $k->bid_price = $k->winning_bid;
+                    $bid_price = str_replace(",","",$k->bid_price);
+                    $k->total_bid = count(Comment::where("car_id",$k->id)->where("type",'1')->get());
+                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
         }
-
+        foreach($aucation_win_pay_settle as $k){
+                    $k->key_id = $this->encryptstring($k->id);
+                    $k->bid_price = $k->winning_bid;
+                    $bid_price = str_replace(",","",$k->bid_price);
+                    $k->total_bid = count(Comment::where("car_id",$k->id)->where("type",'1')->get());
+                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+        }
        
                 
         Session::put("menu_active",'4');
-        return view("front.myaccount",compact("setting","country","livecars","wincars"));
+        return view("front.myaccount",compact("setting","country","livecars","aucation_win_pay_settle","aucation_win_pay_pending"));
     }
 
     public function show_cookie_policy(){
@@ -591,9 +628,9 @@ class FrontController extends Controller
                 if(isset($data)){
                    
                     $data->make_id = Make::find($data->make)?Make::find($data->make)->name:'';                   
-                    $data->bid_price = 0;
+                    $data->bid_price = $data->base_price;
                     if(isset($data->price)&&$data->current_bid_id!=""){                        
-                        $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->price;
+                        $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->base_price;
                     }
                                      
                     $data->Comment = Comment::where('car_id',$data->id)->get();                    
@@ -601,7 +638,7 @@ class FrontController extends Controller
                     $bid_price = str_replace(",","",$data->bid_price);                   
                     
                     foreach($data->Comment as $dc){
-                        $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->username:'';
+                        $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->name:'';
                         $ls = User::find($dc->user_id);
                         if($ls){
                              if($ls->image==""){
@@ -653,10 +690,10 @@ class FrontController extends Controller
     }
 
     public function fetch_visitor(Request $request){
-        $data = CarInfo::find($request->get('car_id'));
+        $data = Car::find($request->get('car_id'));
         if(isset($data)){
-            $bid_amount = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:0;
-           
+            $bid_amount = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->base_price;
+            $views = 0;
             $current_amount = str_replace(",","",$bid_amount);
             if($current_amount<=10000){
                 $getgap = BidGaps::find(1);
@@ -666,17 +703,8 @@ class FrontController extends Controller
                 $minmum_amount = $current_amount+$getgap->gap;
             }
             $bid_price = str_replace(",","",$bid_amount);
-                    if($data->reserve_price<=$bid_price){
-                        $reserve_met = 1;
-                    }
-                    else{
-                        $minus = $data->reserve_price-$bid_price;
-                        if($minus<=1000){
-                            $reserve_met = 3;
-                        }else{
-                            $reserve_met = 2;
-                        }                        
-                    }
+            $reserve_met = 0;
+            
             $arr = array("views"=>$views,"bid_amount"=>$bid_amount,'minmum_amount_next_bid'=>$minmum_amount,"reserve_met"=>$reserve_met);          
             return json_encode($arr);
         }else{
@@ -702,7 +730,7 @@ class FrontController extends Controller
             $store->amount = $request->get("bid_amount");
             $store->type = 1;
             $store->save();
-            CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+            Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
             $getmaxbid = MaxBid::where("car_id",$request->get("car_id"))->get();
             foreach($getmaxbid as $ge){
                 
@@ -725,7 +753,7 @@ class FrontController extends Controller
                         $store->amount = number_format($minmum_amount);
                         $store->type = 1;
                         $store->save();
-                        CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+                        Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
                     }
                 }
                 
@@ -759,7 +787,7 @@ class FrontController extends Controller
                 $store->amount = number_format($minmum_amount);
                 $store->type = 1;
                 $store->save();
-                CarInfo::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
+                Car::where("id",$request->get("car_id"))->update(["current_bid_id"=>$store->id]);
             }
             return Auth::user()->username;
         }
@@ -918,7 +946,31 @@ class FrontController extends Controller
                     return 1;
             }
       }
-
+    
+    public function buy_now(Request $request){
+         $get_car = Car::where("status",'1')->where("id",$request->get("car_id"))->first();
+         if($get_car){
+                    $get_car->status = 4;
+                    $get_car->sold_date = date('Y-m-d');
+                    $get_car->total_bid = count(Comment::where("car_id",$get_car->id)->where("type",'1')->get());
+                    $get_car->winning_bid = $get_car->buy_now_price;
+                    $get_car->save();
+                    $user = array();
+                    //$user->email = $setting->email;
+                    $get_car->email = "hetaljogadiya48@gmail.com";
+                    $get_car->username = "Front Line Ready";
+                    $get_car->bid_amount = $get_car->winning_bid;
+                    $get_car->stock = $get_car->stock;
+                    $get_car->current_bid_name = User::find($get_car->current_bid_id)?User::find($get_car->current_bid_id)->name:'';
+                    Mail::send('email.live_auction', ['user' => $get_car], function($message) use ($get_car){
+                        $message->to($get_car->email,$get_car->username)->subject('Front Line Ready');
+                    });
+                    return 1;
+         }else{
+             return 0;
+         }
+         
+    }
 
 
    

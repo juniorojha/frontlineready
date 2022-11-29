@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 use App\Models\CarInfo;
+use App\Models\Car;
 use Illuminate\Console\Command;
 use App\Models\Setting;
 use App\Models\payment_history;
@@ -13,6 +14,7 @@ use App\Models\UserPaymentMethod;
 use App\Models\Comment;
 use Log;
 use Carbon\Carbon;
+use Mail;
 class LiveAucation extends Command
 {
     /**
@@ -51,46 +53,39 @@ class LiveAucation extends Command
         $timestamp = \Carbon\Carbon::now()->setTimezone('UTC');
         $date = Carbon::parse($timestamp)->format('Y-m-d');
         $time = Carbon::parse($timestamp)->format('H:i');
-        $getlivecars = CarInfo::where("status",'1')->whereDate('aucation_enddate', $date)->whereTime('aucation_endtime','<=',$time)->get();
+        $getlivecars = Car::where("status",'1')->whereDate('end_date', $date)->whereTime('end_date','<=',$time)->get();
        
         if(count($getlivecars)>0){
             foreach($getlivecars as $g){
                 $getcomment = Comment::find($g->current_bid_id);
-                if($getcomment){
-                       
-                        $setting = Setting::find(1);
-                        $txt = Setting::find(1)?Setting::find(1)->txt_charge:'0';
-                        $getpaymentdata = UserPaymentMethod::where("user_id",$getcomment->user_id)->first();
-                        $str = explode("-",$g->currency);
-                        $currency_symbol = isset($str[0])?trim(strtolower($str[0])):'usd';
-                        $per = $txt*str_replace(',', '', $getcomment->amount);
-                        
-                       
-                                    
-                                     
-                                        $store = new payment_history();
-                                        $store->car_id = $g->id;
-                                        $store->buyer_id = $getcomment->user_id;
-                                        $store->transaction_id = '';
-                                        $store->transaction_id = "";
-                                        $store->amount = ($per/100);
-                                        $store->currency = isset($str[1])?trim(strtolower($str[1])):'$';
-                                        $store->status =1;
-                                        $store->save();
-                                        $g->status = 4;
-                                        $g->sold_date = date('Y-m-d');
-                                        $g->total_bid = count(Comment::where("car_id",$g->id)->where("type",'1')->get());
-                                       
-                                        $g->winning_bid = $getcomment->amount;
-                                        $g->save();
-                                         \Log::info("bid save");
-                                       
-                      
+                if($getcomment){                    
+                    $g->status = 4;
+                    $g->sold_date = date('Y-m-d');
+                    $g->total_bid = count(Comment::where("car_id",$g->id)->where("type",'1')->get());                                       
+                    $g->winning_bid = $getcomment->amount;
+                    $g->save();
+                    $g->email = $setting->email;
+                    $g->username = "Front Line Ready";
+                    $g->bid_amount = $g->winning_bid;
+                    $g->stock = $g->stock;
+                    $g->current_bid_name = User::find($g->current_bid_id)?User::find($g->current_bid_id)->name:'';
+                    Mail::send('email.live_auction', ['user' => $g], function($message) use ($g){
+                        $message->to($g->email,$g->username)->subject('Front Line Ready');
+                    });
+                    \Log::info("bid save");
                 }
             }
         }
        // $this->log("success");
        \Log::info("Cron is working fine!");
+       
+       $getlivecars = Car::where("status",'2')->whereDate('start_date',"<=",$date)->whereTime('start_date','>=',$time)->get();
+       //echo "<pre>";print_r($getlivecars);exit;
+       foreach($getlivecars as $g){
+           $g->status = 1;
+           $g->save();
+       }
+        \Log::info("Live Car change fine!");
     }
 
     public function getsitedate(){
