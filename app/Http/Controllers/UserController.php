@@ -77,7 +77,7 @@ class UserController extends Controller
                 $approve = route('email-verified', ['query'=>$this->encryptstring($user->id)]);
                 $txt="";
                 if($user->email_verification==0){
-                    $txt = '<a  href="'.$approve.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Activate</a>';
+                    $txt = '<a  href="'.$approve.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Approve</a>';
                 }
                 return '<a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>'.$txt;  
 

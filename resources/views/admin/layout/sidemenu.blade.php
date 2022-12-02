@@ -77,12 +77,12 @@
                            <a href="{{route('sales-help')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Sales Inquiry
                            </a>
-                        </li> -->
+                        </li> 
                         <li class="">
                            <a href="{{route('contact-us-list')}}" >
                            <i class="metismenu-icon pe-7s-id"></i>Contact Us
                            </a>
-                        </li>
+                        </li>-->
                         
                        
                         

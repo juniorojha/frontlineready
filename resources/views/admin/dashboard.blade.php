@@ -37,7 +37,7 @@ Dashboard
          <div class="widget-content-wrapper text-white">
             <div class="widget-content-left">
                <div class="widget-heading">Total Cars</div>
-               <div class="widget-heading">For Live </div>
+               <div class="widget-heading">In Live Auction </div>
             </div>
             <div class="widget-content-right">
                <div class="widget-numbers text-white"><span>{{$livecars}}</span></div>
@@ -50,7 +50,7 @@ Dashboard
          <div class="widget-content-wrapper text-white">
             <div class="widget-content-left">
                <div class="widget-heading">Total Cars</div>
-               <div class="widget-heading">For Coming Soon</div>
+               <div class="widget-heading">In Coming Soon</div>
             </div>
             <div class="widget-content-right">
                <div class="widget-numbers text-white"><span>{{$comingsooncars}}</span></div>
@@ -63,7 +63,7 @@ Dashboard
          <div class="widget-content-wrapper text-white">
             <div class="widget-content-left">
                <div class="widget-heading">Total </div>
-               <div class="widget-heading"> DealerShip</div>
+               <div class="widget-heading"> Dealers</div>
             </div>
             <div class="widget-content-right">
                <div class="widget-numbers text-white"><span>{{$privatesales}}</span></div>
