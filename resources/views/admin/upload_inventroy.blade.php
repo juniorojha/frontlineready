@@ -35,7 +35,7 @@ Upload Inventory
          <form action="{{route('post-update-inventroy')}}" id="" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="position-relative form-group">
-               <label for="file" class="">Choose Inventroy File<span class="error">*</span></label>
+               <label for="file" class="">Choose Inventory File<span class="error">*</span></label>
                <input name="file" id="file" required=""  type="file" value="" class="form-control">
             </div>
 

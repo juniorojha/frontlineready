@@ -4,14 +4,14 @@
                         <li class="app-sidebar__heading">Menu</li>
                         <li class="">
                            <a href="{{route('dashboard')}}" class="" > <!-- mm-active -->
-                           <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
+                           <i class="metismenu-icon pe-7s-rocket"></i>Dashboard
                            </a>
                         </li>
-                        <li class="">
+                        <!-- <li class="">
                            <a href="{{route('make')}}" >
                            <i class="metismenu-icon pe-7s-paint-bucket"></i>Make
                            </a>
-                        </li>
+                        </li> -->
                         
                         <li class="">
                            <a href="{{route('upload_inventroy')}}" >
@@ -68,11 +68,11 @@
                            <i class="metismenu-icon pe-7s-users"></i>Dealers
                            </a>
                         </li>
-                        <li class="">
+                        <!--<li class="">
                            <a href="{{route('subscriber')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Subscriber
                            </a>
-                        </li><!-- 
+                        </li> 
                          <li class="">
                            <a href="{{route('sales-help')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Sales Inquiry

@@ -133,7 +133,8 @@
                </div>
                <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
-                     <h5>In The Spotlight</h5>
+                     <!-- <h5>In The Spotlight</h5> -->
+                     <h5></h5>
                      <div class="social-media-links show-desktop">
                         <ul>
                            <li><a href="{{$setting->facebook_id}}" target="_blank"><i
@@ -145,7 +146,8 @@
                         </ul>
                      </div>
                      <ul>
-                        <li><a href="{{route('spotlight')}}">News</a></li>
+                        <!-- <li><a href="{{route('spotlight')}}">News</a></li> -->
+                        <li></li>
                      </ul>
                      <div class="social-media-links show-mob-rep">
                         <ul>

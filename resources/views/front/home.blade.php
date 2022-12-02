@@ -234,7 +234,7 @@ ul.slick-dots {
             
             
             
-                                        Download Inventroy <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
+                                        Download Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
                                 </div>
      
        <div class="heading-border-section" id="submit_entry_from">

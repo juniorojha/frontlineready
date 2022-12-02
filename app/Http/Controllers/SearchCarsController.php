@@ -64,7 +64,7 @@ class SearchCarsController extends Controller
                             $livetxt = $livetxt.'<p>RHD</p>';
                         } 
                         $livetxt = $livetxt.'|<p>'.$gc->country_name.' <img src="https://ipdata.co/flags/'.$gc->country_sortname.'.png"></p></span></div><div class="product-shadow-box"><div class="head-bg-color red"><p>RESERVE NOT MET</p></div><div class="timging-tage">
-                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bids : €20,000</p></div></div></div></div>';
+                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bid: €20,000</p></div></div></div></div>';
                     }
                     if($gc->status==2){
                         $comingcount++;
@@ -75,7 +75,7 @@ class SearchCarsController extends Controller
                             $comingtxt = $comingtxt.'<p>RHD</p>';
                         } 
                         $comingtxt = $comingtxt.'|<p>United State <img src="'.asset('public/theme/images/uniter-img.jpg').'"></p></span></div><div class="product-shadow-box"><div class="head-bg-color red"><p>RESERVE NOT MET</p></div><div class="timging-tage">
-                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bids : €20,000</p></div></div></div></div>';
+                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bid: €20,000</p></div></div></div></div>';
                     }
                     if($gc->status==3){
                         $privatecount++;
@@ -86,7 +86,7 @@ class SearchCarsController extends Controller
                             $privatetxt = $privatetxt.'<p>RHD</p>';
                         } 
                         $privatetxt = $privatetxt.'|<p>United State <img src="'.asset('public/theme/images/uniter-img.jpg').'"></p></span></div><div class="product-shadow-box"><div class="head-bg-color red"><p>RESERVE NOT MET</p></div><div class="timging-tage">
-                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bids : €20,000</p></div></div></div></div>';
+                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bid: €20,000</p></div></div></div></div>';
                     }
                     if($gc->status==4){
                         $soldcount++;
@@ -97,7 +97,7 @@ class SearchCarsController extends Controller
                             $soldtxt = $soldtxt.'<p>RHD</p>';
                         } 
                         $soldtxt = $soldtxt.'|<p>United State <img src="'.asset('public/theme/images/uniter-img.jpg').'"></p></span></div><div class="product-shadow-box"><div class="head-bg-color red"><p>RESERVE NOT MET</p></div><div class="timging-tage">
-                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bids : €20,000</p></div></div></div></div>';
+                           <p>Ends In : 10:12:37</p></div><div class="current-bids"><p>Current Bid: €20,000</p></div></div></div></div>';
                     }
                }
         }else{

@@ -10,7 +10,7 @@ Users List
             <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
          </div>
          <div>
-            Users List
+            Dealers
             <div class="page-title-subheading"></div>
          </div>
       </div>

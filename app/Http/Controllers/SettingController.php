@@ -52,7 +52,7 @@ class SettingController extends Controller
             }  
             
         }
-        Session::flash('message',"Inventroy Upload Successfully"); 
+        Session::flash('message',"Inventory Uploaded Successfully"); 
         Session::flash('alert-class', 'alert-success');
         return redirect()->back();
     }

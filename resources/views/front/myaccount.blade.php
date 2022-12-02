@@ -40,7 +40,7 @@ Front Line Ready - Dealer Dashboard
                                             aria-controls="collapseOne">
                                             <div class="detail-heading">
                                                 <h6>
-                                                    Current Bid
+                                                    Current Bids
                                                     <p class="count">({{count($livecars)}})</p>
                                                 </h6>
                                                 <span>
@@ -50,7 +50,7 @@ Front Line Ready - Dealer Dashboard
                                                     </p>
                                                 </span>
                                                  @if(count($livecars)<0)
-                                                        <p>You have not won any auctions yet, best get bidding!</p>
+                                                        <p>You have not won any auctions yet, place your best bids now!</p>
                                                 @endif
                                             </div>
                                         </button>
@@ -79,7 +79,7 @@ Front Line Ready - Dealer Dashboard
                                                             </div>
                                                             <div class="main-heads-cars-user-detail-box2">
                                                                 <div class="step-one">
-                                                                    <p class="content-des">CURRENT BID</p>
+                                                                    <p class="content-des">Current Bid</p>
                                                                     <span class="content-price blue-tag">$ {{$gc->bid_price}}</span>
                                                                 </div>
                                                                 
@@ -146,7 +146,7 @@ Front Line Ready - Dealer Dashboard
                                             aria-controls="collapseOne1">
                                             <div class="detail-heading">
                                                 <h6>
-                                                    Auction WON (Pending Payment)
+                                                    Auctions Won (Pending Payment)
                                                     <p class="count"></p>
                                                 </h6>
                                                 <span>
@@ -224,7 +224,7 @@ Front Line Ready - Dealer Dashboard
                                             data-bs-target="#collapseOne2" aria-expanded="true"
                                             aria-controls="collapseOne2">
                                             <div class="detail-heading">
-                                                <h6> Auction WON (Payment Settle)
+                                                <h6> Auctions Won (Payment Settled)
                                                    
                                                 </h6>
                                                 <span>

@@ -191,7 +191,7 @@ ul.slick-dots {
                      
                         </div>
                         <div class="current-bids">
-                           <p>Current Bids : $ {{$gc->base_price}}</p>
+                           <p>Current Bid: $ {{$gc->base_price}}</p>
                         </div>
                      </div>
                   </div>

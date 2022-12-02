@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-Front Line Ready - In The Spotlight
+Front Line Ready - Reset Password
 @stop
 @section('meta-data')
 @stop

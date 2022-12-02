@@ -251,7 +251,7 @@ Front Line Ready - Vehicle Detail
                                   
                                   <li>
                                       @if($data->status==1)
-                                       <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Make Your Bid</a>
+                                       <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Bid Now</a>
                                        <a class="regisder-bids" href="javascript:void()" onclick="buynow()" style="margin-left: 5px;">Buy Now ( $ {{$data->buy_now_price}})</a>
                                       @endif
                                    
@@ -259,7 +259,7 @@ Front Line Ready - Vehicle Detail
                                   @else
                                   
                                 <li> <a class="regisder-bids" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login <br>
-                                        To Make A Bid</a> </li>
+                                        To Bid</a> </li>
                                 @endif
                                         
                                        
