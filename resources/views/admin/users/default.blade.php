@@ -104,7 +104,7 @@
    ]
    });
    function delete_record(url){
-         var msg = "Do you Sure Want To Delete This User?";
+         var msg = "Are you sure you want to delete this User?";
          if (confirm(msg)) {                
                  window.location.href = url;                 
          } else {

@@ -73,7 +73,7 @@ FAQ Main
    });
 
    function delete_record(url){
-         var msg = "Do you Sure Want To Delete This Topic?";
+         var msg = "Are you sure you want to delete this Topic?";
          if (confirm(msg)) {                
                  window.location.href = url;                 
          } else {

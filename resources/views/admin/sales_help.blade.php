@@ -96,7 +96,7 @@ Sales Inquiry List
    ]
    });
    function delete_record(url){
-         var msg = "Do you Sure Want To Delete This Sales Inquiry?";
+         var msg = "Are you sure you want to delete this Sales Inquiry?";
          if (confirm(msg)) {                
                  window.location.href = url;                 
          } else {

@@ -130,7 +130,7 @@ All Cars
    }
 
  function delete_record(url){
-         var msg = "Do you Sure Want To Delete This News?";
+         var msg = "Are you sure you want to delete this News?";
          if (confirm(msg)) {                
                  window.location.href = url;                 
          } else {
