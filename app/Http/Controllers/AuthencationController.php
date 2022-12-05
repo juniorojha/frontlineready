@@ -55,11 +55,13 @@ class AuthencationController extends Controller
     }
 
     public function show_dashboard(){
-        $allcars = count(Car::whereNull('deleted_at')->get());
         $livecars = count(Car::whereNull('deleted_at')->where("status",'1')->get());
         $comingsooncars = count(Car::whereNull('deleted_at')->where("status",'2')->get());
-        $privatesales = count(User::where("user_type",'0')->get());
-        return view("admin.dashboard",compact('allcars','livecars','comingsooncars','privatesales'));
+        $pendingpayment = count(Car::whereNull('deleted_at')->where("status",'4')->where("payment_status",1)->get());
+        $settledpayment = count(Car::whereNull('deleted_at')->where("status",'4')->where("payment_status",2)->get());
+        $activedealer = count(User::whereNull('deleted_at')->where("user_type",'0')->where("email_verification",1)->get());
+        $pendingdealer = count(User::whereNull('deleted_at')->where("user_type",'0')->where("email_verification",0)->get());
+        return view("admin.dashboard",compact('livecars','comingsooncars','pendingpayment','settledpayment','activedealer','pendingdealer'));
     }
 
     public function admin_logout(){

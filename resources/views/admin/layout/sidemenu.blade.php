@@ -63,11 +63,32 @@
                               </li>
                            </ul>
                         </li> -->
-                        <li class="">
-                           <a href="{{route('users')}}" >
-                           <i class="metismenu-icon pe-7s-users"></i>Dealers
+
+                        <li  class="">
+                           <a href="#">
+                           <i class="metismenu-icon pe-7s-car"></i>Dealers
+                           <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                            </a>
+                           <ul>
+                              <li>
+                                 <a href="{{route('users',['status'=>1])}}"  class="mm-active" >
+                                 <i class="metismenu-icon"></i>Active Dealers
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="{{route('users',['status'=>0])}}">
+                                 <i class="metismenu-icon"></i>Pending Dealers
+                                 </a>
+                              </li>
+                           </ul>
                         </li>
+
+
+                       <!--  <li class="">
+                           <a href="{{route('users')}}" >
+                           <i class="metismenu-icon pe-7s-users"></i>
+                           </a>
+                        </li> -->
                         <!--<li class="">
                            <a href="{{route('subscriber')}}" >
                            <i class="metismenu-icon pe-7s-safe"></i>Subscriber

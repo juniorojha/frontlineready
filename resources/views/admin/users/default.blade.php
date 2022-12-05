@@ -1,6 +1,10 @@
 @extends('admin.layout.index')
 @section('title')
-Users List
+@if($status==1)
+  Active Dealers List
+@else
+  Pending Dealers List
+@endif
 @stop
 @section('content')
 <div class="app-page-title">
@@ -10,7 +14,11 @@ Users List
             <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
          </div>
          <div>
-            Dealers
+           @if($status==1)
+  Active Dealers List
+@else
+  Pending Dealers List
+@endif
             <div class="page-title-subheading"></div>
          </div>
       </div>
@@ -61,7 +69,7 @@ Users List
    $('#UsersTable').DataTable({
    processing: true,
    serverSide: true,
-   ajax: '{{route("users-data-table")}}',
+   ajax: '{{route("users-data-table",["status"=>$status])}}',
    columns: [{  data: 'DT_RowIndex',
                name: 'DT_RowIndex',
                orderable: false,
@@ -103,6 +111,20 @@ Users List
              window.location.reload();
          }
      } 
+     
+     function verify_record(url,status){
+         if(status==1){
+             var msg = "Are you sure you want to activate this user?";
+         }else{
+             var msg = "Are you sure you want to deactivate this user?";
+         }
+         
+         if (confirm(msg)) {                
+                 window.location.href = url;                 
+         } else {
+             window.location.reload();
+         }
+     }
 
    function invoicedata(id){      
          $.ajax({

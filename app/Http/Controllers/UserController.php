@@ -23,8 +23,16 @@ use Log;
 class UserController extends Controller
 {
 
-    public function show_users_list(){
-        return view('admin.users.default');
+    public function show_users_list(Request $request){
+        $status = $request->get("status");
+        Session::put("main_menu","dealers");
+        if($status==1){
+            Session::put("sub_menu","1");
+        }else{
+            Session::put("sub_menu","2");
+        }
+        Session::put("main_menu","dealers");
+        return view('admin.users.default',compact('status'));
     }
    
     public function get_user_data(Request $request){
@@ -36,8 +44,8 @@ class UserController extends Controller
         return json_encode($user);
     }
     
-    public function user_data_table(){
-         $user =User::where("user_type",'0')->whereNull("deleted_at")->get();
+    public function user_data_table(Request $request){
+         $user =User::where("user_type",'0')->where("email_verification",$request->get("status"))->whereNull("deleted_at")->get();
          return DataTables::of($user)
             ->editColumn('id', function ($user) {
                 return $user->id;
@@ -77,7 +85,11 @@ class UserController extends Controller
                 $approve = route('email-verified', ['query'=>$this->encryptstring($user->id)]);
                 $txt="";
                 if($user->email_verification==0){
-                    $txt = '<a  href="'.$approve.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Approve</a>';
+                    $approve = route('email-verified', ['query'=>$this->encryptstring($user->id),'status'=>1]);
+                    $txt = '<a  onclick="verify_record(' . "'" . $approve. "'" . ',1)"  rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Activate</a>';
+                }else{
+                    $approve = route('email-verified', ['query'=>$this->encryptstring($user->id),'status'=>0]);
+                    $txt = '<a  onclick="verify_record(' . "'" . $approve. "'" . ',0)" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Deactivate</a>';
                 }
                 return '<a onclick="delete_record(' . "'" . $delete. "'" . ')" rel="tooltip"  class="btn btn-danger" data-original-title="Remove" style="margin-right: 10px;color:white !important">Delete</a>'.$txt;  
 

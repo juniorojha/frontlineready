@@ -630,7 +630,7 @@ function post_login(){
 						    }
 							                
 						}else if(response==2){
-							$("#login_error").html("Please activate your account.");
+							$("#login_error").html("Please contact a Front Line Ready representative at 469-840-9909 regarding your account status.");
     	 					$("#login_error").addClass("errorbox");                
 						}else{ // email not unqiue
 							$("#login_error").html("The email or password you entered is incorrect.");

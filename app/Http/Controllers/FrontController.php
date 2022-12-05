@@ -260,15 +260,21 @@ class FrontController extends Controller
                 $user = User::find($id);
                 if($user){
                         $newpassword = $this->generateRandomString(5);
-                        $user->email_verification = 1;
-                        $user->username = $this->generateRandomString(8);
-                        $user->password = Hash::make($newpassword);
-                        $user->save(); 
-                        $user->newpassword = $newpassword;
-                        $setting = Setting::find(1);
-                        Mail::send('email.new_register', ['user' => $user], function($message) use ($user){
-                             $message->to($user->email,$user->name)->subject('Front Line Ready');
-                        });
+                        $user->email_verification = $request->get('status');
+                        if($request->get('status')==1){
+                            $user->username = $this->generateRandomString(8);
+                            $user->password = Hash::make($newpassword);
+                            $user->save(); 
+                            $user->newpassword = $newpassword;
+                            $setting = Setting::find(1);
+                            Mail::send('email.new_register', ['user' => $user], function($message) use ($user){
+                                 $message->to($user->email,$user->name)->subject('Front Line Ready');
+                            });
+                        }else{
+                             $user->save(); 
+                        }
+                        
+                        
                         return redirect()->back();
                 }else{
                      Session::flash('message',"Something Wrong"); 

@@ -20,6 +20,8 @@ use App\Exceptions\Handler;
 class CarController extends Controller
 {
     public function show_all_cars(){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","01");
         return view("admin.cars.allcar");
     }
 
@@ -54,6 +56,8 @@ class CarController extends Controller
   
 
     public function show_save_car($id){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","");
         try{
                 $make_data = Make::whereNull('deleted_at')->get();
                 $data = Car::find($id);
@@ -88,6 +92,8 @@ class CarController extends Controller
     }
     
     public function settle_car(Request $request){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","04");
           try{
                 $data = Car::find($request->get("id"));
                 if($data){
@@ -303,6 +309,8 @@ class CarController extends Controller
   
     
     public function show_live_car_data_table(){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","02");
         $car =Car::whereNull('deleted_at')->where("status",'1')->get();
          return DataTables::of($car)
             ->editColumn('vin', function ($car) {
@@ -347,10 +355,14 @@ class CarController extends Controller
     }
 
     public function show_live_car(){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","02");
         return view("admin.cars.live");
     }
 
     public function show_coming_soon(){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","03");
          return view("admin.cars.coming_soon");
     }
 
@@ -381,6 +393,8 @@ class CarController extends Controller
 
    
     public function show_sold_cars(){
+        Session::put("main_menu","cars");
+        Session::put("sub_menu","04");
         return view("admin.cars.sold");
     }
 

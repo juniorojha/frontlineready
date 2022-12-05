@@ -69,23 +69,20 @@ ul.slick-dots {
                     h = hours - days * 24;
                     m = mins - hours * 60;
                     s = secs - mins * 60;
-                     console.log(d+":"+h+":"+m+":"+s);
+                    // console.log(d+":"+h+":"+m+":"+s);
                     m = m < 10 ? "0" + m : m;
                     s = s < 10 ? "0" + s : s;
                     h = h < 10 ? "0" + h : h;
                     if(d>0){
-                        
-                            document.getElementById("end_time_"+id).innerHTML = d+" Day";
-                         //   document.getElementById("end_time_fe_"+id).innerHTML = d+" Day";
-                       
-                        
+                        if($("#end_time_"+id).length){
+                              $("#end_time_"+id).html(h+":"+m+":"+s)  
+                        }
                     }else{
-                        
-                        document.getElementById("end_time_"+id).innerHTML = h+":"+m+":"+s;
-                     //   document.getElementById("end_time_fe_"+id).innerHTML = h+":"+m+":"+s;
+                        if($("#end_time_"+id).length){
+                              $("#end_time_"+id).html(h+":"+m+":"+s)  
+                        }
                        
                     }
-                    //console.log(d+);
                     if(d=='00'&&h=='00'&m=='00'&s=='00'){
                          var totallivecar = document.getElementById("totallivecar").value;
                          document.getElementById("totallivecar").value = parseInt(totallivecar)-1;
@@ -101,9 +98,22 @@ ul.slick-dots {
 </script>
 <!-- header End -->
       <!-- Slider Start -->
-     
-   <div class="container filter-main-hold-pos" id="auction_section" style="    margin-top: 50px;">
+      <div class="container filter-main-hold-pos" id="filter_section">
+         <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+               <div class="search-box">
+                  <div class="input-group" style="flex-wrap: unset;">
+                     <i class="fas fa-search"></i>
+                     <div class="easy-autocomplete">
+                        <input class="form-control autosearch-input-mobile" type="search"
+                           placeholder="Please enter a stock number, make, model or year....." aria-label="Search"
+                            autocomplete="off" id="search_cars" name="search_cars" onkeypress="searchfilterresult()" onkeyup="searchfilterresult()">
+                     </div>
+                  </div>
+               </div>
+            </div>
         
+         </div>
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                <div class="product-featur-row">
@@ -111,19 +121,23 @@ ul.slick-dots {
                      <li class="actions-btn-hold btn_box_border active-2" id="ls_1">
                         <a class="btn_border" href="javascript:checkactivefilter(1)">Live (<span id="totallivecar">{{count($get_car_live)}}</span>)</a>
                      </li>
-                     <li class="actions-btn-hold btn_box_border" id="ls_2">
+                     <li class="actions-btn-hold btn_box_border " id="ls_2">
                         <a class="btn_border" href="javascript:checkactivefilter(2)">Coming Soon (<span id="totalcommingsooncar">{{count($get_car_coming)}}</span>)</a>
                      </li>
                      
                      
                      <li class="actions-btn-hold btn_box_border" id="ls_4">
-                        <a class="btn_border" href="javascript:checkactivefilter(4)">Recent Sales (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
+                        <a class="btn_border" href="javascript:checkactivefilter(4)">Sold (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
+                     </li>
+                     <li class="actions-btn-hold btn_box_border" id="ls_4">
+                        <a class="btn_border" download href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}">Download Inventory</a>
                      </li>
                   </ul>
                </div>
             </div>
          </div>
       </div>
+ 
       <!-- Search and filter end -->
       <!-- main heading start -->
       <div class="heading-border-section" id="header_1">
@@ -440,30 +454,18 @@ window.initAutocomplete = initAutocomplete;
    }
 
    function searchfilterresult(){
-      var makelist = new Array();
-      var sellertype = new Array();
-      var country_list = new Array();
-      var steering_position = new Array();
+     
       var search_cars = $("#search_cars").val();
 
-      $.each($("input[name='make[]']:checked"), function() {
-          makelist.push($(this).val());
-      });
-      $.each($("input[name='seller_type[]']:checked"), function() {
-          sellertype.push($(this).val());
-      });
-      $.each($("input[name='country_list[]']:checked"), function() {
-          country_list.push($(this).val());
-      });
-      $.each($("input[name='steering_position[]']:checked"), function() {
-          steering_position.push($(this).val());
-      });  
+    
       $.ajax({
                   url: '{{url("searchcars")}}',
                   method:'get',
-                  data: { makelist:makelist.toString(),sellertype:sellertype.toString(),country_list:country_list.toString(),steering_position:steering_position.toString(),search_cars:search_cars},
+                  data: { search_cars:search_cars},
                   success: function( data ) {
+                           
                            var str = JSON.parse(data);
+                           
                            $("#live_cars_list").html(str.livetxt);
                            $("#coming_car_list").html(str.comingtxt);
                            $("#private_cars_list").html(str.privatetxt);
@@ -472,8 +474,6 @@ window.initAutocomplete = initAutocomplete;
                            $("#totallivecar").html(str.livecount);
                            $("#totalprivatecar").html(str.privatecount);
                            $("#totalsoldcar").html(str.soldcount);
-
-                      
                   }
       }); 
       $("#filter_drop").removeClass('show');

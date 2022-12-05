@@ -24,12 +24,16 @@ class SettingController extends Controller
     }
     
     public function show_setting(){
+        Session::put("main_menu","setting");
+        Session::put("sub_menu","001");
         $setting = Setting::find(1);
         $timezone=$this->generate_timezone_list();
         return view("admin.setting.editsetting",compact('setting','timezone'));
     }
     
     public function upload_inventroy(){
+         Session::put("main_menu","");
+        Session::put("sub_menu","11");
         return view("admin.upload_inventroy");
     }
     
@@ -194,6 +198,8 @@ class SettingController extends Controller
     }
 
     public function show_bid_gaps(){
+        Session::put("main_menu","setting");
+        Session::put("sub_menu","002");
         $data = BidGaps::all();
         return view("admin.setting.bid_gaps",compact("data"));
     }

@@ -298,7 +298,7 @@ Please add a payment method to you account. My Account -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data-2012-2022.min.js"></script>
       <script type="text/javascript" src="{{asset('public/theme/js/script.js?v=1.2345')}}"></script>      
-      <script type="text/javascript" src="{{asset('public/theme/js/core.js?v=87989')}}"></script>
+      <script type="text/javascript" src="{{asset('public/theme/js/core.js?v=1.23')}}"></script>
       <script src='https://www.google.com/recaptcha/api.js'></script>
       <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
      
