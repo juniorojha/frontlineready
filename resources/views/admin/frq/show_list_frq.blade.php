@@ -74,7 +74,7 @@ FAQ {{$data->topic}}
    });
 
    function delete_record(url){
-         var msg = "Do you Sure Want To Delete This FAQ?";
+         var msg = "Are you sure you want to delete this FAQ?";
          if (confirm(msg)) {                
                  window.location.href = url;                 
          } else {

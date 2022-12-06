@@ -72,7 +72,7 @@ Make
        ]
    });
        function delete_record(url){
-             var msg = "Do you Sure Want To Delete This Make?";
+             var msg = "Are you sure you want to delete this Make?";
              if (confirm(msg)) {                
                      window.location.href = url;                 
              } else {
