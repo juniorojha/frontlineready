@@ -37,7 +37,7 @@ Live Cars
                <th>VIN</th>
                <th>Current Bid</th>
                <th>Total Bid</th>
-               <th>Aucation EndTime</th>
+               <th>Auction EndTime</th>
                <th>More</th>
                <th>Action</th>
             </tr>
@@ -49,7 +49,7 @@ Live Cars
                <th>VIN</th>
                <th>Current Bid</th>
                <th>Total Bid</th>
-               <th>Aucation EndTime</th>
+               <th>Auction EndTime</th>
                <th>More</th>
                <th>Action</th>
             </tr>
