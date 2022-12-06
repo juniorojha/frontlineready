@@ -40,7 +40,7 @@ Curating Cars - {{$userdata->username}} Cars List
                <th>Image</th>
                <th>Title</th>
                <th>View</th>
-               <th>Aucation Time</th>
+               <th>Auction Time</th>
                <th>Status</th>
                <th>Action</th>
             </tr>
@@ -51,7 +51,7 @@ Curating Cars - {{$userdata->username}} Cars List
                <th>Image</th>
                <th>Title</th>
                <th>View</th>
-               <th>Aucation Time</th>
+               <th>Auction Time</th>
                <th>Status</th>
                <th>Action</th>
             </tr>

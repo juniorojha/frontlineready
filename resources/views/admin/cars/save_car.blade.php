@@ -164,7 +164,7 @@ Save Car Information
                                
 
                         ?>
-                        <label for="aucation_enddate" class="">Aucation Start & End Date<span class="error">*</span></label>
+                        <label for="aucation_enddate" class="">Auction Start & End Date<span class="error">*</span></label>
                         <input type="text" name="aucation_date" id="demo" class="form-control" value="{{$start_date}} - {{$end_date}}">
                         <input type="hidden" id="car_start_date" value="{{$start_date}}"> 
                         <input type="hidden" id="car_end_date" value="{{$end_date}}">                        

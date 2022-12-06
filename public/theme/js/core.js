@@ -248,6 +248,8 @@ function detaillogin(val){
 }
 function dealerregisteruser(val){
 	//alert("hey");
+	$("#reg_btn").addClass("hide");
+	$("#loader_btn").removeClass("hide"); 
 	var name = $("#"+val+"_name").val();
 	var dealership_name = $("#"+val+"_dealership_name").val();
 	var dealership_p_number = $("#"+val+"_dealership_p_number").val();
@@ -354,6 +356,9 @@ function dealerregisteruser(val){
     	 $("#"+val+"_error").html(txt);
     	 $("#"+val+"_error").addClass("errorbox");
     }
+
+    $("#reg_btn").removeClass("hide");
+	$("#loader_btn").addClass("hide"); 
 }
 function registeruser(){
 	//alert("hey");

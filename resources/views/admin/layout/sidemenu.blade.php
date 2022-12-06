@@ -13,36 +13,36 @@
                            </a>
                         </li> -->
                         
-                        <li class="">
-                           <a href="{{route('upload_inventroy')}}" >
+                        <li class="<?=Session::get('sub_menu')=="11"?'mm-active':''?>">
+                           <a href="{{route('upload_inventory')}}" >
                            <i class="metismenu-icon pe-7s-paint-bucket"></i>Upload Inventory
                            </a>
                         </li>
                         
-                        <li  class="">
+                        <li  class="<?=Session::get('main_menu')=="cars"?'mm-active':''?>">
                            <a href="#">
                            <i class="metismenu-icon pe-7s-car"></i>Cars
                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                            </a>
                            <ul>
                               <li>
-                                 <a href="{{route('all-cars')}}"  class="mm-active" >
+                                 <a href="{{route('all-cars')}}"  class="<?=Session::get('sub_menu')=="01"?'mm-active':''?>" >
                                  <i class="metismenu-icon"></i>All
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('live-car')}}">
+                                 <a href="{{route('live-car')}}" class="<?=Session::get('sub_menu')=="02"?'mm-active':''?>">
                                  <i class="metismenu-icon"></i>Live Auction
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('coming-soon')}}">
+                                 <a href="{{route('coming-soon')}}" class="<?=Session::get('sub_menu')=="03"?'mm-active':''?>">
                                  <i class="metismenu-icon">
                                  </i>Coming Soon
                                  </a>
                               </li>
                              <li>
-                                 <a href="{{route('sold-cars')}}">
+                                 <a href="{{route('sold-cars')}}" class="<?=Session::get('sub_menu')=="04"?'mm-active':''?>">
                                  <i class="metismenu-icon"></i> Sold Cars
                                  </a>
                               </li>
@@ -64,19 +64,19 @@
                            </ul>
                         </li> -->
 
-                        <li  class="">
+                        <li class="<?=Session::get('main_menu')=="dealers"?'mm-active':''?>" >
                            <a href="#">
                            <i class="metismenu-icon pe-7s-car"></i>Dealers
                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                            </a>
                            <ul>
                               <li>
-                                 <a href="{{route('users',['status'=>1])}}"  class="mm-active" >
+                                 <a href="{{route('users',['status'=>1])}}" class="<?=Session::get('sub_menu')=="1"?'mm-active':''?>" >
                                  <i class="metismenu-icon"></i>Active Dealers
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('users',['status'=>0])}}">
+                                 <a href="{{route('users',['status'=>0])}}" class="<?=Session::get('sub_menu')=="2"?'mm-active':''?>">
                                  <i class="metismenu-icon"></i>Pending Dealers
                                  </a>
                               </li>
@@ -107,20 +107,19 @@
                         
                        
                         
-                        <li  
-                           >
+                        <li  class="<?=Session::get('main_menu')=="setting"?'mm-active':''?>">
                            <a href="#">
                            <i class="metismenu-icon pe-7s-settings"></i>Setting
                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                            </a>
                            <ul>
                               <li>
-                                 <a href="{{route('setting')}}" >
+                                 <a href="{{route('setting')}}"  class="<?=Session::get('sub_menu')=="001"?'mm-active':''?>">
                                  <i class="metismenu-icon"></i>General
                                  </a>
                               </li>
                               <li>
-                                 <a href="{{route('bid-gap')}}" >
+                                 <a href="{{route('bid-gap')}}" class="<?=Session::get('sub_menu')=="002"?'mm-active':''?>">
                                  <i class="metismenu-icon"></i>Bid Gap
                                  </a>
                               </li>
