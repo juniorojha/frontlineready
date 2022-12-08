@@ -32,7 +32,7 @@ Upload Inventory
             {{ Session::get('message') }}
          </div>
          @endif
-         <form action="{{route('post-update-inventroy')}}" id="" method="post" enctype="multipart/form-data">
+         <form action="{{route('post-update-inventory')}}" id="" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="position-relative form-group">
                <label for="file" class="">Choose Inventory File<span class="error">*</span></label>

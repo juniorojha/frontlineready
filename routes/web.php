@@ -99,7 +99,7 @@ Route::post("update_payment_detail",[FrontController::class,"update_payment_deta
 Route::get("fetch_visitor",[FrontController::class,"fetch_visitor"])->name("fetch-visitor");
 Route::get("get_txt",[FrontController::class,"get_txt"]);
 
-Route::get("auction",[FrontController::class,"show_aucation"])->name("aucation");
+Route::get("auction",[FrontController::class,"show_aucation"])->name("auction");
 
 
 Route::get("buy_now",[FrontController::class,"buy_now"])->name("buy-now");
@@ -203,8 +203,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get("request_card_data_table",[SettingController::class,"request_card_data_table"])->name("request-card-data-table");
             Route::get("change_request_card_status",[SettingController::class,"change_request_card_status"])->name("change_request_card_status");
             
-            Route::get("upload_inventroy",[SettingController::class,"upload_inventroy"])->name("upload_inventroy");
-            Route::post("post_update_inventroy",[SettingController::class,"post_update_inventroy"])->name("post-update-inventroy");
+            Route::get("upload_inventroy",[SettingController::class,"upload_inventroy"])->name("upload_inventory");
+            Route::post("post_update_inventroy",[SettingController::class,"post_update_inventroy"])->name("post-update-inventory");
             
             
           /*  Route::get("payment_setting",[SettingController::class,"payment_setting"])->name("payment-setting");

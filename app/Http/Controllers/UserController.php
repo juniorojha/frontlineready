@@ -51,7 +51,7 @@ class UserController extends Controller
                 return $user->id;
             })
             ->editColumn('username', function ($user) {
-                return $user->name;
+                return $user->username;
             })            
             ->editColumn('country', function ($user) {
                 return Country::find($user->country_id)?Country::find($user->country_id)->name:'';

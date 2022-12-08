@@ -105,7 +105,7 @@ class FrontController extends Controller
                  Session::put("menu_active",'3');
                 $makes = Make::wherenull('deleted_at')->get();
                 
-                return view("front.aucation",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
+                return view("front.auction",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something Getting Worng"); 
@@ -329,7 +329,7 @@ class FrontController extends Controller
 
     public function post_register_user(Request $request){
         //dd($request->all());
-        $get_user = User::where("email",$request->get("email"))->where("user_type",'1')->first();
+        $get_user = User::where("email",$request->get("email"))->where("user_type",'0')->first();
         if(!empty($get_user)){
             return 2;
         }else{
