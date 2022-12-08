@@ -48,7 +48,7 @@ this agreement the following terms shall have the following meanings:</br></span
      means an Auction taking place on the Website.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Buyer
-     Premium</b>” / “<b>Curating Cars Fee</b>” means the 5% +VAT fee
+     Premium</b>” / “<b>Frontline Ready Fee</b>” means the 5% +VAT fee
      payable&nbsp;by the Buyer&nbsp;against the winning bid to purchase
      the&nbsp;Item / Vehicle.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
@@ -89,7 +89,7 @@ this agreement the following terms shall have the following meanings:</br></span
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><b><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Consigner”</span></b><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;means
-     a person authorised by Curating Cars to capture digital images, videos and
+     a person authorised by Frontline Ready to capture digital images, videos and
      other content of a Vehicle that is being consigned and act within an
      Independent Contractor Contract with their own Limited Liability
      insurance.</span></br></br></li>
@@ -169,7 +169,7 @@ this agreement the following terms shall have the following meanings:</br></span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Private
      Seller”</span></b><span lang=EN-MY style='font-size:10.5pt;font-family:
      "Arial",sans-serif'>&nbsp;a User that wishes to sell, is selling, or has
-     sold a Vehicle via the Curating Cars service.</span></br></br></li>
+     sold a Vehicle via the Frontline Ready service.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><b><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Profile
      Data”</span></b><span lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;means
@@ -182,8 +182,7 @@ this agreement the following terms shall have the following meanings:</br></span
      any Item or Vehicle or Services you have bought from us either directly,
      by Auction, Negotiated Sale or by some other means.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
-     lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Curating
-     Cars / Us</b>” means Curating Cars Limited and providing this Service.</span></br></br></li>
+     lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Frontline Ready / Us</b>” means Frontline Ready Limited and providing this Service.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Reserve</b>”
      means a monetary value that a Seller has placed on their Item / Vehicle
@@ -206,7 +205,7 @@ this agreement the following terms shall have the following meanings:</br></span
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Service</b>”
      means collectively any online or offline facilities, tools, processes,
-     professional services or information that Curating Cars operates or makes
+     professional services or information that Frontline Ready operates or makes
      available either now or in the future.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><b><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“Social
@@ -216,7 +215,7 @@ this agreement the following terms shall have the following meanings:</br></span
      Snapchat.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>System</b>”
-     means any online communications infrastructure that Curating Cars makes
+     means any online communications infrastructure that Frontline Ready makes
      available through the Website either now or in the future. &nbsp;This
      includes, but is not limited to,&nbsp;Item / Vehicle&nbsp;listings,
      Auctions, email addresses and online forms.</span></br></br></li>
@@ -240,7 +239,7 @@ this agreement the following terms shall have the following meanings:</br></span
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>User</b>”
      / “Users” means any third party that accesses the Website and is not
-     employed by Curating Cars and acting in the course of their employment,
+     employed by Frontline Ready and acting in the course of their employment,
      i.e. generic Website users, Bidders, Sellers / Trade Sellers and Buyers.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Vehicle
@@ -259,8 +258,8 @@ this agreement the following terms shall have the following meanings:</br></span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>“<b>Website</b>”
      /<b>&nbsp;“Site”</b>&nbsp;means the website that you are currently
      using&nbsp;</span><span lang=EN-MY style='color:black'><a
-     href="http://www.curatingcars.com"><i><span style='font-size:10.5pt;
-     font-family:"Arial",sans-serif'>www.curatingcars.com</span></i></a></span><span
+     href="http://www.frontlinereadyrtx.com"><i><span style='font-size:10.5pt;
+     font-family:"Arial",sans-serif'>www.frontlinereadyrtx.com</span></i></a></span><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;and
      any sub-domains of this site unless expressly excluded by their
      own&nbsp;Terms&nbsp;&amp;&nbsp;Conditions.</span></br></br></li>
@@ -280,7 +279,7 @@ lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'
 Your use of this website and any service contained within constitutes
 acceptance by you of these Terms &amp; Conditions.<br>
 &nbsp;<br>
-2.2 Curating Cars and its owners take a proactive approach to user privacy and
+2.2 Frontline Ready and its owners take a proactive approach to user privacy and
 ensure the necessary steps are taken to protect the privacy of its users
 throughout their visiting experience. This website complies to all UK national
 laws and requirements for user privacy.<br>
@@ -288,12 +287,11 @@ laws and requirements for user privacy.<br>
 2.3 Any reference to “you” refers to you as a User of this website and our
 Service (User / Bidder / Buyer / Private Seller / Trade Seller).<br>
 &nbsp;<br>
-2.4 Any reference to “us” refers to&nbsp;Curating Cars Limited, 71 Shelton
-Street, Covent Garden. London WC2H 9JQ.<br>
+2.4 Any reference to “us” refers to&nbsp;Frontline Ready USA.<br>
 &nbsp;<br>
 2.5 Any reference to this “Website” refers to the website address&nbsp;</span><span
-lang=EN-MY style='color:black'><a href="http://www.curatingcars.com"><i><span
-style='font-size:10.5pt;font-family:"Arial",sans-serif'>www.curatingcars.com</span></i></a></span><span
+lang=EN-MY style='color:black'><a href="http://www.frontlinereadyrtx.com"><i><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif'>www.frontlinereadyrtx.com</span></i></a></span><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>&nbsp;and
 such other locations where it may be hosted or featured where the entire
 website or elements of the website are hosted or featured by our partners.</span></p>
@@ -371,7 +369,7 @@ any of the following:</span></p>
      be endorsed by us.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>To pose
-     as another user, third party,&nbsp;organisation or Curating Cars employee
+     as another user, third party,&nbsp;organisation or Frontline Ready employee
      for the purposes of obtaining user or third party information.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>To
@@ -466,7 +464,7 @@ As a Private Seller / Trade Seller you agree to the following:</span></p>
      check and approve all statements on the Listing as part of the Listing
      approval process, including and not limited to a Vehicle’s condition,
      model type, variant type, special edition type, and whether authentic
-     manufacturer or replica. Curating Cars has no liability for the
+     manufacturer or replica. Frontline Ready has no liability for the
      description of any of the aforementioned.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>Item /
@@ -528,7 +526,7 @@ As a Private Seller / Trade Seller you agree to the following:</span></p>
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>Cancellation
      – Before Live Auction</span></b><span lang=EN-MY style='font-size:10.5pt;
      font-family:"Arial",sans-serif'>&nbsp;– once you, a Private Seller / Trade
-     Seller have submitted your car to us, Curating Cars, and we have commenced
+     Seller have submitted your car to us, Frontline Ready, and we have commenced
      our engagement with you i.e. commenced or completed a Consignment Visit by
      sending a photographer to you, or for Self Consignments you have agreed to
      proceed with our Service, then you cannot withdraw your car without incurring
@@ -604,7 +602,7 @@ As a Private Seller / Trade Seller you agree to NOT commit the following:</span>
      allow a Bidder / Buyer to drive a vehicle then you do so entirely at your
      own risk, as there is no guarantee that you or the Bidders / Buyers
      insurance will cover this – we recommend you seek approval from your
-     insurance company. We, Curating Cars do not provide any insurance cover
+     insurance company. We, Frontline Ready do not provide any insurance cover
      for any test drives nor do we provide any insurance cover for any Vehicle.
      All risk in a Vehicle lies with the Private Seller / Trade Seller until
      the Vehicle is sold and in which case this transfers to the Buyer. The
@@ -616,7 +614,7 @@ As a Private Seller / Trade Seller you agree to NOT commit the following:</span>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>6.3
-Curating Cars may edit your Vehicle Listing to comply with the provisions
+Frontline Ready may edit your Vehicle Listing to comply with the provisions
 within these Terms&nbsp;&amp;&nbsp;Conditions without prior consultation.
 &nbsp;In cases of severe breaches of the provisions as contained in these
 Terms&nbsp;&amp;&nbsp;Conditions your Vehicle Listing may be removed and your
@@ -642,7 +640,7 @@ If you decide to not take part in the consignment meeting as agrranged on the
 day of consignment review, then the consignment will cease at the point and you
 will be liable for any costs incurred, i.e. the Consigner’s time charged at the
 equivalent of £100 p/h for all travel time (to and from the location) and time
-spent at the location. This will be invoiced to you by Curating Cars Limited
+spent at the location. This will be invoiced to you by Frontline Ready
 and payment is due within 14 days.<br>
 &nbsp;<br>
 6.6 It is your responsibility to make sure there is no personally identifiable
@@ -691,7 +689,7 @@ in Emirati Dirham.  We are a UK, Swiss, UAE and Malaysia operating service to
 cover the United Kingdom, Europe, Middle East and Asia however we will convert
 to vehicles country and sale local, however this may show an exchange rate difference
 that fluctuates as our system utilises XE services for the conversion which
-Curating Cars cannot guarantee the accuracy. If an Auction Listing is displayed
+Frontline Ready cannot guarantee the accuracy. If an Auction Listing is displayed
 to a Bidder in any other currency apart from that in which the vehicle resides
 then they must contact Us first before placing their Bid – it’s likely their
 Internet browser is changing the currency prefix due to their own preferences,
@@ -718,19 +716,17 @@ not and must not bid on behalf of any third party.<br>
 diligence before placing a Bid on an Item / Vehicle or purchasing a Vehicle.
 All vehicles, no matter what the sale type, are sold on an “as is” basis. Any
 description or expression of manufacturers, models, variants, special editions,
-authenticity and vehicle condition, e.g. bodywork, electrics or mechanics by Curating
-Cars or the Private Seller / Trade Seller should be validated by the
+authenticity and vehicle condition, e.g. bodywork, electrics or mechanics by Frontline Ready or the Private Seller / Trade Seller should be validated by the
 prospective Bidder / Buyer, or via an independent inspection. No warranties are
-given or implied whatsoever. Curating Cars representatives are not qualified
+given or implied whatsoever. Frontline Ready representatives are not qualified
 vehicle inspectors. Also, as per Section 6.1 it is the Seller’s responsibility
-to disclose any outstanding finance or previously recorded accident history to Curating
-Cars. All Vehicles are free from finance and previously recorded accident
-history unless otherwise stated on the Vehicle Listing. Curating Cars may
+to disclose any outstanding finance or previously recorded accident history to Frontline Ready. All Vehicles are free from finance and previously recorded accident
+history unless otherwise stated on the Vehicle Listing. Frontline Ready may
 action their own HPi and accident checks, if that is actioned then details will
 be included on the Vehicle Listing. If a Buyer later finds out the vehicle does
 have outstanding finance, or has previously recorded accident history, then it
 is the responsibility of the Buyer to seek resolution / compensation from the
-Seller; Curating Cars have no responsibility unless it was stated on the
+Seller; Frontline Ready have no responsibility unless it was stated on the
 Vehicle Listing the car was free from outstanding finance, or previously
 recorded accident history and it was not. The Buyer Premium is non-refundable
 under any circumstance.<br>
@@ -766,7 +762,7 @@ possession.<br>
 &nbsp;<br>
 7.12 Buyers may, in limited circumstances, have a legal right to return&nbsp;an
 Item / Vehicle&nbsp;to a Private Seller / Trade Seller. No refunds will be made
-to the Buyer by Curating Cars for the Buyer Premium; unless for reasons as
+to the Buyer by Frontline Ready for the Buyer Premium; unless for reasons as
 contained in&nbsp;<i>Section 12.2</i>.<br>
 &nbsp;<br>
 7.13 Distance Selling – you acknowledge that the Consumer Protection (Distance
@@ -781,8 +777,7 @@ informed decision on the Vehicle before deciding to place a Bid and
 subsequently win the car at Auction – https://www.citizensadvice.org.uk/consumer/<br>
 &nbsp;<br>
 7.14 Bidders agree to pay the&nbsp;Buyer&nbsp;Premium should their bid win
-the&nbsp;Auction. This fee will be displayed at the time of bidding (labelled Curating
-Cars Fee) and confirming a bid enters the bidder into this legal agreement.
+the&nbsp;Auction. This fee will be displayed at the time of bidding (labelled Frontline Ready Fee) and confirming a bid enters the bidder into this legal agreement.
 &nbsp;We automatically charge the&nbsp;Buyer&nbsp;Premium to the stored payment
 card at the end of the&nbsp;Auction. &nbsp;If this fails for whatever reason
 then the Buyer must manually pay the outstanding&nbsp;Buyer&nbsp;Premium by
@@ -847,9 +842,8 @@ and announced by us, then they are still liable for the latest bid and
 contractually bound if they subsequently win the Auction sale at that latest
 and Winning Bid.<br>
 &nbsp;<br>
-7.22 Trade Sales – we, Curating Cars, Auction Vehicles that belong to both
-Private Sellers and Trade Sellers. Buying from a Trade Seller through Curating
-Cars is the same as buying through a Private Seller, and notification of the
+7.22 Trade Sales – we, Frontline Ready, Auction Vehicles that belong to both
+Private Sellers and Trade Sellers. Buying from a Trade Seller through Frontline Ready is the same as buying through a Private Seller, and notification of the
 sale type will be clearly visible on the Auction Listing. For Trade Sales,
 Bidders and Buyers are still required to conduct their own research and due
 diligence, as outlined in section 7.6 above, before placing a Bid on an Item /
@@ -865,22 +859,21 @@ non-refundable under any circumstance.</span></p>
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>8.1&nbsp;<b>Pre-Auction
 Period&nbsp;</b>(<i>by this we refer to the time before the auction listing
-becomes live&nbsp; – generally a 7 day period)&nbsp;&nbsp;–&nbsp;</i>a&nbsp;Curating
-Cars representative will broker any potential sale, and if successful then 5%
-+VAT inc VAT of the agreed purchase price is due to be paid to Curating Cars by
-the Buyer; this must be paid in advance and received by Curating Cars no later
+becomes live&nbsp; – generally a 7 day period)&nbsp;&nbsp;–&nbsp;</i>a&nbsp;Frontline Ready representative will broker any potential sale, and if successful then 5%
++VAT inc VAT of the agreed purchase price is due to be paid to Frontline Ready by
+the Buyer; this must be paid in advance and received by Frontline Ready no later
 than 48hrs after the Buyer completes the transaction with the Private Seller /
 Trade Seller.&nbsp; An interested Buyer must first speak to a representative of
-Curating Cars before registering an account on Curating Cars, store a valid
+Frontline Ready before registering an account on Frontline Ready, store a valid
 credit card.&nbsp; This is a fraud prevention measure to verify the legitimacy
 of the Buyer before passing contact details to the Private Seller / Trade
 Seller.&nbsp; A copy of the&nbsp;<b>signed sales receipt</b>&nbsp;by both
 the&nbsp;<b>Private Seller / Trade Seller</b>&nbsp;and&nbsp;<b>Buyer</b>&nbsp;must
-be sent electronically or posted to Curating Cars business address giving
+be sent electronically or posted to Frontline Ready business address giving
 details of the vehicle (make / model / registration / VIN), the Buyer’s and
 Seller’s / Trade Seller’s contact names and full addresses and the sale price –
 this is required to check the 5% +VAT fee paid is correct.&nbsp; It is
-important to note that Curating Cars acts an intermediary to the sale and
+important to note that Frontline Ready acts an intermediary to the sale and
 offers no warranty and has no liability to either the Buyer, the Private Seller
 / Trade Seller or any agreements / contractuals between parties, e.g. the car
 is ‘Sold as Seen’, the contract is between the Private Seller / Trade Seller
@@ -908,20 +901,20 @@ not been sourced by us but only after the auction has closed.&nbsp;&nbsp;We
 take reasonable steps to monitor this process including but not limited to the
 communications sent between Buyers and Sellers / Trade Sellers via our
 service.&nbsp;&nbsp;An interested Buyer must first speak to a representative of
-Curating Cars before registering an account on Curating Cars, store a valid
+Frontline Ready before registering an account on Frontline Ready, store a valid
 credit card.&nbsp; This is a fraud prevention measure to verify the legitimacy
 of the Buyer before passing contact details to the Private Seller / Trade
-Seller.&nbsp; A&nbsp;Curating Cars representative will then broker any
+Seller.&nbsp; A&nbsp;Frontline Ready representative will then broker any
 potential sale&nbsp;and if successful then 5% +VAT of the agreed purchase price
-is due to be paid to Curating Cars by the Buyer; this must be paid within 48hrs
+is due to be paid to Frontline Ready by the Buyer; this must be paid within 48hrs
 of the Buyer completing the transaction with the Private Seller / Trade
 Seller.&nbsp;&nbsp;A copy of the&nbsp;<b>signed sales receipt</b>&nbsp;by both
 the&nbsp;<b>Private Seller / Trade Seller</b>&nbsp;and&nbsp;<b>Buyer</b>&nbsp;must
-be sent electronically or posted to Curating Cars business address giving
+be sent electronically or posted to Frontline Ready business address giving
 details of the vehicle (make / model / registration / VIN), the Buyer’s and
 Seller’s / Trade Seller’s contact names and full addresses and the sale price –
 this is required to check the 5% +VAT fee paid is correct.&nbsp; It is
-important to note that Curating Cars acts an intermediary to the sale and
+important to note that Frontline Ready acts an intermediary to the sale and
 offers no warranty and has no liability to either the Buyer, the Private Seller
 / Trade Seller or any agreements / contractuals between parties, e.g. the car
 is ‘Sold as Seen’, the contract is between the Private Seller / Trade Seller
@@ -941,20 +934,19 @@ the Private Seller / Trade Seller is free to sell directly to any other Buyer
 that has not been sourced by, us but only after the advertised period.&nbsp; We
 take reasonable steps to monitor this process including but not limited to the
 communications sent between Buyers and Sellers / Trade Sellers via our service.&nbsp;&nbsp;An
-interested Buyer must first speak to a representative of Curating Cars before
-registering an account on Curating Cars, store a valid credit card.&nbsp; This
+interested Buyer must first speak to a representative of Frontline Ready before
+registering an account on Frontline Ready, store a valid credit card.&nbsp; This
 is a fraud prevention measure to verify the legitimacy of the Buyer before
-passing contact details to the Private Seller / Trade Seller.&nbsp; A&nbsp;Curating
-Cars representative will then broker any potential sale&nbsp;and if successful
-then 5% +VAT of the agreed purchase price is due to be paid to Curating Cars by
+passing contact details to the Private Seller / Trade Seller.&nbsp; A&nbsp;Frontline Ready representative will then broker any potential sale&nbsp;and if successful
+then 5% +VAT of the agreed purchase price is due to be paid to Frontline Ready by
 the Buyer; this must be paid within 48hrs of the Buyer completing the
 transaction with the Private Seller / Trade Seller.&nbsp;&nbsp;A copy of
 the&nbsp;<b>signed sales receipt</b>&nbsp;by both the&nbsp;<b>Private Seller /
 Trade Seller</b>&nbsp;and&nbsp;<b>Buyer</b>&nbsp;must be sent electronically or
-posted to Curating Cars business address giving details of the vehicle (make /
+posted to Frontline Ready business address giving details of the vehicle (make /
 model / registration / VIN), the Buyer’s and Seller’s / Trade Seller’s contact
 names and full addresses and the sale price – this is required to check the 5%
-+VAT fee paid is correct.&nbsp; It is important to note that Curating Cars acts
++VAT fee paid is correct.&nbsp; It is important to note that Frontline Ready acts
 an intermediary to the sale and offers no warranty and has no liability to
 either the Buyer, the Private Seller / Trade Seller or any agreements /
 contractuals between parties, e.g. the car is ‘Sold as Seen’, the contract is
@@ -1011,7 +1003,7 @@ being posted on to the website. Furthermore if any content is owned by a third
 party you agree to pay all royalties and damages owed to that party, without
 seeking any contribution from us.<br>
 &nbsp;<br>
-9.6 Images and videos taken by a Curating Cars representative of the vehicle
+9.6 Images and videos taken by a Frontline Ready representative of the vehicle
 can be used for any publication or advertising purposes and remains the
 property of Front Line Ready. &nbsp;They are subject to royalty-free worldwide
 licence.</span></p>
@@ -1049,7 +1041,7 @@ of any users.</span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>12.1
-Buyer Premium (Curating Cars Fee) fee structure is a follows:</span></p>
+Buyer Premium (Frontline Ready Fee) fee structure is a follows:</span></p>
 </br>
 <ol start=1 type=1>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
@@ -1061,7 +1053,7 @@ Buyer Premium (Curating Cars Fee) fee structure is a follows:</span></p>
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>The
      authorisation is released if the Bidder is outbid, or when a Bidder wins
      an&nbsp;Auction, i.e. transfers to&nbsp;Buyer&nbsp;status. &nbsp;The
-     request made by Curating Cars to Stripe to release this authorisation is
+     request made by Frontline Ready to Stripe to release this authorisation is
      immediate, however, the Bidder’s bank may take extra time to release the
      authorisation. &nbsp;Bidders are advised to check with their bank on their
      individual authorisation release policy terms.</span></br></br></li>
@@ -1091,12 +1083,12 @@ Private Seller / Trade Seller together with supporting photographs and a Police
 reference number.<br>
 &nbsp;<br>
 12.3 On Pre-Auction or Post Auction sales&nbsp;<i>(Section 8.1)</i>, i.e.
-negotiated sales by a Curating Cars representative then the 5% +VAT Buyer
+negotiated sales by a Frontline Ready representative then the 5% +VAT Buyer
 Premium fee must be paid in GBP Sterling (£), however it is refundable if
 either the Buyer or the Private Seller / Trade Seller decides to not continue
-with the sale. Curating Cars will require written communication from both the
+with the sale. Frontline Ready will require written communication from both the
 Private Seller / Trade Seller and Buyer confirming the sale is cancelled.&nbsp;
-Once confirmation has been received then Curating Cars will refund the Buyer’s
+Once confirmation has been received then Frontline Ready will refund the Buyer’s
 Premium within 48hrs.&nbsp;&nbsp;Sales of this nature, i.e. outside of auction
 are covered by the full Terms and Conditions laid out herein.<br>
 &nbsp;<br>
@@ -1166,7 +1158,7 @@ generating profits from such use.<br>
 13.2 We will cooperate fully when requested with all government agencies and
 bodies responsible for assessing and collecting such taxes.<br>
 &nbsp;<br>
-13.3 The Curating Cars Fee (Buyer Premium) is inclusive of 20% VAT.</span></p>
+13.3 The Frontline Ready Fee (Buyer Premium) is inclusive of 20% VAT.</span></p>
 <p class="border"></p>
 <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
 7.5pt;margin-left:0in;line-height:normal;background:white'><b><span>14. Suspension Termination or Downgrading</span></b></p>
@@ -1283,7 +1275,7 @@ suitable for use in commercial situations or that it constitutes accurate data
 and / or advice on which business decisions can be based.<br>
 &nbsp;<br>
 16.6 Whilst every effort has been made to ensure that all descriptions of
-services available from Curating Cars correspond to the actual services
+services available from Frontline Ready correspond to the actual services
 available, we are not responsible for any variations from these descriptions.<br>
 &nbsp;<br>
 16.7 Whilst we use reasonable endeavours to ensure that the Website is secure
@@ -1345,7 +1337,7 @@ service provided by us.</span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>At
-Curating Cars, we want to give you the best possible experience to ensure that
+Frontline Ready, we want to give you the best possible experience to ensure that
 you enjoy our Service today, tomorrow, and in the future. Your privacy and the
 security of your Personal Data is, and will always be, enormously important to
 us. Below, our aim is to transparently explain how and why we gather, store,
@@ -1360,7 +1352,7 @@ lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>This
 Policy sets out the essential details relating to your Personal Data
 relationship with Front Line Ready. The Policy applies to all Services and any
-associated Services that Curating Cars provides. From time to time, we may
+associated Services that Frontline Ready provides. From time to time, we may
 develop new or offer additional Services. If the introduction of these new or
 additional Services results in any change to the way we collect or process your
 Personal Data we will provide you with more information and additional terms or
@@ -1433,8 +1425,8 @@ rights afforded to individuals are:</span></p>
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>In
 order to enable you to exercise these rights with ease and to record your
-preferences in relation to how Curating Cars uses your Personal Data, you can
-contact us at privacy@curatingcars.com</span></p>
+preferences in relation to how Frontline Ready uses your Personal Data, you can
+contact us at privacy@frontlinereadyrtx.com</span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>If
@@ -1507,7 +1499,7 @@ includes Personal Data you provide when you:</span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>As
-you interact with us via the Curating Cars Website, we may automatically
+you interact with us via the Frontline Ready Website, we may automatically
 collect Technical Data about your equipment, browsing actions and patterns. We
 may also collect Tracking Data when you use our Website, or when you click on
 one of our adverts (including those shown on third party websites).</span></p>
@@ -2099,10 +2091,9 @@ From time to time we publish informative articles on the Site and take great
 care to make sure any statements are factually correct&nbsp;<u>at the time of
 publication</u>, however this can’t be guaranteed. &nbsp;Any statements, views
 or advice expressed in the articles are not the direct opinion of Front Line Ready.
-&nbsp;Curating Cars is not liable for any outcome whatsoever from a User
+&nbsp;Frontline Ready is not liable for any outcome whatsoever from a User
 following such advice and Users are strongly advised to seek independent
-advice, or contact the relevant authorities directly. &nbsp;In summary, Curating
-Cars and its editorial team are not liable for any action taken by a User based
+advice, or contact the relevant authorities directly. &nbsp;In summary, Frontline Ready and its editorial team are not liable for any action taken by a User based
 on the publication of any Content published on the Site.</span></p>
 <p class="border"></p>
 <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
@@ -2141,8 +2132,8 @@ finance on the Vehicle before the Buyer transfers any funds, partial or full,
 against the final winning bid value. &nbsp;If the Private Seller / Trade Seller
 defaults on this obligation, i.e. all outstanding finance is not cleared within
 7 days of the auction close, then the Buyer has the right to cancel the
-contract and is not bound to complete the transaction. &nbsp;Curating Cars
-will, in this case, refund the Buyer the Curating Cars Fee in full within 7
+contract and is not bound to complete the transaction. &nbsp;Frontline Ready
+will, in this case, refund the Buyer the Frontline Ready Fee in full within 7
 days of notice. &nbsp;The Private Seller / Trade Seller will be charged 5% +VAT
 of the agreed reserve price or of the final bid, whichever is the greater sum.
 This is to cover our costs of consigning the vehicle during the auction
@@ -2218,7 +2209,7 @@ updated here.</span></p>
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>The
      Consigner wears their own PPE face mask supplied by them and puts them on
      for the first time whilst at the Seller’s / Trade Seller’s address, and
-     before the Consignment Visit starts. If one is not available Curating Cars
+     before the Consignment Visit starts. If one is not available Frontline Ready
      will supply this.</span></br></br></li>
  <li class=MsoNormal style='color:#333333;line-height:normal;background:white'><span
      lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif'>The
@@ -2269,7 +2260,7 @@ terms laid out here, and ensure they act within all guidance published by the
 World Health Organisation and any additional laws specific to their own country
 or any other country where the Consignment Visit is actioned. <br>
 &nbsp;<br>
-<b>30.4 Liability Acceptance – Curating Cars</b></span></p>
+<b>30.4 Liability Acceptance – Frontline Ready</b></span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:white'><span
 lang=EN-MY style='font-size:10.5pt;font-family:"Arial",sans-serif;color:#333333'>The
@@ -2282,7 +2273,7 @@ any country within the UK, Europe, UAE, Saudi Arabian, Bahrain, Qatar, Oman,
 Switzerland where the Consignment Visit is actioned.<br>
 &nbsp;<br>
 The Private Seller / Trade Seller and Consigner agree to a Consignment Visit at
-their own risk, i.e. Curating Cars has no liability to either party should any
+their own risk, i.e. Frontline Ready has no liability to either party should any
 injury or death occur from any act deemed to have taken place during a
 Consignment Visit or the travel to and from.</span></p>
         </div>

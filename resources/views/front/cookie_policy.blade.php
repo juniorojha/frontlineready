@@ -80,9 +80,9 @@ Front Line Ready- Cookie Policy
         	</ul>
         	<h1 style="font-weight: 600;margin-left: 30px;">CONTACT DETAILS</h1>
         	<p style="margin-left: 30px;">Our contact details are as follows:</p>
-        	<span style="margin-left:30px;">Curating Cars Limited, 71 Shelton Street, Covent Garden, London. England WC2H 9JQ</span></br>
-        	<span style="margin-left: 30px;">Company registration number : 13511107</span></br>
-        	<span style="margin-left: 30px;">VAT registration number: pending year one sales submissions for 2021/2022</span>
+        	<span style="margin-left:30px;">Frontline Ready</span></br>
+        	<span style="margin-left: 30px;">Company registration number : 12345678910</span></br>
+        	<span style="margin-left: 30px;">Tax registration number: pending year one sales submissions for 2021/2022</span>
         </div>
     </div>
 </div>
