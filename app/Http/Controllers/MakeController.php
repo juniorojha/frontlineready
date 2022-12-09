@@ -23,17 +23,17 @@ class MakeController extends Controller
                 return view("admin.make.save",compact('id','data'));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -55,17 +55,17 @@ class MakeController extends Controller
                 return redirect()->route('make');
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -96,23 +96,23 @@ class MakeController extends Controller
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("make");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("make");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");
+                Session::flash('message',"Something went wrong");
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }    

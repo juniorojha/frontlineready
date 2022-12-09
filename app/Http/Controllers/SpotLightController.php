@@ -38,17 +38,17 @@ class SpotLightController extends Controller
                 return view("admin.spotlight.save_news",compact('id','data'));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");  
+                Session::flash('message',"Something went wrong");  
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -86,17 +86,17 @@ class SpotLightController extends Controller
                 return redirect()->route('news');
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -135,23 +135,23 @@ class SpotLightController extends Controller
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("news");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("news");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");  
+                Session::flash('message',"Something went wrong");  
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('news');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }

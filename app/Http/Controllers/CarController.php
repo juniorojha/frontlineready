@@ -75,17 +75,17 @@ class CarController extends Controller
                 return view("admin.cars.save_car",compact("id","make_data","data"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->back();
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -99,27 +99,27 @@ class CarController extends Controller
                 if($data){
                     $data->payment_status = '2';
                     $data->save();
-                    Session::flash('message',"This Car Payment Settle Successfully"); 
+                    Session::flash('message',"Payment for this car has been settled successfully"); 
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->back();
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
                 }
             }catch(Exception $e){
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }catch (DecryptException $e) {
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }catch (\Illuminate\Database\QueryException $e){
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }    
@@ -130,27 +130,27 @@ class CarController extends Controller
                 $data = CarInfo::find($id);
                 if($data){
                     $data->delete();
-                    Session::flash('message',"Cars Delete Successfully"); 
+                    Session::flash('message',"Cars deleted successfully"); 
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->back();
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
                 }
             }catch(Exception $e){
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }catch (DecryptException $e) {
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }catch (\Illuminate\Database\QueryException $e){
                     \Log::info($e->getMessage());
-                    Session::flash('message',"Something Getting Worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->back();
             }    
@@ -192,7 +192,7 @@ class CarController extends Controller
                             'base_price' => 'required',
                             'banner' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
                     ]);               
-                    $msg = "Car Add Successfully";
+                    $msg = "Car added successfully";
                 }else{
                     $store = Car::find($request->get('car_id'));
                     $request->validate([
@@ -209,9 +209,9 @@ class CarController extends Controller
                             'buy_now_price' => 'required',
                             'base_price' => 'required'
                         ]);
-                    $msg = "Car Update Successfully";
+                    $msg = "Car details updated successfully";
                     if(empty($store)){
-                        Session::flash('message',"Something Getting Wrong"); 
+                        Session::flash('message',"Something went wrong"); 
                         Session::flash('alert-class', 'alert-danger');
                         return redirect()->back();
                     }
@@ -290,17 +290,17 @@ class CarController extends Controller
                 return redirect()->route('all-cars');
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }

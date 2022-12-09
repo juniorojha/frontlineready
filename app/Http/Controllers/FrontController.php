@@ -108,17 +108,17 @@ class FrontController extends Controller
                 return view("front.auction",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         } 
@@ -139,17 +139,17 @@ class FrontController extends Controller
                 return view("front.home",compact("setting","get_car_live"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('page_not_found');
         } 
@@ -207,7 +207,7 @@ class FrontController extends Controller
             // }catch (\Exception $e) {
            //  }
         
-             echo "Mail Send Successfully";
+             echo "Mail sent successfully";
     }
 
     public function save_contact_detail(Request $request){
@@ -283,17 +283,17 @@ class FrontController extends Controller
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");
+                Session::flash('message',"Something went wrong");
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->back();
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->back();
         }catch (\Illuminate\Database\QueryException $e){
                \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         } 
@@ -386,17 +386,17 @@ class FrontController extends Controller
                 return 1;
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return 0;
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return 0;
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return 0;
         } 
@@ -563,17 +563,17 @@ class FrontController extends Controller
                 return view("front.news_detail",compact("setting","country","data","id","spotLight"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         } 
@@ -669,17 +669,17 @@ class FrontController extends Controller
                 return view("front.vehicle_detail",compact("setting","data","id","make_data"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                  return redirect()->route('home');
         } 
@@ -941,10 +941,10 @@ class FrontController extends Controller
             $setting = Setting::find(1);
             $country = Country::all();
             if($request->get('id')==""){
-                $msg = "Reset Code Expired You Need Reset Again";
+                $msg = "This reset code has expired. Please try resetting the password again.";
                 return 0;
             }else{     
-                    $msg = "Your Password Reset Successfully";           
+                    $msg = "Your password has been reset successfully";           
                     $user=User::find($request->get('id'));               
                     $user->password= Hash::make($request->get('npwd'));
                     $user->save();

@@ -902,7 +902,7 @@ function sellwithus(){
 							$("#model_name_user").html(name);
                             $("#myModalsell-out-sumit1").modal('show');                
 						}else{
-							$("#sell_error").html("Something getting worng.");
+							$("#sell_error").html("Something went wrong.");
     	 					$("#sell_error").addClass("errorbox");
 						}
                     }

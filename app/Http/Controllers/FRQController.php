@@ -41,17 +41,17 @@ class FRQController extends Controller
                 return view("admin.frq.save_frq",compact('id','data'));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         } 
@@ -73,17 +73,17 @@ class FRQController extends Controller
                 return redirect()->route('frqlist');
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         } 
@@ -99,23 +99,23 @@ class FRQController extends Controller
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("frqlist");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("frqlist");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         } 
@@ -131,23 +131,23 @@ class FRQController extends Controller
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("frqlist");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("frqlist");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");
+                Session::flash('message',"Something went wrong");
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");
+                Session::flash('message',"Something went wrong");
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }   
@@ -165,17 +165,17 @@ class FRQController extends Controller
                 return view("admin.frq.show_list_frq",compact('data','id','query'));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -205,17 +205,17 @@ class FRQController extends Controller
                 return view("admin.frq.save_quest",compact('id','data','topic_id'));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -239,17 +239,17 @@ class FRQController extends Controller
                 return redirect()->route('show-frq',['id'=>$this->encryptstring($store->topic_id)]);
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('frqlist');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         } 

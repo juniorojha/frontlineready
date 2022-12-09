@@ -123,27 +123,27 @@ class AuthencationController extends Controller
                 $fetch = ContactUs::find($id);
                 if($fetch){
                     $fetch->delete();
-                    Session::flash('message',"Contact Info Delete Successfully"); 
+                    Session::flash('message',"Contact information deleted successfully"); 
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("contact-us-list");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("contact-us-list");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -191,27 +191,27 @@ class AuthencationController extends Controller
                 $fetch = SalesInquiry::find($id);
                 if($fetch){
                     $fetch->delete();
-                    Session::flash('message',"Inquiry Delete Successfully"); 
+                    Session::flash('message',"Inquiry deleted successfully"); 
                     Session::flash('alert-class', 'alert-success');
                     return redirect()->route("sales-help");
                 }else{
-                    Session::flash('message',"Something Getting worng"); 
+                    Session::flash('message',"Something went wrong"); 
                     Session::flash('alert-class', 'alert-danger');
                     return redirect()->route("sales-help");
                 }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -250,22 +250,22 @@ class AuthencationController extends Controller
                     $user->image = $this->fileuploadFileImage($request,'profile','upload_image');
                 }
                 $user->save();
-                Session::flash('message',"Profile Update Successfully"); 
+                Session::flash('message',"Profile updated successfully"); 
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -290,28 +290,28 @@ class AuthencationController extends Controller
                         {
                             $user->password = Hash::make($request->get("npwd"));
                             $user->save();
-                            Session::flash('message',"Password Update Successfully"); 
+                            Session::flash('message',"Password updated successfully"); 
                             Session::flash('alert-class', 'alert-success');
                             return redirect()->back();
                     }
                     else{
-                            Session::flash('message',"Something Getting worng"); 
+                            Session::flash('message',"Something went wrong"); 
                             Session::flash('alert-class', 'alert-danger');
                             return redirect()->back();
                     }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }

@@ -527,7 +527,7 @@ function buynow(){
                     if(data==1){
                        $("#buynowmodal").modal('show');                        
                     }else{
-                        alert("Something Getting Worng. Please Try Again!!");
+                        alert("Something went wrong. Please Try Again!!");
                         window.location.reload();
                     }                 
                 }

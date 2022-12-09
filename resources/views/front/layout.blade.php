@@ -402,7 +402,7 @@ Please add a payment method to you account. My Account -->
                                 <div class="form_contact_box register-form">
                                     
                                     <p style="font-size: 20px;line-height: 35px;">
-                                        Your Password Reset Successfully. Now You Continue With New Password and Enjoy Auction</p>
+                                        Your password has been reset successfully. Please log in now with your new password.</p>
                                     <br>
                                     <br>
                                     <br>

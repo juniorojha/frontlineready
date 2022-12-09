@@ -56,7 +56,7 @@ class SettingController extends Controller
             }  
             
         }
-        Session::flash('message',"Inventory Uploaded Successfully"); 
+        Session::flash('message',"Inventory uploaded successfully"); 
         Session::flash('alert-class', 'alert-success');
         return redirect()->back();
     }
@@ -176,22 +176,22 @@ class SettingController extends Controller
                 //$getsetting->timezone = 1;
               //  $getsetting->txt_charge = $request->get("txt_charge");
                 $getsetting->save();
-                Session::flash('message',"General Setting Update Successfully"); 
+                Session::flash('message',"General settings update successfully"); 
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('setting');
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (DecryptException $e) {
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng");
+                Session::flash('message',"Something went wrong");
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->route('make');
         }catch (\Illuminate\Database\QueryException $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
@@ -214,12 +214,12 @@ class SettingController extends Controller
                     $i++;
                     $g->save();
                 }
-                Session::flash('message',"Data Update Successfully"); 
+                Session::flash('message',"Data updated successfully"); 
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }
@@ -236,12 +236,12 @@ class SettingController extends Controller
             $setting->stripe_key = $request->get("key");
             $setting->stripe_secret = $request->get("secert");
             $setting->save();
-            Session::flash('message',"Data Update Successfully"); 
+            Session::flash('message',"Data updated successfully"); 
             Session::flash('alert-class', 'alert-success');
             return redirect()->back();
         }catch(Exception $e){
                 \Log::info($e->getMessage());
-                Session::flash('message',"Something Getting Worng"); 
+                Session::flash('message',"Something went wrong"); 
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
         }
