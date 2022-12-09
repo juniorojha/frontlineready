@@ -326,7 +326,7 @@ Front Line Ready - Home
                         <div class="timging-tage">
                            <p>Ends In : <span id="end_time_{{$gc->id}}">
                                <?php 
-                                      $timestamp = $gc->aucation_enddate.' '.$gc->aucation_endtime;
+                                      $timestamp = $gc->auction_enddate.' '.$gc->auction_endtime;
                                       $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC');
                                    
                                       $new_date = $date->setTimezone(Session::get('timezone'));

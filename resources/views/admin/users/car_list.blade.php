@@ -81,8 +81,8 @@ Curating Cars - {{$userdata->username}} Cars List
            data: 'view',
            name: 'view'
        },{
-           data: 'aucation_time',
-           name: 'aucation_time'
+           data: 'auction_time',
+           name: 'auction_time'
        },{
            data: 'status',
            name: 'status'

@@ -37,7 +37,7 @@ class CarController extends Controller
             ->editColumn('more', function ($car) {
                 return url('vehicle_detail?query=').$this->encryptstring($car->id);
             }) 
-            ->editColumn('aucation_status', function ($car) {
+            ->editColumn('auction_status', function ($car) {
                 return $car->status;
             })
             ->editColumn('flr_report', function ($car) {
@@ -234,7 +234,7 @@ class CarController extends Controller
                 $store->buy_now_price = $request->get("buy_now_price");
                 $store->base_price = $request->get("base_price");
                 $store->status = '2';
-                $dates = explode(" - ",$request->get("aucation_date"));
+                $dates = explode(" - ",$request->get("auction_date"));
                 if(isset($dates[0])){
                     $date = Carbon::createFromFormat('Y-m-d H:i',date("Y-m-d H:i",strtotime($dates[0])), $this->get_time_zone_name());
                     $date->setTimezone('UTC');

@@ -83,8 +83,8 @@ All Cars
            data: 'flr_report',
            name: 'flr_report'
        },{
-           data: 'aucation_status',
-           name: 'aucation_status'
+           data: 'auction_status',
+           name: 'auction_status'
        },{
            data: 'action',
            name: 'action'

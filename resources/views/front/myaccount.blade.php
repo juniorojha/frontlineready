@@ -162,7 +162,7 @@ Front Line Ready - Dealer Dashboard
                                         <div class="accordion-body">
                                             <div class="cars-details-box-holder ">
                                                 <div class="row">
-                                                    @foreach($aucation_win_pay_pending as $gc)
+                                                    @foreach($auction_win_pay_pending as $gc)
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="cars-detail-col-left">
                                                             <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}">
@@ -241,7 +241,7 @@ Front Line Ready - Dealer Dashboard
                                         <div class="accordion-body">
                                               <div class="cars-details-box-holder ">
                                                 <div class="row">
-                                                @foreach($aucation_win_pay_settle as $gc)
+                                                @foreach($auction_win_pay_settle as $gc)
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                         <div class="cars-detail-col-left">
                                                             <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}">

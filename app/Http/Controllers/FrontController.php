@@ -77,7 +77,7 @@ class FrontController extends Controller
         return $timezone;
     }
     
-    public function show_aucation(Request $request){
+    public function show_auction(Request $request){
          try{
                 $setting = Setting::find(1);
                 $id = $request->get("id");
@@ -452,16 +452,16 @@ class FrontController extends Controller
             }
         }
         $wincars = array();
-        $aucation_win_pay_pending = Car::where("status",'4')->where("payment_status",'1')->get();
-        $aucation_win_pay_settle = Car::where("status",'4')->where("payment_status",'2')->get();
-        foreach($aucation_win_pay_pending as $k){
+        $auction_win_pay_pending = Car::where("status",'4')->where("payment_status",'1')->get();
+        $auction_win_pay_settle = Car::where("status",'4')->where("payment_status",'2')->get();
+        foreach($auction_win_pay_pending as $k){
                     $k->key_id = $this->encryptstring($k->id);
                     $k->bid_price = $k->winning_bid;
                     $bid_price = str_replace(",","",$k->bid_price);
                     $k->total_bid = count(Comment::where("car_id",$k->id)->where("type",'1')->get());
                      $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
         }
-        foreach($aucation_win_pay_settle as $k){
+        foreach($auction_win_pay_settle as $k){
                     $k->key_id = $this->encryptstring($k->id);
                     $k->bid_price = $k->winning_bid;
                     $bid_price = str_replace(",","",$k->bid_price);
@@ -471,7 +471,7 @@ class FrontController extends Controller
        
                 
         Session::put("menu_active",'4');
-        return view("front.myaccount",compact("setting","country","livecars","aucation_win_pay_settle","aucation_win_pay_pending"));
+        return view("front.myaccount",compact("setting","country","livecars","auction_win_pay_settle","auction_win_pay_pending"));
     }
 
     public function show_cookie_policy(){

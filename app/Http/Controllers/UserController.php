@@ -151,9 +151,9 @@ class UserController extends Controller
             ->editColumn('view', function ($car) {
                 return $this->encryptstring($car->id);
             }) 
-            ->editColumn('aucation_time', function ($car) {
-                if($car->aucation_start_datetime!=""&&$car->aucation_end_datetime!=""){
-                    return $car->aucation_start_datetime.'@'.$car->aucation_end_datetime;
+            ->editColumn('auction_time', function ($car) {
+                if($car->auction_start_datetime!=""&&$car->auction_end_datetime!=""){
+                    return $car->auction_start_datetime.'@'.$car->auction_end_datetime;
                 }else{
                    return "@";
                 }
@@ -166,8 +166,8 @@ class UserController extends Controller
                $delete = route('delete-car', ['id'=>$car->id]);
                $change_car_status = route('change-car-status', ['query'=>$this->encryptstring($car->id)]);
                $add = "";
-               if($car->status==0&&$car->is_aucation=='1'){
-                    $add = '<button type="button" class="btn mr-2  btn-primary" onclick="set_car_id(' .$car->id. ')" data-toggle="modal" data-target="#exampleModal">Set Aucation</button>';
+               if($car->status==0&&$car->is_auction=='1'){
+                    $add = '<button type="button" class="btn mr-2  btn-primary" onclick="set_car_id(' .$car->id. ')" data-toggle="modal" data-target="#exampleModal">Set Auction</button>';
                }
                 if($car->is_approve==1){
                     $status = '<a  href="'.$change_car_status.'" rel="tooltip"  class="btn btn-success" data-original-title="banner" style="margin-right: 10px;color: white !important;">Enable</a>';

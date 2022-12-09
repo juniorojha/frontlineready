@@ -20,29 +20,29 @@ $(document).on("click", ".delete-row", function () {
 
 
 
-function changeaucationtime(val){
+function changeauctiontime(val){
    // alert(val);
    if(val==1){
-        $("#aucation_end_datetime_div").removeClass("hide");
+        $("#auction_end_datetime_div").removeClass("hide");
         $("#sold_div").addClass('hide');
-        $("#aucation_enddate").attr("required",true);
-        $("#aucation_endtime").attr("required",true);
+        $("#auction_enddate").attr("required",true);
+        $("#auction_endtime").attr("required",true);
         $("#sold_date").attr("required",false);
         $("#total_bid").attr("required",false);
         $("#winning_bid").attr("required",false);
    }else if(val==4){
        $("#sold_div").removeClass('hide');
-       $("#aucation_end_datetime_div").addClass("hide");
-       $("#aucation_enddate").attr("required",false);
-       $("#aucation_endtime").attr("required",false);
+       $("#auction_end_datetime_div").addClass("hide");
+       $("#auction_enddate").attr("required",false);
+       $("#auction_endtime").attr("required",false);
        $("#sold_date").attr("required",true);
        $("#total_bid").attr("required",true);
        $("#winning_bid").attr("required",true);
    }else{
-         $("#aucation_end_datetime_div").addClass("hide");
+         $("#auction_end_datetime_div").addClass("hide");
          $("#sold_div").addClass('hide');
-         $("#aucation_enddate").attr("required",false);
-         $("#aucation_endtime").attr("required",false);
+         $("#auction_enddate").attr("required",false);
+         $("#auction_endtime").attr("required",false);
          $("#sold_date").attr("required",false);
          $("#total_bid").attr("required",false);
          $("#winning_bid").attr("required",false);

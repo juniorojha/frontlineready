@@ -118,12 +118,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="" id="saveaucationinfo" action="{{route('save-aucation-time')}}" method="post" enctype="multipart/form-data">
+            <form class="" id="saveauctioninfo" action="{{route('save-auction-time')}}" method="post" enctype="multipart/form-data">
             <div class="modal-body">                 
                   <input type="hidden" name="car_id" id="auct_car_id" value="">
                   {{csrf_field()}}                      
                   <div class="form-group">
-                           <label for="end_time" class="">Select Aucation Time<span class="error">*</span></label>
+                           <label for="end_time" class="">Select Auction Time<span class="error">*</span></label>
                            <input type="text" class="form-control" id="demo" name="datefilter" value="" />
 
                   </div>                           

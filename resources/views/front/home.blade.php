@@ -242,7 +242,7 @@ ul.slick-dots {
     
          <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 18%;margin-bottom: 63px;">
             @if(Auth::id())
-                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}" style="padding:0px 45px;" target="_blank">
+                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">
             @else
                  <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">
             @endif

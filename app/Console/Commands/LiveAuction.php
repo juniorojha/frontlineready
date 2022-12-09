@@ -15,14 +15,14 @@ use App\Models\Comment;
 use Log;
 use Carbon\Carbon;
 use Mail;
-class LiveAucation extends Command
+class LiveAuction extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'live:aucation';
+    protected $signature = 'live:auction';
 
     /**
      * The console command description.

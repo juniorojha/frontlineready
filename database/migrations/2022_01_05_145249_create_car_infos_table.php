@@ -30,13 +30,13 @@ class CreateCarInfosTable extends Migration
             $table->string('former_keepers');
             $table->bigInteger('country_id')->nullable();
             $table->bigInteger('city_id')->nullable();
-            $table->enum('is_aucation', ['0', '1'])->comment("0=>no,1=>yes")->default(0);
+            $table->enum('is_auction', ['0', '1'])->comment("0=>no,1=>yes")->default(0);
             $table->enum('seller_type', ['1', '2'])->comment("2=>private,1=>dealer")->default(1);
             $table->text('description');
             $table->string('currency');
             $table->bigInteger('current_bid_id')->nullable();
-            $table->date('aucation_start_datetime')->nullable();
-            $table->date('aucation_end_datetime')->nullable();
+            $table->date('auction_start_datetime')->nullable();
+            $table->date('auction_end_datetime')->nullable();
             $table->double('price')->nullable();
             $table->double('reserve_price')->nullable();
             $table->enum('is_approve', ['0', '1'])->comment("0=>no,1=>yes")->default(0);

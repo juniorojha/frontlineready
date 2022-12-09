@@ -31,24 +31,24 @@ class SettingController extends Controller
         return view("admin.setting.editsetting",compact('setting','timezone'));
     }
     
-    public function upload_inventroy(){
+    public function upload_inventory(){
          Session::put("main_menu","");
         Session::put("sub_menu","11");
-        return view("admin.upload_inventroy");
+        return view("admin.upload_inventory");
     }
     
-    public function post_update_inventroy(Request $request){
+    public function post_update_inventory(Request $request){
         $setting = Setting::find(1);
         if($setting){
             if($request->file("file")){
-                $old_image = $setting->inventroy_pdf;
+                $old_image = $setting->inventory_pdf;
                 $f = $request->file("file");
                 $filename = $f->getClientOriginalName();
                 $extension = $f->getClientOriginalExtension() ?: 'png';
                 $picture = rand().time() . '.' . $extension;
                 $destinationPath = Storage_path("app/public");
                 $f->move($destinationPath, $picture); 
-                $setting->inventroy_pdf = $picture;
+                $setting->inventory_pdf = $picture;
                 $setting->save();
                 if($old_image!=""){
                     $this->removeImage(storage_path("app/public").'/'.$old_image);  

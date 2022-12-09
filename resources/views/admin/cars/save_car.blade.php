@@ -150,7 +150,7 @@ Save Car Information
                   </div>
                  
                   <div class="row">                    
-                     <div class="form-group col-md-6 " id="aucation_end_datetime_div">
+                     <div class="form-group col-md-6 " id="auction_end_datetime_div">
                         <?php 
                                  $start_date = date('m/d/Y  h:m A');
                                  $end_date = date('m/d/Y  h:m A');
@@ -164,8 +164,8 @@ Save Car Information
                                
 
                         ?>
-                        <label for="aucation_enddate" class="">Auction Start & End Date<span class="error">*</span></label>
-                        <input type="text" name="aucation_date" id="demo" class="form-control" value="{{$start_date}} - {{$end_date}}">
+                        <label for="auction_enddate" class="">Auction Start & End Date<span class="error">*</span></label>
+                        <input type="text" name="auction_date" id="demo" class="form-control" value="{{$start_date}} - {{$end_date}}">
                         <input type="hidden" id="car_start_date" value="{{$start_date}}"> 
                         <input type="hidden" id="car_end_date" value="{{$end_date}}">                        
                      </div>                     
