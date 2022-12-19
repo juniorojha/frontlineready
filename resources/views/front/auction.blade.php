@@ -44,6 +44,13 @@ ul.slick-dots {
   color: #000;
   font-size: 26px;
 }
+.timging-tage p {
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 17px;
+    width: 65%;
+    font-family: "Montserrat";
+}
 </style>
 <script>
     
@@ -69,17 +76,22 @@ ul.slick-dots {
                     h = hours - days * 24;
                     m = mins - hours * 60;
                     s = secs - mins * 60;
-                    // console.log(d+":"+h+":"+m+":"+s);
+                     console.log(d+":"+h+":"+m+":"+s);
                     m = m < 10 ? "0" + m : m;
                     s = s < 10 ? "0" + s : s;
                     h = h < 10 ? "0" + h : h;
                     if(d>0){
                         if($("#end_time_"+id).length){
-                              $("#end_time_"+id).html(h+":"+m+":"+s)  
+                            if(d==1){
+                                $("#end_time_"+id).html(" In a day")
+                            }else{
+                                $("#end_time_"+id).html(d+" days")
+                            }
+                                
                         }
                     }else{
                         if($("#end_time_"+id).length){
-                              $("#end_time_"+id).html(h+":"+m+":"+s)  
+                              $("#end_time_"+id).html(d+" "+h+":"+m+":"+s)  
                         }
                        
                     }
@@ -130,7 +142,7 @@ ul.slick-dots {
                         <a class="btn_border" href="javascript:checkactivefilter(4)">Sold (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
                      </li>
                      <li class="actions-btn-hold btn_box_border" id="ls_4">
-                        <a class="btn_border" download href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}">Download Inventory</a>
+                        <a class="btn_border" download href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}">Download Inventory</a>
                      </li>
                   </ul>
                </div>

@@ -8,24 +8,9 @@ Front Line Ready - Home
  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'></style>
 <style>
-
     .wrapper{
   padding: 30px 0;
   overflow-x: hidden;
-}
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 
@@ -59,6 +44,13 @@ ul.slick-dots {
   color: #000;
   font-size: 26px;
 }
+.timging-tage p {
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 15px;
+    width: 47%;
+    font-family: "Montserrat";
+}
 </style>
 <script>
     
@@ -84,14 +76,18 @@ ul.slick-dots {
                     h = hours - days * 24;
                     m = mins - hours * 60;
                     s = secs - mins * 60;
-                 //    console.log(d+":"+h+":"+m+":"+s);
+                     console.log(d+":"+h+":"+m+":"+s);
                     m = m < 10 ? "0" + m : m;
                     s = s < 10 ? "0" + s : s;
                     h = h < 10 ? "0" + h : h;
                     if(d>0){
-                        
+                        if(d==1){
+                             document.getElementById("end_time_fe_"+id).innerHTML = "In a day";
+                        }else{
+                             document.getElementById("end_time_fe_"+id).innerHTML = d+" days";
+                        }
                        //     document.getElementById("end_time_"+id).innerHTML = d+" Day";
-                            document.getElementById("end_time_fe_"+id).innerHTML = d+" Day";
+                           
                        
                         
                     }else{
@@ -242,7 +238,7 @@ ul.slick-dots {
     
          <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 18%;margin-bottom: 63px;">
             @if(Auth::id())
-                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">
+                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}" style="padding:0px 45px;" target="_blank">
             @else
                  <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">
             @endif
@@ -325,15 +321,11 @@ ul.slick-dots {
                             <div class="end-border-and-btn">
                                 <!-- data-bs-toggle="modal"
                                         data-bs-target="#myModalsell-out-sumit1" -->
-                                <div class="actions-btn-hold btn_box_border" id="reg_btn">
+                                <div class="actions-btn-hold btn_box_border">
                                     <a class="btn_border" href="javascript:dealerregisteruser('reg1')" style="padding:0px 45px;" >SUBMIT <i
                                             class="fal fa-long-arrow-right" style="margin-left: 8px;"
                                             aria-hidden="true"></i></a>
                                 </div>
-                                <div class="btn_box_border hide" id="loader_btn" >
-                                     <div class="loader"></div>
-                                </div>
-                                
                             </div>
                     </form>
                 </div>
