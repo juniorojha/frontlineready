@@ -118,7 +118,7 @@ ul.slick-dots {
                      <i class="fas fa-search"></i>
                      <div class="easy-autocomplete">
                         <input class="form-control autosearch-input-mobile" type="search"
-                           placeholder="Please enter a stock number, make, model or year....." aria-label="Search"
+                           placeholder="Please enter a stock number, make, model or year" aria-label="Search"
                             autocomplete="off" id="search_cars" name="search_cars" onkeypress="searchfilterresult()" onkeyup="searchfilterresult()">
                      </div>
                   </div>

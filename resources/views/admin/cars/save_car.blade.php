@@ -196,7 +196,7 @@ Save Car Information
                      </div>
                   </div>
                   <div class="input-field">
-                     <label class="active">Banner<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Click on box area for upload file" style="margin-left: 15px;border: 1px solid;padding: 0px 8px;border-radius: 30px;"><i class="fa fa-info"></i></button></label></br>                    
+                     <label class="active">Banner<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Click anywhere inside the box to upload images" style="margin-left: 15px;border: 1px solid;padding: 0px 8px;border-radius: 30px;"><i class="fa fa-info"></i></button></label></br>                    
                      
                      <div class="input-images-1" style="padding-top: .5rem;padding-bottom: .5rem;"></div>
                   </div>

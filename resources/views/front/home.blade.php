@@ -67,10 +67,6 @@ ul.slick-dots {
                     hours = Math.floor(diff / (1000 * 60 * 60));
                     mins = Math.floor(diff / (1000 * 60));
                     secs = Math.floor(diff / 1000);
-                
-                   
-                 
-                    
                     
                     d = days;
                     h = hours - days * 24;
@@ -82,7 +78,7 @@ ul.slick-dots {
                     h = h < 10 ? "0" + h : h;
                     if(d>0){
                         if(d==1){
-                             document.getElementById("end_time_fe_"+id).innerHTML = "In a day";
+                             document.getElementById("end_time_fe_"+id).innerHTML = " a day";
                         }else{
                              document.getElementById("end_time_fe_"+id).innerHTML = d+" days";
                         }
