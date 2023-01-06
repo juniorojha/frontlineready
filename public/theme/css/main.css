@@ -2199,11 +2199,11 @@ a.show-password {
 }
 
 .sellers-receives-content, .sell-with-us-content span {
-    font-weight: 700;
+/*    font-weight: 700;*/
     color: #4d4d4d;
     margin-bottom: 30px;
     display: block;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .sellers-receives-content {
@@ -5072,7 +5072,7 @@ li.share-button.sharer button.share-btn {
         display: none;
     }
     .logo-nav {
-        text-align: center;
+        text-align: left;
         margin-bottom: 35px;
     }
     .footer-heading-contents ul {

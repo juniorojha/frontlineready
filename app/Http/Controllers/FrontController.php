@@ -232,9 +232,9 @@ class FrontController extends Controller
                 $to = "support@frontlinereadyrtx.com";
                 $subject = "New Contact Detail";
                 $txt = $txt;
-                $headers = "From: support@frontlinereadyrtx.com \r\n";
-                $headers .= "Reply-To: support@frontlinereadyrtx.com \r\n";
-                $headers .= "CC: support@frontlinereadyrtx.com\r\n";
+                $headers = "From: support@frontlinereadytx.com \r\n";
+                $headers .= "Reply-To: support@frontlinereadytx.com \r\n";
+                $headers .= "CC: support@frontlinereadytx.com\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $result = mail($to,$subject,$txt,$headers);
@@ -606,7 +606,13 @@ class FrontController extends Controller
         $make_list = Make::all();
          Session::put("menu_active",'2');
         return view("front.about_us",compact("setting","country","make_list"));
-    }    
+    }  
+
+    public function contact_page(){
+        $setting = Setting::find(1);
+         Session::put("menu_active",'6');
+        return view("front.contact_us",compact("setting"));
+    }        
 
     public function post_newsletter_user(Request $request){
         $news = Subscriber::where("email",$request->get("email"))->first();

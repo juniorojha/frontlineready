@@ -55,6 +55,7 @@ Route::Get("getcurrenttime/{offset}",[FrontController::class,"getcurrenttime"]);
 
 Route::get("/",[FrontController::class,"show_home"])->name("home");
 Route::post("save_contact_detail",[FrontController::class,"save_contact_detail"])->name("save-contact-detail");
+Route::get("contact",[FrontController::class,"contact_page"])->name("contact-us");
 Route::post("register_user",[FrontController::class,"post_register_user"])->name("register-user");
 Route::get("check_username",[FrontController::class,"check_username"])->name("check-username");
 Route::get("news_details",[FrontController::class,"show_news_details"])->name("news-detail");

@@ -142,7 +142,7 @@ ul.slick-dots {
                         <a class="btn_border" href="javascript:checkactivefilter(4)">Sold (<span id="totalsoldcar">{{count($get_car_sold)}}</span>)</a>
                      </li>
                      <li class="actions-btn-hold btn_box_border" id="ls_4">
-                        <a class="btn_border" download href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}">Download Inventory</a>
+                        <a class="btn_border" download href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}">Download Inventory</a>
                      </li>
                   </ul>
                </div>

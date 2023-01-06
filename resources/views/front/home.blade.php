@@ -153,7 +153,7 @@ ul.slick-dots {
             <div class="row">
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                   <div class="heading-box">
-                     <h2>Featured Auctions</h2>
+                     <h2>Featured Inventory</h2>
                   </div>
                   <span class="left"></span>
                   <span class="Right"></span>
@@ -234,7 +234,7 @@ ul.slick-dots {
     
          <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 18%;margin-bottom: 63px;">
             @if(Auth::id())
-                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventroy_pdf}}" style="padding:0px 45px;" target="_blank">
+                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">
             @else
                  <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">
             @endif
@@ -244,7 +244,7 @@ ul.slick-dots {
                                         Download Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
                                 </div>
      
-       <div class="heading-border-section" id="submit_entry_from">
+       <div class="heading-border-section" id="submit_entry_from" style="display:none!important;">
         <span class="firts"></span>
         <div class="container">
             <div class="row">
@@ -259,7 +259,7 @@ ul.slick-dots {
         </div>
         <span class="second"></span>
     </div>
-    <div class="container" id="delarship_reg">
+    <div class="container" id="delarship_reg" style="display:none!important;">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form_contact_box seller-form-hold">

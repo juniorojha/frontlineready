@@ -25,6 +25,28 @@
    </head>
    <body>
       <!-- header Start -->
+      <div class="static-header" style="background-color: black;position: fixed;top: 0px;width: 100%;z-index: 99999;opacity: 80%;">
+         <div class="container">
+            <div class="row" style="height: 30px; padding-top: 2px; color: white; top: 0px; overflow: hidden;">
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <p><a href="mailto:sales@frontlinereadytx.com"><i class="fa fa-envelope-o"></i>  sales@frontlinereadytx.com</a></p>
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="text-align: right;">
+                  <p><i class="fa fa-file-pdf-o"></i><a target="_blank" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}">  Download Current Inventory</a>
+                     <!-- @if(Auth::id())
+                     <a target="_blank" href=""></a>
+                     @else
+                     <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login to d/a>
+                     @endif -->
+                  </p>
+               </div>                              
+            </div>
+         </div>
+      </div>
       <div class="top-header-hold">
          <div class="container">
             <div class="row">
@@ -36,9 +58,7 @@
                            <a href="javascript:void(0)" class="closeNav closebtn">&times;</a>
                            <ul class="top-nav-bar">
                               <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
-                     <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                   
-                             
+                              <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>                             
                               @if(Auth::id())
                                 <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('auction')}}">Auction</a></li>
                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
@@ -52,6 +72,8 @@
                                  <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login</a>
                               </li>
                               @endif
+                           
+                              <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>
                            </ul>
                         </div>
                      </div>
@@ -83,6 +105,8 @@
                                  <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">Login</a>
                               </li>
                               @endif
+
+                     <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>         
                   </ul>
                </div>
             </div>
@@ -124,7 +148,7 @@
                   <div class="footer-heading-contents">
                      <h5>About Us</h5>
                      <ul>
-                        <li><a href="{{route('home')}}#user_contact_us">Contact Us</a></li>
+                        <li><a href="{{route('contact-us')}}">Contact Us</a></li>
                         <li><a href="{{route('term-privacy')}}">Privacy Policy</a></li>
                         <li><a href="{{route('term-privacy')}}">Terms and Conditions</a></li>
                         <li><a href="{{route('cookie-policy')}}">Cookie Policy</a></li>
