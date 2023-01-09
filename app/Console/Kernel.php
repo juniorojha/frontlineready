@@ -16,11 +16,14 @@ class Kernel extends ConsoleKernel
 
     protected $commands = [
         Commands\LiveAuction::class,
+        Commands\CarRead::class,
     ];
 
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('live:auction')
+        $schedule->command('live:auction')
+                 ->everyMinute();
+        $schedule->command('car:read')
                  ->everyMinute();
     }
 

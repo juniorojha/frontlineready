@@ -14,9 +14,6 @@ class ImportCar implements ToModel
     */
     public function model(array $row)
     {
-        echo "<pre>";print_r($row);exit;
-        return new Car([
-            //
-        ]);
+        $users = [];
     }
 }

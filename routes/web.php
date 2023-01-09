@@ -30,7 +30,8 @@ Route::get('config-cache', function () {
 });
 
 Route::get("cronrun", function () {
-    Artisan::call("live:auction");
+    Artisan::call("car:read");
+   // Artisan::call("live:auction");
     echo "done";
 });
 
