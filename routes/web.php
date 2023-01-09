@@ -208,6 +208,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post("post_update_inventory",[SettingController::class,"post_update_inventory"])->name("post-update-inventory");
             
             
+            Route::get("car_sync_data",[CarController::class,"update_car_sync_data"])->name("car-sync-data");
           /*  Route::get("payment_setting",[SettingController::class,"payment_setting"])->name("payment-setting");
             Route::post("update_payment_setting",[SettingController::class,"update_payment_setting"])->name("update-payment-setting");*/
 

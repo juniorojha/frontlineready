@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportCar;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
@@ -445,5 +446,117 @@ class CarController extends Controller
             }) 
             ->addIndexColumn()              
             ->make(true);
+    }
+
+    public function update_car_sync_data(){
+        $users = [];
+        if (($open = fopen(asset('upload/fready.CSV'), "r")) !== FALSE) {
+            while (($data = fgetcsv($open, 1000, ",")) !== FALSE) {
+                $users[] = $data;
+            }
+            fclose($open);
+        }
+        $start_date_time = $this->getsitedate();
+        $total_record = 0;
+        $new_record = 0;
+        $update_record = array();
+        $duplicate_record = array();
+
+        foreach($users as $u){
+            if(!empty($u[10])){
+                    $store = Car::where("stock",$u[0])->first();
+                    if(empty($store)){
+                        $store = new Car();
+                        $new_record++;
+                    }else{
+                        $update_record[]=$u[0];
+                    }
+                    $store->stock = $u[0];
+                    $store->vin = $u[10];
+                    $get_make = Make::where('name', 'LIKE', '%'.$u[2].'%')->first();
+                    if($get_make){
+                        $store->make = $get_make->id;
+                    }else{
+                        $get_make = new Make();
+                        $get_make->name = $u[2];
+                        $get_make->save();
+                        $store->make = $get_make->id;
+                    }
+                    $store->model = $u[3]." ".$u[4];
+                    $store->year = '2020';
+                    if($u[1]!=""){
+                        $store->year = $u[1];
+                    }
+                    if(empty($u[1])){
+                        $duplicate_record[] = "Empty Year for Stock number ".$u[10].", skipping";
+                    }
+                    $store->mileage = $u[11];
+                    if($u[5]>4){
+                        $store->engine_size = $u[7]."V".$u[5];
+                    }else{
+                        $store->engine_size = $u[7];
+                    }
+                    $store->transmission = $u[6];
+                    $store->exterior_color = $u[12];
+                    $store->interior_color = !empty($u[13])?$u[13]:'Unknown';
+                    $store->interior_materia = !empty($u[37])?$u[37]:'Unavailable';
+                    $store->buy_now_price = $u[22];
+                    if(empty($u[22])){
+                        $store->buy_now_price = 5000+$u[20];                        
+                    }
+                    $store->base_price = isset($u[20])?$u[20]:'20000';
+                    if(empty($u[20])){
+                        $duplicate_record[] = "Empty Base price for Stock number ".$u[20].", skipping";
+                    }
+                    if(!empty($u[18])){
+                        $str = explode(",", $u[18]);
+                        if(isset($str[0])){
+                            $fname = str_replace("ftp.gauravojha.com/","",$str[0]);
+                            copy(asset('upload/'.$fname),storage_path('app/public/cars/banner').'/'.$fname);
+                            $store->thumbail = $fname; 
+                        }else{
+                            $file_name = rand()."222.png";
+                            copy(asset('public/default.png'),storage_path('app/public/cars/banner').'/'.$file_name);
+                            $store->thumbail = $file_name; 
+                        }                
+                    }else{
+                        $file_name = rand()."222.png";
+                        copy(asset('public/default.png'),storage_path('app/public/cars/banner').'/'.$file_name);
+                        $store->thumbail = $file_name; 
+                    }
+                    if(!empty($u[38])){
+                        $start_date = date("Y-m-d",strtotime($u[38]));
+                        $store->start_date = $start_date;                
+                        $store->end_date = date("Y-m-d", strtotime("$start_date +10 days"));
+                    }else{
+                        $start_date = date("Y-m-d",strtotime("-1 days"));
+                        $store->start_date = $start_date;                
+                        $store->end_date = date("Y-m-d", strtotime("$start_date +9 days"));
+                    }
+                    $store->save();
+                    if(!empty($u[18])){
+                        $str = explode(",", $u[18]);
+                        if(count($str)>=1){
+                            $i=0;
+                            foreach($str as $s){
+                                if($i!=0){
+                                    $fname = str_replace("ftp.gauravojha.com/","",$s);
+                                    copy(asset('upload/'.$fname),storage_path('app/public/cars/banner').'/'.$fname);
+                                    $add = new CarImages();
+                                    $add->car_id = $store->id;
+                                    $add->image = $fname;
+                                    $add->save();
+                                }
+                                $i++;
+                            }
+                        }
+                    }
+            }else{
+                $duplicate_record[] = "Empty VIN for Stock number ".$u[10].", skipping";
+            }          
+            $total_record++;
+        }
+        $fail = 0;
+        return json_encode(array("start_datetime"=>$start_date_time,"total_record"=>$total_record,"duplicate_record"=>$duplicate_record,"new_record"=>$new_record,"update_record"=>$update_record,"fail"=>$fail));
     }
 }
