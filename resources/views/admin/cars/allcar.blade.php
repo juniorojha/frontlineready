@@ -3,6 +3,135 @@
 All Cars
 @stop
 @section('content')
+<style>
+  /* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+  </style>
 <div class="app-page-title">
    <div class="page-title-wrapper">
       <div class="page-title-heading">
@@ -30,7 +159,11 @@ All Cars
       </div>
       @endif
       <div class="row" style="margin-left: 5px;margin-bottom: 10px;">
-         <a href="{{route('save-car', ['user_id'=>0,'id'=>0,'tab'=>0])}}" class="btn btn-primary">Add New Car</a>
+        <a href="{{route('save-car', ['user_id'=>0,'id'=>0,'tab'=>0])}}" class="btn btn-primary">Add New Car</a>
+        <a onclick="syncdata()" data-toggle="modal" data-target="#sync_report_info" href="javascript:void(0)" class="btn btn-primary" style="margin-left:15px">Sync Data From Frazer</a>         
+      </div>
+      <div id="report_area">
+          
       </div>
       <table style="width: 100%;" id="cartable" class="table table-hover table-striped table-bordered">
          <thead>
@@ -58,7 +191,6 @@ All Cars
       </table>
    </div>
 </div>
-
 @stop
 @section('footer')
 <script type="text/javascript">
@@ -138,6 +270,35 @@ All Cars
          }
      } 
 
-   
+ function syncdata(){
+     $(".loading").removeClass("hide");
+     $(".loading").addClass("show");
+     $.ajax({
+              url: "{{route('car-sync-data')}}",
+              method: 'get',
+              success: function(response){
+                  console.log(response);
+                  var str = JSON.parse(response);
+                  $(".loading").removeClass("show");
+                  $(".loading").addClass("hide");
+                  var update_record = str.update_record;
+                  var txdemo = "";
+                  var txdemo1 = "";
+                  for(var i=0;i<str.duplicate_record.length;i++){
+                      txdemo = txdemo+'</br>'+tr.duplicate_record[i];
+                  }
+                  for(var i=0;i<str.update_record.length;i++){
+                      txdemo1 = txdemo1+','+str.update_record[i];
+                      if(i%5==0){
+                         txdemo1 = txdemo1+"</br>";
+                      }
+                  }
+                  var txt = '<p>Sync started at '+str.start_datetime+'</p><p>Total number of records '+str.total_record+'</p><div id="report_list">'+txdemo+'</div><p>'+str.new_record+' records processed successfully.</p><p>Records with stock numbers '+txdemo1+'already existed and were updated</p><p>0 records failed. Details above.</p>';
+                  $("#sync_report_area").html(txt);
+              }
+        });
+     
+ }
+
 </script>
 @stop

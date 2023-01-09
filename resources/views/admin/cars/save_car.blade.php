@@ -114,6 +114,7 @@ Save Car Information
                         <select id="transmission" name="transmission" class="form-control">
                             <option value="Automatic">Automatic</option>
                             <option value="Manual">Manual</option>
+                            <option value="Continuously Variable">Continuously Variable</option>
                         </select>
                      </div>
                   </div>
