@@ -465,6 +465,7 @@ class CarController extends Controller
         foreach($users as $u){
             if(!empty($u[10])){
                     $store = Car::where("stock",$u[0])->first();
+                    // Check if car already exists
                     if(empty($store)){
                         $store = new Car();
                         $new_record++;
@@ -474,6 +475,7 @@ class CarController extends Controller
                     $store->stock = $u[0];
                     $store->vin = $u[10];
                     $get_make = Make::where('name', 'LIKE', '%'.$u[2].'%')->first();
+                    // If make exists, use its ID else create a new make.
                     if($get_make){
                         $store->make = $get_make->id;
                     }else{
@@ -491,8 +493,9 @@ class CarController extends Controller
                         $duplicate_record[] = "Empty Year for Stock number ".$u[10].", skipping";
                     }
                     $store->mileage = $u[11];
+                    // Engine size + cylinders
                     if($u[5]>4){
-                        $store->engine_size = $u[7]."V".$u[5];
+                        $store->engine_size = $u[7]." V".$u[5];
                     }else{
                         $store->engine_size = $u[7];
                     }
@@ -501,13 +504,15 @@ class CarController extends Controller
                     $store->interior_color = !empty($u[13])?$u[13]:'Unknown';
                     $store->interior_materia = !empty($u[37])?$u[37]:'Unavailable';
                     $store->buy_now_price = $u[22];
+                    // If buy now price is empty, it will be base price + $5k
                     if(empty($u[22])){
-                        $store->buy_now_price = 5000+$u[20];                        
+                        $store->buy_now_price = (str)(5000+(int)$u[20]);
                     }
                     $store->base_price = isset($u[20])?$u[20]:'20000';
                     if(empty($u[20])){
                         $duplicate_record[] = "Empty Base price for Stock number ".$u[20].", skipping";
                     }
+                    // Processing images of cars
                     if(!empty($u[18])){
                         $str = explode(",", $u[18]);
                         if(isset($str[0])){
@@ -524,6 +529,7 @@ class CarController extends Controller
                         copy(asset('public/default.png'),storage_path('app/public/cars/banner').'/'.$file_name);
                         $store->thumbail = $file_name; 
                     }
+                    // Calculation of auction dates
                     if(!empty($u[38])){
                         $start_date = date("Y-m-d",strtotime($u[38]));
                         $store->start_date = $start_date." 00:00:00";                

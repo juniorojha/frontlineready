@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('live:auction')
                  ->everyMinute();
         $schedule->command('car:read')
-                 ->everyMinute();
+                 ->dailyAt('11:30');
     }
 
     /**
