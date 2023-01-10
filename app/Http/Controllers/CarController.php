@@ -128,7 +128,7 @@ class CarController extends Controller
 
     public function show_delete_car($id){
              try{
-                $data = CarInfo::find($id);
+                $data = Car::find($id);
                 if($data){
                     $data->delete();
                     Session::flash('message',"Cars deleted successfully"); 
@@ -532,12 +532,12 @@ class CarController extends Controller
                     // Calculation of auction dates
                     if(!empty($u[38])){
                         $start_date = date("Y-m-d",strtotime($u[38]));
-                        $store->start_date = $start_date." 00:00:00";                
-                        $store->end_date = date("Y-m-d", strtotime("$start_date +10 days"))." 23:59:59";
+                        $store->start_date = $start_date." 00:00";                
+                        $store->end_date = date("Y-m-d", strtotime("$start_date +10 days"))." 23:59";
                     }else{
                         $start_date = date("Y-m-d",strtotime("-1 days"));
-                        $store->start_date = $start_date;                
-                        $store->end_date = date("Y-m-d", strtotime("$start_date +9 days"));
+                        $store->start_date = $start_date." 00:00";                
+                        $store->end_date = date("Y-m-d", strtotime("$start_date +9 days"))." 23:59";;
                     }
                     $store->save();
                     if(!empty($u[18])){
