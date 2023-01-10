@@ -128,7 +128,7 @@ class CarController extends Controller
 
     public function show_delete_car($id){
              try{
-                $data = CarInfo::find($id);
+                $data = Car::find($id);
                 if($data){
                     $data->delete();
                     Session::flash('message',"Cars deleted successfully"); 
