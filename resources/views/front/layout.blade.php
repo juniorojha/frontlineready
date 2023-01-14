@@ -58,21 +58,7 @@
                            <a href="javascript:void(0)" class="closeNav closebtn">&times;</a>
                            <ul class="top-nav-bar">
                               <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
-                              <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>                             
-                              @if(Auth::id())
-                                <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('auction')}}">Auction</a></li>
-                             <li class="<?=Session::get("menu_active")==4?'active':''?>">
-                                 <a href="{{route('myaccount')}}">My Account</a>
-                              </li>
-                              <li class="<?=Session::get("menu_active")==5?'active':''?>">
-                                 <a href="{{route('user-logout')}}">Logout</a>
-                              </li>
-                              @else
-                              <li class="<?=Session::get("menu_active")==5?'active':''?>">
-                                 <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login</a>
-                              </li>
-                              @endif
-                           
+                              <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
                               <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>
                            </ul>
                         </div>
@@ -88,24 +74,6 @@
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
-                  
-                     
-                    
-                     @if(Auth::id())
-                        <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('auction')}}">Auction</a></li>
-                              <li class="<?=Session::get("menu_active")==4?'active':''?>">
-                                 <a href="{{route('myaccount')}}">My Account</a>
-                              </li>
-                              <li class="<?=Session::get("menu_active")==5?'active':''?>">
-                                 <a href="{{route('user-logout')}}">Logout</a>
-                              </li>
-                              @else
-                             
-                              <li class="<?=Session::get("menu_active")==5?'active':''?>">
-                                 <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">Login</a>
-                              </li>
-                              @endif
-
                      <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>         
                   </ul>
                </div>
@@ -124,7 +92,7 @@
                </div>
             </div>-->
             <div class="row">
-               <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+               <!-- <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>Auctions</h5>
                      <ul>
@@ -133,7 +101,7 @@
                         <li><a href="{{route('auction',['id'=>4])}}">Sold</a></li>
                      </ul>
                   </div>
-               </div>
+               </div> -->
                <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <h5>Selling</h5>
@@ -155,6 +123,7 @@
                      </ul>
                   </div>
                </div>
+               <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12"></div>
                <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                   <div class="footer-heading-contents">
                      <!-- <h5>In The Spotlight</h5> -->

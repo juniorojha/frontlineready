@@ -21,8 +21,8 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('live:auction')
-                 ->everyMinute();
+        // $schedule->command('live:auction')
+        //          ->everyMinute();
         $schedule->command('car:read')
                  ->dailyAt('11:30');
     }

@@ -146,130 +146,117 @@ Front Line Ready - Vehicle Detail
                     </ul>
                     
                 </div>
-                
-                    <a style="margin-left: 50px;width: 200px;color: white;    background: black;" href='{{url('/')."/storage/app/public/cars/report"."/".$data->flr_report}}' class="btn btn-primary" target="_blank">FLR Vehicle Report</a>
-                
-                
+                @if($data->flr_report!='')
+                    <a style="margin-left: 50px;width: 50%;color: white;    background: black;" href='{{url('/')."/storage/app/public/cars/report"."/".$data->flr_report}}' class="btn btn-primary" target="_blank">FLR Vehicle Condition Report</a>
+                @endif                
             </div>
         </div>
     </div>
-    
 
-
-<div class="current-bid-register-tab-banner" style="margin-top:15px">
-            <div class="container">
-                <div class="row">
-                     @if($data->status==1)
-                    <div class="col-lg-8 col-md-9 col-sm-9 col-xs-12">
-                        @else
-                        <div class="col-lg-12 col-md-9 col-sm-9 col-xs-12">
-                        @endif
-                        <div class="live-bid-hits-tags">
-                            @if($data->status==1)
-                             <a href="">Live</a>
-                            @elseif($data->status==2)
-                            <a href="">Coming Soon</a>
-                            
-                            @elseif($data->status==4)
-                            <a href="">Sold</a>
-                            @endif
-                            
-                            <div class="bids-times"> <span class="end-in">
-                                @if($data->status==1)
-                                
-                                 <?php 
-                                  
-                                       $timestamp = date("Y-m-d H:i:s",strtotime($data->end_date));
-                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
-                                      $new_date = $date->setTimezone('UTC');
-                                      $date1 =  \Carbon\Carbon::parse($new_date)->format('Y-m-d H:i:s');
-                                      
-                                    
-                               ?>
-                            <script type="text/javascript">
-                               updateTimer('{{$date1}}','{{$data->id}}');
-                            </script>
-                                Ends In :</span>
-                                <ul>
-                                    <li> <span id="day_car">0</span>
-                                        <p >Days</p>
-                                    </li>
-                                    <li> <span id="hour_car">00</span>
-                                        <p >Hours</p>
-                                    </li>
-                                    <li> <span id="min_car">00</span>
-                                        <p >Min</p>
-                                    </li>
-                                    <li> <span id="sec_car">00</span>
-                                        <p >Sec</p>
-                                    </li>
-                                </ul>
-                                 @endif
-                            </div>
-                            
-                            
-                           
-                            @if($data->status==1)
-                            <div class="current-bid-tags">
-                                <p>Current Bid : <span>$ {{$data->bid_price}}</span></p>
-                                 
-                                                               
-                            </div>
-                            @endif
-                       
-                            @if($data->status==4)
-                            <div class="current-bid-tags" style="width:170px;margin-left: 0px;">
-                                <p style="font-weight: 600;font-size: 15px;">Sold Date </p>
-                                <div class="head-bg-color" style="    max-width: 50%;">
-                                    <p style="padding:0px;">{{$data->sold_date}}</p>
-                                </div>
-                            </div>
-                            <div class="current-bid-tags" style="width:170px">
-                                <p style="font-weight: 600;font-size: 15px;">Winning Bid </p>
-                                <div class="head-bg-color">
-                                    <p style="padding:0px">$ {{$data->winning_bid}}</p>
-                                </div>
-                            </div>
-                            <div class="current-bid-tags" style="width:170px">
-                                <p style="font-weight: 600;font-size: 15px;">Total Bid </p>
-                                <div class="head-bg-color">
-                                    <p style="padding:0px">{{$data->total_bid}}</p>
-                                </div>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                     @if($data->status==1)
-                   <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
-                        @else
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        @endif
+<div class="current-bid-register-tab-banner" style="margin-top:15px; display: none;"> <!-- Make it visible to go live -->
+    <div class="container">
+        <div class="row">
+             @if($data->status==1)
+            <div class="col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                @else
+                <div class="col-lg-12 col-md-9 col-sm-9 col-xs-12">
+                @endif
+                <div class="live-bid-hits-tags">
+                    @if($data->status==1)
+                     <a href="">Live</a>
+                    @elseif($data->status==2)
+                    <a href="">Coming Soon</a>
                     
-                        <div class="register-login-makebid" style="">
-                            <ul>
-                                  @if(Auth::id())
-                                  
-                                  <li>
-                                      @if($data->status==1)
-                                       <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Bid Now</a>
-                                       <a class="regisder-bids" href="javascript:void()" onclick="buynow()" style="margin-left: 5px;">Buy Now ( $ {{$data->buy_now_price}})</a>
-                                      @endif
-                                   
-                                   
-                                  @else
-                                  
-                                <li> <a class="regisder-bids" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login <br>
-                                        To Bid</a> </li>
-                                @endif
-                                        
-                                       
-                               
-                            </ul>
+                    @elseif($data->status==4)
+                    <a href="">Sold</a>
+                    @endif
+                    
+                    <div class="bids-times"> <span class="end-in">
+                        @if($data->status==1)
+                        
+                         <?php 
+                          
+                               $timestamp = date("Y-m-d H:i:s",strtotime($data->end_date));
+                              $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
+                              $new_date = $date->setTimezone('UTC');
+                              $date1 =  \Carbon\Carbon::parse($new_date)->format('Y-m-d H:i:s');
+                              
+                            
+                       ?>
+                    <script type="text/javascript">
+                       updateTimer('{{$date1}}','{{$data->id}}');
+                    </script>
+                        Ends In :</span>
+                        <ul>
+                            <li> <span id="day_car">0</span>
+                                <p >Days</p>
+                            </li>
+                            <li> <span id="hour_car">00</span>
+                                <p >Hours</p>
+                            </li>
+                            <li> <span id="min_car">00</span>
+                                <p >Min</p>
+                            </li>
+                            <li> <span id="sec_car">00</span>
+                                <p >Sec</p>
+                            </li>
+                        </ul>
+                         @endif
+                    </div>
+                   
+                    @if($data->status==1)
+                    <div class="current-bid-tags">
+                        <p>Current Bid : <span>$ {{$data->bid_price}}</span></p>
+                    </div>
+                    @endif
+               
+                    @if($data->status==4)
+                    <div class="current-bid-tags" style="width:170px;margin-left: 0px;">
+                        <p style="font-weight: 600;font-size: 15px;">Sold Date </p>
+                        <div class="head-bg-color" style="    max-width: 50%;">
+                            <p style="padding:0px;">{{$data->sold_date}}</p>
                         </div>
                     </div>
+                    <div class="current-bid-tags" style="width:170px">
+                        <p style="font-weight: 600;font-size: 15px;">Winning Bid </p>
+                        <div class="head-bg-color">
+                            <p style="padding:0px">$ {{$data->winning_bid}}</p>
+                        </div>
+                    </div>
+                    <div class="current-bid-tags" style="width:170px">
+                        <p style="font-weight: 600;font-size: 15px;">Total Bid </p>
+                        <div class="head-bg-color">
+                            <p style="padding:0px">{{$data->total_bid}}</p>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+            </div>
+             @if($data->status==1)
+           <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+                @else
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                @endif
+                <div class="register-login-makebid" style="">
+                    <ul>
+                          @if(Auth::id())
+                          
+                          <li>
+                              @if($data->status==1)
+                               <a class="regisder-bids" href="javascript:void()" id="move_to_bid">Bid Now</a>
+                               <a class="regisder-bids" href="javascript:void()" onclick="buynow()" style="margin-left: 5px;">Buy Now ( $ {{$data->buy_now_price}})</a>
+                              @endif
+                          @else
+                          
+                        <li> <a class="regisder-bids" data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">Login <br>
+                                To Bid</a> </li>
+                        @endif                                       
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
     <!--Banner Slider end -->
 

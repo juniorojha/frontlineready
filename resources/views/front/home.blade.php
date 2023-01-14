@@ -28,7 +28,8 @@ Front Line Ready - Home
 }
 
 ul.slick-dots {
-    display: none !important;
+    left: 0!important;
+/*    display: none !important;*/
 }
 
 .slick-next, .slick-prev{
@@ -52,58 +53,47 @@ ul.slick-dots {
     font-family: "Montserrat";
 }
 </style>
-<script>
-    
-      
+<script>  
         
-        function updateTimer(duration,id) {
-                    var interVal=  setInterval(function () {
-                    future = Date.parse(duration);
-                     date = new Date().toLocaleString("en-US", { timeZone: '<?=Session::get('timezone')?>' });
-             now = Date.parse(date);
-                    diff = future - now;
-                    
-                    days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    hours = Math.floor(diff / (1000 * 60 * 60));
-                    mins = Math.floor(diff / (1000 * 60));
-                    secs = Math.floor(diff / 1000);
-                    
-                    d = days;
-                    h = hours - days * 24;
-                    m = mins - hours * 60;
-                    s = secs - mins * 60;
-                     console.log(d+":"+h+":"+m+":"+s);
-                    m = m < 10 ? "0" + m : m;
-                    s = s < 10 ? "0" + s : s;
-                    h = h < 10 ? "0" + h : h;
-                    if(d>0){
-                        if(d==1){
-                             document.getElementById("end_time_fe_"+id).innerHTML = " a day";
-                        }else{
-                             document.getElementById("end_time_fe_"+id).innerHTML = d+" days";
-                        }
-                       //     document.getElementById("end_time_"+id).innerHTML = d+" Day";
-                           
-                       
-                        
-                    }else{
-                        
-                      //  document.getElementById("end_time_"+id).innerHTML = h+":"+m+":"+s;
-                        document.getElementById("end_time_fe_"+id).innerHTML = h+":"+m+":"+s;
-                       
-                    }
-                    //console.log(d+);
-                    if(d=='00'&&h=='00'&m=='00'&s=='00'){
-                         var totallivecar = document.getElementById("totallivecar").value;
-                         document.getElementById("totallivecar").value = parseInt(totallivecar)-1;
-                         document.getElementById("live_cars_"+id).style.display="none";
-                    }
- 
-  
-            },1000);
-   
+function updateTimer(duration,id) {
+    var interVal=  setInterval(function () {
+        future = Date.parse(duration);
+        date = new Date().toLocaleString("en-US", { timeZone: '<?=Session::get('timezone')?>' });
+        now = Date.parse(date);
+        diff = future - now;
+        
+        days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        hours = Math.floor(diff / (1000 * 60 * 60));
+        mins = Math.floor(diff / (1000 * 60));
+        secs = Math.floor(diff / 1000);
+        
+        d = days;
+        h = hours - days * 24;
+        m = mins - hours * 60;
+        s = secs - mins * 60;
+         // console.log(d+":"+h+":"+m+":"+s);
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        h = h < 10 ? "0" + h : h;
+        if(d>0){
+            if(d==1){
+                 document.getElementById("end_time_fe_"+id).innerHTML = " a day";
+            }else{
+                 document.getElementById("end_time_fe_"+id).innerHTML = d+" days";
+            }
+           //     document.getElementById("end_time_"+id).innerHTML = d+" Day";
+        }else{               
+          //  document.getElementById("end_time_"+id).innerHTML = h+":"+m+":"+s;
+            document.getElementById("end_time_fe_"+id).innerHTML = h+":"+m+":"+s;
+        }
+        //console.log(d+);
+        if(d=='00'&&h=='00'&m=='00'&s=='00'){
+             var totallivecar = document.getElementById("totallivecar").value;
+             document.getElementById("totallivecar").value = parseInt(totallivecar)-1;
+             document.getElementById("live_cars_"+id).style.display="none";
+        }
+    },1000); 
 }
-
 
 </script>
 <!-- header End -->
@@ -168,26 +158,18 @@ ul.slick-dots {
                         <div class="attributes">
                            <ul>
                               <li>
-                                 <p class="live">LIVE</p>
+                                 <!-- <p class="live">LIVE</p> -->
                               </li>
                            </ul>
                         </div>
                         <div class="img-hold">
-                            @if(Auth::id())
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
-                               @else
-                               <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">
-                               @endif
                                <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}">
                                </a>
                         </div>
                         <div class="heading-hold">
-                            @if(Auth::id())
                            <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
-                               @else
-                               <a data-bs-toggle="modal" data-bs-target="#register_user_model" href="#" id="login_model" onclick="changemodel('login_content')">
-                               @endif
-                               <h4>{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h4>
+                               <h4>{{$gc->year}} | {{$gc->make}} {{$gc->model}} | {{$gc->mileage}} miles</h4>
                            </a>
                           <ul class="icons-section">
                            
@@ -196,28 +178,6 @@ ul.slick-dots {
                      </div>
                      <div class="product-content">
                        
-                     </div>
-                     <div class="product-shadow-box">
-                       
-                        <div class="timging-tage">
-                           <p>Ends In : <span id="end_time_fe_{{$gc->id}}">
-                               <?php 
-                                      $timestamp = date("Y-m-d H:i:s",strtotime($gc->end_date));
-                                      $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, Session::get('current_timezone'));
-                                      $new_date = $date->setTimezone('UTC');
-                                      $date =  \Carbon\Carbon::parse($new_date)->format('Y-m-d');
-                                      $time = \Carbon\Carbon::parse($new_date)->format('H:i:s');
-                                      $date1 = $date." ".$time;
-                               ?>
-                            <script type="text/javascript">
-                        updateTimer('{{$date1}}','{{$gc->id}}');
-                     </script>
-                     </span></p>
-                     
-                        </div>
-                        <div class="current-bids">
-                           <p>Current Bids : $ {{$gc->base_price}}</p>
-                        </div>
                      </div>
                   </div>
                </div>
@@ -232,17 +192,9 @@ ul.slick-dots {
       </div>
      
     
-         <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 18%;margin-bottom: 63px;">
-            @if(Auth::id())
-                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">
-            @else
-                 <a data-bs-toggle="modal" class="btn_border" data-bs-target="#register_user_model" href="#" onclick="changemodel('login_content')">
-            @endif
-            
-            
-            
-                                        Download Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
-                                </div>
+        <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 20%;margin-bottom: 63px;">
+                <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">Download Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
+        </div>
      
        <div class="heading-border-section" id="submit_entry_from" style="display:none!important;">
         <span class="firts"></span>
@@ -346,7 +298,7 @@ ul.slick-dots {
         arrows: true,
         dots: true,
         speed: 300,
-        infinite: true,
+        infinite: false,
         autoplaySpeed: 3000,
         autoplay: true,
         responsive: [

@@ -506,7 +506,7 @@ class CarController extends Controller
                     $store->buy_now_price = $u[22];
                     // If buy now price is empty, it will be base price + $5k
                     if(empty($u[22])){
-                        $store->buy_now_price = (str)(5000+(int)$u[20]);
+                        $store->buy_now_price = 5000+$u[20];
                     }
                     $store->base_price = isset($u[20])?$u[20]:'20000';
                     if(empty($u[20])){
