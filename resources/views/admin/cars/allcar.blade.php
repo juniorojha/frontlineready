@@ -281,19 +281,24 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                   var str = JSON.parse(response);
                   $(".loading").removeClass("show");
                   $(".loading").addClass("hide");
+                  var processed_records = str.new_record+str.duplicate_record.length
                   var update_record = str.update_record;
                   var txdemo = "";
                   var txdemo1 = "";
                   for(var i=0;i<str.duplicate_record.length;i++){
-                      txdemo = txdemo+'</br>'+tr.duplicate_record[i];
+                      txdemo = txdemo+'</br>'+str.duplicate_record[i];
                   }
                   for(var i=0;i<str.update_record.length;i++){
-                      txdemo1 = txdemo1+','+str.update_record[i];
+                      if(i==0){
+                        txdemo1 = str.update_record[i];
+                      } else {
+                        txdemo1 = txdemo1+', '+str.update_record[i];
+                      }
                       if(i%5==0){
                          txdemo1 = txdemo1+"</br>";
                       }
                   }
-                  var txt = '<p>Sync started at '+str.start_datetime+'</p><p>Total number of records '+str.total_record+'</p><div id="report_list">'+txdemo+'</div><p>'+str.new_record+' records processed successfully.</p><p>Records with stock numbers '+txdemo1+'already existed and were updated</p><p>0 records failed. Details above.</p>';
+                  var txt = '<p>Sync started at '+str.start_datetime+'.</p><p>Total number of records '+str.total_record+'.</p><div id="report_list">'+txdemo+'</div><p>'+processed_records+' records processed successfully.</p><p>Records with stock numbers '+txdemo1+' already existed and were updated.</p><p>0 records failed. Details above.</p>';
                   $("#sync_report_area").html(txt);
               }
         });
