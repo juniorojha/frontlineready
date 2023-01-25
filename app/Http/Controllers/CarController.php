@@ -562,7 +562,7 @@ class CarController extends Controller
             }          
             $total_record++;
         }
-        $fail = 0;
+        $fail = count($duplicate_record);
         return json_encode(array("start_datetime"=>$start_date_time,"total_record"=>$total_record,"duplicate_record"=>$duplicate_record,"new_record"=>$new_record,"update_record"=>$update_record,"fail"=>$fail));
     }
 }
