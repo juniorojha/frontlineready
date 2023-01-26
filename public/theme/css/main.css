@@ -823,6 +823,9 @@ hover {
 
 .img-hold img {
     width: 100%;
+    max-width:500px;
+    height: 350px;
+    object-fit: cover;
     transition: ease all 0.3s;
 }
 
@@ -833,11 +836,15 @@ hover {
 .product-img-heading .heading-hold {
     margin-top: 18px;
     display: flex;
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     justify-content: space-between;
 }
 
 .heading-hold h4 {
-    font-size: 20px;
+    font-size: 16px;
     color: #000;
 }
 
