@@ -60,7 +60,9 @@ Front Line Ready - About Us
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;">
                     <div class="sell-with-us-content">
                        
-                        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.  We then certify our cars for 30 days or 1,000 miles. <br/>
+                        <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We buy vehicles and put them through a rigorous inspection and reconditioning process to make sure they meet our high standards. Each Front Line Ready vehicle will have a current Texas Inspection and be ready for you to sell immediately on your lot without time consulting and costly reconditioning.  
+                            <!-- We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.    -->
+                           We then certify our cars for 30 days or 1,000 miles. <br/>
                         &nbsp;&nbsp;&nbsp;It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. </p>
                         <a href="{{route('home')}}#delarship_reg"><h3 style="display: flex;justify-content: center;    font-size: 24px;font-weight: 700;">Contact us to learn more.</h3></a>
                     
@@ -99,7 +101,7 @@ Front Line Ready - About Us
                     </div>
                 </div>
             </div>    
-             <div class="row" style="margin-top:50px">
+             <!-- <div class="row" style="margin-top:50px">
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-heading-cl-pos">
                   <div class="heading-box">
                      <h2>How Our Auctions Work</h2>
@@ -107,8 +109,8 @@ Front Line Ready - About Us
                   <span class="left"></span>
                   <span class="Right"></span>
                </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sellers-receives-content">
                        
@@ -125,7 +127,7 @@ Front Line Ready - About Us
                         <p>That's it.  Sound easy enough?</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="seller-middle-banner" style="margin-bottom:0px"><div class="container">
