@@ -558,7 +558,7 @@ class CarController extends Controller
                         }
                     }
             }else{
-                $duplicate_record[] = "Empty VIN for Stock number ".$u[10].", skipping";
+                $duplicate_record[] = "Empty VIN for Stock number ".$u[0].", skipping";
             }          
             $total_record++;
         }
