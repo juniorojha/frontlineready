@@ -102,6 +102,7 @@ Route::get("fetch_visitor",[FrontController::class,"fetch_visitor"])->name("fetc
 Route::get("get_txt",[FrontController::class,"get_txt"]);
 
 Route::get("auction",[FrontController::class,"show_auction"])->name("auction");
+Route::get("inventory",[FrontController::class,"show_inventory"])->name("inventory");
 
 
 Route::get("buy_now",[FrontController::class,"buy_now"])->name("buy-now");

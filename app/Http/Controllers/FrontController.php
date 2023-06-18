@@ -102,10 +102,46 @@ class FrontController extends Controller
                     $k->key_id = $this->encryptstring($k->id);  
                      $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
+                $get_all_cars = Car::whereNull('deleted_at')->get();
+                foreach ($get_all_cars as $k) {
+                    $k->key_id = $this->encryptstring($k->id);
+                    $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+                }
                  Session::put("menu_active",'3');
                 $makes = Make::wherenull('deleted_at')->get();
                 
-                return view("front.auction",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold"));
+                return view("front.auction",compact("id","makes","setting","spotLight","get_car_coming","get_car_live","get_car_sold","get_all_cars"));
+        }catch(Exception $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        }catch (DecryptException $e) {
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        }catch (\Illuminate\Database\QueryException $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->route('page_not_found');
+        } 
+    }
+
+    public function show_inventory(Request $request){
+         try{
+                $setting = Setting::find(1);
+                $id = $request->get("id");
+                $get_all_cars = Car::whereNull('deleted_at')->get();
+                foreach ($get_all_cars as $k) {
+                    $k->key_id = $this->encryptstring($k->id);
+                    $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+                }
+                Session::put("menu_active",'3');
+                $makes = Make::wherenull('deleted_at')->get();
+                
+                return view("front.inventory",compact("id","makes","setting","get_all_cars"));
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something went wrong"); 
@@ -133,7 +169,8 @@ class FrontController extends Controller
                 // $get_car_live = Car::whereNull('deleted_at')->where("status",'1')->get();
                  $get_car_live = Car::whereNull('deleted_at')->get();
                 foreach ($get_car_live as $k) {
-                    $k->key_id = $this->encryptstring($k->id);                   $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
+                    $k->key_id = $this->encryptstring($k->id);                   
+                    $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
                  Session::put("menu_active",'1');
                 return view("front.home",compact("setting","get_car_live"));

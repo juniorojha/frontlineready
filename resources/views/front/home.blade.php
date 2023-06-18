@@ -192,10 +192,14 @@ function updateTimer(duration,id) {
       </div>
      
     
+        <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 20%;margin-bottom: 30px;">
+                <a class="btn_border" href="{{route('inventory')}}" style="padding:0px 45px;">View Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
+        </div>
+
         <div class="actions-btn-hold btn_box_border" style="display: flex;    justify-content: center;width: 20%;margin-bottom: 63px;">
                 <a class="btn_border" href="{{asset('storage/app/public/').'/'.$setting->inventory_pdf}}" style="padding:0px 45px;" target="_blank">Download Inventory <i class="fal fa-long-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
         </div>
-     
+        
        <div class="heading-border-section" id="submit_entry_from" style="display:none!important;">
         <span class="firts"></span>
         <div class="container">

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.11
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 05:16 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: localhost:3306
+-- Generation Time: Apr 19, 2023 at 06:07 PM
+-- Server version: 5.7.23-23
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `frontlineready`
+-- Database: `gauray2y_frontlineready`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bid_gaps` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `types` varchar(255) DEFAULT NULL,
+  `types` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gap` double DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -51,33 +52,33 @@ INSERT INTO `bid_gaps` (`id`, `types`, `gap`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
-  `current_bid_id` int(11) DEFAULT 0,
-  `stock` text DEFAULT NULL,
-  `vin` text DEFAULT NULL,
-  `make` text DEFAULT NULL,
-  `model` text DEFAULT NULL,
-  `year` text DEFAULT NULL,
-  `mileage` text DEFAULT NULL,
-  `engine_size` text DEFAULT NULL,
-  `transmission` text DEFAULT NULL,
-  `exterior_color` text DEFAULT NULL,
-  `interior_color` text DEFAULT NULL,
-  `interior_materia` text DEFAULT NULL,
-  `flr_report` text DEFAULT NULL,
+  `current_bid_id` int(11) DEFAULT '0',
+  `stock` text,
+  `vin` text,
+  `make` text,
+  `model` text,
+  `year` text,
+  `mileage` text,
+  `engine_size` text,
+  `transmission` text,
+  `exterior_color` text,
+  `interior_color` text,
+  `interior_materia` text,
+  `flr_report` text,
   `buy_now_price` varchar(1000) DEFAULT NULL,
   `base_price` varchar(1000) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
-  `payment_status` int(11) NOT NULL DEFAULT 1 COMMENT '1=>pending,2=>settle',
+  `payment_status` int(11) NOT NULL DEFAULT '1' COMMENT '1=>pending,2=>settle',
   `thumbail` varchar(1000) NOT NULL,
-  `start_date` text DEFAULT NULL,
-  `end_date` text DEFAULT NULL,
+  `start_date` text,
+  `end_date` text,
   `sold_date` varchar(1000) DEFAULT NULL,
   `total_bid` varchar(1000) DEFAULT NULL,
   `winning_bid` varchar(500) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cars`
@@ -85,9 +86,40 @@ CREATE TABLE `cars` (
 
 INSERT INTO `cars` (`id`, `current_bid_id`, `stock`, `vin`, `make`, `model`, `year`, `mileage`, `engine_size`, `transmission`, `exterior_color`, `interior_color`, `interior_materia`, `flr_report`, `buy_now_price`, `base_price`, `status`, `payment_status`, `thumbail`, `start_date`, `end_date`, `sold_date`, `total_bid`, `winning_bid`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '1', 'ZHWGE12N96LA03527', '2', 'LP520 GT3', '2006', '5000', '5.0L V10', 'Automatic', 'Yellow', 'Black', 'Leader', '1299206161668831986.pdf', '15000', '500', 4, 2, '16651835601668831986.png', '2022-11-21 19:00', '2022-11-30 18:00', '2022-11-22', '1', '15000', '2022-11-19 04:26:26', '2022-11-22 12:18:48', NULL),
-(2, 0, '1', 'WBS3R92040K339121', '7', 'm4', '2014', '21,800 Km', '5.0L V10', 'Automatic', 'Red', 'Black', 'Leader', '17888975221669096783.pdf', '25000', '1000', 1, 1, '7108743941669096783.png', '2022-11-25 00:00', '2022-11-30 00:00', NULL, NULL, NULL, '2022-11-22 05:59:43', '2022-11-25 00:00:04', NULL),
+(2, 0, '1', 'WBS3R92040K339121', '7', 'm4', '2014', '21,800 Km', '5.0L V10', 'Automatic', 'Red', 'Black', 'Leader', '17888975221669096783.pdf', '25000', '1000', 1, 1, '7108743941669096783.png', '2022-12-16 00:00', '2022-12-31 00:00', NULL, NULL, NULL, '2022-11-22 05:59:43', '2022-12-20 00:00:03', NULL),
 (3, 5, '3', 'HS30-00930', '7', '280Z', '1971', '2,320 Miles', '2,320 Miles', 'Manual', 'orange', 'white', 'white', '7441273341669176133.pdf', '5000', '2000', 4, 1, '15029107621669176130.png', '2022-11-22 22:00', '2022-11-24 22:00', '2022-11-24', '1', '2,200', '2022-11-23 04:02:13', '2022-11-24 22:01:02', NULL),
-(4, 0, '4', 'SBM11SAB5GW675998', '6', 'MCLAREN', '2018', '17,525 Km', '5.0L V10', 'Automatic', 'Blue', 'Black', 'White', '10403213731669176923.pdf', '10000', '7000', 1, 1, '14417897361669176922.png', '2022-11-22 23:00', '2022-11-25 23:00', NULL, NULL, NULL, '2022-11-23 04:15:23', '2022-11-23 04:16:02', NULL);
+(4, 0, '4', 'SBM11SAB5GW675998', '6', 'MCLAREN', '2018', '17,525 Km', '5.0L V10', 'Automatic', 'Blue', 'Black', 'White', '10403213731669176923.pdf', '10000', '7000', 2, 1, '19387400601670593650.jpg', '2023-01-15 23:00', '2023-01-25 23:00', NULL, NULL, NULL, '2022-11-23 04:15:23', '2022-12-19 15:45:26', NULL),
+(5, 0, 'L11628', 'ZACNJABB6LPL11628', '30', 'RENEGADE LATITUDE', '2020', '43902', '2.4L', 'Automatic', 'BLACK', 'Unknown', 'Unavailable', NULL, '11750', '6750', NULL, 1, '1854768881222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:05', '2023-01-10 02:44:23', NULL),
+(6, 0, '231499', '3FA6P0HD0KR231499', '10', 'FUSION SE', '2019', '24246', '1.5L', 'Automatic', 'GRAY', 'BLACK', 'Unavailable', NULL, '21800', '16800', NULL, 1, '1183973150222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:10', '2023-01-10 02:44:28', NULL),
+(7, 0, '605686', '2C3CDXAT7KH605686', '31', 'CHARGER POLICE', '2019', '14379', '5.7LV8', 'Automatic', 'GREEN', 'BLACK', 'Unavailable', NULL, '24000', '19000', NULL, 1, '667096574222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:15', '2023-01-10 02:44:33', NULL),
+(8, 0, '714916', '3N63M0YNXHK714916', '14', 'CITY EXPRESS LS', '2017', '89791', '2.0L', 'Automatic', 'WHITE', 'BLACK', 'Unavailable', NULL, '19000', '14000', NULL, 1, '289555263222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:20', '2023-01-10 02:44:38', NULL),
+(9, 0, 'H32296', 'ZACCJABB9JPH32296', '30', 'RENEGADE LATITUDE', '2018', '43987', '2.4L', 'Automatic', 'SILVER', 'BLACK', 'Unavailable', NULL, '18500', '13500', NULL, 1, '1682628875222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:25', '2023-01-10 02:44:43', NULL),
+(10, 0, '171705', '2GKFLSE39E6171705', '32', 'TERRAIN SLT', '2014', '66050', '3.6LV6', 'Automatic', 'SILVER', 'BLACK', 'Unavailable', NULL, '13000', '8000', NULL, 1, '1620129660222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:30', '2023-01-10 02:44:48', NULL),
+(11, 0, '163259', '3KPC24A69NE163259', '33', 'ACCENT SE', '2022', '4477', '1.6L', 'Continuously Variable', 'RED', 'BLACK', 'Unavailable', NULL, '20900', '15900', NULL, 1, '1982510590222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:35', '2023-01-10 02:44:53', NULL),
+(12, 0, '196614', '1C3CCCFB3GN196614', '34', '200 LX', '2016', '49600', '2.4L', 'Automatic', 'MAROON', 'BLACK', 'Unavailable', NULL, '10000', '5000', NULL, 1, '1836120491222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:40', '2023-01-10 02:44:58', NULL),
+(13, 0, '66954', '19XFB2F50EE066954', '35', 'CIVIC LX', '2014', '94050', '1.8L', 'Automatic', 'BLUE', 'BLACK', 'Unavailable', NULL, '12000', '7000', NULL, 1, '1488850373222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:45', '2023-01-10 02:45:03', NULL),
+(14, 0, '344328', '4T4BF1FKXER344328', '13', 'CAMRY LE', '2014', '99450', '2.5L', 'Automatic', 'SILVER', 'GRAY', 'Unavailable', NULL, '12800', '7800', NULL, 1, '237718893222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:50', '2023-01-10 02:45:08', NULL),
+(15, 0, '127789', '2G1125S30E9127789', '14', 'IMPALA LT', '2014', '125000', '3.6LV6', 'Automatic', 'SILVER', 'BLACK', 'Unavailable', NULL, '8500', '3500', NULL, 1, '861253764222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:36:55', '2023-01-10 02:45:13', NULL),
+(16, 0, '358798', '2HGFC3B34GH358798', '35', 'CIVIC EX-T', '2016', '101850', '1.5L', 'Continuously Variable', 'BLACK', 'BLACK', 'Unavailable', NULL, '15400', '10400', NULL, 1, '95041823222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:00', '2023-01-10 02:45:18', NULL),
+(17, 0, '11057', 'ML32A3HJ9LH011057', '17', 'MIRAGE ES', '2020', '15164', '1.2L', 'Automatic', 'SILVER', 'GRAY', 'Unavailable', NULL, '14000', '9000', NULL, 1, '1124791605222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:05', '2023-01-10 02:45:23', NULL),
+(18, 0, 'D88274', '1FTEW1CP1FKD88274', '10', 'F150 SUPERCREW', '2015', '95650', '2.7LV6', 'Automatic', 'RED', 'TAN', 'Unavailable', NULL, '15400', '10400', NULL, 1, '1721528803222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:10', '2023-01-10 02:45:28', NULL),
+(19, 0, '27584', 'KNDMB5C15F6027584', '36', 'SEDONA LX', '2015', '60000', '3.3LV6', 'Automatic', 'BLUE', 'BLACK', 'Unavailable', NULL, '11500', '6500', NULL, 1, '874260950222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:15', '2023-01-10 02:45:33', NULL),
+(20, 0, '815883', '3N1CN7APXKL815883', '37', 'VERSA S', '2019', '46350', '1.6L', 'Continuously Variable', 'WHITE', 'BLACK', 'Unavailable', NULL, '13000', '8000', NULL, 1, '926653474222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:20', '2023-01-10 02:45:38', NULL),
+(21, 0, '190481', '1G1BF5SM2H7190481', '14', 'CRUZE PREMIER', '2017', '69312', '1.4L', 'Automatic', 'WHITE', 'BLACK', 'Unavailable', NULL, '9500', '4500', NULL, 1, '1675321557222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:25', '2023-01-10 02:45:43', NULL),
+(22, 0, '122020', '1G1ZE5ST2HF122020', '14', 'MALIBU LT', '2017', '44325', '1.5L', 'Automatic', 'BLUE', 'BLACK', 'Unavailable', NULL, '17000', '12000', NULL, 1, '793841031222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:30', '2023-01-10 02:45:48', NULL),
+(23, 0, '203300', 'KM8K12AA6KU203300', '33', 'KONA SE', '2019', '38200', '2.0L', 'Automatic', 'WHITE', 'BLACK', 'Unavailable', NULL, '18500', '13500', NULL, 1, '1267942370222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:35', '2023-01-10 02:45:53', NULL),
+(24, 0, '464246', '3GTP9EEL7MG464246', '32', 'SIERRA 1500 AT4', '2021', '25507', '6.2LV8', 'Automatic', 'WHITE', 'BLACK', 'Unavailable', NULL, '38500', '33500', NULL, 1, '1317249366222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:40', '2023-01-10 02:45:58', NULL),
+(25, 0, '749281', '2C3CDXHG9KH749281', '31', 'CHARGER GT', '2019', '65350', '3.6LV6', 'Automatic', 'BLACK', 'BLACK', 'Unavailable', NULL, '21000', '16000', NULL, 1, '1053417278222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:45', '2023-01-10 02:46:03', NULL),
+(26, 0, '167751', '1GKKNKLA0MZ167751', '32', 'ACADIA SLE', '2021', '3338', '2.5L', 'Automatic', 'RED', 'GRAY', 'Unavailable', NULL, '30900', '25900', NULL, 1, '238851077222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:50', '2023-01-10 02:46:08', NULL),
+(27, 0, '907364', '5YFBURHEXKP907364', '13', 'COROLLA LE', '2019', '18750', '1.8L', 'Continuously Variable', 'GRAY', 'BLACK', 'Unavailable', NULL, '18300', '13300', NULL, 1, '1157204255222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:37:55', '2023-01-10 02:46:13', NULL),
+(28, 0, '246024', '1C4NJDEB6FD246024', '30', 'COMPASS LATITUDE', '2015', '62836', '2.4L', 'Automatic', 'RED', 'Unknown', 'Unavailable', NULL, '14000', '9000', NULL, 1, '1208063899222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:38:00', '2023-01-10 02:46:18', NULL),
+(29, 0, 'B44121', '1FM5K7DH9GGB44121', '10', 'EXPLORER XLT', '2016', '68457', '2.3L', 'Automatic', 'GRAY', 'BLACK', 'Unavailable', NULL, '11000', '6000', NULL, 1, '1134635755222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:38:06', '2023-01-10 02:46:23', NULL),
+(30, 0, 'D83967', '1FTFX1E58KKD83967', '10', 'F150 SUPER CAB', '2019', '81160', '5.0LV8', 'Automatic', 'WHITE', 'GRAY', 'Unavailable', NULL, '21950', '16950', NULL, 1, '1485084980222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:38:11', '2023-01-10 02:46:28', NULL),
+(31, 0, '465776', '3GCUKREC5JG465776', '14', 'SILVERADO 1500 LT', '2018', '51900', '5.3LV8', 'Automatic', 'WHITE', 'BLACK', 'Leather', NULL, '30500', '25500', NULL, 1, '101745_465776_20.jpg', '2023-01-05 00:00', '2023-01-15 23:59', NULL, NULL, NULL, '2023-01-10 02:38:16', '2023-01-10 02:38:16', NULL),
+(32, 0, 'H69332', 'ZFBERFAB6J6H69332', '38', 'PROMASTER CITY ', '2018', '54000', '2.4L', 'Automatic', 'WHITE', 'BLACK', 'Unavailable', NULL, '23500', '18500', NULL, 1, '423446624222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:39:52', '2023-01-10 02:48:13', NULL),
+(33, 0, 'D96434', '1FTEW1E57KKD96434', '10', 'F150 SUPERCREW', '2019', '81310', '5.0LV8', 'Automatic', 'WHITE', 'GRAY', 'Unavailable', NULL, '26000', '21000', NULL, 1, '32298166222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:39:57', '2023-01-10 02:48:18', NULL),
+(34, 0, '782074', '5NPE24AF2KH782074', '33', 'SONATA SE', '2019', '31900', '2.4L', 'Automatic', 'WHITE', 'Unknown', 'Unavailable', NULL, '18500', '13500', NULL, 1, '1047161572222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:40:02', '2023-01-10 02:48:23', NULL),
+(35, 0, 'C02783', '1FTEW1EG2HFC02783', '10', 'F150 SUPERCREW', '2017', '93150', '3.5LV6', 'Automatic', 'BLACK', 'Unknown', 'Unavailable', NULL, '34284.8', '29284.8', NULL, 1, '803433192222.png', '2023-01-09 00:00', '2023-01-18 23:59', NULL, NULL, NULL, '2023-01-10 02:40:08', '2023-01-10 02:48:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -98,9 +130,9 @@ INSERT INTO `cars` (`id`, `current_bid_id`, `stock`, `vin`, `make`, `model`, `ye
 CREATE TABLE `cars_history_data` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `date` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `mileage` varchar(255) DEFAULT NULL,
+  `date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mileage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -124,9 +156,9 @@ CREATE TABLE `cars_images` (
   `id` int(11) NOT NULL,
   `car_id` int(11) DEFAULT NULL,
   `image` varchar(1000) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cars_images`
@@ -150,7 +182,49 @@ INSERT INTO `cars_images` (`id`, `car_id`, `image`, `created_at`, `updated_at`) 
 (15, 4, '8674118191669176923.png', '2022-11-23 04:15:26', '2022-11-23 04:15:26'),
 (16, 4, '5586787841669176926.png', '2022-11-23 04:15:30', '2022-11-23 04:15:30'),
 (17, 4, '1080144391669176930.png', '2022-11-23 04:15:32', '2022-11-23 04:15:32'),
-(18, 4, '10033983721669176932.png', '2022-11-23 04:15:35', '2022-11-23 04:15:35');
+(18, 4, '10033983721669176932.png', '2022-11-23 04:15:35', '2022-11-23 04:15:35'),
+(19, 4, '10565442661670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(20, 4, '8889937641670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(21, 4, '19008816031670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(22, 4, '1594281801670595964.png', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(23, 4, '17147221591670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(24, 4, '14069882071670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(25, 4, '12718568571670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(26, 4, '5423205181670595964.jpg', '2022-12-09 14:26:04', '2022-12-09 14:26:04'),
+(27, 31, '101745_465776_21.jpg', '2023-01-10 02:38:22', '2023-01-10 02:38:22'),
+(28, 31, '101745_465776_22.jpg', '2023-01-10 02:38:27', '2023-01-10 02:38:27'),
+(29, 31, '101745_465776_23.jpg', '2023-01-10 02:38:32', '2023-01-10 02:38:32'),
+(30, 31, '101745_465776_24.jpg', '2023-01-10 02:38:38', '2023-01-10 02:38:38'),
+(31, 31, '101745_465776_25.jpg', '2023-01-10 02:38:44', '2023-01-10 02:38:44'),
+(32, 31, '101745_465776_26.jpg', '2023-01-10 02:38:49', '2023-01-10 02:38:49'),
+(33, 31, '101745_465776_27.jpg', '2023-01-10 02:38:55', '2023-01-10 02:38:55'),
+(34, 31, '101745_465776_28.jpg', '2023-01-10 02:39:00', '2023-01-10 02:39:00'),
+(35, 31, '101745_465776_29.jpg', '2023-01-10 02:39:06', '2023-01-10 02:39:06'),
+(36, 31, '101745_465776_30.jpg', '2023-01-10 02:39:11', '2023-01-10 02:39:11'),
+(37, 31, '101745_465776_31.jpg', '2023-01-10 02:39:17', '2023-01-10 02:39:17'),
+(38, 31, '101745_465776_32.jpg', '2023-01-10 02:39:22', '2023-01-10 02:39:22'),
+(39, 31, '101745_465776_33.jpg', '2023-01-10 02:39:28', '2023-01-10 02:39:28'),
+(40, 31, '101745_465776_34.jpg', '2023-01-10 02:39:33', '2023-01-10 02:39:33'),
+(41, 31, '101745_465776_35.jpg', '2023-01-10 02:39:39', '2023-01-10 02:39:39'),
+(42, 31, '101745_465776_36.jpg', '2023-01-10 02:39:42', '2023-01-10 02:39:42'),
+(43, 31, '101745_465776_37.jpg', '2023-01-10 02:39:47', '2023-01-10 02:39:47'),
+(44, 31, '101745_465776_21.jpg', '2023-01-10 02:46:39', '2023-01-10 02:46:39'),
+(45, 31, '101745_465776_22.jpg', '2023-01-10 02:46:45', '2023-01-10 02:46:45'),
+(46, 31, '101745_465776_23.jpg', '2023-01-10 02:46:50', '2023-01-10 02:46:50'),
+(47, 31, '101745_465776_24.jpg', '2023-01-10 02:46:56', '2023-01-10 02:46:56'),
+(48, 31, '101745_465776_25.jpg', '2023-01-10 02:47:01', '2023-01-10 02:47:01'),
+(49, 31, '101745_465776_26.jpg', '2023-01-10 02:47:07', '2023-01-10 02:47:07'),
+(50, 31, '101745_465776_27.jpg', '2023-01-10 02:47:12', '2023-01-10 02:47:12'),
+(51, 31, '101745_465776_28.jpg', '2023-01-10 02:47:19', '2023-01-10 02:47:19'),
+(52, 31, '101745_465776_29.jpg', '2023-01-10 02:47:24', '2023-01-10 02:47:24'),
+(53, 31, '101745_465776_30.jpg', '2023-01-10 02:47:29', '2023-01-10 02:47:29'),
+(54, 31, '101745_465776_31.jpg', '2023-01-10 02:47:35', '2023-01-10 02:47:35'),
+(55, 31, '101745_465776_32.jpg', '2023-01-10 02:47:40', '2023-01-10 02:47:40'),
+(56, 31, '101745_465776_33.jpg', '2023-01-10 02:47:46', '2023-01-10 02:47:46'),
+(57, 31, '101745_465776_34.jpg', '2023-01-10 02:47:51', '2023-01-10 02:47:51'),
+(58, 31, '101745_465776_35.jpg', '2023-01-10 02:47:57', '2023-01-10 02:47:57'),
+(59, 31, '101745_465776_36.jpg', '2023-01-10 02:48:02', '2023-01-10 02:48:02'),
+(60, 31, '101745_465776_37.jpg', '2023-01-10 02:48:08', '2023-01-10 02:48:08');
 
 -- --------------------------------------------------------
 
@@ -177,15 +251,15 @@ CREATE TABLE `car_bids` (
 CREATE TABLE `car_exteriors` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `wheels_tyres` text DEFAULT NULL,
-  `bodywork` text DEFAULT NULL,
-  `paint` text DEFAULT NULL,
-  `glass_trim` text DEFAULT NULL,
+  `wheels_tyres` text COLLATE utf8mb4_unicode_ci,
+  `bodywork` text COLLATE utf8mb4_unicode_ci,
+  `paint` text COLLATE utf8mb4_unicode_ci,
+  `glass_trim` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `banner` varchar(1000) NOT NULL,
-  `video_type` int(11) NOT NULL DEFAULT 1 COMMENT '1=>video,2=>url',
-  `media` varchar(100) DEFAULT NULL
+  `banner` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video_type` int(11) NOT NULL DEFAULT '1' COMMENT '1=>video,2=>url',
+  `media` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -209,8 +283,8 @@ INSERT INTO `car_exteriors` (`id`, `car_id`, `wheels_tyres`, `bodywork`, `paint`
 CREATE TABLE `car_histories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `description` text DEFAULT NULL,
-  `banner` varchar(1000) DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `banner` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -231,39 +305,39 @@ INSERT INTO `car_histories` (`id`, `car_id`, `description`, `banner`, `created_a
 
 CREATE TABLE `car_infos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `reg_no` varchar(255) NOT NULL,
-  `name` varchar(2000) DEFAULT NULL,
-  `short_desc` longtext DEFAULT NULL,
-  `banner` varchar(250) DEFAULT NULL,
+  `reg_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_desc` longtext COLLATE utf8mb4_unicode_ci,
+  `banner` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL,
   `make_id` bigint(20) DEFAULT NULL,
-  `model` varchar(255) NOT NULL,
-  `variant` varchar(255) NOT NULL,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `variant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `year` bigint(20) NOT NULL,
-  `mileage` varchar(255) NOT NULL,
-  `gearbox` varchar(255) NOT NULL,
-  `steering_position` enum('1','2') NOT NULL DEFAULT '1' COMMENT '1=>LHD,2=>RHD',
-  `engine_size` varchar(255) NOT NULL,
-  `color` varchar(255) NOT NULL,
-  `chassis_no` varchar(255) NOT NULL,
-  `former_keepers` varchar(255) NOT NULL,
+  `mileage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gearbox` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `steering_position` enum('1','2') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1' COMMENT '1=>LHD,2=>RHD',
+  `engine_size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chassis_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `former_keepers` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` bigint(20) DEFAULT NULL,
   `city_id` bigint(20) DEFAULT NULL,
-  `is_auction` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `description` text NOT NULL,
-  `seller_type` int(11) NOT NULL DEFAULT 1 COMMENT '1=>Dealer,2=>private',
-  `currency` varchar(15) DEFAULT NULL,
+  `is_auction` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seller_type` int(11) NOT NULL DEFAULT '1' COMMENT '1=>Dealer,2=>private',
+  `currency` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `current_bid_id` bigint(20) DEFAULT NULL,
   `auction_endtime` time DEFAULT NULL,
   `auction_enddate` date DEFAULT NULL,
-  `price` varchar(250) DEFAULT NULL,
+  `price` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `reserve_price` double DEFAULT NULL,
-  `is_approve` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `status` enum('1','2','3','4','0') NOT NULL DEFAULT '0' COMMENT '1=>live,2=>comming,3=>buy_now,4=>sold,0=>new',
-  `is_sold` bigint(20) NOT NULL DEFAULT 0 COMMENT '0=>no,1=>yes',
+  `is_approve` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `status` enum('1','2','3','4','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '1=>live,2=>comming,3=>buy_now,4=>sold,0=>new',
+  `is_sold` bigint(20) NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
   `sold_date` date DEFAULT NULL,
-  `total_bid` int(11) NOT NULL DEFAULT 0,
-  `winning_bid` varchar(1000) DEFAULT NULL,
+  `total_bid` int(11) NOT NULL DEFAULT '0',
+  `winning_bid` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -289,12 +363,12 @@ INSERT INTO `car_infos` (`id`, `reg_no`, `name`, `short_desc`, `banner`, `user_i
 CREATE TABLE `car_interiors` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `seats` text DEFAULT NULL,
-  `dashboard` text DEFAULT NULL,
-  `steering_wheel` text DEFAULT NULL,
-  `banner` varchar(1000) DEFAULT NULL,
-  `video_type` int(11) NOT NULL DEFAULT 2 COMMENT '1=>video,2=>url	',
-  `media` varchar(250) DEFAULT NULL,
+  `seats` text COLLATE utf8mb4_unicode_ci,
+  `dashboard` text COLLATE utf8mb4_unicode_ci,
+  `steering_wheel` text COLLATE utf8mb4_unicode_ci,
+  `banner` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_type` int(11) NOT NULL DEFAULT '2' COMMENT '1=>video,2=>url	',
+  `media` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -317,13 +391,13 @@ INSERT INTO `car_interiors` (`id`, `car_id`, `seats`, `dashboard`, `steering_whe
 CREATE TABLE `car_mechanics` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `engine_gearbox` text DEFAULT NULL,
-  `suspension_brakes` text DEFAULT NULL,
-  `the_drive` text DEFAULT NULL,
-  `electrics` text DEFAULT NULL,
-  `banner` varchar(1000) DEFAULT NULL,
-  `video_type` int(11) NOT NULL DEFAULT 2 COMMENT '1=>video,2=>url	',
-  `media` varchar(1000) DEFAULT NULL,
+  `engine_gearbox` text COLLATE utf8mb4_unicode_ci,
+  `suspension_brakes` text COLLATE utf8mb4_unicode_ci,
+  `the_drive` text COLLATE utf8mb4_unicode_ci,
+  `electrics` text COLLATE utf8mb4_unicode_ci,
+  `banner` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_type` int(11) NOT NULL DEFAULT '2' COMMENT '1=>video,2=>url	',
+  `media` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -346,8 +420,8 @@ INSERT INTO `car_mechanics` (`id`, `car_id`, `engine_gearbox`, `suspension_brake
 CREATE TABLE `car_media` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
-  `type` enum('1','2','3','4','5') NOT NULL DEFAULT '1' COMMENT '1=>Exterior,2=>Interior,3=>Mechanics,4=>History & Paperwork,5=>Video',
-  `media` varchar(255) DEFAULT NULL,
+  `type` enum('1','2','3','4','5') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1' COMMENT '1=>Exterior,2=>Interior,3=>Mechanics,4=>History & Paperwork,5=>Video',
+  `media` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -398,7 +472,7 @@ CREATE TABLE `cities` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `state_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cities`
@@ -48381,10 +48455,10 @@ CREATE TABLE `comments` (
   `car_id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `datetime` datetime NOT NULL,
-  `comment` text DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci,
   `reply_id` bigint(20) DEFAULT NULL,
-  `type` int(11) NOT NULL DEFAULT 1 COMMENT '1=>bid,2=>comment',
-  `amount` varchar(250) DEFAULT NULL,
+  `type` int(11) NOT NULL DEFAULT '1' COMMENT '1=>bid,2=>comment',
+  `amount` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48406,12 +48480,12 @@ INSERT INTO `comments` (`id`, `car_id`, `user_id`, `datetime`, `comment`, `reply
 
 CREATE TABLE `contact_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` bigint(20) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `message` text NOT NULL,
-  `interested_In` enum('1','2','3') NOT NULL DEFAULT '1' COMMENT '1=>buying,2=>selling,3=>everything  ',
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `interested_In` enum('1','2','3') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1' COMMENT '1=>buying,2=>selling,3=>everything  ',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48428,7 +48502,7 @@ CREATE TABLE `countries` (
   `name` varchar(150) NOT NULL,
   `phonecode` int(11) NOT NULL,
   `image` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `countries`
@@ -48445,9 +48519,9 @@ INSERT INTO `countries` (`id`, `sortname`, `name`, `phonecode`, `image`) VALUES
 
 CREATE TABLE `currencies` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `symbol` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `symbol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48578,12 +48652,12 @@ INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `created_at`, `updated
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -48594,7 +48668,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `f_r_q_mains` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `topic` varchar(255) DEFAULT NULL,
+  `topic` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48616,8 +48690,8 @@ INSERT INTO `f_r_q_mains` (`id`, `topic`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `f_r_q_s` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `topic_id` int(11) NOT NULL,
-  `question` text NOT NULL,
-  `answer` text NOT NULL,
+  `question` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48663,7 +48737,7 @@ INSERT INTO `f_r_q_s` (`id`, `topic_id`, `question`, `answer`, `created_at`, `up
 
 CREATE TABLE `makes` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -48699,7 +48773,16 @@ INSERT INTO `makes` (`id`, `name`, `deleted_at`, `created_at`, `updated_at`) VAL
 (26, 'tet', '2022-01-30 05:15:22', '2022-01-30 05:15:13', '2022-01-30 05:15:22'),
 (27, '56546', '2022-01-30 05:15:49', '2022-01-30 05:15:43', '2022-01-30 05:15:49'),
 (28, 'test454', '2022-01-30 05:28:01', '2022-01-30 05:27:40', '2022-01-30 05:28:01'),
-(29, '1', '2022-01-30 05:30:44', '2022-01-30 05:30:41', '2022-01-30 05:30:44');
+(29, '1', '2022-01-30 05:30:44', '2022-01-30 05:30:41', '2022-01-30 05:30:44'),
+(30, 'JEEP', NULL, '2023-01-10 02:36:00', '2023-01-10 02:36:00'),
+(31, 'DODGE', NULL, '2023-01-10 02:36:10', '2023-01-10 02:36:10'),
+(32, 'GMC', NULL, '2023-01-10 02:36:25', '2023-01-10 02:36:25'),
+(33, 'HYUNDAI', NULL, '2023-01-10 02:36:30', '2023-01-10 02:36:30'),
+(34, 'CHRYSLER', NULL, '2023-01-10 02:36:35', '2023-01-10 02:36:35'),
+(35, 'HONDA', NULL, '2023-01-10 02:36:40', '2023-01-10 02:36:40'),
+(36, 'KIA', NULL, '2023-01-10 02:37:10', '2023-01-10 02:37:10'),
+(37, 'NISSAN', NULL, '2023-01-10 02:37:15', '2023-01-10 02:37:15'),
+(38, 'RAM', NULL, '2023-01-10 02:39:47', '2023-01-10 02:39:47');
 
 -- --------------------------------------------------------
 
@@ -48711,11 +48794,18 @@ CREATE TABLE `max_bids` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `amount` varchar(10000) DEFAULT NULL,
-  `status` bigint(20) NOT NULL DEFAULT 0,
+  `amount` varchar(10000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` bigint(20) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `max_bids`
+--
+
+INSERT INTO `max_bids` (`id`, `car_id`, `user_id`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(1, 2, 52, '5,000', 0, '2022-12-14 17:24:57', '2022-12-14 17:24:57');
 
 -- --------------------------------------------------------
 
@@ -48725,7 +48815,7 @@ CREATE TABLE `max_bids` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -48777,11 +48867,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `pages` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `meta_title` varchar(255) NOT NULL,
-  `meta_description` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `is_enable` enum('0','1') NOT NULL DEFAULT '1' COMMENT '0=>disable,1=>enable',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_enable` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1' COMMENT '0=>disable,1=>enable',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48793,8 +48883,8 @@ CREATE TABLE `pages` (
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -48808,12 +48898,12 @@ CREATE TABLE `payment_histories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `car_id` bigint(20) NOT NULL,
   `buyer_id` bigint(20) NOT NULL,
-  `transaction_id` varchar(255) NOT NULL,
-  `amount` varchar(255) NOT NULL,
-  `currency` varchar(100) DEFAULT NULL,
+  `transaction_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `currency` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0=>failed,1=>success'
+  `status` int(11) NOT NULL DEFAULT '0' COMMENT '0=>failed,1=>success'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -48824,11 +48914,11 @@ CREATE TABLE `payment_histories` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -48843,10 +48933,10 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `removecard_request` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0=>process,1=>approve,2=>remove',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status` int(11) NOT NULL DEFAULT '0' COMMENT '0=>process,1=>approve,2=>remove',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -48857,7 +48947,7 @@ CREATE TABLE `removecard_request` (
 CREATE TABLE `reset_passwords` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `code` varchar(255) DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48870,11 +48960,11 @@ CREATE TABLE `reset_passwords` (
 
 CREATE TABLE `sales_inquiries` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `make` varchar(500) DEFAULT NULL,
-  `model` varchar(500) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `make` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `model` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -48888,18 +48978,18 @@ CREATE TABLE `sales_inquiries` (
 
 CREATE TABLE `settings` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `address` text NOT NULL,
-  `facebook_id` varchar(255) NOT NULL,
-  `twitter_id` varchar(255) NOT NULL,
-  `instgram_id` varchar(255) NOT NULL,
-  `timezone` varchar(255) NOT NULL,
-  `fees_info` longblob DEFAULT NULL,
-  `txt_charge` varchar(100) DEFAULT NULL,
-  `stripe_key` varchar(2000) DEFAULT NULL,
-  `stripe_secret` varchar(2000) DEFAULT NULL,
-  `inventory_pdf` varchar(1000) DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `facebook_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `twitter_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instgram_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `timezone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fees_info` longblob,
+  `txt_charge` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stripe_key` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stripe_secret` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `inventory_pdf` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48909,7 +48999,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `email`, `phone`, `address`, `facebook_id`, `twitter_id`, `instgram_id`, `timezone`, `fees_info`, `txt_charge`, `stripe_key`, `stripe_secret`, `inventory_pdf`, `created_at`, `updated_at`) VALUES
-(1, 'ojha.iiitm@gmail.com', '(718) 777-160304', 'Covent Garden, London WC2H 9JQ', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.instagram.com/', '73', 0x3c68333e425559455253204946205553494e47204120554e49544544204b494e47444f4d20524547495354455245442043524544495420434152443c2f68333e0d0a0d0a3c703e4f75722066656573206172652036252028696e636c7573697665206f662056415429206f66207468652077696e6e696e67206269642e3c2f703e0d0a0d0a3c7461626c65207374796c653d2277696474683a383025223e0d0a093c74626f64793e0d0a09093c74723e0d0a0909093c74683e43757272656e6379206f662041756374696f6e3c2f74683e0d0a0909093c74683e4d696e696d756d204665650d0a0909093c703e3c736d616c6c3e696e636c7573697665206f66205641543c2f736d616c6c3e3c2f703e0d0a0909093c2f74683e0d0a0909093c74683e4d6178696d756d204665650d0a0909093c703e3c736d616c6c3e696e636c7573697665206f66205641543c2f736d616c6c3e3c2f703e0d0a0909093c2f74683e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4272697469736820506f756e643c2f74643e0d0a0909093c74643e26706f756e643b3630303c2f74643e0d0a0909093c74643e26706f756e643b362c3030303c2f74643e0d0a09093c2f74723e0d0a093c2f74626f64793e0d0a3c2f7461626c653e0d0a0d0a3c68333e266e6273703b3c2f68333e0d0a0d0a3c68333e4255594552532046524f4d2052455354204f462054484520574f524c443c2f68333e0d0a0d0a3c703e4f75722066656573206172652035252e3c2f703e0d0a0d0a3c7461626c65207374796c653d2277696474683a383025223e0d0a093c74626f64793e0d0a09093c74723e0d0a0909093c74683e43757272656e6379206f662041756374696f6e3c2f74683e0d0a0909093c74683e4d696e696d756d204665653c2f74683e0d0a0909093c74683e4d6178696d756d204665653c2f74683e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e5541452044697268616d3c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a0909093c74643e32352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e53617564696120417261626961205341523c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a0909093c74643e32352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4b7577616974692044696e61723c2f74643e0d0a0909093c74643e3230303c2f74643e0d0a0909093c74643e323030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4261687261696e692044696e61723c2f74643e0d0a0909093c74643e3235303c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4575726f20266575726f3b3c2f74643e0d0a0909093c74643e3530303c2f74643e0d0a0909093c74643e352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e5377697373204672616e633c2f74643e0d0a0909093c74643e3630303c2f74643e0d0a0909093c74643e363235303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e555320446f6c6c61723c2f74643e0d0a0909093c74643e3635303c2f74643e0d0a0909093c74643e363830303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4d616c61797369612052696e676769743c2f74643e0d0a0909093c74643e323830303c2f74643e0d0a0909093c74643e32383530303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e486f6e67204b6f6e6720446f6c6c61723c2f74643e0d0a0909093c74643e353330303c2f74643e0d0a0909093c74643e35333030303c2f74643e0d0a09093c2f74723e0d0a093c2f74626f64793e0d0a3c2f7461626c653e, '5', 'pk_test_51KSwzRDUyVAyCTOu4lcoXg7OmzWv3ynrjzEOKZtswxRDo1lmsMgzq6ZsoUcrqyZZV53zjrAI1EaGDfffYOsGJrhn84Z00zsgXXPVg', 'ddfgdf', '1892086101669724710.pdf', '2022-01-15 09:53:32', '2022-11-29 06:55:10');
+(1, 'ojha.iiitm@gmail.com', '(718) 777-160304', 'Covent Garden, London WC2H 9JQ', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.instagram.com/', '73', 0x3c68333e425559455253204946205553494e47204120554e49544544204b494e47444f4d20524547495354455245442043524544495420434152443c2f68333e0d0a0d0a3c703e4f75722066656573206172652036252028696e636c7573697665206f662056415429206f66207468652077696e6e696e67206269642e3c2f703e0d0a0d0a3c7461626c65207374796c653d2277696474683a383025223e0d0a093c74626f64793e0d0a09093c74723e0d0a0909093c74683e43757272656e6379206f662041756374696f6e3c2f74683e0d0a0909093c74683e4d696e696d756d204665650d0a0909093c703e3c736d616c6c3e696e636c7573697665206f66205641543c2f736d616c6c3e3c2f703e0d0a0909093c2f74683e0d0a0909093c74683e4d6178696d756d204665650d0a0909093c703e3c736d616c6c3e696e636c7573697665206f66205641543c2f736d616c6c3e3c2f703e0d0a0909093c2f74683e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4272697469736820506f756e643c2f74643e0d0a0909093c74643e26706f756e643b3630303c2f74643e0d0a0909093c74643e26706f756e643b362c3030303c2f74643e0d0a09093c2f74723e0d0a093c2f74626f64793e0d0a3c2f7461626c653e0d0a0d0a3c68333e266e6273703b3c2f68333e0d0a0d0a3c68333e4255594552532046524f4d2052455354204f462054484520574f524c443c2f68333e0d0a0d0a3c703e4f75722066656573206172652035252e3c2f703e0d0a0d0a3c7461626c65207374796c653d2277696474683a383025223e0d0a093c74626f64793e0d0a09093c74723e0d0a0909093c74683e43757272656e6379206f662041756374696f6e3c2f74683e0d0a0909093c74683e4d696e696d756d204665653c2f74683e0d0a0909093c74683e4d6178696d756d204665653c2f74683e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e5541452044697268616d3c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a0909093c74643e32352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e53617564696120417261626961205341523c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a0909093c74643e32352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4b7577616974692044696e61723c2f74643e0d0a0909093c74643e3230303c2f74643e0d0a0909093c74643e323030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4261687261696e692044696e61723c2f74643e0d0a0909093c74643e3235303c2f74643e0d0a0909093c74643e323530303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4575726f20266575726f3b3c2f74643e0d0a0909093c74643e3530303c2f74643e0d0a0909093c74643e352c3030303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e5377697373204672616e633c2f74643e0d0a0909093c74643e3630303c2f74643e0d0a0909093c74643e363235303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e555320446f6c6c61723c2f74643e0d0a0909093c74643e3635303c2f74643e0d0a0909093c74643e363830303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e4d616c61797369612052696e676769743c2f74643e0d0a0909093c74643e323830303c2f74643e0d0a0909093c74643e32383530303c2f74643e0d0a09093c2f74723e0d0a09093c74723e0d0a0909093c74643e486f6e67204b6f6e6720446f6c6c61723c2f74643e0d0a0909093c74643e353330303c2f74643e0d0a0909093c74643e35333030303c2f74643e0d0a09093c2f74723e0d0a093c2f74626f64793e0d0a3c2f7461626c653e, '5', 'pk_test_51KSwzRDUyVAyCTOu4lcoXg7OmzWv3ynrjzEOKZtswxRDo1lmsMgzq6ZsoUcrqyZZV53zjrAI1EaGDfffYOsGJrhn84Z00zsgXXPVg', 'ddfgdf', '9577251673018028.pdf', '2022-01-15 09:53:32', '2023-01-06 15:13:48');
 
 -- --------------------------------------------------------
 
@@ -48919,10 +49009,10 @@ INSERT INTO `settings` (`id`, `email`, `phone`, `address`, `facebook_id`, `twitt
 
 CREATE TABLE `spot_lights` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `short_desc` varchar(255) NOT NULL,
-  `description` longtext DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48946,8 +49036,8 @@ INSERT INTO `spot_lights` (`id`, `title`, `image`, `short_desc`, `description`, 
 CREATE TABLE `states` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `country_id` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `country_id` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `states`
@@ -53055,7 +53145,7 @@ INSERT INTO `states` (`id`, `name`, `country_id`) VALUES
 
 CREATE TABLE `subscribers` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -53068,30 +53158,30 @@ CREATE TABLE `subscribers` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `country_id` varchar(20) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country_id` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `user_type` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>user,1=>admin',
-  `promotions_email_notification` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `trade_news_email_notification` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `outbid_sms_notification` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `watcher_comment_notification` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
-  `email_verification` int(11) NOT NULL DEFAULT 0 COMMENT '0=>no,1=>yes',
-  `dealership_name` text DEFAULT NULL,
-  `dealership_p_number` text DEFAULT NULL,
-  `address` text DEFAULT NULL,
-  `street_address` text DEFAULT NULL,
-  `city` varchar(1000) DEFAULT NULL,
-  `state` varchar(1000) DEFAULT NULL,
-  `postcode` varchar(1000) DEFAULT NULL,
-  `country` varchar(1000) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_type` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>user,1=>admin',
+  `promotions_email_notification` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `trade_news_email_notification` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `outbid_sms_notification` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `watcher_comment_notification` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `email_verification` int(11) NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `dealership_name` text COLLATE utf8mb4_unicode_ci,
+  `dealership_p_number` text COLLATE utf8mb4_unicode_ci,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `street_address` text COLLATE utf8mb4_unicode_ci,
+  `city` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postcode` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -53116,15 +53206,15 @@ INSERT INTO `users` (`id`, `name`, `username`, `country_id`, `phone`, `email`, `
 CREATE TABLE `user_invoice_addresses` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `company_name` varchar(255) DEFAULT NULL,
-  `billing_address` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `billing_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` bigint(20) DEFAULT NULL,
-  `state_id` varchar(1000) DEFAULT NULL,
-  `city_id` varchar(1000) DEFAULT NULL,
-  `pincode` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `vat_no` varchar(255) DEFAULT NULL,
-  `country_code` varchar(100) DEFAULT NULL,
+  `state_id` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city_id` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vat_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country_code` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -53138,15 +53228,15 @@ CREATE TABLE `user_invoice_addresses` (
 CREATE TABLE `user_payment_methods` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `stripe_customer_id` varchar(1000) DEFAULT NULL,
-  `country_code` varchar(255) DEFAULT NULL,
-  `name_on_card` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `billing_address` varchar(255) DEFAULT NULL,
+  `stripe_customer_id` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_on_card` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `billing_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` bigint(20) DEFAULT NULL,
-  `state_id` varchar(1000) DEFAULT NULL,
-  `city_id` varchar(1000) DEFAULT NULL,
-  `pincode` varchar(255) DEFAULT NULL,
+  `state_id` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city_id` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -53173,11 +53263,11 @@ CREATE TABLE `user_watchings` (
 
 CREATE TABLE `views` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `viewable_type` varchar(255) NOT NULL,
+  `viewable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `viewable_id` bigint(20) UNSIGNED NOT NULL,
-  `visitor` text DEFAULT NULL,
-  `collection` varchar(255) DEFAULT NULL,
-  `viewed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `visitor` text COLLATE utf8mb4_unicode_ci,
+  `collection` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `viewed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -53430,7 +53520,7 @@ ALTER TABLE `bid_gaps`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `cars_history_data`
@@ -53442,7 +53532,7 @@ ALTER TABLE `cars_history_data`
 -- AUTO_INCREMENT for table `cars_images`
 --
 ALTER TABLE `cars_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `car_bids`
@@ -53538,13 +53628,13 @@ ALTER TABLE `f_r_q_s`
 -- AUTO_INCREMENT for table `makes`
 --
 ALTER TABLE `makes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `max_bids`
 --
 ALTER TABLE `max_bids`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `migrations`

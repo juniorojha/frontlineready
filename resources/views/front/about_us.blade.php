@@ -64,7 +64,7 @@ Front Line Ready - About Us
                             <!-- We then post them to our dealer only auction portal where our dealer partners can participate in our 10-day auction process or "buy it now".  We then deliver the vehicle to the winning dealer.    -->
                            We then certify our cars for 30 days or 1,000 miles. <br/>
                         &nbsp;&nbsp;&nbsp;It's that simple.  No standing around a live auction all day.  No more auction buy fees.  No more waiting for the next trade in. </p>
-                        <a href="{{route('home')}}#delarship_reg"><h3 style="display: flex;justify-content: center;    font-size: 24px;font-weight: 700;">Contact us to learn more.</h3></a>
+                        <a href="{{route('contact')}}"><h3 style="display: flex;justify-content: center;    font-size: 24px;font-weight: 700;">Contact us to learn more.</h3></a>
                     
                     </div>
                 </div>

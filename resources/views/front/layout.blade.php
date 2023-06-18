@@ -59,6 +59,7 @@
                            <ul class="top-nav-bar">
                               <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                               <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
+                              <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('inventory')}}">Inventory</a></li>
                               <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>
                            </ul>
                         </div>
@@ -74,6 +75,7 @@
                   <ul class="top-nav-bar desktop-hold">
                      <li class="<?=Session::get("menu_active")==1?'active':''?>"><a href="{{route('home')}}">Home</a></li>
                      <li class="<?=Session::get("menu_active")==2?'active':''?>"><a href="{{route('about-us')}}">About us</a></li>
+                     <li class="<?=Session::get("menu_active")==3?'active':''?>"><a href="{{route('inventory')}}">Inventory</a></li>
                      <li class="<?=Session::get("menu_active")==6?'active':''?>"><a href="{{route('contact-us')}}">Contact us</a></li>         
                   </ul>
                </div>
