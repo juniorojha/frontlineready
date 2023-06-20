@@ -67,7 +67,7 @@ Front Line Ready - Vehicle Detail
    
   
     </script>
-    <div class="row" style="    margin-top: 50px;">
+    <div class="row" style="    margin-top: 50px; margin-bottom:40px;">
         <div class="col-md-6">
             <div class="container">
 <!-- Flickity HTML init -->
