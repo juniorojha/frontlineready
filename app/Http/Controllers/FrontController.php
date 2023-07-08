@@ -135,7 +135,8 @@ class FrontController extends Controller
                 $id = $request->get("id");
                 $get_all_cars = Car::whereNull('deleted_at')->get();
                 foreach ($get_all_cars as $k) {
-                    $k->key_id = $this->encryptstring($k->id);
+                    // $k->key_id = $this->encryptstring($k->id);
+                    $k->key_id = $k->id;
                     $k->make = Make::find($k->make)?Make::find($k->make)->name:'';
                 }
                 Session::put("menu_active",'3');
@@ -710,6 +711,72 @@ class FrontController extends Controller
                     Session::put("menu_active",'5');
                 }
                 return view("front.vehicle_detail",compact("setting","data","id","make_data"));
+        }catch(Exception $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                 return redirect()->route('home');
+        }catch (DecryptException $e) {
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                 return redirect()->route('home');
+        }catch (\Illuminate\Database\QueryException $e){
+                \Log::info($e->getMessage());
+                Session::flash('message',"Something went wrong"); 
+                Session::flash('alert-class', 'alert-danger');
+                 return redirect()->route('home');
+        } 
+        
+    }
+
+     public function stock(Request $request){
+     try{
+                $id = $request->get("car");              
+                $make_data = Make::whereNull('deleted_at')->get();
+                // $data = Car::find($id);  
+                $data = Car::whereNull('deleted_at')->where('id','=',$id)->get();              
+                $setting = Setting::find(1);
+                $data = (count($data)>0 ? $data[0]: NULL);
+                if(isset($data)){
+                    $data->make_id = Make::find($data->make)?Make::find($data->make)->name:'';                   
+                    $data->bid_price = $data->base_price;
+                    if(isset($data->price)&&$data->current_bid_id!=""){                        
+                        $data->bid_price = Comment::find($data->current_bid_id)?Comment::find($data->current_bid_id)->amount:$data->base_price;
+                    }
+                                     
+                    $data->Comment = Comment::where('car_id',$data->id)->get();                    
+                    
+                    $bid_price = str_replace(",","",$data->bid_price);                   
+                    
+                    foreach($data->Comment as $dc){
+                        $dc->username = User::find($dc->user_id)?User::find($dc->user_id)->name:'';
+                        $ls = User::find($dc->user_id);
+                        if($ls){
+                             if($ls->image==""){
+                                 $dc->image = asset('storage/app/public/profile/user-thumb.jpg');
+                             }else{
+                                 $dc->image = asset('storage/app/public/profile').'/'.$ls->image;
+                             }
+                        }else{
+                            $dc->image = asset('storage/app/public/profile/user-thumb.jpg');
+                        }
+                    }
+                    $data->images = CarImages::where("car_id",$data->id)->get();
+                }
+
+               
+
+                if(Auth::id()){
+                    Session::put("menu_active",'4');
+                }else{
+                    Session::put("menu_active",'5');
+                }
+                if(isset($data)) {
+                    return view("front.vehicle_detail",compact("setting","data","id","make_data"));
+                } else {
+                    return redirect()->route('inventory');
+                }
         }catch(Exception $e){
                 \Log::info($e->getMessage());
                 Session::flash('message',"Something went wrong"); 

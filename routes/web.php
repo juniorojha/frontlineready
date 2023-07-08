@@ -66,6 +66,7 @@ Route::get("about",[FrontController::class,"about_us"])->name("about-us");
 Route::get("sell_with_us",[FrontController::class,"sell_with_us"])->name("sell-with-us");
 Route::get("sell_your_vehicle",[FrontController::class,"sell_your_vehicle"])->name("sell-your-vehicle");
 Route::get("vehicle_detail",[FrontController::class,"vehicle_detail"])->name("vehicle-detail");
+Route::get("stock",[FrontController::class,"stock"])->name("stock");
 Route::get("my_watch",[FrontController::class,"show_my_watch"])->name("my-watch");
 Route::get("my_listing",[FrontController::class,"show_my_listing"])->name("my-listing");
 Route::get("my_details",[FrontController::class,"show_my_details"])->name("my-details");

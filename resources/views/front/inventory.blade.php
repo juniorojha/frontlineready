@@ -108,11 +108,11 @@ ul.slick-dots {
                            </ul>
                         </div> -->
                         <div class="img-hold">
-                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
+                           <a href="{{route('stock',['car'=>$gc->key_id])}}"><img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"></a>
                            <!-- <img src="{{asset('storage/app/public/cars/banner').'/'.$gc->thumbail}}"> -->
                         </div>
                         <div class="heading-hold">
-                           <a href="{{route('vehicle-detail',['query'=>$gc->key_id])}}">
+                           <a href="{{route('stock',['car'=>$gc->key_id])}}">
                                <h6 style="font-size:12px;margin-bottom:20px;">{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h6>
                            </a>
                            <!-- <h6 style="font-size:12px;margin-bottom:20px;">{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h6>
