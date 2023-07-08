@@ -115,11 +115,12 @@ ul.slick-dots {
                            <a href="{{route('stock',['car'=>$gc->key_id])}}">
                                <h6 style="font-size:12px;margin-bottom:20px;">{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h6>
                            </a>
-                           <!-- <h6 style="font-size:12px;margin-bottom:20px;">{{$gc->year}} | {{$gc->make}} | {{$gc->model}} | {{$gc->mileage}}</h6>
-                          <ul class="icons-section"> -->
-                           
-                           </ul>
                         </div>
+                        <ul>
+                           <li class="actions-btn-hold btn_box_border" style="margin: 0px 0px 10px 0px;" id="ls_5">
+                              <a class="btn_border" href="mailto:sales@frontlinereadyrtx.com?subject=Requesting additional information for {{$gc->year.' '.$gc->make.' '.$gc->model}}&body=Hi FrontLine Ready Team,%0A%0ACan you please send more information about the {{$gc->year.' '.$gc->make.' '.$gc->model}} listed on your site?%0A%0AThe stock number is %23{{$gc->stock}}.%0A%0A">Request Additional Information</a>
+                           </li>
+                        </ul>
                      </div>
                      <div class="product-content">
                        
